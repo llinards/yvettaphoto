@@ -9,4 +9,7 @@ class HomeController extends Controller
     public function index() {
         return view('layouts.app');
     }
+    public function gallery() {
+        return view('layouts.gallery');
+    }
 }
