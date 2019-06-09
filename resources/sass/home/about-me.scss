@@ -1,0 +1,46 @@
+section#third {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #34495e;
+    /* height: 500px; */
+}
+
+section#third .heading {
+    margin-bottom: 50px;
+}
+
+section#third p.lead {
+    text-align: justify;
+}
+
+section#third a.anime-border-white {
+    text-decoration: none;
+}
+
+.anime-border-white {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+}
+
+.anime-border-white::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width .3s;
+}
+
+.anime-border-white:hover::after {
+    width: 100%;
+}
+
+section#third a:hover {
+    color: #fff !important;
+}
+
+.about-me__read-more {
+    text-transform: uppercase;
+    color: #97759c !important
+}
