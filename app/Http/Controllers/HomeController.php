@@ -12,4 +12,7 @@ class HomeController extends Controller
     public function gallery() {
         return view('layouts.gallery');
     }
+    public function aboutMe() {
+        return view('layouts.about-me');
+    }
 }
