@@ -1,0 +1,35 @@
+#portfolio {
+    padding-top: 100px !important;
+}
+
+.gallery-list-item {
+    color: #777;
+    cursor: pointer;
+    user-select: none;
+}
+
+.active-item {
+    color: #34495e;
+}
+
+.list-inline-item:not(:last-child) {
+    margin-right: 0;
+}
+
+.gallery__collection {
+    text-align: center;
+    margin: 10px;
+}
+
+.gallery__collection img {
+    padding-top: 10px;
+}
+
+.modal-body {
+    padding: 0;
+}
+
+.ekko-lightbox-nav-overlay a:last-child span,
+.ekko-lightbox-nav-overlay a span {
+    color: #343a40;
+}
