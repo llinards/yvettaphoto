@@ -10,7 +10,18 @@
 </head>
 <body>
   <div id="contents">
-   <h1>Hello World</h1>
+   @include('inc.navbar')
+   @yield('navbar')
+   @include('home.header')
+   @yield('header')
+   @include('home.portfolio')
+   @yield('portfolio')
+   @include('home.about-me')
+   @yield('about-me')
+   @include('home.contact-me')
+   @yield('contact-me')
+   @include('inc.footer')
+   @yield('footer')
   </div>
 @include('inc.js')
 @yield('js')

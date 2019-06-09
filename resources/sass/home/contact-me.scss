@@ -1,0 +1,41 @@
+section#fourth {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+section#fourth .heading {
+    margin-bottom: 50px;
+}
+
+section#fourth p.lead {
+    text-align: justify;
+}
+
+.form-control {
+    border: transparent;
+    border-radius: 0;
+    border-bottom: 3px solid #34495e;
+    transition: all .4s;
+}
+
+.form-control:focus {
+    background: transparent;
+    border: 3px solid #34495e;
+    box-shadow: none;
+    color: #000;
+}
+
+.btn-submit {
+    /* border-radius: 0;
+ border: 3px solid #34495e;
+ color: #000;
+ background-color: #fff; */
+    border-radius: .25rem;
+    background-color: #616569;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.btn-submit:hover {
+    background-color: #1d2124;
+}

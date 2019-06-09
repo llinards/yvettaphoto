@@ -7,6 +7,95 @@
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/brands';
 
-body {
- background-color: #ccc;
+@import 'media-queries';
+@import 'navbar';
+@import 'home/header';
+@import 'home/portfolio';
+@import 'home/about-me';
+@import 'home/contact-me';
+
+hr {
+    border: 2px solid #34495e;
+}
+
+.underline {
+    width: 150px;
+    border: 3px solid #34495e;
+    margin: auto;
+}
+
+.underline-dark {
+    width: 150px;
+    border: 3px solid #fff;
+    margin: auto;
+}
+
+#button {
+    display: inline-block;
+    background-color: #616569;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    margin: 30px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+#button:hover {
+    cursor: pointer;
+    background-color: #1d2124;
+}
+
+#button:active {
+    background-color: #1d2124;
+}
+
+#button::after {
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 50px;
+    color: #fff;
+}
+
+#button.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.button__icon {
+    font-size: 40px;
+    padding-top: 0.1875rem;
+}
+
+.instagram__icon {
+    font-size: 2.25rem;
+    margin: 0 auto;
+    color: #000;
+    display: table;
+}
+
+.instagram__icon:hover,
+.instagram__icon:active {
+    color: #000;
+}
+
+.lynyrds-signature {
+    font-size: 12px;
+    color: #212529;
+}
+
+.lynyrds-signature a {
+    color: #212529;
+}
+
+.lynyrds-signature a:hover {
+    color: #1d2124;
+    text-decoration: transparent;
 }

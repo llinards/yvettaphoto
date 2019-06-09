@@ -16489,7 +16489,360 @@ readers do not read off random characters that represent icons */
   font-family: "Font Awesome 5 Brands";
 }
 
-body {
-  background-color: #ccc;
+@media (min-width: 576px) {
+  .gallery-block.grid-gallery .scale-on-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-link {
+    font-size: 19px;
+  }
+
+  .fixed-top {
+    background-color: #eee !important;
+    opacity: 0.995;
+  }
+
+  .about-me__quote {
+    font-size: 20px;
+  }
+
+  .about-me__nav-links {
+    text-align: center;
+  }
+
+  .about-me__nav-link {
+    padding: 25px 16px !important;
+  }
+
+  #button {
+    margin: 15px;
+    bottom: 15px;
+    right: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .about-me__container {
+    margin: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .main__headings {
+    font-size: 45px;
+  }
+}
+
+.fixed-top {
+  transition: all 0.4s;
+}
+
+.fixed-top.scrolled {
+  background-color: #eee !important;
+  /* margin: 10px; */
+  transition: all 0.7s;
+  opacity: 0.95;
+  /* border-radius: 10px; */
+}
+
+.anime-border {
+  display: inline-block;
+  color: #34495e;
+  text-decoration: none;
+}
+
+.anime-border::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #34495e;
+  transition: width 0.3s;
+}
+
+.anime-border:hover::after {
+  width: 100%;
+}
+
+/* .active {
+ border-top: 3px solid #34495e;
+} */
+
+.navbar-btn {
+  background-color: #616569 !important;
+  /* background-color: #fff !important;
+  border: 3px solid #34495e; */
+}
+
+.navbar-btn:focus {
+  outline: none;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler {
+  /* border-radius: 0; */
+}
+
+section#first {
+  height: 100vh;
+  background-image: url("/img/section-one-bg.jpg");
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.gallery-block.grid-gallery {
+  padding-bottom: 60px;
+  padding-top: 60px;
+}
+
+.gallery-block.grid-gallery .heading {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.gallery-block.grid-gallery .heading h2 {
+  font-weight: bold;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.gallery-block.grid-gallery a {
+  opacity: 1;
+  transition: all 0.7s;
+}
+
+.gallery-block.grid-gallery a:hover {
+  opacity: 0.8;
+}
+
+/* .img-blur {
+ -webkit-filter: blur(2px);
+ filter: blur(2px);
+}
+
+.img-blur:hover {
+ -webkit-filter: blur(0);
+ filter: blur(0);
+} */
+
+.gallery-block.grid-gallery .item {
+  margin-bottom: 20px;
+}
+
+.portfolio-heading {
+  position: absolute;
+  top: 70%;
+  right: 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: #222;
+  width: 70%;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.5s;
+}
+
+.portfolio-heading:hover {
+  opacity: 1;
+}
+
+.card-shadow {
+  box-shadow: 5px 8px 20px #444;
+  transition: all 0.4s;
+}
+
+.card-shadow:hover {
+  transform: translateY(-5px);
+}
+
+/* @media (min-width: 576px) {
+ .gallery-block.grid-gallery .scale-on-hover:hover {
+     transform: scale(1.05);
+     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15) !important;
+ }
+} */
+
+section#third {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #34495e;
+  /* height: 500px; */
+}
+
+section#third .heading {
+  margin-bottom: 50px;
+}
+
+section#third p.lead {
+  text-align: justify;
+}
+
+section#third a.anime-border-white {
+  text-decoration: none;
+}
+
+.anime-border-white {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.anime-border-white::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s;
+}
+
+.anime-border-white:hover::after {
+  width: 100%;
+}
+
+section#third a:hover {
+  color: #fff !important;
+}
+
+.about-me__read-more {
+  text-transform: uppercase;
+  color: #97759c !important;
+}
+
+section#fourth {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+section#fourth .heading {
+  margin-bottom: 50px;
+}
+
+section#fourth p.lead {
+  text-align: justify;
+}
+
+.form-control {
+  border: transparent;
+  border-radius: 0;
+  border-bottom: 3px solid #34495e;
+  transition: all 0.4s;
+}
+
+.form-control:focus {
+  background: transparent;
+  border: 3px solid #34495e;
+  box-shadow: none;
+  color: #000;
+}
+
+.btn-submit {
+  /* border-radius: 0;
+  border: 3px solid #34495e;
+  color: #000;
+  background-color: #fff; */
+  border-radius: 0.25rem;
+  background-color: #616569;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.btn-submit:hover {
+  background-color: #1d2124;
+}
+
+hr {
+  border: 2px solid #34495e;
+}
+
+.underline {
+  width: 150px;
+  border: 3px solid #34495e;
+  margin: auto;
+}
+
+.underline-dark {
+  width: 150px;
+  border: 3px solid #fff;
+  margin: auto;
+}
+
+#button {
+  display: inline-block;
+  background-color: #616569;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  margin: 30px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+#button:hover {
+  cursor: pointer;
+  background-color: #1d2124;
+}
+
+#button:active {
+  background-color: #1d2124;
+}
+
+#button::after {
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 50px;
+  color: #fff;
+}
+
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.button__icon {
+  font-size: 40px;
+  padding-top: 0.1875rem;
+}
+
+.instagram__icon {
+  font-size: 2.25rem;
+  margin: 0 auto;
+  color: #000;
+  display: table;
+}
+
+.instagram__icon:hover,
+.instagram__icon:active {
+  color: #000;
+}
+
+.lynyrds-signature {
+  font-size: 12px;
+  color: #212529;
+}
+
+.lynyrds-signature a {
+  color: #212529;
+}
+
+.lynyrds-signature a:hover {
+  color: #1d2124;
+  -webkit-text-decoration: transparent;
+          text-decoration: transparent;
 }
 
