@@ -1,4 +1,3 @@
-@section('about-me')
 <section id="third">
   <div class="container">
       <div class="row justify-content-center align-items-center">
@@ -22,4 +21,3 @@
       </div>
   </div>
 </section>
-@endsection

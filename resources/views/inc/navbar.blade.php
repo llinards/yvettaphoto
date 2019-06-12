@@ -1,5 +1,3 @@
-
-@section('navbar')
 <nav class="navbar navbar-expand-md fixed-top">
  <a href="#first" class="navbar-brand">
      <img class="img-fluid" width="150" src="img/logo.png" alt="">
@@ -25,4 +23,3 @@
      </ul>
  </div>
 </nav>
-@endsection

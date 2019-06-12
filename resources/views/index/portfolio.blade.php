@@ -1,4 +1,3 @@
-@section('portfolio')
 <section id="second" class="gallery-block grid-gallery">
  <div class="container">
      <div class="heading">
@@ -71,4 +70,3 @@
      </div>
  </div>
 </section>
-@endsection
