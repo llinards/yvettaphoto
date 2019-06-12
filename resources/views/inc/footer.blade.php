@@ -1,4 +1,3 @@
-@section('footer')
 <footer>
   <p class="lead text-center">&copy; 2018 YVETTA</p>
   <a target="_blank" href="https://www.instagram.com/yvettaphoto/" class="instagram__icon">
@@ -13,4 +12,3 @@
 <a id="button">
   <i class="fas fa-chevron-up text-light button__icon"></i>
 </a>
-@endsection
