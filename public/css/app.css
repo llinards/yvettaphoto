@@ -16586,6 +16586,15 @@ section#first {
   background-position: center;
 }
 
+.all-photos-btn {
+  text-align: center;
+}
+
+.all-photos-btn a {
+  text-decoration: none;
+  font-size: 2rem;
+}
+
 .gallery-block.grid-gallery {
   padding-bottom: 60px;
   padding-top: 60px;
