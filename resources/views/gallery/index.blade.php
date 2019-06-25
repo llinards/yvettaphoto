@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row mt-5 justify-content-center">
             <div class="heading">
-                <h1 class="display-4 text-uppercase text-center">Gallery</h1>
+                <h1 class="display-4 text-uppercase text-center">Choose your category</h1>
                 <div class="underline"></div>
             </div>
         </div>
