@@ -8,7 +8,7 @@
          <div class="col-8 mx-auto item">
              <div class="card border-0 card-shadow">
                  <a class="lightbox" href="gallery/">
-                     <img class="card-img img-fluid img-blur" src="img/black-white/0206_cover_1200px.jpg">
+                     <img class="card-img img-fluid img-blur" src="img/cover-photos/main_portfolio_cover.jpeg">
                  </a>
              </div>
              <div class="all-photos-btn text-align-center">

@@ -16523,6 +16523,10 @@ readers do not read off random characters that represent icons */
     bottom: 15px;
     right: 0;
   }
+
+  .gallery-photo {
+    text-align: center;
+  }
 }
 
 @media (max-width: 575px) {
@@ -16736,6 +16740,40 @@ section#fourth p.lead {
 
 #portfolio {
   padding-top: 100px !important;
+}
+
+.gallery-photo {
+  padding: 0.05rem !important;
+  position: relative;
+}
+
+.gallery-photo img {
+  transition: all 0.4s;
+}
+
+.gallery-photo img:hover,
+.gallery-photo img:active {
+  opacity: 0.5;
+}
+
+.gallery-photo:hover,
+.gallery-photo:active {
+  cursor: pointer;
+}
+
+.gallery-photo-title {
+  position: absolute;
+  background-color: #34495e;
+  top: 65%;
+  left: 1%;
+  right: 0;
+  max-width: 80%;
+  z-index: 1;
+}
+
+.gallery-list-title:hover,
+.gallery-list-title:active {
+  display: inline-block;
 }
 
 .gallery-list-item {

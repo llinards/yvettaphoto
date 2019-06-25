@@ -7,6 +7,33 @@
                 <div class="underline"></div>
             </div>
         </div>
+        <div class="row pt-3">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 p-1 gallery-photo">
+                <h3 class="gallery-photo-title text-uppercase text-white p-1">Black&White</h3>
+                <img class="img-fluid" src="img/cover-photos/600x600_bw.png" alt="">               
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 gallery-photo">
+                <h3 class="gallery-photo-title text-uppercase text-white p-1">Creative</h3>
+                <img class="img-fluid" src="img/cover-photos/600x600_creative.png" alt="">
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 gallery-photo">
+                <h3 class="gallery-photo-title text-uppercase text-white p-1">Latvia</h3>
+                <img class="img-fluid" src="img/cover-photos/600x600_latvia.png" alt="">
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 gallery-photo">
+                <h3 class="gallery-photo-title text-uppercase text-white p-1">Patterns</h3>
+                <img class="img-fluid" src="img/cover-photos/600x600_patterns.png" alt="">
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 gallery-photo">
+                <h3 class="gallery-photo-title text-uppercase text-white p-1">Streetphoto</h3>
+                <img class="img-fluid" src="img/cover-photos/600x600_streetphotp.png" alt="">
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 gallery-photo">
+                <h3 class="gallery-photo-title text-uppercase text-white p-1">Yellowstone</h3>
+                <img class="img-fluid" src="img/cover-photos/600x600_yellowstone.png" alt="">
+            </div>
+        </div>
+{{-- 
         <!-- GALLERY -->
         <ul class="list-inline text-center text-uppercase font-weight-bold my-4">
             <li class="list-inline-item gallery-list-item active-item" data-filter="all">All
@@ -330,7 +357,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <!-- end of OLD GALLERY -->
 </section>
