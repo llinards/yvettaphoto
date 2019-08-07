@@ -16,3 +16,7 @@ Route::get('/gallery', 'HomeController@gallery');
 Route::get('/about-me', 'HomeController@aboutMe');
 
 Route::get('/admin', 'AdminController@index');
+
+Route::get('/admin/kategorijas', 'CategoriesController@index');
+Route::get('/admin/kategorijas/jauna', 'CategoriesController@create');
+Route::post('/admin/kategorijas', 'CategoriesController@store');
