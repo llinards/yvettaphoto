@@ -15,3 +15,4 @@ Route::get('/', 'HomeController@index');
 Route::get('/gallery', 'HomeController@gallery');
 Route::get('/about-me', 'HomeController@aboutMe');
 
+Route::get('/admin', 'AdminController@index');
