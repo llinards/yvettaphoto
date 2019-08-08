@@ -1,6 +1,8 @@
-@extends('layouts.default')
+@extends('layouts.admin-default')
 <div class="container pb-4 pt-4">
    <h1>Jauna kategorijas izveide</h1>
+   @include('inc.status-messages')
+   @yield('content')
    <form action="/admin/kategorijas" enctype="multipart/form-data" method="post">
    @csrf
       <div class="form-group">

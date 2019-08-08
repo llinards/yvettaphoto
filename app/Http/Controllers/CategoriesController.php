@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use Intervention\Image\Facades\Image;
+use DB;
 
 class CategoriesController extends Controller
 {
     public function index() 
     {
-        return view('categories.index');
+        $categories = DB::table('categories')->select('id','name','cover_photo_url')->get();
+        return view('categories.index', compact('categories')) ;
     }
 
     public function create()
@@ -36,6 +38,11 @@ class CategoriesController extends Controller
 
         $newCategory->save();
         
-        return redirect ('/admin/kategorijas/jauna');
+        return back()->with('success', 'Kategorija pievienota!');
+    }
+
+    public function delete($id)
+    {
+
     }
 }
