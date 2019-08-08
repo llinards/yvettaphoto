@@ -1,5 +1,5 @@
 <footer>
-  <p class="lead text-center">&copy; 2018 YVETTA</p>
+  <p class="lead text-center">&copy; <?php echo date("Y"); ?> YVETTA</p>
   <a target="_blank" href="https://www.instagram.com/yvettaphoto/" class="instagram__icon">
       <i class="fab fa-instagram"></i>
   </a>

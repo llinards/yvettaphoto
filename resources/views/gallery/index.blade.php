@@ -8,30 +8,12 @@
             </div>
         </div>
         <div class="row pt-3">
+            @foreach($categories as $category)
             <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 p-1 gallery-photo">
-                <h3 class="gallery-photo-title text-uppercase text-white p-1">Black&White</h3>
-                <img class="img-fluid" src="img/cover-photos/600x600_bw.png" alt="">               
+                <h3 class="gallery-photo-title text-uppercase text-white p-1">{{ $category->name }}</h3>
+                <img class="img-fluid" src="/storage/{{ $category->cover_photo_url}}" alt="">               
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 gallery-photo">
-                <h3 class="gallery-photo-title text-uppercase text-white p-1">Creative</h3>
-                <img class="img-fluid" src="img/cover-photos/600x600_creative.png" alt="">
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 gallery-photo">
-                <h3 class="gallery-photo-title text-uppercase text-white p-1">Latvia</h3>
-                <img class="img-fluid" src="img/cover-photos/600x600_latvia.png" alt="">
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 gallery-photo">
-                <h3 class="gallery-photo-title text-uppercase text-white p-1">Patterns</h3>
-                <img class="img-fluid" src="img/cover-photos/600x600_patterns.png" alt="">
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 gallery-photo">
-                <h3 class="gallery-photo-title text-uppercase text-white p-1">Streetphoto</h3>
-                <img class="img-fluid" src="img/cover-photos/600x600_streetphotp.png" alt="">
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 gallery-photo">
-                <h3 class="gallery-photo-title text-uppercase text-white p-1">Yellowstone</h3>
-                <img class="img-fluid" src="img/cover-photos/600x600_yellowstone.png" alt="">
-            </div>
+            @endforeach
         </div>
 {{-- 
         <!-- GALLERY -->
