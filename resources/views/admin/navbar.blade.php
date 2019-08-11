@@ -9,7 +9,7 @@
    <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav d-flex align-items-center">
          <li class="nav-item active">
-         <a class="nav-link" target="_blank" href="/admin">Administrācijas sākumlapa</a>
+         <a class="nav-link" href="/admin">Administrācijas sākumlapa</a>
          </li>
          <li class="nav-item">
          <a class="nav-link" target="_blank" href="/">Galvenā mājaslapa</a>
