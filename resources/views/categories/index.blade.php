@@ -1,4 +1,5 @@
 @extends('layouts.admin-default')
+@include('admin.navbar')
 <div class="container pb-4">
    <div class="d-flex flex-column align-items-center pt-4">
       <h1>Kategorijas</h1> 
