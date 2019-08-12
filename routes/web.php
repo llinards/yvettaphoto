@@ -20,3 +20,5 @@ Route::get('/admin', 'AdminController@index');
 Route::get('/admin/kategorijas', 'CategoriesController@index');
 Route::get('/admin/kategorijas/jauna', 'CategoriesController@create');
 Route::post('/admin/kategorijas', 'CategoriesController@store');
+Route::get('/admin/kategorijas/{category}/edit', 'CategoriesController@edit');
+Route::patch('/admin/kategorijas/{category}', 'CategoriesController@update');
