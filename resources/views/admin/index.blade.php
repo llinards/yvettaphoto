@@ -1,4 +1,5 @@
-@extends('layouts.admin-default')
+@extends('layouts.admin-default',['title' => 'Administrācijas panelis'])
+@section('content')
 @include('admin.navbar')
 {{-- section options --}}
 <section class="options">
@@ -27,8 +28,8 @@
             </div>
             <div>
                <ul class="list-group list-group-flush">
-                  <li class="list-group-item display-4">Lapā ir <span class="badge badge-secondary">4</span> bildes</li>
-                  <li class="list-group-item display-4">Lapā ir <span class="badge badge-secondary">6</span> kategorijas</li>
+                  <li class="list-group-item">Lapā ir <span class="badge badge-secondary">4</span> bildes</li>
+                  <li class="list-group-item">Lapā ir <span class="badge badge-secondary">6</span> kategorijas</li>
                </ul>
             </div>
          </div>
@@ -36,3 +37,4 @@
    </div>
 </section>
 {{-- end of google analytics --}}
+@stop

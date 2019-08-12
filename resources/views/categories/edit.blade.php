@@ -4,11 +4,12 @@
 <div class="container pb-4 pt-4">
    <h1>Jauna kategorijas izveide</h1>
    @yield('content')
-   <form action="/admin/kategorijas" enctype="multipart/form-data" method="post">
+   <form action="/admin/kategorijas/{{ $category->id }}" enctype="multipart/form-data" method="post">
    @csrf
+   @method('PATCH')
       <div class="form-group">
          <label for="category-name" class="col-form-label">Kategorijas nosaukums</label>
-         <input type="text" class="form-control @error('category-name') is-invalid @enderror" value="{{ old('category-name') }}" name="category-name" id="category-name" placeholder="Kategorijas nosaukums šeit">
+         <input id="category-name" name="category-name" type="text" class="form-control @error('category-name') is-invalid @enderror" value="{{ old('category-name') ?? $category->name }}">
          @error('category-name')
             <strong>Kategorijas nosaukums ir obligāts!</strong>
          @enderror
