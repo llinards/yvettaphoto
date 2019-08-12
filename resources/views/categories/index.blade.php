@@ -13,7 +13,7 @@
    </div>
    <div class="row">
       @foreach($categories as $category)
-      <div class="col-xs-12 col-sm-6 col-md-4 mt-4">
+      <div class="col-xs-12 col-md-6 col-lg-4 mt-4">
          <div class="card" style="width: 18rem; margin: 0 auto;">
             <img src="/storage/{{ $category->cover_photo_url }}" class="card-img-top" alt="...">
             <div class="card-body">
