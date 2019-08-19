@@ -17,7 +17,7 @@ class CategoriesController extends Controller
 
     public function create()
     {
-        return view('categories.create');
+        return back();
     }
 
     public function store() 
@@ -32,26 +32,33 @@ class CategoriesController extends Controller
         $image = Image::make(public_path("storage/{$imagePath}"))->fit(600, 600);
         $image->save();
 
-        $newCategory = new Category();
-        $newCategory->name = $data['category-name'];
-        $newCategory->cover_photo_url = $imagePath;
+        try {
+            $newCategory = new Category();
+            $newCategory->name = $data['category-name'];
+            $newCategory->cover_photo_url = $imagePath;
 
-        $newCategory->save();
-        
-        return redirect('/admin/kategorijas')->with('success', 'Kategorija pievienota!');
+            $newCategory->save();
+            
+            return redirect('/admin/kategorijas')->with('success', 'Kategorija pievienota!');
+        } catch (\Exception $e) {
+            return redirect('/admin/kategorijas')->with('error', 'Kļūda!');
+        }
     }
 
-    public function edit(Category $category)
+    public function edit()
     {
-        return view ('categories.edit', compact('category'));
+        return back();
     }
 
     public function update(Category $category)
     {
         $data = request()->validate([
+            'category-id' => 'required',
             'category-name' => 'required',
             'category-cover' => 'image',
         ]);
+
+        $categoryId = $data['category-id'];
 
         if(request('category-cover')) {
             $imagePath = request('category-cover')->store('uploads', 'public');
@@ -63,20 +70,29 @@ class CategoriesController extends Controller
                 ['category-cover' => $imagePath]
             );
         }
-        $updateCategory = Category::find($category->id);
-        $updateCategory->name = $data['category-name'];
 
-        if(request('category-cover')) {
-            $updateCategory->cover_photo_url = $imagePath;
+        try {
+            $updateCategory = Category::find($categoryId);
+            $updateCategory->name = $data['category-name'];
+            if(request('category-cover')) {
+                $updateCategory->cover_photo_url = $imagePath;
+            }
+            $updateCategory->save();
+            return redirect('/admin/kategorijas')->with('success', 'Kategorija atjaunota!');
+        } catch (\Exception $e) {
+            return redirect('/admin/kategorijas')->with('error', 'Kļūda!');
         }
-
-        $updateCategory->save();
-
-        return redirect('/admin/kategorijas')->with('success', 'Kategorija atjaunota!');
     }
 
-    public function delete($id)
+    public function destroy(Request $request)
     {
-
+        $data = $request->input('category-id');
+        try {
+            $categoryToRemove = Category::where('id', $data)->delete();
+            Category::destroy($data);
+            return redirect('/admin/kategorijas')->with('success', 'Kategorija izdzēsta!');
+        } catch (\Exception $e) {
+            return redirect('/admin/kategorijas')->with('error', 'Kļūda!');
+        }
     }
 }

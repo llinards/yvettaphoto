@@ -8,7 +8,7 @@
    </button>
    <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav d-flex align-items-center">
-         <li class="nav-item active">
+         <li class="{{ (request()->is('/admin')) ? 'active' : '' }}nav-item">
          <a class="nav-link" href="/admin">Administrācijas sākumlapa</a>
          </li>
          <li class="nav-item">

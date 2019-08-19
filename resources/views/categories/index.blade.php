@@ -7,25 +7,34 @@
       <div class="d-flex flex-column align-items-center">
          <h1>Kategorijas</h1> 
          <div>
-            <a href="/admin/kategorijas/jauna" class="btn btn-success p-2">Pievienot jaunu kategoriju</a>
+            <button class="btn btn-success" data-toggle="modal" data-target="#createModal">Pievienot jaunu kategoriju</button>
          </div>
       </div>
    </div>
+   @include('categories.create-modal')
+   @include('categories.edit-modal')
+   @include('categories.delete-modal')
    <div class="row">
-      @foreach($categories as $category)
-      <div class="col-xs-12 col-md-6 col-lg-4 mt-4">
-         <div class="card" style="width: 18rem; margin: 0 auto;">
-            <img src="/storage/{{ $category->cover_photo_url }}" class="card-img-top" alt="...">
-            <div class="card-body">
-               <h5 class="card-title text-center">{{ $category->name }}</h5>
-               <div class="text-center">
-               <a href="/admin/kategorijas/{{ $category->id }}/edit" class="btn btn-warning">Rediģēt kategoriju</a>
-               <a href="/admin/kategorijas/{{ $category->id }}/delete" class="btn btn-danger mt-2">Dzēst kategoriju</a>
+      @if(!$categories->isEmpty())
+         @foreach($categories as $category)
+         <div class="col-xs-12 col-md-6 col-lg-4 mt-4">
+            <div class="card" style="width: 18rem; margin: 0 auto;">
+               <img src="/storage/{{ $category->cover_photo_url }}" class="card-img-top" alt="...">
+               <div class="card-body">
+                  <h5 class="card-title text-center">{{ $category->name }}</h5>
+                  <div class="text-center">
+                     <button class="btn btn-warning mt-1 editCategory" data-toggle="modal" data-categoryname="{{ $category->name }}" data-categoryid="{{ $category->id }}">Rediģēt kategoriju</button>
+                     <button class="btn btn-danger mt-1 deleteCategory" data-toggle="modal" data-categoryid="{{ $category->id }}">Dzēst kategoriju</button>
+                  </div>
                </div>
             </div>
          </div>
+         @endforeach
+      @else
+      <div class="text-center w-100">
+         <p>Nav nevienas kategorijas! Pievieno, lai kaut ko redzētu šeit! :)</p>
       </div>
-      @endforeach
+      @endif
    </div>
 </div>
 @stop

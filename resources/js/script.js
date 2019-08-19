@@ -82,4 +82,17 @@ $(function () {
         }
     });
 
+    $(document).on('click', '.deleteCategory', function () {
+        var categoryId = $(this).attr('data-categoryid');
+        $('#modelToDeleteId').val(categoryId);
+        $('#deleteModal').modal('show');
+    });
+
+    $(document).on('click', '.editCategory', function () {
+        var categoryName = $(this).attr('data-categoryname');
+        var categoryId = $(this).attr('data-categoryid');
+        $('#modelToEditName').val(categoryName);
+        $('#modelToEditId').val(categoryId);
+        $('#editModal').modal('show');
+    });
 });
