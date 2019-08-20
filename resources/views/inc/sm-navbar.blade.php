@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse justify-content-end" id="nav">
         <ul class="navbar-nav">
             <li class="nav-item about-me__nav-links">
-                <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border about-me__nav-link" href="../">
+                <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border about-me__nav-link" href="{{ URL::previous() }}">
                     <i class="fas fa-chevron-left"></i> Back</a>
             </li>
         </ul>
