@@ -123,4 +123,9 @@ $(function () {
     for (x = 0; x < allItems.length; x++) {
         imagesLoaded(allItems[x], resizeInstance);
     }
+
+    lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true
+    })
 });
