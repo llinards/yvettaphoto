@@ -9,20 +9,19 @@
       <div class="row pt-3">
          <div class="container-fluid">
             <div class="grid">
+               @if(!$images->isEmpty())
+               @foreach($images as $image)
                <div class="item photo">
                   <div class="content">
-                     <a href="/img/black-white/0111_1200px.jpg" data-lightbox="{{ $category->id }}">
-                        <img class="photothumb" src="../img/black-white/0111_1200px.jpg">
+                     <a href="/storage/{{ $image->image_name}}" data-lightbox="{{ $category->id }}">
+                        <img class="photothumb" src="/storage/{{ $image->image_name}}">
                      </a>
                   </div>
                </div>
-               <div class="item photo">
-                  <div class="content">
-                     <a href="/img/black-white/0115_1200px.jpg" data-lightbox="{{ $category->id }}">
-                        <img class="photothumb" src="/img/black-white/0115_1200px.jpg">
-                     </a>
-                  </div>
-               </div>
+               @endforeach
+               @else
+                  <p>No pictures found!</p>
+               @endif
             </div>
          </div>
       </div>
