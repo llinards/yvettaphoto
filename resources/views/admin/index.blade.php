@@ -7,11 +7,11 @@
       <div class="jumbotron">
          <div class="row d-flex flex-column align-items-center">
             <div>
-               <h2>Kādas opcijas gribi veikt?</h2>
+               <h2 class="admin__headings">Kādas opcijas gribi veikt?</h2>
             </div>
-            <div>
+            <div class="admin-buttons">
                <a href="/admin/kategorijas" class="btn btn-primary">Pievienot jaunu kategoriju</a>
-               <a href="#" class="btn btn-primary disabled">Pievienot jaunas bildes</a>
+               <a href="/admin/bildes/jaunas" class="btn btn-primary">Pievienot jaunas bildes</a>
             </div>
          </div>
       </div>
@@ -19,7 +19,7 @@
 </section>
 {{-- end of section options --}}
 {{-- section google analytics --}}
-<section class="google-analytics">
+{{-- <section class="google-analytics">
    <div class="container mt-4">
       <div class="jumbotron">
          <div class="row d-flex flex-column align-items-center">
@@ -35,6 +35,6 @@
          </div>
       </div>
    </div>
-</section>
+</section> --}}
 {{-- end of google analytics --}}
 @stop

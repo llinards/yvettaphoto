@@ -5,7 +5,7 @@
    @include('inc.status-messages')
    <div class="jumbotron">
       <div class="d-flex flex-column align-items-center">
-         <h1>Kategorijas</h1> 
+         <h2 class="admin__headings">Kategorijas</h2> 
          <div>
             <button class="btn btn-success" data-toggle="modal" data-target="#createModal">Pievienot jaunu kategoriju</button>
          </div>

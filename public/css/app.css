@@ -16723,6 +16723,19 @@ body.lb-disable-scrolling {
   .about-me__container {
     margin: 20px;
   }
+
+  .admin__headings {
+    font-size: 1.5rem;
+  }
+
+  .admin-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .admin-buttons a {
+    margin-top: 1rem;
+  }
 }
 
 @media (max-width: 360px) {
@@ -17122,5 +17135,22 @@ hr {
   color: #1d2124;
   -webkit-text-decoration: transparent;
           text-decoration: transparent;
+}
+
+.form-group#my-dropzone .message {
+  font-family: "Segoe UI Light", "Arial", serif;
+  font-weight: 600;
+  color: #0087F7;
+  font-size: 1.5em;
+  letter-spacing: 0.05em;
+}
+
+.form-group.dropzone {
+  border: 2px dashed #0087F7;
+  background: white;
+  border-radius: 5px;
+  min-height: 300px;
+  padding: 90px 0;
+  vertical-align: baseline;
 }
 
