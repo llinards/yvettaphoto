@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Image;
+use App\Category;
 use DB;
 
 class ImagesController extends Controller
@@ -47,6 +48,25 @@ class ImagesController extends Controller
         }
         } catch (\Exception $e) {
             return redirect('/admin/bildes/jaunas')->with('error', 'Kļūda!');
+        }
+    }
+
+    public function edit(Category $category)
+    {
+        $categoryId = $category->id;
+        $images = DB::table('images')->select('id','image_name')->where('category_id', $categoryId)->orderBy('created_at', 'DESC')->get();
+        return view ('photos.edit', compact('images', 'category'));
+    }
+
+    public function destroy (Request $request)
+    {
+        $data = $request->input('image-id');
+        try {
+            $categoryToRemove = Image::where('id', $data)->delete();
+            Image::destroy($data);
+            return back()->with('success', 'Bilde izdzēsta!');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Kļūda!');
         }
     }
 }
