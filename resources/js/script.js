@@ -57,8 +57,6 @@ $(function () {
         $(this).ekkoLightbox();
     });
 
-
-
     var btn = $('#button');
 
     $(window).scroll(function () {
