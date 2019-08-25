@@ -14343,7 +14343,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
   return b.defaults = {
     albumLabel: "Image %1 of %2",
-    alwaysShowNavOnTouchDevices: !1,
+    alwaysShowNavOnTouchDevices: 1,
     fadeDuration: 600,
     fitImagesInViewport: !0,
     imageFadeDuration: 600,

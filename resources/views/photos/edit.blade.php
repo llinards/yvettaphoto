@@ -25,7 +25,10 @@
          @endforeach
       @else
       <div class="text-center w-100">
-         <p>Nav nevienas bildes šajā kategorijā! Pievieno, lai kaut ko redzētu šeit! :)</p>
+         <div>
+            <p>Nav nevienas bildes šajā kategorijā! Pievieno, lai kaut ko redzētu šeit! :)</p>
+            <a class="btn btn-success" href="/admin/bildes/jaunas">Pievienot bildes</a>
+         </div>
       </div>
       @endif
    </div>
