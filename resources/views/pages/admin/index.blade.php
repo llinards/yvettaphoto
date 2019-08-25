@@ -1,6 +1,6 @@
 @extends('layouts.admin-default',['title' => 'Administrācijas panelis'])
 @section('content')
-@include('admin.navbar')
+@include('inc.admin-navbar')
 {{-- section options --}}
 <section class="options">
    <div class="container mt-4">

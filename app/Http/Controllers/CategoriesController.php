@@ -12,7 +12,7 @@ class CategoriesController extends Controller
     public function index() 
     {
         $categories = DB::table('categories')->select('id','name','cover_photo_url')->orderBy('created_at', 'DESC')->get();
-        return view('categories.index', compact('categories')) ;
+        return view('pages.admin.categories', compact('categories')) ;
     }
 
     public function create()
