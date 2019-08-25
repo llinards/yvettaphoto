@@ -30,3 +30,5 @@ Route::delete('/admin/kategorijas', 'CategoriesController@destroy');
 Route::get('/admin/bildes', 'ImagesController@index');
 Route::get('/admin/bildes/jaunas', 'ImagesController@create');
 Route::post('/admin/bildes', 'ImagesController@store');
+Route::get('/admin/{category}/bildes', 'ImagesController@edit');
+Route::delete('/admin/bildes', 'ImagesController@destroy');

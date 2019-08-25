@@ -14609,6 +14609,11 @@ $(function () {
     $('#modelToEditId').val(categoryId);
     $('#editModal').modal('show');
   });
+  $(document).on('click', '.deleteImage', function () {
+    var imageId = $(this).attr('data-imageid');
+    $('#modelToDeleteId').val(imageId);
+    $('#deleteModal').modal('show');
+  });
 
   function resizeGridItem(item) {
     grid = document.getElementsByClassName("grid")[0];
@@ -14639,7 +14644,7 @@ $(function () {
     imagesLoaded(allItems[x], resizeInstance);
   }
 
-  lightbox.option({
+  jQuery.lightbox.option({
     'resizeDuration': 200,
     'wrapAround': true,
     'disableScrolling': false
