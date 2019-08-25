@@ -54,7 +54,7 @@ class ImagesController extends Controller
     public function edit(Category $category)
     {
         $categoryId = $category->id;
-        $images = DB::table('images')->select('id','image_name')->where('category_id', $categoryId)->get();
+        $images = DB::table('images')->select('id','image_name')->where('category_id', $categoryId)->orderBy('created_at', 'DESC')->get();
         return view ('photos.edit', compact('images', 'category'));
     }
 

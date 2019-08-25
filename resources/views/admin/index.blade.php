@@ -10,7 +10,7 @@
                <h2 class="admin__headings">Kādas opcijas gribi veikt?</h2>
             </div>
             <div class="admin-buttons">
-               <a href="/admin/kategorijas" class="btn btn-primary">Pievienot jaunu kategoriju</a>
+               <a href="/admin/kategorijas" class="btn btn-primary">Kategoriju rediģēšana</a>
                <a href="/admin/bildes/jaunas" class="btn btn-primary">Pievienot jaunas bildes</a>
             </div>
          </div>

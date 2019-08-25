@@ -23,7 +23,7 @@
                <div class="card-body">
                   <h5 class="card-title text-center">{{ $category->name }}</h5>
                   <div class="text-center">
-                     <a class="btn btn-success mt-1" href="/admin/{{ $category->id }}/bildes">Skatīt bildes šajā kategorijā</a>
+                     <a class="btn btn-success mt-1" href="/admin/{{ $category->id }}/bildes">Bildes šajā kategorijā</a>
                      <button class="btn btn-warning mt-1 editCategory" data-toggle="modal" data-categoryname="{{ $category->name }}" data-categoryid="{{ $category->id }}">Rediģēt kategoriju</button>
                      <button class="btn btn-danger mt-1 deleteCategory" data-toggle="modal" data-categoryid="{{ $category->id }}">Dzēst kategoriju</button>
                   </div>
