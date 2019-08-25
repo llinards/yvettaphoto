@@ -1,6 +1,6 @@
 @extends('layouts.admin-default')
 @section('content')
-@include('admin.navbar')
+@include('inc.admin-navbar')
 <div class="container mt-4">
    @include('inc.status-messages')
    <div class="jumbotron">
