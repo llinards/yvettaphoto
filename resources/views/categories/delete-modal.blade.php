@@ -12,6 +12,7 @@
             </button>
             </div>
             <div class="modal-footer">
+               <small class="form-text text-muted">Bildes, kas ir saistītas ar šo kategoriju tiks dzēstas</small>
                <button type="submit" class="btn btn-danger">Dzēst</button>
                <button type="button" class="btn btn-secondary" data-dismiss="modal">Aizvērt</button>
             </div>
