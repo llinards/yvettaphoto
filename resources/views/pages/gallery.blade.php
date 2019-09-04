@@ -12,7 +12,7 @@
          <div class="row pt-3">
             @foreach($categories as $category)
                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 p-1 gallery-photo">
-                  <a href="/gallery/{{ $category->id }}">
+                  <a href="/gallery/{{ $category->category_slug }}">
                      <h3 class="gallery-photo-title text-uppercase text-white p-1">{{ $category->name }}</h3>
                      <img class="img-fluid" src="/storage/{{ $category->cover_photo_url}}" alt="">     
                   </a>          

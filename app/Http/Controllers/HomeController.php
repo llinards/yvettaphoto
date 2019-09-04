@@ -15,7 +15,7 @@ class HomeController extends Controller
     }
     public function gallery() 
     {
-        $categories = DB::table('categories')->select('id','name','cover_photo_url')->orderBy('created_at', 'DESC')->get();
+        $categories = DB::table('categories')->select('id','name','category_slug','cover_photo_url')->orderBy('created_at', 'DESC')->get();
         return view('pages.gallery', compact('categories')) ;
     }
     public function aboutMe() 
