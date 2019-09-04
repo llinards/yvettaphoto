@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Image;
 use App\Category;
+use Intervention\Image\Facades\Image as Exif;
 use DB;
 
 class ImagesController extends Controller
@@ -34,10 +35,23 @@ class ImagesController extends Controller
             $imageCount = 0;     
             foreach ($photos['photos'] as $photo) {
                 $imagePath = $photo->store('uploads', 'public');
+                
+                $data = Exif::make(public_path("storage/{$imagePath}"))->exif();
+                $cameraModel = $data['Model'];
+                $cameraMake = $data['Make'];
+                $iso = $data['ISOSpeedRatings'];
+                $fNumber = $data['FNumber'];
+                $exposureTime = $data['ExposureTime'];
 
                 $newImage = new Image();
                 $newImage->category_id = $categoryIdForImage;
                 $newImage->image_name = $imagePath;
+                $newImage->camera_model = $cameraModel;
+                $newImage->camera_make = $cameraMake;
+                $newImage->iso = $iso;
+                $newImage->f_number = $fNumber;
+                $newImage->exposure_time = $exposureTime;
+                
                 $newImage->save();        
                 $imageCount += 1;    
             }
