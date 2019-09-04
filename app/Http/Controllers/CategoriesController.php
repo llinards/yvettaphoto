@@ -14,7 +14,7 @@ class CategoriesController extends Controller
 {
     public function index() 
     {
-        $categories = DB::table('categories')->select('id','name','cover_photo_url')->orderBy('created_at', 'DESC')->get();
+        $categories = DB::table('categories')->select('id','name','category_slug','cover_photo_url')->orderBy('created_at', 'DESC')->get();
         return view('pages.admin.categories', compact('categories')) ;
     }
 
@@ -64,6 +64,7 @@ class CategoriesController extends Controller
         ]);
 
         $categoryId = $data['category-id'];
+        $categorySlug = str_slug($data['category-name'], '-');
 
         if(request('category-cover')) {
             $imagePath = request('category-cover')->store('uploads', 'public');
@@ -79,6 +80,7 @@ class CategoriesController extends Controller
         try {
             $updateCategory = Category::find($categoryId);
             $updateCategory->name = $data['category-name'];
+            $updateCategory->category_slug = $categorySlug; 
             if(request('category-cover')) {
                 $updateCategory->cover_photo_url = $imagePath;
             }
