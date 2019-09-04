@@ -31,6 +31,7 @@ class CategoriesController extends Controller
         ]);
 
         $imagePath = request('category-cover')->store('uploads', 'public');
+        $categorySlug = str_slug($data['category-name'], '-');
 
         $image = Image::make(public_path("storage/{$imagePath}"))->fit(600, 600);
         $image->save();
@@ -38,6 +39,7 @@ class CategoriesController extends Controller
         try {
             $newCategory = new Category();
             $newCategory->name = $data['category-name'];
+            $newCategory->category_slug = $categorySlug; 
             $newCategory->cover_photo_url = $imagePath;
 
             $newCategory->save();
