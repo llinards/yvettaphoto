@@ -14678,6 +14678,9 @@ $(function () {
   $('.photothumb').bind("contextmenu", function (e) {
     return false;
   });
+  $('.img-fluid').bind("contextmenu", function (e) {
+    return false;
+  });
 });
 
 /***/ }),
