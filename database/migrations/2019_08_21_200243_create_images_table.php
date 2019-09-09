@@ -17,6 +17,11 @@ class CreateImagesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('category_id');
             $table->text('image_name');
+            $table->text('camera_model');
+            $table->text('camera_make');
+            $table->integer('iso');
+            $table->text('f_number');
+            $table->text('exposure_time');
             $table->timestamps();
 
             $table->index('category_id');
