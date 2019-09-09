@@ -1,6 +1,6 @@
 @extends('layouts.admin-default')
 @section('content')
-@include('admin.navbar')
+@include('inc.admin-navbar')
 <div class="container mt-4">
    @include('inc.status-messages')
    <div class="jumbotron">
@@ -23,6 +23,7 @@
                <div class="card-body">
                   <h5 class="card-title text-center">{{ $category->name }}</h5>
                   <div class="text-center">
+                     <a class="btn btn-success mt-1" href="/admin/{{ $category->category_slug }}/bildes">Bildes šajā kategorijā</a>
                      <button class="btn btn-warning mt-1 editCategory" data-toggle="modal" data-categoryname="{{ $category->name }}" data-categoryid="{{ $category->id }}">Rediģēt kategoriju</button>
                      <button class="btn btn-danger mt-1 deleteCategory" data-toggle="modal" data-categoryid="{{ $category->id }}">Dzēst kategoriju</button>
                   </div>

@@ -10738,12 +10738,12 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _script__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./script */ "./resources/js/script.js");
-/* harmony import */ var _script__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_script__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _dropzone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dropzone */ "./resources/js/dropzone.js");
+/* harmony import */ var _dropzone__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_dropzone__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _lightbox_min__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lightbox.min */ "./resources/js/lightbox.min.js");
 /* harmony import */ var _lightbox_min__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_lightbox_min__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _dropzone__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dropzone */ "./resources/js/dropzone.js");
-/* harmony import */ var _dropzone__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_dropzone__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _script__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./script */ "./resources/js/script.js");
+/* harmony import */ var _script__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_script__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
@@ -14343,7 +14343,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
   return b.defaults = {
     albumLabel: "Image %1 of %2",
-    alwaysShowNavOnTouchDevices: !1,
+    alwaysShowNavOnTouchDevices: 1,
     fadeDuration: 600,
     fitImagesInViewport: !0,
     imageFadeDuration: 600,
@@ -14351,7 +14351,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     resizeDuration: 700,
     showImageNumberLabel: !0,
     wrapAround: !1,
-    disableScrolling: !1,
+    disableScrolling: 1,
     sanitizeTitle: !1
   }, b.prototype.option = function (b) {
     a.extend(this.options, b);
@@ -14609,6 +14609,11 @@ $(function () {
     $('#modelToEditId').val(categoryId);
     $('#editModal').modal('show');
   });
+  $(document).on('click', '.deleteImage', function () {
+    var imageId = $(this).attr('data-imageid');
+    $('#modelToDeleteId').val(imageId);
+    $('#deleteModal').modal('show');
+  });
 
   function resizeGridItem(item) {
     grid = document.getElementsByClassName("grid")[0];
@@ -14637,44 +14642,42 @@ $(function () {
 
   for (x = 0; x < allItems.length; x++) {
     imagesLoaded(allItems[x], resizeInstance);
-  }
+  } // var total_photos_counter = 0;
+  // Dropzone.options.myDropzone = {
+  //     uploadMultiple: true,
+  //     parallelUploads: 2,
+  //     maxFilesize: 16,
+  //     previewTemplate: document.querySelector('#preview').innerHTML,
+  //     addRemoveLinks: true,
+  //     dictRemoveFile: 'Remove file',
+  //     dictFileTooBig: 'Image is larger than 16MB',
+  //     timeout: 10000,
+  //     init: function () {
+  //         this.on("removedfile", function (file) {
+  //             $.post({
+  //                 url: '/images-delete',
+  //                 data: {
+  //                     id: file.name,
+  //                     _token: $('[name="_token"]').val()
+  //                 },
+  //                 dataType: 'json',
+  //                 success: function (data) {
+  //                     total_photos_counter--;
+  //                     $("#counter").text("# " + total_photos_counter);
+  //                 }
+  //             });
+  //         });
+  //     },
+  //     success: function (file, done) {
+  //         total_photos_counter++;
+  //         $("#counter").text("# " + total_photos_counter);
+  //     }
+  // };
 
-  lightbox.option({
-    'resizeDuration': 200,
-    'wrapAround': true,
-    'disableScrolling': false
+
+  $('.photothumb').bind("contextmenu", function (e) {
+    return false;
   });
-  var total_photos_counter = 0;
-  Dropzone.options.myDropzone = {
-    uploadMultiple: true,
-    parallelUploads: 2,
-    maxFilesize: 16,
-    previewTemplate: document.querySelector('#preview').innerHTML,
-    addRemoveLinks: true,
-    dictRemoveFile: 'Remove file',
-    dictFileTooBig: 'Image is larger than 16MB',
-    timeout: 10000,
-    init: function init() {
-      this.on("removedfile", function (file) {
-        $.post({
-          url: '/images-delete',
-          data: {
-            id: file.name,
-            _token: $('[name="_token"]').val()
-          },
-          dataType: 'json',
-          success: function success(data) {
-            total_photos_counter--;
-            $("#counter").text("# " + total_photos_counter);
-          }
-        });
-      });
-    },
-    success: function success(file, done) {
-      total_photos_counter++;
-      $("#counter").text("# " + total_photos_counter);
-    }
-  };
 });
 
 /***/ }),
@@ -14697,8 +14700,8 @@ $(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Applications/MAMP/htdocs/yvettaphoto/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/yvettaphoto/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/linardslazdins/Development/sites/yvettaphoto/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/linardslazdins/Development/sites/yvettaphoto/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

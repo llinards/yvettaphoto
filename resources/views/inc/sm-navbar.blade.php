@@ -2,18 +2,19 @@
     <a href="../" class="navbar-brand">
         <img class="img-fluid" width="150" src="../img/logo.png" alt="">
     </a>
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+   <button type="button" class="navbar-toggler navbar-light bg-dark navbar-btn" data-toggle="collapse" data-target="#nav">
       <span class="navbar-toggler-icon"></span>
    </button>
 
     <div class="collapse navbar-collapse justify-content-end" id="nav">
         <ul class="navbar-nav">
-            <li class="nav-item about-me__nav-links">
-                <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border about-me__nav-link" href="/">Home</a>
+            <li class="nav-item">
+                <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="/">
+                <i class="fas fa-home"></i> Home</a>
             </li>
-            <li class="nav-item about-me__nav-links">
-                <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border about-me__nav-link" href="{{ URL::previous() }}">
-                    <i class="fas fa-chevron-left"></i> Back</a>
+            <li class="nav-item">
+                <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="{{ URL::previous() }}">
+                <i class="fas fa-chevron-left"></i> Back</a>
             </li>
         </ul>
     </div>

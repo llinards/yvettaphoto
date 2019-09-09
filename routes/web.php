@@ -14,10 +14,8 @@
 Route::get('/', 'HomeController@index');
 Route::get('/gallery', 'HomeController@gallery');
 Route::get('/about-me', 'HomeController@aboutMe');
-
-Route::get('/gallery/{category}', 'GalleryController@index');
-
-Route::get('/admin', 'AdminController@index');
+Route::get('/gallery/{category}', 'HomeController@galleryImages');
+Route::get('/admin', 'HomeController@admin');
 
 Route::get('/admin/kategorijas', 'CategoriesController@index');
 Route::get('/admin/kategorijas/jauna', 'CategoriesController@create');
@@ -26,7 +24,8 @@ Route::get('/admin/kategorijas/{category}/edit', 'CategoriesController@edit');
 Route::patch('/admin/kategorijas', 'CategoriesController@update');
 Route::delete('/admin/kategorijas', 'CategoriesController@destroy');
 
-
 Route::get('/admin/bildes', 'ImagesController@index');
 Route::get('/admin/bildes/jaunas', 'ImagesController@create');
 Route::post('/admin/bildes', 'ImagesController@store');
+Route::get('/admin/{category}/bildes', 'ImagesController@edit');
+Route::delete('/admin/bildes', 'ImagesController@destroy');
