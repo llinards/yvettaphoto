@@ -21,6 +21,8 @@ Route::get('/gallery', 'HomeController@gallery');
 Route::get('/about-me', 'HomeController@aboutMe');
 Route::get('/gallery/{category}', 'HomeController@galleryImages');
 
+Route::post('/send-email', 'EmailsController@sendEmail');
+
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', 'HomeController@admin');
