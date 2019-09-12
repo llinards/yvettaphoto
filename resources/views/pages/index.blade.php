@@ -56,15 +56,17 @@
                   <div class="underline"></div>
                </div>
                <div class="col-lg-12">
-                  <form method="POST" action="inc/mail.php" class="contact-form">
+                  @include('inc.status-messages')
+                  <form method="POST" action="/send-email" class="contact-form">
+                     @csrf
                      <div class="form-group">
-                        <input autocomplete="nope" type="text" class="form-control input" name="name" id="" placeholder="Name">
+                        <input type="text" class="form-control input" name="name" id="" placeholder="Name" value="{{ old('name') }}" required>
                      </div>
                      <div class="form-group">
-                        <input autocomplete="nope" type="text" class="form-control input" name="email" id="" placeholder="E-mail">
+                        <input type="email" class="form-control input" name="email" id="" placeholder="E-mail" value="{{ old('email') }}" required>
                      </div>
                      <div class="form-group">
-                        <textarea autocomplete="off" class="form-control" name="msg" id="" placeholder="Type your message" rows="3"></textarea>
+                        <textarea class="form-control" name="msg" id="" placeholder="Type your message" rows="3" value="{{ old('msg') }}" required></textarea>
                      </div>
                      <button class="btn btn-submit" type="submit">Send</button>
                   </form>
