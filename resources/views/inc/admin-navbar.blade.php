@@ -9,15 +9,25 @@
    <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav d-flex align-items-center">
          <li class="{{ (request()->is('/admin')) ? 'active' : '' }}nav-item">
-         <a class="nav-link" href="/admin">Administrācijas sākumlapa</a>
+            <a class="nav-link" href="/admin">Administrācijas sākumlapa</a>
          </li>
          <li class="nav-item">
-         <a class="nav-link" target="_blank" href="/">Galvenā mājaslapa</a>
+            <a class="nav-link" target="_blank" href="/">Galvenā mājaslapa</a>
          </li>
          <li class="nav-item">
             <a href="https://www.instagram.com/yvettaphoto/" target="_blank" class="nav-link">
             <i class="fab fa-instagram fa-2x"></i></a>
          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+               Iziet
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+               @csrf
+            </form>
+        </li>
       </ul>
    </div>
 </nav>

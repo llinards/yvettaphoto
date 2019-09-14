@@ -12,15 +12,11 @@
                <div class="underline"></div>
             </div>
             <div class="row justify-content-center">
-               <div class="col-8 mx-auto item">
-                  <div class="card border-0 card-shadow">
-                     <a href="gallery/">
-                        <img class="card-img img-fluid img-blur" src="img/cover-photos/main_portfolio_cover.jpeg">
-                     </a>
-                  </div>
-                  <div class="all-photos-btn text-align-center">
-                     <a class="text-dark text-uppercase font-weight-bold anime-border portfolio-link pt-3" href="gallery/">see all photos</a>
-                  </div>
+               <div class="col-sm-12 col-lg-8 mx-auto gallery-photo">
+                  <a href="/gallery/">
+                     <h3 class="gallery-photo-title text-uppercase text-white p-1">see all photos</h3>
+                     <img class="img-fluid" src="img/cover-photos/main_portfolio_cover.jpeg" alt="">     
+                  </a>    
                </div>
             </div>
          </div>
@@ -60,15 +56,17 @@
                   <div class="underline"></div>
                </div>
                <div class="col-lg-12">
-                  <form method="POST" action="inc/mail.php" class="contact-form">
+                  @include('inc.status-messages')
+                  <form method="POST" action="/send-email" class="contact-form">
+                     @csrf
                      <div class="form-group">
-                        <input autocomplete="nope" type="text" class="form-control input" name="name" id="" placeholder="Name">
+                        <input type="text" class="form-control input" name="name" id="" placeholder="Name" value="{{ old('name') }}" required>
                      </div>
                      <div class="form-group">
-                        <input autocomplete="nope" type="text" class="form-control input" name="email" id="" placeholder="E-mail">
+                        <input type="email" class="form-control input" name="email" id="" placeholder="E-mail" value="{{ old('email') }}" required>
                      </div>
                      <div class="form-group">
-                        <textarea autocomplete="off" class="form-control" name="msg" id="" placeholder="Type your message" rows="3"></textarea>
+                        <textarea class="form-control" name="msg" id="" placeholder="Type your message" rows="3" value="{{ old('msg') }}" required></textarea>
                      </div>
                      <button class="btn btn-submit" type="submit">Send</button>
                   </form>
