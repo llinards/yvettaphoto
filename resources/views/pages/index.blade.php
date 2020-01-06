@@ -59,7 +59,7 @@
                   @include('inc.status-messages')
                   <form method="POST" action="/send-email" class="contact-form">
                      @csrf
-                     @honeypot
+                     {{-- @honeypot --}}
                      <div class="form-group">
                         <input type="text" class="form-control input" name="name" id="" placeholder="Name" value="{{ old('name') }}" required>
                      </div>
