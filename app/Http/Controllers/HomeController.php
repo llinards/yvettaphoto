@@ -14,7 +14,7 @@ class HomeController extends Controller
     }
     public function gallery() 
     {
-        $categories = Category::orderBy('created_at', 'DESC')->get();
+        $categories = Category::categoriesDesc()->get();
         return view('pages.gallery', compact('categories')) ;
     }
     public function aboutMe() 

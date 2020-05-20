@@ -14,7 +14,7 @@
                <input type="hidden" name="category-id" id="modelToEditId">
                <div class="form-group">
                   <label for="category-name" class="col-form-label">Kategorijas nosaukums</label>
-                  <input id="modelToEditName" name="category-name" type="text" class="form-control @error('category-name') is-invalid @enderror">
+                  <input id="modelToEditName" name="category-name" type="text" class="form-control">
                </div>
                <div class="form-group">
                   <label for="category-cover" class="col-form-label">Kategorijas titulbilde</label>

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Category;
 use App\Image as Photos;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Str;
 use DB;
 use File;
 
@@ -14,7 +15,7 @@ class CategoriesController extends Controller
 {
     public function index() 
     {
-        $categories = DB::table('categories')->select('id','name','category_slug','cover_photo_url')->orderBy('created_at', 'DESC')->get();
+        $categories = Category::categoriesDesc()->get();
         return view('pages.admin.categories', compact('categories')) ;
     }
 
@@ -25,18 +26,15 @@ class CategoriesController extends Controller
 
     public function store() 
     {
+      
         $data = request()->validate([
             'category-name' => 'required',
             'category-cover' => ['required', 'image'],
         ]);
 
-        $imagePath = request('category-cover')->store('uploads', 'public');
-        $categorySlug = str_slug($data['category-name'], '-');
-
-        $image = Image::make(public_path("storage/{$imagePath}"))->fit(600, 600);
-        $image->save();
-
         try {
+            $categorySlug = Str::slug($data['category-name'], '-');
+            $imagePath = $this->saveCoverImage($categorySlug);
             $newCategory = new Category();
             $newCategory->name = $data['category-name'];
             $newCategory->category_slug = $categorySlug; 
@@ -55,29 +53,23 @@ class CategoriesController extends Controller
         return back();
     }
 
-    public function update(Category $category)
+    public function update()
     {
         $data = request()->validate([
             'category-id' => 'required',
             'category-name' => 'required',
             'category-cover' => 'image',
         ]);
-
-        $categoryId = $data['category-id'];
-        $categorySlug = str_slug($data['category-name'], '-');
-
-        if(request('category-cover')) {
-            $imagePath = request('category-cover')->store('uploads', 'public');
-            $image = Image::make(public_path("storage/{$imagePath}"))->fit(600, 600);
-            $image->save();
-            
-            $data = array_merge(
-                $data,
-                ['category-cover' => $imagePath]
-            );
-        }
-
         try {
+            $categoryId = request('category-id');
+            $categorySlug = Str::slug($data['category-name'], '-');
+            if(request('category-cover')) {
+                $imagePath = $this->saveCoverImage($categorySlug);
+                $data = array_merge(
+                    $data,
+                    ['category-cover' => $imagePath]
+                );
+            }
             $updateCategory = Category::find($categoryId);
             $updateCategory->name = $data['category-name'];
             $updateCategory->category_slug = $categorySlug; 
@@ -91,28 +83,29 @@ class CategoriesController extends Controller
         }
     }
 
-    public function destroy(Request $request)
+    public function destroy()
     {
-        $data = $request->input('category-id');
         try {
-            $categoryCover = DB::table('categories')->select('cover_photo_url')->where('id', $data)->get();
-            $categoryCover = json_decode( json_encode($categoryCover), true);
-            foreach($categoryCover as $item) {
-                File::delete(public_path("storage/{$item['cover_photo_url']}"));
-            }
-            $categoryToRemove = Category::where('id', $data)->delete();
-            Category::destroy($data);
-            
-            $images = DB::table('images')->select('image_name')->where('category_id', $data)->get();
-            $images = json_decode( json_encode($images), true);
-            foreach($images as $image) {
-                File::delete(public_path("storage/{$image['image_name']}"));
-            }
-            $imagesToRemove = Photos::where('category_id', $data)->delete();
-            Photos::destroy($data);
+            $categoryId = request('category-id');
+            $category = Category::find($categoryId);
+            $categorySlug = $category->category_slug;
+            Storage::deleteDirectory('public/uploads/' . $categorySlug);
+            Category::destroy($categoryId);
+            Photos::where('category_id', $categoryId)->delete();
             return redirect('/admin/kategorijas')->with('success', 'Kategorija un tās bildes izdzēstas!');
         } catch (\Exception $e) {
             return redirect('/admin/kategorijas')->with('error', 'Kļūda!');
         }
+    }
+
+    protected function saveCoverImage($categorySlug)
+    {
+        $file = request('category-cover');
+        $filename = 'cover_' . $categorySlug . '_' . date("Ymd_His") . '.' . $file->getClientOriginalExtension();
+        $imagePath = $file->storeAs('uploads/' . $categorySlug, $filename, 'public');
+        $image = Image::make(public_path("storage/{$imagePath}"))->fit(600, 600);
+        $image->save();
+
+        return $imagePath;
     }
 }

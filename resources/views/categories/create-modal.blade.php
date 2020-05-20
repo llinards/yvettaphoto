@@ -13,7 +13,7 @@
             <div class="modal-body p-4">
                <div class="form-group">
                   <label for="category-name" class="col-form-label">Kategorijas nosaukums</label>
-                  <input type="text" class="form-control @error('category-name') is-invalid @enderror" value="{{ old('category-name') }}" name="category-name" id="category-name" placeholder="Kategorijas nosaukums šeit" required>
+                  <input type="text" class="form-control" value="{{ old('category-name') }}" name="category-name" id="category-name" placeholder="Kategorijas nosaukums šeit" required>
                </div>
                <div class="form-group">
                   <label for="category-cover" class="col-form-label">Kategorijas titulbilde</label>
