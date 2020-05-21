@@ -146,6 +146,8 @@ return [
 
     'attributes' => [
         'category-name' => 'Kategorijas nosaukuma',
-        'category-cover' => 'Kategorijas bilde'
+        'category-cover' => 'Kategorijas bilde',
+        'selected-category' => 'Izvēlētās kategorijas',
+        'photos' => 'Bildes'
     ],
 ];

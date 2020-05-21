@@ -13,15 +13,21 @@
       <form action="/admin/bildes" enctype="multipart/form-data" method="post">
          @csrf
          <div class="form-group">
-            <select class="custom-select" name="selected-category" required>
-               <option selected>Izvēlies kategoriju</option>
+            <select class="custom-select" name="selected-category">
+               <option selected disabled>Izvēlies kategoriju</option>
                @foreach($categories as $category)
                   <option value="{{ $category->id }}">{{ $category->name }}</option>
                @endforeach
             </select>
+            @error('selected-category')
+               <p class="text-danger">{{ $message }}</small>
+            @enderror
          </div>
          <div class="form-group">
-            <input type="file" name="photos[]" multiple required>
+            <input type="file" name="photos[]" multiple>
+            @error('photos')
+               <p class="text-danger">{{ $message }}</small>
+            @enderror
          </div>
          <div class="admin-buttons">
          <button type="submit" class="btn btn-success">Pievienot</button>
