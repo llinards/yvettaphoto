@@ -25,7 +25,8 @@ Route::post('/send-email', 'EmailsController@sendEmail');
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/admin', 'HomeController@admin');
+    Route::get('/admin', 'AdminController@index');
+
     Route::get('/admin/kategorijas', 'CategoriesController@index');
     Route::get('/admin/kategorijas/jauna', 'CategoriesController@create');
     Route::post('/admin/kategorijas', 'CategoriesController@store');

@@ -16,11 +16,13 @@ class CategoriesController extends Controller
     public function index() 
     {
         $categories = Category::categoriesDesc()->get();
-        return view('pages.admin.categories', compact('categories')) ;
+        return view('categories.index', compact('categories')) ;
     }
 
     public function create()
     {
+        $category = new Category();
+        return view('categories.create', compact('category'));
         return back();
     }
 
@@ -42,7 +44,7 @@ class CategoriesController extends Controller
 
             $newCategory->save();
             
-            return redirect('/admin/kategorijas')->with('success', 'Kategorija pievienota!');
+            return redirect('/admin/' . $categorySlug . '/bildes')->with('success', 'Kategorija pievienota!');
         } catch (\Exception $e) {
             return redirect('/admin/kategorijas')->with('error', 'Kļūda!');
         }

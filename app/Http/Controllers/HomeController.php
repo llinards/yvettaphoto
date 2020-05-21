@@ -26,8 +26,4 @@ class HomeController extends Controller
         $images = Image::where('category_id', $category->id)->get();
         return view ('pages.photos', compact('category', 'images'));
     }
-    public function admin()
-    {
-        return view('pages.admin.index');
-    }
 }
