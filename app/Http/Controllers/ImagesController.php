@@ -35,7 +35,7 @@ class ImagesController extends Controller
             $imageCount = 0;     
             foreach ($data['photos'] as $photo) {
                 $imagePath = $photo->store('uploads/' . $categorySlug->category_slug, 'public');
-                $data = Exif::make(public_path("storage/{$imagePath}"))->exif();
+                $data = Exif::make("storage/{$imagePath}")->exif();
                 if (isset($data['Model'])) {
                     $cameraModel = $data['Model'];
                     $cameraMake = $data['Make'];

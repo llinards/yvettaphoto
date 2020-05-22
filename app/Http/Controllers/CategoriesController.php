@@ -105,7 +105,7 @@ class CategoriesController extends Controller
         $file = request('category-cover');
         $filename = 'cover_' . $categorySlug . '_' . date("Ymd_His") . '.' . $file->getClientOriginalExtension();
         $imagePath = $file->storeAs('uploads/' . $categorySlug, $filename, 'public');
-        $image = Image::make(public_path("storage/{$imagePath}"))->fit(600, 600);
+        $image = Image::make("storage/{$imagePath}")->fit(600, 600);
         $image->save();
 
         return $imagePath;
