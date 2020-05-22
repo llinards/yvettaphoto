@@ -6,6 +6,7 @@
    <div class="jumbotron">
       <div class="d-flex flex-column align-items-center">
          <h2 class="admin__headings">{{ $category->name}}</h2> 
+         <a href="/admin/bildes/jaunas" class="btn btn-success">Pievienot jaunas bildes</a>
       </div>
    </div>
    @include('photos.delete-modal')

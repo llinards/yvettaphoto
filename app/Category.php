@@ -14,4 +14,9 @@ class Category extends Model
     {   
         return 'category_slug';
     }
+
+    public function scopeCategoriesDesc($query)
+    {
+        return $query->orderBy('created_at', 'DESC');
+    }
 }

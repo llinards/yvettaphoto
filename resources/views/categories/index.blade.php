@@ -7,11 +7,10 @@
       <div class="d-flex flex-column align-items-center">
          <h2 class="admin__headings">Kategorijas</h2> 
          <div>
-            <button class="btn btn-success" data-toggle="modal" data-target="#createModal">Pievienot jaunu kategoriju</button>
+            <a href="/admin/kategorijas/jauna" class="btn btn-success">Pievienot jaunu kategoriju</a>
          </div>
       </div>
    </div>
-   @include('categories.create-modal')
    @include('categories.edit-modal')
    @include('categories.delete-modal')
    <div class="row">
