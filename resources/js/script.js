@@ -135,5 +135,4 @@ $(function () {
     $('.img-fluid').bind("contextmenu", function (e) {
         return false;
     });
-
 });

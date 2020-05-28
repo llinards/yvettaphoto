@@ -11,7 +11,7 @@ class Category extends Model
         return $this->hasMany(Image::class);
     }
     public function getRouteKeyName()
-    {   
+    {
         return 'category_slug';
     }
 

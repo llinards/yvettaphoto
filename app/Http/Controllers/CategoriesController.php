@@ -13,7 +13,7 @@ use File;
 
 class CategoriesController extends Controller
 {
-    public function index() 
+    public function index()
     {
         $categories = Category::categoriesDesc()->get();
         return view('categories.index', compact('categories')) ;
@@ -26,12 +26,12 @@ class CategoriesController extends Controller
         return back();
     }
 
-    public function store() 
+    public function store()
     {
-      
         $data = request()->validate([
             'category-name' => 'required',
             'category-cover' => ['required', 'image'],
+            'category-description' => 'required'
         ]);
 
         try {
@@ -39,11 +39,12 @@ class CategoriesController extends Controller
             $imagePath = $this->saveCoverImage($categorySlug);
             $newCategory = new Category();
             $newCategory->name = $data['category-name'];
-            $newCategory->category_slug = $categorySlug; 
+            $newCategory->description = $data['category-description'];
+            $newCategory->category_slug = $categorySlug;
             $newCategory->cover_photo_url = $imagePath;
 
             $newCategory->save();
-            
+
             return redirect('/admin/' . $categorySlug . '/bildes')->with('success', 'Kategorija pievienota!');
         } catch (\Exception $e) {
             return redirect('/admin/kategorijas')->with('error', 'Kļūda!');
@@ -74,7 +75,7 @@ class CategoriesController extends Controller
             }
             $updateCategory = Category::find($categoryId);
             $updateCategory->name = $data['category-name'];
-            $updateCategory->category_slug = $categorySlug; 
+            $updateCategory->category_slug = $categorySlug;
             if(request('category-cover')) {
                 $updateCategory->cover_photo_url = $imagePath;
             }

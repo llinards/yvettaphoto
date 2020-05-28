@@ -12,7 +12,7 @@
             @if($category->description)
                 <div class="container">
                     <div class="row pt-3 justify-content-center">
-                        <p class="lead text-justify description__p">{!! $category->description !!}</p>
+                        <div class="lead text-justify description__p">{!! $category->description !!}</div>
                     </div>
                 </div>
             @endif

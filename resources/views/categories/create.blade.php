@@ -21,6 +21,14 @@
                 </div>
                 {{--        TODO: Add gallery description--}}
                 <div class="form-group">
+                    <label for="category-description">Kategorijas apraksts</label>
+                    <textarea class="form-control" id="category-description" name="category-description"
+                              rows="3"></textarea>
+                    @error('category-description')
+                    <p class="text-danger">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="form-group">
                     <label for="category-cover" class="col-form-label">Kategorijas titulbilde</label>
                     <input type="file" class="form-control-file" name="category-cover" id="category-cover">
                     <small class="form-text text-muted">Bilde automātiski tiks sagriezta 600x600px</small>
@@ -33,4 +41,7 @@
             </form>
         </div>
     </div>
+    <script>
+        CKEDITOR.replace('category-description');
+    </script>
 @endsection
