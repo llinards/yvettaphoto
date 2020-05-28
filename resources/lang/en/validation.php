@@ -148,6 +148,7 @@ return [
         'category-name' => 'Kategorijas nosaukuma',
         'category-cover' => 'Kategorijas bilde',
         'selected-category' => 'Izvēlētās kategorijas',
-        'photos' => 'Bildes'
+        'photos' => 'Bildes',
+        'category-description' => 'Kategorijas apraksta'
     ],
 ];

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
- @include('inc.head')
+    @include('inc.head')
+    @include('inc.js')
 </head>
 <body>
- @yield('content')
- @include('inc.js')
+@yield('content')
 </body>
 </html>

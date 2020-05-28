@@ -17044,6 +17044,15 @@ section#fourth p.lead {
   padding-top: 100px !important;
 }
 
+.description__p {
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.description__p p {
+  margin-bottom: 0.5rem;
+}
+
 .lb-outerContainer {
   border-radius: 0 !important;
 }
