@@ -9,7 +9,9 @@
     @include('inc.js')
 </head>
 <body>
-@include('inc.admin-navbar')
+@if(!isset($loginPage))
+    @include('inc.admin-navbar')
+@endif
 @yield('content')
 </body>
 </html>
