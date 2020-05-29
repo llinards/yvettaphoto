@@ -16,13 +16,13 @@ class CategoriesController extends Controller
     public function index()
     {
         $categories = Category::categoriesDesc()->get();
-        return view('categories.index', compact('categories'));
+        return view('admin.categories.index', compact('categories'));
     }
 
     public function create()
     {
         $category = new Category();
-        return view('categories.create', compact('category'));
+        return view('admin.categories.create', compact('category'));
     }
 
     public function store()
@@ -53,7 +53,7 @@ class CategoriesController extends Controller
     public function edit(Category $category)
     {
         $category = Category::where('id', $category->id)->get();
-        return view('categories.edit', compact('category'));
+        return view('admin.categories.edit', compact('category'));
     }
 
     public function update()

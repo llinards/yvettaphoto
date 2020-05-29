@@ -1,4 +1,3 @@
-{{-- navbar --}}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
    <a class="navbar-brand" href="/" target="_blank">
       <img class="img-fluid" style="max-width:100px;" src="/img/logo.png" alt="">
@@ -31,4 +30,3 @@
       </ul>
    </div>
 </nav>
-{{-- end of navbar --}}

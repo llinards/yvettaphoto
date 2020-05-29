@@ -1,15 +1,14 @@
 @extends('layouts.admin-default')
 @section('content')
-@include('inc.admin-navbar')
 <div class="container mt-4">
    @include('inc.status-messages')
    <div class="jumbotron">
       <div class="d-flex flex-column align-items-center">
-         <h2 class="admin__headings">{{ $category->name}}</h2> 
+         <h2 class="admin__headings">{{ $category->name}}</h2>
          <a href="/admin/bildes/jaunas" class="btn btn-success">Pievienot jaunas bildes</a>
       </div>
    </div>
-   @include('photos.delete-modal')
+   @include('admin.photos.delete-modal')
    <div class="row">
       @if(!$images->isEmpty())
          @foreach($images as $image)
