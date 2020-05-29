@@ -1,11 +1,10 @@
 @extends('layouts.admin-default')
 @section('content')
-@include('inc.admin-navbar')
 <div class="container mt-4">
    @include('inc.status-messages')
    <div class="jumbotron">
       <div class="d-flex flex-column align-items-center">
-         <h2 class="admin__headings">Pievienot jaunas bildes</h2> 
+         <h2 class="admin__headings">Pievienot jaunas bildes</h2>
       </div>
    </div>
    <div class="row justify-content-center m-2">

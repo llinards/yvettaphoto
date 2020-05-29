@@ -1,6 +1,5 @@
 @extends('layouts.admin-default')
 @section('content')
-@include('inc.admin-navbar')
 <div class="container mt-4">
    @include('inc.status-messages')
    <div class="jumbotron">
@@ -11,7 +10,7 @@
          </div>
       </div>
    </div>
-   @include('categories.delete-modal')
+   @include('admin.categories.delete-modal')
    <div class="row">
       @if(!$categories->isEmpty())
          @foreach($categories as $category)

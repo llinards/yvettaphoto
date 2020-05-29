@@ -11,16 +11,16 @@ use DB;
 
 class ImagesController extends Controller
 {
-    
+
     public function index()
     {
         return back();
     }
-    
-    public function create() 
+
+    public function create()
     {
         $categories = Category::get();
-        return view ('photos.create', compact('categories'));
+        return view ('admin.photos.create', compact('categories'));
     }
 
     public function store()
@@ -31,8 +31,8 @@ class ImagesController extends Controller
         ]);
         $categoryIdForImage = request('selected-category');
         $categorySlug = Category::find($categoryIdForImage);
-        try {   
-            $imageCount = 0;     
+        try {
+            $imageCount = 0;
             foreach ($data['photos'] as $photo) {
                 $imagePath = $photo->store('uploads/' . $categorySlug->category_slug, 'public');
                 $data = Exif::make("storage/{$imagePath}")->exif();
@@ -60,8 +60,8 @@ class ImagesController extends Controller
                     $newImage->f_number = 'NA';
                     $newImage->exposure_time = 'NA';
                 }
-                $newImage->save();        
-                $imageCount += 1;    
+                $newImage->save();
+                $imageCount += 1;
             }
             if ($imageCount > 1) {
                 return redirect('/admin/' . $categorySlug->category_slug . '/bildes')->with('success', 'Bildes pievienotas!');
@@ -76,7 +76,7 @@ class ImagesController extends Controller
     public function edit(Category $category)
     {
         $images = Image::where('category_id', $category->id)->orderBy('created_at', 'DESC')->get();
-        return view ('photos.edit', compact('images', 'category'));
+        return view ('admin.photos.edit', compact('images', 'category'));
     }
 
     public function destroy ()
