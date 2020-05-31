@@ -81,11 +81,12 @@ hr {
     padding-top: 0.1875rem;
 }
 
-.instagram__icon {
+.instagram__icon,
+.facebook__icon{
     font-size: 2.25rem;
-    margin: 0 auto;
+    //margin: 0 auto;
     color: #000;
-    display: table;
+    //display: table;
 }
 
 .instagram__icon:hover,
