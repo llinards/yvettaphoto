@@ -29,7 +29,9 @@
                 <div class="form-group">
                     <label for="category-cover" class="col-form-label">Kategorijas titulbilde</label>
                     <input type="file" class="form-control-file" name="category-cover" id="category-cover">
-                    <small class="form-text text-muted">Bilde automātiski tiks sagriezta 600x600px</small>
+                    <small class="form-text text-muted">Bilde automātiski tiks sagriezta 600x600px.</small>
+                    <small class="form-text text-muted"><strong>Bildes
+                            izmērs nedrīkst pārsniegt 1.5 MB (1536 KB).</strong></small>
                     @error('category-cover')
                     <p class="text-danger">{{ $message }}</p>
                     @enderror
