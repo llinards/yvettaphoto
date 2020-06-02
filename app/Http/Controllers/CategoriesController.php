@@ -29,8 +29,8 @@ class CategoriesController extends Controller
     {
         $data = request()->validate([
             'category-name' => 'required',
-            'category-cover' => ['required', 'image'],
-            'category-description' => 'required'
+            'category-cover' => ['required', 'image', 'max:1536'],
+            'category-description' => 'nullable'
         ]);
 
         try {
@@ -62,7 +62,7 @@ class CategoriesController extends Controller
             'category-id' => 'required',
             'category-name' => 'required',
             'category-description' => 'nullable',
-            'category-cover' => 'image',
+            'category-cover' => ['image','max:1536'],
         ]);
         try {
             $categoryId = request('category-id');
