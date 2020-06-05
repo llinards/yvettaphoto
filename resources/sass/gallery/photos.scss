@@ -1,18 +1,3 @@
-.grid {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-auto-rows: 20px;
-}
-
-.item {
-    background-color: #ffffff;
-}
-
-.photothumb {
-    width: 100%;
-}
-
 #photos {
     padding-top: 100px !important;
 }
@@ -24,13 +9,4 @@
     p {
         margin-bottom: 0.5rem;
     }
-}
-
-.lb-outerContainer {
-    border-radius: 0 !important;
-}
-
-.lightbox .lb-image {
-    border: none;
-    border-radius: 0 !important;
 }

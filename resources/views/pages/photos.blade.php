@@ -18,23 +18,16 @@
             @endif
             <div class="row pt-3">
                 <div class="container-fluid">
-                    <div class="grid">
-                        @if(!$images->isEmpty())
-                            @foreach($images as $image)
-                                <div class="item photo">
-                                    <div class="content">
-                                        <a href="/storage/{{ $image->image_name}}" data-lightbox="{{ $category->id }}">
-                                            <img class="photothumb" src="/storage/{{ $image->image_name}}">
-                                        </a>
-                                    </div>
-                                </div>
-                            @endforeach
-                        @else
-                            <p>No pictures found!</p>
-                        @endif
-                    </div>
+                    @if(!$images->isEmpty())
+                        @foreach($images as $image)
+                            <a href="/storage/{{ $image->image_name}}">
+                                <img class="img-fluid" style="max-width: 250px;" src="/storage/{{ $image->image_name}}">
+                            </a>
+                        @endforeach
+                    @else
+                        <p>No pictures found!</p>
+                    @endif
                 </div>
             </div>
-        </div>
     </section>
 @stop
