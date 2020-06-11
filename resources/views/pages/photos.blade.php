@@ -17,17 +17,18 @@
                 </div>
             @endif
             <div class="row pt-3">
-                <div class="container-fluid">
-                    @if(!$images->isEmpty())
-                        @foreach($images as $image)
-                            <a href="/storage/{{ $image->image_name}}">
-                                <img class="img-fluid" style="max-width: 250px;" src="/storage/{{ $image->image_name}}">
-                            </a>
-                        @endforeach
-                    @else
-                        <p>No pictures found!</p>
-                    @endif
-                </div>
+                @if(!$images->isEmpty())
+
+                    @foreach($images as $image)
+                        <a href="/storage/{{ $image->image_name}}">
+                            <img class="w-25" src="/storage/{{ $image->image_name}}"/>
+                        </a>
+                    @endforeach
+
+                @else
+                    <p>No pictures found!</p>
+                @endif
             </div>
+        </div>
     </section>
-@stop
+@endsection
