@@ -2,11 +2,10 @@
 @section('content')
     @include('inc.navbar', ['index' => true])
     {{-- header section --}}
-    <section id="first"></section>
+    <section id="home"></section>
     {{-- end of header section --}}
-
     {{-- view portfolio section --}}
-    <section id="second" class="gallery-block grid-gallery">
+    <section id="portfolio" class="gallery-block grid-gallery">
         <div class="container-fluid">
             <div class="heading">
                 <h1 class="display-4 text-uppercase main__headings">Portfolio</h1>
@@ -26,9 +25,8 @@
         </div>
     </section>
     {{-- end of view portfolio section --}}
-
     {{-- view about me section --}}
-    <section id="third">
+    <section id="aboutMe">
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="heading">
@@ -56,7 +54,7 @@
     </section>
     {{-- end of view about me section --}}
     {{-- contact form --}}
-    <section id="fourth">
+    <section id="contactMe">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="heading">

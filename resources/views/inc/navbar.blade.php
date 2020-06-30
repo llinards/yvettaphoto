@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md fixed-top">
-    <a href="{{ ($index) ? '#first' : '/' }}" class="navbar-brand">
+    <a href="{{ ($index) ? '#home' : '/' }}" class="navbar-brand">
         <img class="img-fluid" width="150" src="../img/logo.png" alt="">
     </a>
     <button type="button" class="navbar-toggler navbar-light bg-dark navbar-btn" data-toggle="collapse"
@@ -11,17 +11,17 @@
             @if($index)
                 <li class="nav-item">
                     <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border"
-                       href="#first">Home</a>
+                       href="#home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="#second">Portfolio</a>
+                    <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="#portfolio">Portfolio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="#third">About
+                    <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="#aboutMe">About
                         Me</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="#fourth">Contact
+                    <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="#contactMe">Contact
                         Me</a>
                 </li>
             @else
