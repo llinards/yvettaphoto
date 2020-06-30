@@ -17,9 +17,8 @@ Auth::routes([
   ]);
 
 Route::get('/', 'HomeController@index');
-Route::get('/gallery', 'HomeController@gallery');
 Route::get('/about-me', 'HomeController@aboutMe');
-Route::get('/gallery/{category}', 'HomeController@galleryImages');
+Route::get('/{category}', 'HomeController@galleryImages');
 
 Route::post('/send-email', 'EmailsController@sendEmail');
 
