@@ -1,6 +1,6 @@
 @extends('layouts.default', ['title' => $category->name ])
 @section('content')
-    @include('inc.navbar', ['index' => false])
+    @include('inc.navbar', ['index' => false, 'photos' => true])
     <section class="py-5" id="photos">
         <div class="container-fluid">
             <div class="row mt-5 justify-content-center">
@@ -20,8 +20,8 @@
                 @if(!$images->isEmpty())
 
                     @foreach($images as $image)
-                        <a href="/storage/{{ $image->image_name}}">
-                            <img class="w-25" src="/storage/{{ $image->image_name}}"/>
+                        <a data-toggle="lightbox"  class="col p-2" data-gallery="photos" href="/storage/{{ $image->image_name}}">
+                            <img class="img-fluid" src="/storage/{{ $image->image_name}}"/>
                         </a>
                     @endforeach
 
