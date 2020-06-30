@@ -1,5 +1,6 @@
 // change background for navbar when scrolling down
 $(function () {
+
     $(document).scroll(function () {
         var $nav = $(".fixed-top");
         $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
@@ -28,10 +29,6 @@ $(function () {
         }).offset();
     });
 
-    $(document).on('click', '[data-toggle="lightbox"]', function (event) {
-        event.preventDefault();
-        $(this).ekkoLightbox();
-    });
     //
     var btn = $('#button');
     $(window).scroll(function () {

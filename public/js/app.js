@@ -133,10 +133,6 @@ $(function () {
     $('body, html').animate({
       scrollTop: pos
     }).offset();
-  });
-  $(document).on('click', '[data-toggle="lightbox"]', function (event) {
-    event.preventDefault();
-    $(this).ekkoLightbox();
   }); //
 
   var btn = $('#button');

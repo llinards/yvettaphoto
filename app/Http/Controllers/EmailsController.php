@@ -14,7 +14,7 @@ class EmailsController extends Controller
             Mail::send(new ContactMail($request));
             return redirect('/#contactMe')->with('success', 'Paldies, Jūsu e-pasts ir nosūtīts!');
         } catch (\Exception $e) {
-            return redirect('/#contactMe')->with('error', 'Kļūda!');
+            return redirect('/#fourth')->with('error', 'Kļūda!');
         }
     }
 }
