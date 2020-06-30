@@ -1,6 +1,6 @@
 @extends('layouts.default', ['title' => $category->name ])
 @section('content')
-    @include('inc.sm-navbar')
+    @include('inc.navbar', ['index' => false])
     <section class="py-5" id="photos">
         <div class="container-fluid">
             <div class="row mt-5 justify-content-center">

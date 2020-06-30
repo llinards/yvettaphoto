@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('content')
-    @include('inc.navbar')
+    @include('inc.navbar', ['index' => true])
     {{-- header section --}}
     <section id="first"></section>
     {{-- end of header section --}}

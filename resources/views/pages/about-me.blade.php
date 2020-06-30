@@ -1,7 +1,7 @@
 @extends('layouts.default', ['title' => 'About Me'])
 @section('content')
-   @include('inc.sm-navbar')
-   <section class="py-5" id="about-me">
+    @include('inc.navbar', ['index' => false])
+    <section class="py-5" id="about-me">
       <div class="container-fluid">
          <div class="row mt-5 justify-content-center">
             <div class="heading">
