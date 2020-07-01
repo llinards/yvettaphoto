@@ -31,7 +31,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border"
-                       href="{{ URL::previous() }}">
+                        href="{{ (isset($photos)) ? '/#portfolio' : URL::previous() }}">
                         <i class="fas fa-chevron-left"></i> Back</a>
                 </li>
             @endif

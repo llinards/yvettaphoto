@@ -1,1 +1,2 @@
-import script from './script';
+require ('./ekko-lightbox');
+require ('./script');
