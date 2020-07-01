@@ -10,13 +10,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('pages.index');
-    }
-
-    public function gallery()
-    {
-        $categories = Category::categoriesDesc()->get();
-        return view('pages.gallery', compact('categories'));
+        $categories = Category::latest()->get();
+        return view('pages.index', compact('categories'));
     }
 
     public function aboutMe()
