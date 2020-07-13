@@ -16842,6 +16842,12 @@ body.lb-disable-scrolling {
   }
 }
 
+@media (max-width: 992px) {
+  .images-container {
+    grid-template-columns: repeat(5, 1fr) !important;
+  }
+}
+
 @media (max-width: 767px) {
   .nav-link {
     font-size: 19px;
@@ -16877,6 +16883,10 @@ body.lb-disable-scrolling {
   .gallery-photo {
     text-align: center;
   }
+
+  .images-container {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
 }
 
 @media (max-width: 575px) {
@@ -16895,6 +16905,22 @@ body.lb-disable-scrolling {
 
   .admin-buttons a {
     margin-top: 1rem;
+  }
+
+  .images-container {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media (max-width: 425px) {
+  .images-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .images-container {
+    grid-template-columns: repeat(1, 1fr) !important;
   }
 }
 
@@ -17192,6 +17218,35 @@ section#contactMe p.lead {
 .modal-content {
   border: none;
   border-radius: 0;
+}
+
+.images-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 5px;
+  grid-auto-flow: dense;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.4s;
+}
+
+.image:hover img {
+  opacity: 0.7;
 }
 
 #about-me {
