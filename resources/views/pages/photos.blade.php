@@ -1,6 +1,6 @@
 @extends('layouts.default', ['title' => $category->name ])
 @section('content')
-    @include('inc.sm-navbar')
+    @include('inc.navbar', ['index' => false, 'photos' => true])
     <section class="py-5" id="photos">
         <div class="container-fluid">
             <div class="row mt-5 justify-content-center">
@@ -16,25 +16,20 @@
                     </div>
                 </div>
             @endif
-            <div class="row pt-3">
-                <div class="container-fluid">
-                    <div class="grid">
-                        @if(!$images->isEmpty())
-                            @foreach($images as $image)
-                                <div class="item photo">
-                                    <div class="content">
-                                        <a href="/storage/{{ $image->image_name}}" data-lightbox="{{ $category->id }}">
-                                            <img class="photothumb" src="/storage/{{ $image->image_name}}">
-                                        </a>
-                                    </div>
-                                </div>
-                            @endforeach
-                        @else
-                            <p>No pictures found!</p>
-                        @endif
-                    </div>
-                </div>
+            <div class="row pt-3 images-container">
+                @if(!$images->isEmpty())
+                    @foreach($images as $image)
+                        <div class="image">
+                            <a data-toggle="lightbox" data-gallery="photos"
+                               href="/storage/{{ $image->image_name}}">
+                                <img src="/storage/{{ $image->image_name}}"/>
+                            </a>
+                        </div>
+                    @endforeach
+                @else
+                    <p>No pictures found!</p>
+                @endif
             </div>
         </div>
     </section>
-@stop
+@endsection

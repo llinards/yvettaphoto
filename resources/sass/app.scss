@@ -8,7 +8,7 @@
 @import '~@fortawesome/fontawesome-free/scss/brands';
 
 @import 'lightbox';
-@import 'media-queries';
+@import 'assets/ekko-lightbox';
 @import 'navbar';
 
 @import 'home/header';
@@ -20,6 +20,8 @@
 @import 'gallery/photos';
 
 @import 'about-me/index';
+@import 'media-queries';
+
 
 hr {
     border: 2px solid #34495e;

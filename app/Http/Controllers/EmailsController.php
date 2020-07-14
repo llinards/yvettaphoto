@@ -12,9 +12,9 @@ class EmailsController extends Controller
     {
         try {
             Mail::send(new ContactMail($request));
-            return redirect('/#fourth')->with('success', 'Paldies, Jūsu e-pasts ir nosūtīts!');
+            return redirect('/#contactMe')->with('success', 'Paldies, Jūsu e-pasts ir nosūtīts!');
         } catch (\Exception $e) {
             return redirect('/#fourth')->with('error', 'Kļūda!');
-        } 
+        }
     }
 }
