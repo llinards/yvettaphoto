@@ -20,7 +20,7 @@
                 @if(!$images->isEmpty())
                     @foreach($images as $image)
                         <div class="image">
-                            <a data-toggle="lightbox" class="" data-gallery="photos"
+                            <a data-toggle="lightbox" class="" data-camera-model="{{ $image }}" data-footer="{{ $image }}}" data-gallery="photos"
                                href="/storage/{{ $image->image_name}}">
                                 <img class="" src="/storage/{{ $image->image_name}}"/>
                             </a>
