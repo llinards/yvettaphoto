@@ -5,6 +5,12 @@
     }
 }
 
+@media (max-width: 992px) {
+    .images-container {
+        grid-template-columns: repeat(5, 1fr) !important;
+    }
+}
+
 @media (max-width: 767px) {
     .nav-link {
         font-size: 19px;
@@ -31,14 +37,12 @@
         text-align: center;
     }
 
-    #button {
-        margin: 15px;
-        bottom: 15px;
-        right: 0;
-    }
-
     .gallery-photo {
         text-align: center;
+    }
+
+    .images-container {
+        grid-template-columns: repeat(4, 1fr) !important;
     }
 }
 
@@ -58,6 +62,33 @@
         a {
             margin-top: 1rem;
         }
+    }
+    .images-container {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .ekko-lightbox-nav-overlay a {
+        font-size: 3em !important;
+    }
+
+    #button {
+        right: 0 !important;
+    }
+}
+
+@media (max-width: 425px) {
+    .images-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    #button {
+        margin: 20px !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .images-container {
+        grid-template-columns: repeat(1, 1fr) !important;
     }
 }
 

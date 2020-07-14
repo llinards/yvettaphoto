@@ -9,7 +9,6 @@
 
 @import 'lightbox';
 @import 'assets/ekko-lightbox';
-@import 'media-queries';
 @import 'navbar';
 
 @import 'home/header';
@@ -21,6 +20,8 @@
 @import 'gallery/photos';
 
 @import 'about-me/index';
+@import 'media-queries';
+
 
 hr {
     border: 2px solid #34495e;

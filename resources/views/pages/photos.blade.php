@@ -16,15 +16,16 @@
                     </div>
                 </div>
             @endif
-            <div class="row pt-3">
+            <div class="row pt-3 images-container">
                 @if(!$images->isEmpty())
-
                     @foreach($images as $image)
-                        <a data-toggle="lightbox"  class="col p-2" data-gallery="photos" href="/storage/{{ $image->image_name}}">
-                            <img class="img-fluid" src="/storage/{{ $image->image_name}}"/>
-                        </a>
+                        <div class="image">
+                            <a data-toggle="lightbox" data-gallery="photos"
+                               href="/storage/{{ $image->image_name}}">
+                                <img src="/storage/{{ $image->image_name}}"/>
+                            </a>
+                        </div>
                     @endforeach
-
                 @else
                     <p>No pictures found!</p>
                 @endif
