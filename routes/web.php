@@ -16,12 +16,6 @@ Auth::routes([
     'reset' => false
   ]);
 
-Route::get('/', 'HomeController@index');
-Route::get('/about-me', 'HomeController@aboutMe');
-Route::get('/{category}', 'HomeController@galleryImages');
-
-Route::post('/send-email', 'EmailsController@sendEmail');
-
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', 'AdminController@index');
@@ -39,3 +33,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/{category}/bildes', 'ImagesController@edit');
     Route::delete('/admin/bildes', 'ImagesController@destroy');
 });
+
+Route::get('/', 'HomeController@index');
+Route::get('/about-me', 'HomeController@aboutMe');
+Route::get('/{category}', 'HomeController@galleryImages');
+
+Route::post('/send-email', 'EmailsController@sendEmail');
