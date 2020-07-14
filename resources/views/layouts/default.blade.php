@@ -4,7 +4,7 @@
     @include('inc.head')
     @include('inc.js')
 </head>
-<body oncontextmenu="return true">
+<body oncontextmenu="return false">
 @yield('content')
 @include('inc.footer')
 </body>

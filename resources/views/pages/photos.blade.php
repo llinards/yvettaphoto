@@ -16,13 +16,13 @@
                     </div>
                 </div>
             @endif
-            <div class="row p-3 images-container">
+            <div class="row pt-3 images-container">
                 @if(!$images->isEmpty())
                     @foreach($images as $image)
                         <div class="image">
-                            <a data-toggle="lightbox" class="" data-camera-model="{{ $image }}" data-footer="{{ $image }}}" data-gallery="photos"
+                            <a data-toggle="lightbox" data-gallery="photos"
                                href="/storage/{{ $image->image_name}}">
-                                <img class="" src="/storage/{{ $image->image_name}}"/>
+                                <img src="/storage/{{ $image->image_name}}"/>
                             </a>
                         </div>
                     @endforeach
