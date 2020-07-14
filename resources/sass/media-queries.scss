@@ -37,12 +37,6 @@
         text-align: center;
     }
 
-    #button {
-        margin: 15px;
-        bottom: 15px;
-        right: 0;
-    }
-
     .gallery-photo {
         text-align: center;
     }
@@ -72,11 +66,19 @@
     .images-container {
         grid-template-columns: repeat(3, 1fr) !important;
     }
+
+    #button {
+        right: 0 !important;
+    }
 }
 
 @media (max-width: 425px) {
     .images-container {
         grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    #button {
+        margin: 20px !important;
     }
 }
 
