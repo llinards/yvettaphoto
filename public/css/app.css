@@ -17067,10 +17067,11 @@ section#contactMe p.lead {
   position: absolute;
   background-color: #34495e;
   top: 65%;
-  left: 1%;
+  left: 0.5%;
   right: 0;
   max-width: 80%;
   z-index: 1;
+  opacity: 0.85;
 }
 
 .gallery-list-title:hover,
