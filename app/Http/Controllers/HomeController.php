@@ -21,7 +21,7 @@ class HomeController extends Controller
 
     public function galleryImages(Category $category)
     {
-        $images = Image::where('category_id', $category->id)->get();
+        $images = Image::imagesDesc($category)->get();
         return view('pages.photos', compact('category', 'images'));
     }
 }
