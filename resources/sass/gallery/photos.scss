@@ -68,3 +68,11 @@
     font-size: 4rem;
 }
 
+.modal-backdrop.show {
+    opacity: 0.95 !important;
+}
+
+.modal-backdrop {
+    background-color: #ccc !important;
+}
+
