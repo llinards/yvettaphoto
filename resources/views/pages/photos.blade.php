@@ -16,10 +16,10 @@
                     </div>
                 </div>
             @endif
-            <div class="row pt-3 images-container">
+            <div class="row pt-3 images-container grid">
                 @if(!$images->isEmpty())
                     @foreach($images as $image)
-                        <div class="image">
+                        <div class="image grid-item">
                             <a data-toggle="lightbox" data-gallery="photos"
                                href="/storage/{{ $image->image_name}}">
                                 <img src="/storage/{{ $image->image_name}}"/>
