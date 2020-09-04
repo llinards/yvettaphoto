@@ -17264,6 +17264,10 @@ section#contactMe p.lead {
   .images-container {
     grid-template-columns: repeat(1, 1fr) !important;
   }
+
+  .grid-item {
+    width: 325px;
+  }
 }
 
 @media (max-width: 360px) {
