@@ -78,5 +78,5 @@ $(function () {
             gutter: 10,
             fitWidth: true,
         });
-    }, 500);
+    }, 1000);
 });
