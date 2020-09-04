@@ -579,14 +579,15 @@ $(function () {
       alwaysShowClose: false
     });
   });
-  setTimeout(function () {
+  imagesLoaded(document.querySelector('.grid'), function (instance) {
     var elem = document.querySelector('.grid');
     var msnry = new Masonry(elem, {
       itemSelector: '.grid-item',
       gutter: 10,
       fitWidth: true
     });
-  }, 500);
+    console.log('all images are loaded');
+  });
 });
 
 /***/ }),
