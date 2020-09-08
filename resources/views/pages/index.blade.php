@@ -78,8 +78,7 @@
                             <textarea class="form-control" name="msg" id="" placeholder="Type your message" rows="3"
                                       value="{{ old('msg') }}" required></textarea>
                         </div>
-{{--                        <button class="btn btn-submit" type="submit">Send</button>--}}
-                        <button class="btn btn-submit" type="submit" disabled="disabled">Temporary disabled</button>
+                        <button class="btn btn-submit" type="submit">Send</button>
                     </form>
                 </div>
             </div>
