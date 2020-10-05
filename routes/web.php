@@ -19,6 +19,9 @@ Auth::routes([
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', 'AdminController@index');
+    Route::get('/admin/titulbilde/jauna', 'AdminController@create');
+    Route::post('/admin/titulbilde/jauna', 'AdminController@store');
+
 
     Route::get('/admin/kategorijas', 'CategoriesController@index');
     Route::get('/admin/kategorijas/jauna', 'CategoriesController@create');

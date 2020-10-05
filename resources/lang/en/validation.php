@@ -149,6 +149,7 @@ return [
         'category-cover' => 'Kategorijas bilde',
         'selected-category' => 'Izvēlētās kategorijas',
         'photos' => 'Bildes',
-        'category-description' => 'Kategorijas apraksta'
+        'category-description' => 'Kategorijas apraksta',
+        'main-img-cover' => 'Titulbildes izvēles'
     ],
 ];
