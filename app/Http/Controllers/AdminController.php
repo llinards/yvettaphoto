@@ -25,7 +25,7 @@ class AdminController extends Controller
       $file = request('main-img-cover');
       $filename = 'home-bg.jpg';
       $imagePath = $file->storeAs('uploads/' . 'cover_photos', $filename, 'public');
-      $image = Exif::make("storage/{$imagePath}")->fit(600, 600);
+      $image = Exif::make("storage/{$imagePath}");
       $image->save();
       return redirect('/admin/titulbilde/jauna')->with('success', 'Titulbilde nomainīta!');
     } catch (\Exception $exception) {
