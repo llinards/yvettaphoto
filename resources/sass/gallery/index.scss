@@ -1,61 +1,61 @@
 .gallery-photo {
-    padding: 0.05rem !important;
-    position: relative;
+  padding: 0.05rem !important;
+  position: relative;
 }
 
 .gallery-photo img {
-    transition: all 0.4s;
+  transition: all 0.4s;
 }
 
 .gallery-photo img:hover,
 .gallery-photo img:active {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .gallery-photo:hover,
 .gallery-photo:active {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .gallery-photo-title {
-    position: absolute;
-    background-color: #34495e;
-    top: 65%;
-    left: 0.5%;
-    right: 0;
-    max-width: 80%;
-    z-index: 1;
-    opacity: 0.85;
+  position: absolute;
+  background-color: #34495e;
+  top: 65%;
+  left: 0.5%;
+  right: 0;
+  max-width: 80%;
+  z-index: 1;
+  opacity: 0.85;
 }
 
 .gallery-list-title:hover,
 .gallery-list-title:active {
-    display: inline-block;
+  display: inline-block;
 }
 
 .gallery-list-item {
-    color: #777;
-    cursor: pointer;
-    user-select: none;
+  color: #777;
+  cursor: pointer;
+  user-select: none;
 }
 
 .active-item {
-    color: #34495e;
+  color: #34495e;
 }
 
 .list-inline-item:not(:last-child) {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 .gallery__collection {
-    text-align: center;
-    margin: 10px;
+  text-align: center;
+  margin: 10px;
 }
 
 .gallery__collection img {
-    padding-top: 10px;
+  padding-top: 10px;
 }
 
 .modal-body {
-    padding: 0;
+  padding: 0;
 }
