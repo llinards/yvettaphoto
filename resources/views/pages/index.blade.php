@@ -45,7 +45,7 @@
             <p class="lead text-light">
               Feel free to read about my journey more
               <a class="text-light font-weight-bold anime-border-white about-me__read-more"
-                 href="about-me/">here...</a>er
+                 href="about-me/">here...</a>
             </p>
           </div>
         </div>
