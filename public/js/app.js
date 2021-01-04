@@ -1740,10 +1740,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["category"],
   data: function data() {
@@ -37339,80 +37335,70 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("section", { staticClass: "py-5", attrs: { id: "photos" } }, [
-      _vm.loading ? _c("div", { staticClass: "loading" }) : _vm._e(),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "container-fluid", class: _vm.loading ? "d-none" : "" },
-        [
-          _c("div", { staticClass: "row mt-5 justify-content-center" }, [
-            _c("div", { staticClass: "heading" }, [
-              _c(
-                "h1",
-                {
-                  staticClass:
-                    "display-4 text-uppercase text-center main__headings"
-                },
-                [
-                  _vm._v(
-                    "\n            " + _vm._s(_vm.categoryName) + "\n          "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "underline" })
-            ])
-          ]),
-          _vm._v(" "),
-          _vm.categoryDescription
-            ? _c("div", { staticClass: "container" }, [
-                _c("div", { staticClass: "row pt-3 justify-content-center" }, [
-                  _c(
-                    "div",
-                    { staticClass: "lead text-justify description__p" },
-                    [
-                      _c("span", {
-                        domProps: { innerHTML: _vm._s(_vm.categoryDescription) }
-                      })
-                    ]
-                  )
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row mt-5 justify-content-center" }, [
+          _c("div", { staticClass: "heading" }, [
+            _c(
+              "h1",
+              {
+                staticClass:
+                  "display-4 text-uppercase text-center main__headings"
+              },
+              [
+                _vm._v(
+                  "\n            " + _vm._s(_vm.categoryName) + "\n          "
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "underline" })
+          ])
+        ]),
+        _vm._v(" "),
+        _vm.categoryDescription
+          ? _c("div", { staticClass: "container" }, [
+              _c("div", { staticClass: "row pt-3 justify-content-center" }, [
+                _c("div", { staticClass: "lead text-justify description__p" }, [
+                  _c("span", {
+                    domProps: { innerHTML: _vm._s(_vm.categoryDescription) }
+                  })
                 ])
               ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c("div", { staticClass: "row pt-3 images-container grid" }, [
-            _vm.images
-              ? _c(
-                  "div",
-                  _vm._l(_vm.images, function(image) {
-                    return _c(
-                      "div",
-                      { key: image.id, staticClass: "image grid-item" },
-                      [
-                        _c(
-                          "a",
-                          {
-                            attrs: {
-                              "data-toggle": "lightbox",
-                              "data-gallery": "photos",
-                              href: "/storage/" + image.image_name
-                            }
-                          },
-                          [
-                            _c("img", {
-                              attrs: { src: "/storage/" + image.image_name }
-                            })
-                          ]
-                        )
-                      ]
-                    )
-                  }),
-                  0
-                )
-              : _c("div", [_c("p", [_vm._v("No pictures found!")])])
-          ])
-        ]
-      )
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _c("div", { staticClass: "row pt-3 images-container grid" }, [
+          _vm.images
+            ? _c(
+                "div",
+                _vm._l(_vm.images, function(image) {
+                  return _c(
+                    "div",
+                    { key: image.id, staticClass: "image grid-item" },
+                    [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            "data-toggle": "lightbox",
+                            "data-gallery": "photos",
+                            href: "/storage/" + image.image_name
+                          }
+                        },
+                        [
+                          _c("img", {
+                            attrs: { src: "/storage/" + image.image_name }
+                          })
+                        ]
+                      )
+                    ]
+                  )
+                }),
+                0
+              )
+            : _c("div", [_c("p", [_vm._v("No pictures found!")])])
+        ])
+      ])
     ])
   ])
 }

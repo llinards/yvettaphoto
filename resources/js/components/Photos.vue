@@ -1,11 +1,7 @@
 <template>
   <div>
     <section class="py-5" id="photos">
-      <div class="loading" v-if="loading"></div>
-      <div
-        class="container-fluid"
-        v-bind:class="loading ? 'd-none' : ''"
-      >
+      <div class="container-fluid">
         <div class="row mt-5 justify-content-center">
           <div class="heading">
             <h1 class="display-4 text-uppercase text-center main__headings">
