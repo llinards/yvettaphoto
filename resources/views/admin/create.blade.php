@@ -22,7 +22,7 @@
                     @enderror
                 </div>
                 <button type="submit" class="btn btn-success">Mainīt</button>
-                <a class="btn btn-secondary" href="/admin/kategorijas">Atpakaļ</a>
+                <a class="btn btn-secondary" href="/admin">Atpakaļ</a>
             </form>
         </div>
     </div>
