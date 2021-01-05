@@ -42,6 +42,7 @@
   </div>
 </template>
 <script>
+import Masonry from "masonry-layout";
 export default {
   props: ["category"],
   data() {
@@ -60,14 +61,14 @@ export default {
       this.images = response.data[0];
       this.loading = false;
     });
-    imagesLoaded(document.querySelector(".grid"), function (instance) {
-      var elem = document.querySelector(".grid");
-      var msnry = new Masonry(elem, {
+    window.onload = () => {
+      const grid = document.querySelector(".grid");
+      const masonry = new Masonry(grid, {
         itemSelector: ".grid-item",
         gutter: 5,
         fitWidth: true,
       });
-    });
+    };
   },
 };
 </script>

@@ -1,5 +1,7 @@
 require('./bootstrap')
 require('./ekko-lightbox');
+// require('./imagesloaded');
+// require('./masonry');
 require('./script');
 
 import Vue from 'vue'
