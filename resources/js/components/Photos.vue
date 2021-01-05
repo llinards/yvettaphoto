@@ -60,6 +60,14 @@ export default {
       this.images = response.data[0];
       this.loading = false;
     });
+    imagesLoaded(document.querySelector(".grid"), function (instance) {
+      var elem = document.querySelector(".grid");
+      var msnry = new Masonry(elem, {
+        itemSelector: ".grid-item",
+        gutter: 5,
+        fitWidth: true,
+      });
+    });
   },
 };
 </script>
