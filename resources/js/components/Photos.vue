@@ -1,8 +1,8 @@
 <template>
   <div>
     <section class="py-5" id="photos">
-      <div class="loading" v-if="loading"></div>
-      <div class="container-fluid" v-bind:class="loading ? 'd-none' : ''">
+      <!-- <div class="loading" v-if="loading"></div> -->
+      <div class="container-fluid">
         <div class="row mt-5 justify-content-center">
           <div class="heading">
             <h1 class="display-4 text-uppercase text-center main__headings">
@@ -55,12 +55,13 @@ export default {
       loading: true,
     };
   },
-  created() {},
   mounted() {
     axios.get(`/api/${this.category}`).then((response) => {
       this.categoryName = response.data[1].name;
       this.categoryDescription = response.data[1].description;
       this.images = response.data[0];
+    });
+    window.addEventListener("load", function () {
       imagesLoaded(document.querySelector(".grid"), function (instance) {
         const grid = document.querySelector(".grid");
         const masonry = new Masonry(grid, {
@@ -69,7 +70,6 @@ export default {
           fitWidth: true,
         });
       });
-      // this.loading = false;
     });
   },
 };
