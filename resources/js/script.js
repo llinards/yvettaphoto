@@ -75,7 +75,7 @@ $(function () {
         var elem = document.querySelector('.grid');
         var msnry = new Masonry(elem, {
             itemSelector: '.grid-item',
-            gutter: 5,
+            gutter: 35,
             fitWidth: true,
         });
         console.log('all images are loaded');
