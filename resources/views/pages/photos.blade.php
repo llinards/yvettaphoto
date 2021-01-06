@@ -32,4 +32,14 @@
             </div>
         </div>
     </section>
+    <script>
+        imagesLoaded( document.querySelector('.grid'), function( instance ) {
+            var elem = document.querySelector('.grid');
+            var msnry = new Masonry(elem, {
+                itemSelector: '.grid-item',
+                gutter: 35,
+                fitWidth: true,
+            });
+        });
+    </script>
 @endsection
