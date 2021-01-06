@@ -1,2 +1,3 @@
-require ('./ekko-lightbox');
-require ('./script');
+require('./bootstrap');
+require('./ekko-lightbox');
+require('./script');
