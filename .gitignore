@@ -11,3 +11,4 @@ npm-debug.log
 yarn-error.log
 .idea
 /resources/views/inc/head.blade.php
+/storage/debugbar/*
