@@ -6,9 +6,7 @@
 }
 
 @media (max-width: 992px) {
-    .images-container {
-        grid-template-columns: repeat(5, 1fr) !important;
-    }
+
 }
 
 @media (max-width: 767px) {
@@ -41,10 +39,6 @@
     .gallery-photo {
         text-align: center;
     }
-
-    .images-container {
-        grid-template-columns: repeat(4, 1fr) !important;
-    }
 }
 
 @media (max-width: 575px) {
@@ -64,13 +58,6 @@
             margin-top: 1rem;
         }
     }
-    .images-container {
-        grid-template-columns: repeat(3, 1fr) !important;
-    }
-
-    .ekko-lightbox-nav-overlay a {
-        font-size: 3em !important;
-    }
 
     #button {
         right: 0 !important;
@@ -78,20 +65,12 @@
 }
 
 @media (max-width: 425px) {
-    .images-container {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-
     #button {
         margin: 20px !important;
     }
 }
 
 @media (max-width: 375px) {
-    .images-container {
-        grid-template-columns: repeat(1, 1fr) !important;
-    }
-
     .grid-item {
         width: 325px
     }

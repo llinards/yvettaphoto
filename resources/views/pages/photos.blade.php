@@ -16,12 +16,11 @@
                     </div>
                 </div>
             @endif
-            <div class="row pt-3 images-container grid">
+            <div class="row pt-3">
                 @if(!$images->isEmpty())
                     @foreach($images as $image)
-                        <div class="image grid-item">
-                            <a data-toggle="lightbox" data-gallery="photos"
-                               href="/storage/{{ $image->image_name}}">
+                        <div>
+                            <a href="/storage/{{ $image->image_name}}">
                                 <img src="/storage/{{ $image->image_name}}"/>
                             </a>
                         </div>
@@ -32,14 +31,4 @@
             </div>
         </div>
     </section>
-    <script>
-        imagesLoaded( document.querySelector('.grid'), function( instance ) {
-            var elem = document.querySelector('.grid');
-            var msnry = new Masonry(elem, {
-                itemSelector: '.grid-item',
-                gutter: 35,
-                fitWidth: true,
-            });
-        });
-    </script>
 @endsection
