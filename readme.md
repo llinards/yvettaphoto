@@ -1,4 +1,4 @@
-<h1 align="center">👋 YVETTA PHOTO 👋</h1>
+<h1>📷 YVETTA PHOTO 📷</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-2.2-blue.svg?cacheSeconds=2592000" />
 </p>
@@ -9,14 +9,12 @@
 
 > Laravel 6 <br />
 > Bootstrap 4<br />
-> jQuery 3.5.1
+> jQuery 3.5.1<br />
+> (Migration to VueJS 3 planned)
 
 
 ### 🏠 [Homepage](https://yvettaphoto.com)
-### [Instagram](https://www.instagram.com/yvettaphoto/)
-
-## Author
+### 📷 [Instagram](https://www.instagram.com/yvettaphoto/)
+### 🌍 [Public Demo] - coming soon...
 
 👤 **Linards**
-
-* Github: [@llinards](https://github.com/llinards)
