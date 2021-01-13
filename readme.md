@@ -5,8 +5,6 @@
 
 > Portfolio type website. Page has a fully functional admin page for managing categories and images of it. 
 
-<h3>Most updated portfolio page coming soon...</h3>
-
 <h4>Stack</h4>
 
 > Laravel 6 <br />
