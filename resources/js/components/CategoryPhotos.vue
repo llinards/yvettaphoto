@@ -21,7 +21,7 @@
           <div v-if="images">
             <div v-for="image in images" v-bind:key="image.id">
               <a v-bind:href="'/storage/' + image.image_name">
-                <img v-bind:src="'/storage/' + image.image_name" />
+                <img class="img-fluid" v-bind:src="'/storage/' + image.image_name" />
               </a>
             </div>
           </div>

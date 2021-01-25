@@ -37653,6 +37653,7 @@ var render = function() {
                       { attrs: { href: "/storage/" + image.image_name } },
                       [
                         _c("img", {
+                          staticClass: "img-fluid",
                           attrs: { src: "/storage/" + image.image_name }
                         })
                       ]
