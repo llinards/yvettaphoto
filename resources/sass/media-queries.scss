@@ -13,7 +13,11 @@
 
 @media (max-width: 767px) {
     .nav-link {
-        font-size: 19px;
+        font-size: 20px;
+    }
+
+    .yvettaphoto-logo {
+        max-width: 60%;
     }
 
     .fixed-top {
@@ -36,6 +40,7 @@
 
     .navbar-nav {
         text-align: center;
+        padding: 2rem;
     }
 
     .gallery-photo {
