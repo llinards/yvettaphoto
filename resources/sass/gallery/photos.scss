@@ -1,39 +1,50 @@
 #photos {
-    padding-top: 100px !important;
+  padding-top: 100px !important;
 }
 
 .description__p {
-    letter-spacing: 1px;
-    margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
 
-    p {
-        margin-bottom: 0.5rem;
-    }
+  p {
+    margin-bottom: 0.5rem;
+  }
 }
 
 .modal-content {
-    border: none;
-    border-radius: 0;
+  border: none;
+  border-radius: 0;
 }
 
 .modal-header {
-    align-items: center;
+  align-items: center;
 }
 
 .close {
-    color: #343a40 !important;
-    opacity: 1;
+  color: #343a40 !important;
+  opacity: 1;
 }
 
 .ekko-lightbox-nav-overlay a {
-    font-size: 4rem;
+  font-size: 4rem;
 }
 
 .modal-backdrop.show {
-    opacity: 0.9 !important;
+  opacity: 0.9 !important;
 }
 
 .modal-backdrop {
-    background-color: #ccc !important;
+  background-color: #ccc !important;
 }
 
+.grid {
+  margin: 0 auto;
+}
+
+.grid-item {
+  width: 400px;
+  margin-bottom: 35px;
+  img {
+    width: 100%;
+  }
+}
