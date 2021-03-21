@@ -2000,7 +2000,7 @@ __webpack_require__.r(__webpack_exports__);
       loading: true
     };
   },
-  mounted: function mounted() {
+  created: function created() {
     var _this = this;
 
     axios.get("/api/".concat(this.category)).then(function (response) {

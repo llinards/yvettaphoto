@@ -44,7 +44,7 @@ export default {
       loading: true,
     };
   },
-  mounted() {
+  created() {
     axios.get(`/api/${this.category}`).then((response) => {
       this.categoryName = response.data[1].name;
       this.categoryDescription = response.data[1].description;
