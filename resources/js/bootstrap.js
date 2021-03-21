@@ -11,8 +11,6 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
-    window.imagesLoaded = require('imagesloaded');
-    window.Masonry = require('masonry-layout');
 } catch (e) { }
 
 /**
