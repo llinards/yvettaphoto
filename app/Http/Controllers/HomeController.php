@@ -14,6 +14,11 @@ class HomeController extends Controller
         return view('pages.index', compact('categories'));
     }
 
+    public function artistStatement()
+    {
+        return view('pages.artist-statement');
+    }
+
     public function aboutMe()
     {
         return view('pages.about-me');

@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-md fixed-top">
+<nav class="navbar navbar-expand-lg fixed-top">
     <a href="{{ ($index) ? '#home' : '/' }}" class="navbar-brand">
-        <img class="img-fluid" width="150" src="../img/logo.png" alt="">
+        <img class="img-fluid yvettaphoto-logo" width="150" src="../img/logo.png" alt="">
     </a>
     <button type="button" class="navbar-toggler navbar-light bg-dark navbar-btn" data-toggle="collapse"
             data-target="#nav">
@@ -10,11 +10,13 @@
         <ul class="navbar-nav">
             @if($index)
                 <li class="nav-item">
-                    <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border"
-                       href="#home">Home</a>
+                    <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="#home">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="/artist-statement">Artists Statement</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="#aboutMe">About
@@ -25,10 +27,6 @@
                         Me</a>
                 </li>
             @else
-                <li class="nav-item">
-                    <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="/">
-                        <i class="fas fa-home"></i> Home</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border"
                         href="{{ (isset($photos)) ? '/#portfolio' : URL::previous() }}">
