@@ -17,12 +17,14 @@
             </div>
           </div>
         </div>
+        <div v-if="isLoading" class="loading"></div>
         <div v-if="images" class="row pt-3 grid">
           <div v-for="image in images" class="grid-item" v-bind:key="image.id">
             <a v-bind:href="'/storage/' + image.image_name">
               <img
                 class="img-fluid"
                 v-bind:src="'/storage/' + image.image_name"
+                @load="reloadGrid"
               />
             </a>
           </div>
@@ -43,18 +45,14 @@ export default {
     return {
       categoryName: "",
       categoryDescription: "",
-      images: {},
+      images: [],
+      imgSrc: "",
+      isLoaded: false,
+      isLoading: false,
     };
   },
-  created() {
-    axios.get(`/api/${this.category}`).then((response) => {
-      this.categoryName = response.data[1].name;
-      this.categoryDescription = response.data[1].description;
-      this.images = response.data[0];
-    });
-  },
-  mounted() {
-    setTimeout(function () {
+  methods: {
+    reloadGrid() {
       const grid = document.querySelector(".grid");
       const masonry = new Masonry(grid, {
         itemSelector: ".grid-item",
@@ -62,7 +60,30 @@ export default {
         fitWidth: true,
         originLeft: false,
       });
-    }, 3000);
+    },
   },
+  created() {
+    axios.get(`/api/${this.category}`).then((response) => {
+      this.categoryName = response.data[1].name;
+      this.categoryDescription = response.data[1].description;
+      this.images = response.data[0];
+      var imgCount = this.images.length;
+
+      // if (this.imgSrc == "") {
+      //   this.isLoaded = false;
+      //   this.isLoading = true;
+      //   for (var i = 0; i < imgCount; i++) {
+      //     this.imgSrc = this.images.image_name[i];
+      //     console.log(this.imgSrc);
+      //   }
+      //   // this.imgsrc = "https://images2.alphacoders.com/103/1039991.jpg";
+      //   // this.btntext = "Hide Image";
+      // } else {
+      //   // this.imgsrc = "";
+      //   // this.btntext = "Show Image";
+      // }
+    });
+  },
+  mounted() {},
 };
 </script>
