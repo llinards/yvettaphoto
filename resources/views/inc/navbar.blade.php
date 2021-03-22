@@ -16,7 +16,7 @@
                     <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="#portfolio">Portfolio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="/artist-statement">Artists Statement</a>
+                    <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="/artist-statement">Artist Statement</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="#aboutMe">About
