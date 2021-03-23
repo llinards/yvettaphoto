@@ -17,7 +17,6 @@
             </div>
           </div>
         </div>
-        <div v-if="isLoading" class="loading"></div>
         <div v-if="images" class="row pt-3 grid">
           <div v-for="image in images" class="grid-item" v-bind:key="image.id">
             <a v-bind:href="'/storage/' + image.image_name">
@@ -38,7 +37,6 @@
 </template>
 <script>
 import Masonry from "masonry-layout";
-import imagesLoaded from "imagesloaded";
 export default {
   props: ["category"],
   data() {
@@ -46,9 +44,6 @@ export default {
       categoryName: "",
       categoryDescription: "",
       images: [],
-      imgSrc: "",
-      isLoaded: false,
-      isLoading: false,
     };
   },
   methods: {
@@ -67,21 +62,6 @@ export default {
       this.categoryName = response.data[1].name;
       this.categoryDescription = response.data[1].description;
       this.images = response.data[0];
-      var imgCount = this.images.length;
-
-      // if (this.imgSrc == "") {
-      //   this.isLoaded = false;
-      //   this.isLoading = true;
-      //   for (var i = 0; i < imgCount; i++) {
-      //     this.imgSrc = this.images.image_name[i];
-      //     console.log(this.imgSrc);
-      //   }
-      //   // this.imgsrc = "https://images2.alphacoders.com/103/1039991.jpg";
-      //   // this.btntext = "Hide Image";
-      // } else {
-      //   // this.imgsrc = "";
-      //   // this.btntext = "Show Image";
-      // }
     });
   },
   mounted() {},
