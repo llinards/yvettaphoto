@@ -3,7 +3,7 @@
     @include('inc.navbar', ['index' => false])
     <section class="py-5" id="about-me">
       <div class="container-fluid">
-          <div class="row mt-5 justify-content-center">
+          <div class="row mt-md-5 justify-content-center">
             <div class="heading">
               <h1 class="display-4 text-uppercase text-center main__headings">The Artist Statement</h1>
               <div class="underline"></div>

@@ -48,8 +48,22 @@
     margin: 20px;
   }
 
+  .about-me__container p,
+  .description__p,
+  .about-me__p {
+    font-size: 18px;
+  }
+
+  .main__headings {
+    font-size: 3rem;
+  }
+
   .admin__headings {
     font-size: 1.5rem;
+  }
+
+  .ekko-lightbox-nav-overlay a {
+    font-size: 3em !important;
   }
 
   .admin-buttons {
@@ -59,9 +73,10 @@
     a {
       margin-top: 1rem;
     }
-
   }
-
+  .grid-item {
+    width: 350px;
+  }
   #button {
     right: 0 !important;
   }

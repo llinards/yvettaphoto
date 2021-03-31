@@ -2,7 +2,7 @@
   <div>
     <section class="py-5" id="photos">
       <div class="container-fluid">
-        <div class="row mt-5 justify-content-center">
+        <div class="row mt-md-5 mt-sm-3 justify-content-center">
           <div class="heading">
             <h1 class="display-4 text-uppercase text-center main__headings">
               {{ categoryName }}
