@@ -86,17 +86,29 @@
   #button {
     margin: 20px !important;
   }
+
+  .about-me__container p,
+  .description__p,
+  .about-me__p {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 375px) {
   .grid-item {
     width: 325px;
   }
+
+  .about-me__container p,
+  .description__p,
+  .about-me__p {
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 360px) {
   .main__headings {
-    font-size: 45px;
+    font-size: 2rem;
   }
 
   .grid-item {
