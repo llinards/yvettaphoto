@@ -62,9 +62,16 @@ $(function() {
     $("#deleteModal").modal("show");
   });
 
-    $(document).on('click', '.deleteImage', function () {
-        var imageId = $(this).attr('data-imageid');
-        $('#modelToDeleteId').val(imageId);
-        $('#deleteModal').modal('show');
+  $(document).on("click", ".deleteImage", function() {
+    var imageId = $(this).attr("data-imageid");
+    $("#modelToDeleteId").val(imageId);
+    $("#deleteModal").modal("show");
+  });
+
+  $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+    event.preventDefault();
+    $(this).ekkoLightbox({
+      alwaysShowClose: false
     });
+  });
 });
