@@ -31,13 +31,9 @@
                      to photo my children – son and daughter but not only.
                   </p>
                   <img src="../img/about-me/Hannover_web_story.jpg" width="350" class="img-fluid py-2" alt="">
-                  <p class="lead text-justify about-me__p">I will never forget this first camera! The picture taken by this camera was included in "EXPO 2000"
-                     info desk in the Latvian pavilion in Hannover. It was about a project of waste development in
-                     the region where I was involved and proud of. Today such photo wouldn’t get high attention, but
-                     in 2000ies it was not only a significant achievement for myself but also very significant progress
-                     in Environmental management here in Latvia. I think this was the most viewed photo so far, but
-                     I hope to change this statistic with new projects very soon!
-                  </p>
+                  <p class="lead text-justify about-me__p">
+                     My photo in "EXPO 2000" info desk in the Latvian pavilion in Hannover.
+                     It was about a waste development project in the region where I was involved and proud of. Today such a photo wouldn’t get high attention, but in the 2000ies it was not only a significant achievement for me to produce a photo but also very significant progress in Environmental management here in Latvia.                  </p>
                   <h4 class="text-uppercase border-bottom pb-2 pt-2">Some thriller elements</h4>
                   <p class="lead text-justify about-me__p">Now it's time for some thriller elements with my DSLR cameras. My first Sony DSLR remained on the
                      Mediterranean Sea where I accidentally slipped on the stones… (but I managed to keep memory card
@@ -52,8 +48,7 @@
                      <p class="lead text-justify about-me__p">
                         You see my experience is not very easy, but I am confident we all have to pass some learnings to achieve some results!</p>
                      <p class="lead text-justify about-me__p">I hope and wish you to enjoy photo!</p>
-                     <blockquote class="text-uppercase about-me__quote about-me__p">Get inspired to pick up beautiful moments
-                     <br>with you!</blockquote>
+                     <blockquote class="text-uppercase about-me__quote about-me__p">ENJOY AND BE INSPIRED BY THE PHOTOS!</blockquote>
                   </p>
                   <img src="../img/about-me/0338_1200px.jpg" width="350" class="img-fluid py-2" alt="">
                </div>
