@@ -39,8 +39,7 @@
               You are warmly welcome on my webpage! I hope you will enjoy beautiful landscapes and creative inspiration as I firmly believe we have to share our expertise from well-known beautiful places upon colorful secrets of nature and lights surrounded by.
             </p>
             <p class="lead text-light">
-              Photography for me is a conversation about what I see and how feel. It is an inner conversation about a personal experience of learning new knowledge, technology, exploring new places, and experiencing the changing circumstances of this world.
-              To become a photographer, I started with fundamental pieces of knowledge in Photo Académie in Riga (Latvia). Upon finding ICM and ME photo technics, I realized that is the language I was looking for – be able to access and express a secret and mystique of life, color tonality, and vibrance of my emotions. It is a language that reflects the way I see and feel life and the way to be in dialog with you.
+            
             </p>
             <p class="lead text-light">
               <a class="text-light font-weight-bold anime-border-white about-me__read-more text-uppercase" href="about-me/">Read more</a>
