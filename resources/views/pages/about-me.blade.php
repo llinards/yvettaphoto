@@ -13,41 +13,15 @@
             <div class="row text-center mt-5">
                <div class="col">
                   <p class="lead text-justify about-me__p">I’m
-                     <strong>Iveta Lazdina</strong> from Latvia. My way till moment to go to show photos for you is not only
-                          just an overview but a quite exciting story with some thriller elements and painful moments.
+                     <strong>Iveta Lazdina</strong> from Latvia. Photography for me is a conversation about what I see and how feel. It is an inner conversation about a personal experience of learning new knowledge, technology, exploring new places, and experiencing the changing circumstances of this world.
+                     To become a photographer, I started with fundamental pieces of knowledge in Photo Académie in Riga (Latvia). Upon finding ICM and ME photo technics, I realized that is the language I was looking for – be able to access and express a secret and mystique of life, color tonality, and vibrance of my emotions. It is a language that reflects the way I see and feel life and the way to be in dialog with you.
                   </p>
-                  <img src="../img/about-me/Me_as_model.jpg" width="350" class="img-fluid py-2" alt="">
-                  <h4 class="text-uppercase border-bottom pb-2">Me as model</h4>
-                  <p class="lead text-justify about-me__p">My first introduction with photo comes from early child age when I was a top model for my relatives.
-                     As it is very often also today, I was interested and ready to support my uncle who did a lot
-                     of black & white film photos with me as the main model. Therefore, I am lucky because of that
-                     I have adorable albums from my sunshine childhood age. Even photos are black & white, I still
-                     can feel a touch of the sun coming from pictures. Sometimes I also had a chance to be in the
-                     darkroom where all the processes happen and where all images taken by camera turned in to the
-                     photography, and it was even bigger magic for me.
-                  </p>
-                  <h4 class="text-uppercase border-bottom pb-2 pt-2">First KODAK</h4>
-                  <p class="lead text-justify about-me__p">An essential step for me was the first KODAK semi-auto camera in 90ties. It was a period when I started
-                     to photo my children – son and daughter but not only.
-                  </p>
+                  <hr />
                   <img src="../img/about-me/Hannover_web_story.jpg" width="350" class="img-fluid py-2" alt="">
                   <p class="lead text-justify about-me__p">
                      My photo in "EXPO 2000" info desk in the Latvian pavilion in Hannover.
                      It was about a waste development project in the region where I was involved and proud of. Today such a photo wouldn’t get high attention, but in the 2000ies it was not only a significant achievement for me to produce a photo but also very significant progress in Environmental management here in Latvia.                  </p>
-                  <h4 class="text-uppercase border-bottom pb-2 pt-2">Some thriller elements</h4>
-                  <p class="lead text-justify about-me__p">Now it's time for some thriller elements with my DSLR cameras. My first Sony DSLR remained on the
-                     Mediterranean Sea where I accidentally slipped on the stones… (but I managed to keep memory card
-                     :) ) Next Nikon was stolen… but finally the next Nikon started to bring me fantastic photos.
-                  </p>
-                  <h4 class="text-uppercase border-bottom pb-2 pt-2">Learning</h4>
-                  <p class="lead text-justify about-me__p">To start to master my camera, apply some light edits and get pictures as wish, I graduated Photo
-                     Academia in Riga with the most excellent tutor in the world Maris Kundzins (Latvia). It was a
-                     process which completely changed my understanding of photography starting from my vision, who
-                     is doing what in the process of photography, feeling of colour, composition till technical basics
-                     and tips and finally philosophy behind each photo.
-                     <p class="lead text-justify about-me__p">
-                        You see my experience is not very easy, but I am confident we all have to pass some learnings to achieve some results!</p>
-                     <p class="lead text-justify about-me__p">I hope and wish you to enjoy photo!</p>
+                     <hr />
                      <blockquote class="text-uppercase about-me__quote about-me__p">ENJOY AND BE INSPIRED BY THE PHOTOS!</blockquote>
                   </p>
                   <img src="../img/about-me/0338_1200px.jpg" width="350" class="img-fluid py-2" alt="">
