@@ -8,10 +8,6 @@ class Category extends Model
 {
     protected $fillable = ['name','description','category_slug','cover_photo_url'];
 
-    public function image()
-    {
-        return $this->hasMany(Image::class);
-    }
     public function getRouteKeyName()
     {
         return 'category_slug';
