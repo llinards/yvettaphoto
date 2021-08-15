@@ -6,10 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    public function image()
-    {
-        return $this->hasMany(Image::class);
-    }
+    protected $fillable = ['name','description','category_slug','cover_photo_url'];
+
     public function getRouteKeyName()
     {
         return 'category_slug';
