@@ -35,14 +35,12 @@ class CategoriesController extends Controller
     try {
       $categorySlug = Str::slug($data['category-name'], '-');
       $imagePath = $this->saveCoverImage($categorySlug);
-      $newCategory = new Category();
-      $newCategory->name = $data['category-name'];
-      $newCategory->description = $data['category-description'];
-      $newCategory->category_slug = $categorySlug;
-      $newCategory->cover_photo_url = $imagePath;
-
-      $newCategory->save();
-
+      $data = Category::create([
+        'name' => $data['category-name'],
+        'description' => $data['category-description'],
+        'category_slug' => $categorySlug,
+        'cover_photo_url' => $imagePath
+      ]);
       return redirect('/admin/' . $categorySlug . '/bildes')->with('success', 'Kategorija pievienota!');
     } catch (\Exception $e) {
       return redirect('/admin/kategorijas')->with('error', 'Kļūda!');
@@ -66,18 +64,14 @@ class CategoriesController extends Controller
     try {
       $categoryId = request('category-id');
       $categorySlug = Str::slug($data['category-name'], '-');
-      if (request('category-cover')) {
-        $imagePath = $this->saveCoverImage($categorySlug);
-        $data = array_merge(
-          $data,
-          ['category-cover' => $imagePath]
-        );
-      }
       $updateCategory = Category::find($categoryId);
       $updateCategory->name = $data['category-name'];
       $updateCategory->description = $data['category-description'];
       $updateCategory->category_slug = $categorySlug;
       if (request('category-cover')) {
+        $oldImg = Category::where('id', $categoryId)->pluck('cover_photo_url');
+        Storage::delete('public/' . $oldImg[0]);
+        $imagePath = $this->saveCoverImage($categorySlug);
         $updateCategory->cover_photo_url = $imagePath;
       }
       $updateCategory->save();
