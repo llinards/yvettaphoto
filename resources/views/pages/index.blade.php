@@ -7,11 +7,12 @@
   {{-- view portfolio section --}}
   <section id="portfolio" class="gallery-block grid-gallery">
     <div class="container-fluid">
-      <div class="heading">
-        <h1 class="display-4 text-uppercase main__headings">Portfolio</h1>
+      <div class="heading d-flex">
+        <div class="underline"></div>
+        <h1 class="text-uppercase main__headings">Portfolio</h1>
         <div class="underline"></div>
       </div>
-      <div class="row pt-3">
+      <div class="row">
         @foreach($categories as $category)
           <div class="col-sm-12 col-md-6 col-lg-3 p-1 gallery-photo">
             <a href="/{{ $category->category_slug }}">
@@ -25,37 +26,13 @@
     </div>
   </section>
   {{-- end of view portfolio section --}}
-  {{-- view about me section --}}
-  <section id="aboutMe">
-    <div class="container">
-      <div class="row justify-content-center align-items-center">
-        <div class="heading">
-          <h1 class="display-4 text-uppercase text-center text-white main__headings">About Me</h1>
-          <div class="underline-dark"></div>
-        </div>
-        <div class="row about-me__container">
-          <div class="col">
-            <p class="lead text-light">
-              You are warmly welcome on my webpage! I hope you will enjoy beautiful landscapes and creative inspiration as I firmly believe we have to share our expertise from well-known beautiful places upon colorful secrets of nature and lights surrounded by.
-            </p>
-            <p class="lead text-light">
-            
-            </p>
-            <p class="lead text-light">
-              <a class="text-light font-weight-bold anime-border-white about-me__read-more text-uppercase" href="about-me/">Read more</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  {{-- end of view about me section --}}
   {{-- contact form --}}
   <section id="contactMe">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="heading">
-          <h1 class="display-4 text-uppercase text-center main__headings">Contact Me</h1>
+        <div class="heading d-flex">
+          <div class="underline"></div>
+          <h1 class="text-uppercase text-center main__headings">Contact<br /> Me</h1>
           <div class="underline"></div>
         </div>
         <div class="col-lg-12">

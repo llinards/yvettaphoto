@@ -3,7 +3,8 @@
 <head>
     @include('inc.head')
 </head>
-<body oncontextmenu="return false">
+{{-- <body oncontextmenu="return false"> --}}
+<body>
     <div id="app">
         @yield('content')
         @include('inc.footer')

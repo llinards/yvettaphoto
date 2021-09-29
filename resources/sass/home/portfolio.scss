@@ -1,71 +1,57 @@
-.all-photos-btn {
-    text-align: center;
-
-    a {
-        text-decoration: none;
-        font-size: 2rem;
-    }
-}
-
-.gallery-block.grid-gallery {
-    padding-bottom: 60px;
-    padding-top: 60px;
-}
 
 .gallery-block.grid-gallery .heading {
-    margin-bottom: 50px;
-    text-align: center;
+  text-align: center;
 }
 
 .gallery-block.grid-gallery .heading h2 {
-    font-weight: bold;
-    font-size: 1.4rem;
-    text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.4rem;
+  text-transform: uppercase;
 }
 
 .gallery-block.grid-gallery a {
-    opacity: 1;
-    transition: all .7s;
-    //position: relative;
+  opacity: 1;
+  transition: all 0.7s;
+  //position: relative;
 }
 
 .gallery-block.grid-gallery a:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .gallery-block.grid-gallery .item {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .portfolio-heading:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .portfolio-photo {
-    padding: 0.05rem !important;
-    position: relative;
+  padding: 0.05rem !important;
+  position: relative;
 }
 
 .portfolio-photo img {
-    transition: all 0.4s;
+  transition: all 0.4s;
 }
 
 .portfolio-photo img:hover,
 .portfolio-photo img:active {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .portfolio-photo:hover,
 .portfolio-photo:active {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .portfolio-photo-title {
-    position: absolute;
-    background-color: #34495e;
-    top: 65%;
-    left: 1%;
-    right: 0;
-    max-width: 80%;
-    z-index: 1;
+  position: absolute;
+  background-color: #34495e;
+  top: 65%;
+  left: 1%;
+  right: 0;
+  max-width: 80%;
+  z-index: 1;
 }

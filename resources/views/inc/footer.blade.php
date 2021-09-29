@@ -10,7 +10,7 @@
     </div>
     <p class="lead lynyrds-signature text-center">Developed with
         <i class="fas fa-heart"></i> by
-        <a href="">LYNYRDS</a>
+        <a href="mailto:linards@lynyrds.com">LYNYRDS</a>
     </p>
     <div class="underline mb-5"></div>
 </footer>
