@@ -7,7 +7,7 @@
   {{-- view portfolio section --}}
   <section id="portfolio" class="gallery-block grid-gallery">
     <div class="container-fluid">
-      <div class="heading d-flex">
+      <div class="heading d-flex align-items-center justify-content-around">
         <div class="underline"></div>
         <h1 class="text-uppercase main__headings">Portfolio</h1>
         <div class="underline"></div>
@@ -28,25 +28,25 @@
   {{-- end of view portfolio section --}}
   {{-- contact form --}}
   <section id="contactMe">
-    <div class="container">
+    <div class="container-fluid">
+      <div class="heading d-flex align-items-center justify-content-around">
+        <div class="underline"></div>
+        <h1 class="text-uppercase text-center main__headings">Contact<br /> Me</h1>
+        <div class="underline"></div>
+      </div>
       <div class="row justify-content-center">
-        <div class="heading d-flex">
-          <div class="underline"></div>
-          <h1 class="text-uppercase text-center main__headings">Contact<br /> Me</h1>
-          <div class="underline"></div>
-        </div>
-        <div class="col-lg-12">
+        <div class="col-lg-10">
           @include('inc.status-messages')
           <form method="POST" action="/send-email" class="contact-form">
             @csrf
             @honeypot
             <div class="form-group">
               <input type="text" class="form-control input" name="name" id="" placeholder="Name"
-                     value="{{ old('name') }}" required>
+                    value="{{ old('name') }}" required>
             </div>
             <div class="form-group">
               <input type="email" class="form-control input" name="email" id="" placeholder="E-mail"
-                     value="{{ old('email') }}" required>
+                    value="{{ old('email') }}" required>
             </div>
             <div class="form-group">
                             <textarea class="form-control" name="msg" id="" placeholder="Type your message" rows="3"

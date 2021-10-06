@@ -17445,6 +17445,11 @@ body.lb-disable-scrolling {
   box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.75);
 }
 
+.fixed-top.scrolled .nav-item > .nav-link,
+.fixed-top.scrolled .menu-divider {
+  color: #000000;
+}
+
 .yvettaphoto-logo {
   max-width: 150px;
 }
@@ -17732,15 +17737,15 @@ a {
 }
 
 .underline {
-  width: 259px;
-  border: 1px solid #dee2e6;
-  margin: auto;
+  width: 25%;
+  height: 3px;
+  background-color: #dee2e6;
 }
 
 .underline-dark {
-  width: 150px;
-  border: 3px solid #fff;
-  margin: auto;
+  width: 90%;
+  height: 3px;
+  background-color: #fff;
 }
 
 .heading {
@@ -17831,14 +17836,6 @@ a {
 }
 
 @media (max-width: 992px) {
-  .main__headings {
-    font-size: 49px;
-  }
-
-  .underline {
-    width: 150px;
-  }
-
   .menu-divider {
     display: none;
   }
@@ -17865,10 +17862,6 @@ a {
 
   .main__headings {
     font-size: 55px;
-  }
-
-  .underline {
-    width: 73px;
   }
 
   .yvettaphoto-logo {
@@ -17927,10 +17920,6 @@ a {
 @media (max-width: 425px) {
   .main__headings {
     font-size: 35px;
-  }
-
-  .underline {
-    width: 50px;
   }
 
   #button {

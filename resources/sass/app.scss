@@ -38,15 +38,18 @@ a {
 }
 
 .underline {
-  width: 259px;
-  border: 1px solid #dee2e6;
-  margin: auto;
+  width: 25%;
+  height: 3px;
+  background-color: #dee2e6;
 }
 
 .underline-dark {
-  width: 150px;
-  border: 3px solid #fff;
-  margin: auto;
+  // width: 150px;
+  width: 90%;
+  // border: 3px solid #fff;
+  // margin: auto;
+  height: 3px;
+  background-color: #fff;
 }
 
 .heading {

@@ -1,12 +1,14 @@
 <nav class="navbar navbar-expand-lg fixed-top">
-    {{-- <a href="{{ ($index) ? '#home' : '/' }}" class="navbar-brand">
-        <img class="img-fluid yvettaphoto-logo" src="../img/logo-white.png" alt="">
-    </a> --}}
+    <div class="navbar-logo">
+        <a href="{{ ($index) ? '#home' : '/' }}">
+            <img class="img-fluid yvettaphoto-logo" src="../img/logo-svg-white.svg" alt="">
+        </a>
+    </div>
     <button type="button" class="navbar-toggler" data-toggle="collapse"
             data-target="#nav">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-center" id="nav">
+    <div class="collapse navbar-collapse" id="nav">
         <ul class="navbar-nav">
             @if($index)
                 <li class="nav-item">
