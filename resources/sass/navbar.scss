@@ -9,6 +9,10 @@
   padding: 0;
   // opacity: 0.95;
   box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.75);
+  .nav-item > .nav-link,
+  .menu-divider {
+    color: #000000;
+  }
 }
 
 .yvettaphoto-logo {
