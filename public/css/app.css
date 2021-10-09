@@ -17563,10 +17563,6 @@ section#contactMe p.lead {
   padding: 0;
 }
 
-#photos {
-  padding-top: 100px !important;
-}
-
 .description__p {
   letter-spacing: 1px;
   margin-bottom: 0.5rem;
@@ -17619,10 +17615,6 @@ section#contactMe p.lead {
   background: transparent url("https://miro.medium.com/max/882/1*9EBHIOzhE1XfMYoKz1JcsQ.gif") center no-repeat;
   height: 400px;
   width: 400px;
-}
-
-#about-me {
-  padding-top: 100px !important;
 }
 
 .border-bottom {

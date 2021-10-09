@@ -2,13 +2,12 @@
   <div>
     <section class="py-5" id="photos">
       <div class="container-fluid">
-        <div class="row mt-md-5 mt-sm-3 justify-content-center">
-          <div class="heading">
-            <h1 class="display-4 text-uppercase text-center main__headings">
-              {{ categoryName }}
-            </h1>
-            <div class="underline"></div>
-          </div>
+        <div class="heading d-flex align-items-center justify-content-around">
+          <div class="underline"></div>
+          <h1 class="text-uppercase text-center main__headings">
+            {{ categoryName }}
+          </h1>
+          <div class="underline"></div>
         </div>
         <div class="container" v-if="categoryDescription">
           <div class="row pt-3 justify-content-center">
@@ -19,7 +18,11 @@
         </div>
         <div v-if="images" class="row pt-3 grid">
           <div v-for="image in images" class="grid-item" v-bind:key="image.id">
-            <a data-toggle="lightbox" :data-gallery="categoryName" v-bind:href="'/storage/' + image.image_name">
+            <a
+              data-toggle="lightbox"
+              :data-gallery="categoryName"
+              v-bind:href="'/storage/' + image.image_name"
+            >
               <img
                 class="img-fluid"
                 v-bind:src="'/storage/' + image.image_name"
@@ -43,7 +46,7 @@ export default {
     return {
       categoryName: "",
       categoryDescription: "",
-      images: []
+      images: [],
     };
   },
   methods: {
@@ -53,17 +56,17 @@ export default {
         itemSelector: ".grid-item",
         gutter: 35,
         fitWidth: true,
-        originLeft: false
+        originLeft: false,
       });
-    }
+    },
   },
   created() {
-    axios.get(`/api/${this.category}`).then(response => {
+    axios.get(`/api/${this.category}`).then((response) => {
       this.categoryName = response.data[1].name;
       this.categoryDescription = response.data[1].description;
       this.images = response.data[0];
     });
   },
-  mounted() {}
+  mounted() {},
 };
 </script>

@@ -3,14 +3,13 @@
     @include('inc.navbar', ['index' => false])
     <section class="py-5" id="about-me">
       <div class="container-fluid">
-          <div class="row mt-md-5 justify-content-center">
-            <div class="heading">
-              <h1 class="display-4 text-uppercase text-center main__headings">The Artist Statement</h1>
-              <div class="underline"></div>
-            </div>
+          <div class="heading d-flex align-items-center justify-content-around">
+            <div class="underline"></div>
+            <h1 class="text-uppercase text-center main__headings">The Artist Statement</h1>
+            <div class="underline"></div>
           </div>
           <div class="container">
-            <div class="row text-center mt-5">
+            <div class="row text-center">
               <div class="col">
                 <img src="../img/iveta-lazdina-artist-statement.jpeg" width="350" class="img-fluid pb-3" alt="">
                 <p class="lead text-justify about-me__p">For me, photography is a conversation about what I see and feel, what I would like to say being surrounded by nature colors, and expressions of light. It is a conversation within time through centuries getting inspired by Impressionists & Abstract painter’s masterpieces and photo camera possibilities nowadays. Sometimes this is the inner conversation about my paths and what I see on this. It is a never-ending process of learning.</p>
