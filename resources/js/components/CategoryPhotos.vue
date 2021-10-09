@@ -10,7 +10,7 @@
           <div class="underline"></div>
         </div>
         <div class="container" v-if="categoryDescription">
-          <div class="row pt-3 justify-content-center">
+          <div class="row justify-content-center">
             <div class="lead text-justify description__p">
               <span v-html="categoryDescription"></span>
             </div>

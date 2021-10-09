@@ -40081,7 +40081,7 @@ var render = function() {
         _vm._v(" "),
         _vm.categoryDescription
           ? _c("div", { staticClass: "container" }, [
-              _c("div", { staticClass: "row pt-3 justify-content-center" }, [
+              _c("div", { staticClass: "row justify-content-center" }, [
                 _c("div", { staticClass: "lead text-justify description__p" }, [
                   _c("span", {
                     domProps: { innerHTML: _vm._s(_vm.categoryDescription) }
