@@ -1994,6 +1994,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["category"],
@@ -40059,24 +40062,20 @@ var render = function() {
       _c("div", { staticClass: "container-fluid" }, [
         _c(
           "div",
-          { staticClass: "row mt-md-5 mt-sm-3 justify-content-center" },
+          {
+            staticClass:
+              "heading d-flex align-items-center justify-content-around"
+          },
           [
-            _c("div", { staticClass: "heading" }, [
-              _c(
-                "h1",
-                {
-                  staticClass:
-                    "display-4 text-uppercase text-center main__headings"
-                },
-                [
-                  _vm._v(
-                    "\n            " + _vm._s(_vm.categoryName) + "\n          "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "underline" })
-            ])
+            _c("div", { staticClass: "underline" }),
+            _vm._v(" "),
+            _c(
+              "h1",
+              { staticClass: "text-uppercase text-center main__headings" },
+              [_vm._v("\n          " + _vm._s(_vm.categoryName) + "\n        ")]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "underline" })
           ]
         ),
         _vm._v(" "),

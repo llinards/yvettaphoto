@@ -17496,62 +17496,6 @@ section#home {
   background-position: center;
 }
 
-.gallery-block.grid-gallery .heading {
-  text-align: center;
-}
-
-.gallery-block.grid-gallery .heading h2 {
-  font-weight: bold;
-  font-size: 1.4rem;
-  text-transform: uppercase;
-}
-
-.gallery-block.grid-gallery a {
-  opacity: 1;
-  transition: all 0.7s;
-}
-
-.gallery-block.grid-gallery a:hover {
-  opacity: 0.8;
-}
-
-.gallery-block.grid-gallery .item {
-  margin-bottom: 20px;
-}
-
-.portfolio-heading:hover {
-  opacity: 1;
-}
-
-.portfolio-photo {
-  padding: 0.05rem !important;
-  position: relative;
-}
-
-.portfolio-photo img {
-  transition: all 0.4s;
-}
-
-.portfolio-photo img:hover,
-.portfolio-photo img:active {
-  opacity: 0.5;
-}
-
-.portfolio-photo:hover,
-.portfolio-photo:active {
-  cursor: pointer;
-}
-
-.portfolio-photo-title {
-  position: absolute;
-  background-color: #34495e;
-  top: 65%;
-  left: 1%;
-  right: 0;
-  max-width: 80%;
-  z-index: 1;
-}
-
 section#contactMe p.lead {
   text-align: justify;
 }
@@ -17581,73 +17525,42 @@ section#contactMe p.lead {
   background-color: #1d2124;
 }
 
-.gallery-photo {
-  padding: 0.05rem !important;
-  position: relative;
+.category a:hover,
+.category a:active {
+  text-decoration: none;
 }
 
-.gallery-photo img {
-  transition: all 0.4s;
-}
-
-.gallery-photo img:hover,
-.gallery-photo img:active {
-  opacity: 0.5;
-}
-
-.gallery-photo:hover,
-.gallery-photo:active {
+.category:hover,
+.category:active {
   cursor: pointer;
 }
 
-.gallery-photo-title {
+.category-title-overlay {
   position: absolute;
-  background-color: #34495e;
-  top: 65%;
-  left: 0.5%;
-  right: 0;
-  max-width: 80%;
-  z-index: 1;
-  opacity: 0.85;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #dee2e6ad;
+  opacity: 0;
 }
 
-.gallery-list-title:hover,
-.gallery-list-title:active {
-  display: inline-block;
+.category-title-overlay h2 {
+  letter-spacing: 1.06px;
+  font-size: 3rem;
 }
 
-.gallery-list-item {
-  color: #777;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.active-item {
-  color: #34495e;
+.category-title-overlay:hover,
+.category-title-overlay:active {
+  opacity: 1;
 }
 
 .list-inline-item:not(:last-child) {
   margin-right: 0;
 }
 
-.gallery__collection {
-  text-align: center;
-  margin: 10px;
-}
-
-.gallery__collection img {
-  padding-top: 10px;
-}
-
 .modal-body {
   padding: 0;
-}
-
-#photos {
-  padding-top: 100px !important;
 }
 
 .description__p {
@@ -17702,10 +17615,6 @@ section#contactMe p.lead {
   background: transparent url("https://miro.medium.com/max/882/1*9EBHIOzhE1XfMYoKz1JcsQ.gif") center no-repeat;
   height: 400px;
   width: 400px;
-}
-
-#about-me {
-  padding-top: 100px !important;
 }
 
 .border-bottom {
@@ -17878,10 +17787,6 @@ a {
 
   .about-me__nav-link {
     padding: 25px 16px !important;
-  }
-
-  .gallery-photo {
-    text-align: center;
   }
 }
 

@@ -3,14 +3,13 @@
     @include('inc.navbar', ['index' => false])
     <section class="py-5" id="about-me">
       <div class="container-fluid">
-         <div class="row mt-md-5 justify-content-center">
-            <div class="heading">
-               <h1 class="display-4 text-uppercase text-center main__headings">About Me</h1>
-               <div class="underline"></div>
-            </div>
+         <div class="heading d-flex align-items-center justify-content-around">
+            <div class="underline"></div>
+            <h1 class="text-uppercase text-center main__headings">About Me</h1>
+            <div class="underline"></div>
          </div>
          <div class="container">
-            <div class="row text-center mt-5">
+            <div class="row text-center">
                <div class="col">
                   <p class="lead text-justify about-me__p">I’m
                      <strong>Iveta Lazdina</strong> from Latvia. Photography for me is a conversation about what I see and how feel. It is an inner conversation about a personal experience of learning new knowledge, technology, exploring new places, and experiencing the changing circumstances of this world.
