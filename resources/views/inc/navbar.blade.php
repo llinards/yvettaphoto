@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="navbar-logo">
+    {{-- <div class="navbar-logo">
         <a href="{{ ($index) ? '#home' : '/' }}">
             <img class="img-fluid yvettaphoto-logo" src="../img/logo-svg-white.svg" alt="">
         </a>
-    </div>
+    </div> --}}
     <button type="button" class="navbar-toggler" data-toggle="collapse"
             data-target="#nav">
         <span class="navbar-toggler-icon"></span>
