@@ -1,4 +1,23 @@
 @media (max-width: 992px) {
+  .navbar-logo {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .logo-black {
+    display: block;
+  }
+
+  .logo-white {
+    display: none;
+  }
+
+  .nav-item > .nav-link,
+  .menu-divider {
+    color: #000000;
+  }
+
   .menu-divider {
     display: none;
   }
@@ -28,9 +47,9 @@
     font-size: 55px;
   }
 
-  .yvettaphoto-logo {
-    max-width: 60%;
-  }
+  // .yvettaphoto-logo {
+  //   max-width: 60%;
+  // }
 
   .about-me__quote {
     font-size: 20px;

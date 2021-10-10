@@ -1,6 +1,6 @@
 .fixed-top {
   transition: all 0.4s;
-  padding-top: 1.5rem;
+  padding-top: 2rem;
 }
 
 .fixed-top.scrolled {
@@ -13,10 +13,35 @@
   .menu-divider {
     color: #000000;
   }
+  .navbar-logo {
+    position: relative;
+    top: 0;
+
+    img {
+      width: 60px;
+    }
+  }
+  .logo-black {
+    display: block;
+  }
+
+  .logo-white {
+    display: none;
+  }
 }
 
-.yvettaphoto-logo {
-  max-width: 150px;
+.navbar-logo {
+  position: absolute;
+  top: 20%;
+  left: 3%;
+
+  img {
+    width: 100px;
+  }
+}
+
+.logo-black {
+  display: none;
 }
 
 // .nav-item > .nav-link {
