@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg fixed-top">
+<nav class="navbar navbar-expand-lg">
     <div class="navbar-logo">
         <a href="{{ ($index) ? '#home' : '/' }}">
             <img class="img-fluid logo-white" src="../img/logo-svg-white.svg" alt="">
@@ -7,7 +7,9 @@
     </div>
     <button type="button" class="navbar-toggler" data-toggle="collapse"
             data-target="#nav">
-        <span class="navbar-toggler-icon"></span>
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
     </button>
     <div class="collapse navbar-collapse justify-content-center" id="nav">
         <ul class="navbar-nav">

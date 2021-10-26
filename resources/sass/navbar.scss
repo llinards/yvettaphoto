@@ -1,33 +1,37 @@
-.fixed-top {
-  transition: all 0.4s;
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
   padding-top: 2rem;
 }
 
-.fixed-top.scrolled {
-  background-color: #dee2e6;
-  transition: all 0.7s;
+.navbar-toggler {
   padding: 0;
-  // opacity: 0.95;
-  box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.75);
-  .nav-item > .nav-link,
-  .menu-divider {
-    color: #000000;
-  }
-  .navbar-logo {
-    position: relative;
-    top: 0;
+  margin: 0;
+}
 
-    img {
-      width: 60px;
-    }
-  }
-  .logo-black {
-    display: block;
-  }
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #000000;
+  margin: 6px 0;
+  transition: 0.5s;
+}
 
-  .logo-white {
-    display: none;
-  }
+.bar1.change {
+  transform: rotate(-45deg) translate(-10px, 10px);
+}
+
+.bar2.change {
+  opacity: 0;
+}
+
+.bar3.change {
+  transform: rotate(45deg) translate(-5px, -5px);
 }
 
 .navbar-logo {

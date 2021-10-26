@@ -1,4 +1,10 @@
 @media (max-width: 992px) {
+  .navbar {
+    background-color: #dee2e6;
+    padding-top: 8px;
+    box-shadow: 0px 6px 17px 0px rgb(0 0 0 / 75%);
+  }
+
   .navbar-logo {
     position: relative;
     top: 0;
@@ -21,14 +27,7 @@
   .menu-divider {
     display: none;
   }
-  .fixed-top {
-    background-color: #dee2e6;
-    padding-top: 8px;
-    box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.75);
-  }
-  .fixed-top.scrolled {
-    padding: 8px 16px;
-  }
+
   .navbar-nav {
     text-align: center;
   }
@@ -39,10 +38,6 @@
 }
 
 @media (max-width: 767px) {
-  .nav-link {
-    font-size: 20px;
-  }
-
   .main__headings {
     font-size: 55px;
   }
