@@ -4,14 +4,14 @@
       <div class="container-fluid">
         <div class="heading d-flex align-items-center justify-content-around">
           <div class="underline"></div>
-          <h1 class="text-uppercase text-center main__headings">
+          <h1 class="text-uppercase text-center main-header">
             {{ categoryName }}
           </h1>
           <div class="underline"></div>
         </div>
         <div class="container" v-if="categoryDescription">
           <div class="row justify-content-center">
-            <div class="lead text-justify description__p">
+            <div class="lead main-text">
               <span v-html="categoryDescription"></span>
             </div>
           </div>
@@ -46,7 +46,7 @@ export default {
     return {
       categoryName: "",
       categoryDescription: "",
-      images: [],
+      images: []
     };
   },
   methods: {
@@ -56,17 +56,17 @@ export default {
         itemSelector: ".grid-item",
         gutter: 35,
         fitWidth: true,
-        originLeft: false,
+        originLeft: false
       });
-    },
+    }
   },
   created() {
-    axios.get(`/api/${this.category}`).then((response) => {
+    axios.get(`/api/${this.category}`).then(response => {
       this.categoryName = response.data[1].name;
       this.categoryDescription = response.data[1].description;
       this.images = response.data[0];
     });
   },
-  mounted() {},
+  mounted() {}
 };
 </script>

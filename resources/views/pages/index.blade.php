@@ -9,7 +9,7 @@
     <div class="container-fluid">
       <div class="heading d-flex align-items-center justify-content-around">
         <div class="underline"></div>
-        <h1 class="text-uppercase main__headings">Portfolio</h1>
+        <h1 class="text-uppercase main-header">Portfolio</h1>
         <div class="underline"></div>
       </div>
       <div class="row">
@@ -34,7 +34,7 @@
     <div class="container-fluid">
       <div class="heading d-flex align-items-center justify-content-around">
         <div class="underline"></div>
-        <h1 class="text-uppercase text-center main__headings">Contact<br /> Me</h1>
+        <h1 class="text-uppercase text-center main-header">Contact<br /> Me</h1>
         <div class="underline"></div>
       </div>
       <div class="row justify-content-center">
