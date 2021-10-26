@@ -1,30 +1,50 @@
-@media (min-width: 576px) {
-  .gallery-block.grid-gallery .scale-on-hover:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15) !important;
-  }
-}
-
 @media (max-width: 992px) {
-  .fixed-top {
-    background-color: #eee !important;
-    opacity: 0.995;
-    box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.75);
+  .navbar {
+    background-color: #dee2e6;
+    padding-top: 8px;
+    box-shadow: 0px 6px 17px 0px rgb(0 0 0 / 75%);
   }
+
+  .navbar-logo {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .logo-black {
+    display: block;
+  }
+
+  .logo-white {
+    display: none;
+  }
+
+  .nav-item > .nav-link,
+  .menu-divider {
+    color: #000000;
+  }
+
+  .menu-divider {
+    display: none;
+  }
+
   .navbar-nav {
     text-align: center;
-    padding: 2rem;
+  }
+
+  .underline {
+    width: 10%;
   }
 }
 
 @media (max-width: 767px) {
-  .nav-link {
-    font-size: 20px;
+  .main-header {
+    font-size: 55px;
   }
 
-  .yvettaphoto-logo {
-    max-width: 60%;
-  }
+  // .yvettaphoto-logo {
+  //   max-width: 60%;
+  // }
 
   .about-me__quote {
     font-size: 20px;
@@ -37,26 +57,12 @@
   .about-me__nav-link {
     padding: 25px 16px !important;
   }
-
-  .gallery-photo {
-    text-align: center;
-  }
 }
 
 @media (max-width: 575px) {
-  .about-me__container {
-    margin: 20px;
-  }
-
-  .about-me__container p,
-  .description__p,
-  .about-me__p {
-    font-size: 18px;
-  }
-
-  .main__headings {
-    font-size: 2rem;
-  }
+  // .description__p {
+  //   font-size: 18px;
+  // }
 
   .admin__headings {
     font-size: 1.5rem;
@@ -83,15 +89,17 @@
 }
 
 @media (max-width: 425px) {
+  .main-header {
+    font-size: 35px;
+  }
+
   #button {
     margin: 20px !important;
   }
 
-  .about-me__container p,
-  .description__p,
-  .about-me__p {
-    font-size: 16px;
-  }
+  // .description__p {
+  //   font-size: 16px;
+  // }
 }
 
 @media (max-width: 375px) {
@@ -99,18 +107,12 @@
     width: 325px;
   }
 
-  .about-me__container p,
-  .description__p,
-  .about-me__p {
-    font-size: 13px;
-  }
+  // .description__p {
+  //   font-size: 13px;
+  // }
 }
 
 @media (max-width: 360px) {
-  .main__headings {
-    font-size: 2rem;
-  }
-
   .grid-item {
     width: 275px;
   }

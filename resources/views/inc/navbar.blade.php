@@ -1,34 +1,39 @@
-<nav class="navbar navbar-expand-lg fixed-top">
-    <a href="{{ ($index) ? '#home' : '/' }}" class="navbar-brand">
-        <img class="img-fluid yvettaphoto-logo" width="150" src="../img/logo.png" alt="">
-    </a>
-    <button type="button" class="navbar-toggler navbar-light bg-dark navbar-btn" data-toggle="collapse"
+<nav class="navbar navbar-expand-lg">
+    <div class="navbar-logo">
+        <a href="{{ ($index) ? '#home' : '/' }}">
+            <img class="img-fluid logo-white" src="../img/logo-svg-white.svg" alt="">
+            <img class="img-fluid logo-black" src="../img/logo-black.png" alt="">
+        </a>
+    </div>
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
             data-target="#nav">
-        <span class="navbar-toggler-icon"></span>
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
     </button>
-    <div class="collapse navbar-collapse justify-content-end" id="nav">
+    <div class="collapse navbar-collapse justify-content-center" id="nav">
         <ul class="navbar-nav">
             @if($index)
                 <li class="nav-item">
-                    <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="#home">Home</a>
+                    <a class="nav-link text-uppercase anime-border" href="#home">Home</a><span class="menu-divider"> |</span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="#portfolio">Portfolio</a>
+                    <a class="nav-link text-uppercase anime-border" href="#portfolio">Portfolio</a><span class="menu-divider"> |</span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="/artist-statement">Artist Statement</a>
+                    <a class="nav-link text-uppercase anime-border" href="/artist-statement">Artist Statement</a><span class="menu-divider"> |</span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="#aboutMe">About
-                        Me</a>
+                    <a class="nav-link text-uppercase anime-border" href="/about-me">About
+                        Me</a><span class="menu-divider"> |</span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border" href="#contactMe">Contact
+                    <a class="nav-link text-uppercase anime-border" href="#contactMe">Contact
                         Me</a>
                 </li>
             @else
                 <li class="nav-item">
-                    <a class="nav-link text-dark text-uppercase font-weight-bold px-3 anime-border"
+                    <a class="nav-link text-uppercase anime-border"
                         href="{{ (isset($photos)) ? '/#portfolio' : URL::previous() }}">
                         <i class="fas fa-chevron-left"></i> Back</a>
                 </li>

@@ -1,10 +1,5 @@
 // change background for navbar when scrolling down
 $(function() {
-  $(document).scroll(function() {
-    var $nav = $(".fixed-top");
-    $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
-  });
-
   // handle links with @href started with '#' only
   $(document).on("click", 'a[href^="#"]', function(e) {
     // target element id
@@ -73,5 +68,12 @@ $(function() {
     $(this).ekkoLightbox({
       alwaysShowClose: false
     });
+  });
+
+  const menu = document.querySelector(".navbar-toggler");
+  menu.addEventListener("click", () => {
+    for (let child of menu.children) {
+      child.classList.toggle("change");
+    }
   });
 });

@@ -1,111 +1,140 @@
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 // Font Awesome
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/regular';
-@import '~@fortawesome/fontawesome-free/scss/solid';
-@import '~@fortawesome/fontawesome-free/scss/brands';
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
 
-@import 'lightbox';
-@import 'assets/ekko-lightbox';
-@import 'navbar';
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 
-@import 'home/header';
-@import 'home/portfolio';
-@import 'home/about-me';
-@import 'home/contact-me';
+@import "lightbox";
+@import "assets/ekko-lightbox";
+@import "navbar";
 
-@import 'gallery/index';
-@import 'gallery/photos';
+@import "home/header";
+@import "home/portfolio";
+@import "home/contact-me";
 
-@import 'about-me/index';
-@import 'media-queries';
+@import "gallery/index";
 
+@import "about-me/index";
 
 hr {
-    border: 2px solid #34495e;
+  border: 2px solid #34495e;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  font-family: "Montserrat", sans-serif;
 }
 
 .underline {
-    width: 150px;
-    border: 3px solid #34495e;
-    margin: auto;
+  width: 25%;
+  height: 3px;
+  background-color: #dee2e6;
 }
 
 .underline-dark {
-    width: 150px;
-    border: 3px solid #fff;
-    margin: auto;
+  // width: 150px;
+  width: 90%;
+  // border: 3px solid #fff;
+  // margin: auto;
+  height: 3px;
+  background-color: #fff;
+}
+
+.heading {
+  padding: 55px 0;
+}
+
+.main-header {
+  letter-spacing: 2.5px;
+  font-weight: 300;
+  font-size: 80px;
+}
+
+.main-text {
+  letter-spacing: 0.75px;
+  margin-bottom: 0.5rem;
 }
 
 #button {
-    display: inline-block;
-    background-color: #616569;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    border-radius: 4px;
-    margin: 30px;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    transition: background-color .3s, opacity .5s, visibility .5s;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1000;
+  display: inline-block;
+  background-color: #616569;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  margin: 30px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
 }
 
 #button:hover {
-    cursor: pointer;
-    background-color: #1d2124;
+  cursor: pointer;
+  background-color: #1d2124;
 }
 
 #button:active {
-    background-color: #1d2124;
+  background-color: #1d2124;
 }
 
 #button::after {
-    font-weight: normal;
-    font-style: normal;
-    font-size: 20px;
-    line-height: 50px;
-    color: #fff;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 50px;
+  color: #fff;
 }
 
 #button.show {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 .button__icon {
-    font-size: 40px;
-    padding-top: 0.1875rem;
+  font-size: 40px;
+  padding-top: 0.1875rem;
 }
 
 .instagram__icon,
-.facebook__icon{
-    font-size: 2.25rem;
-    //margin: 0 auto;
-    color: #000;
-    //display: table;
+.facebook__icon {
+  font-size: 2.25rem;
+  //margin: 0 auto;
+  color: #000;
+  //display: table;
 }
 
 .instagram__icon:hover,
 .instagram__icon:active {
-    color: #000;
+  color: #000;
 }
 
 .lynyrds-signature {
-    font-size: 12px;
-    color: #212529;
+  font-size: 12px;
+  color: #212529;
 }
 
 .lynyrds-signature a {
-    color: #212529;
+  color: #212529;
 }
 
 .lynyrds-signature a:hover {
-    color: #1d2124;
-    text-decoration: transparent;
+  color: #1d2124;
+  text-decoration: transparent;
 }
+
+@import "media-queries";

@@ -10,9 +10,9 @@
     </div>
     <p class="lead lynyrds-signature text-center">Developed with
         <i class="fas fa-heart"></i> by
-        <a href="">LYNYRDS</a>
+        <a href="mailto:linards@lynyrds.com">LYNYRDS</a>
     </p>
-    <div class="underline mb-5"></div>
+    {{-- <div class="underline mb-5"></div> --}}
 </footer>
 <a id="button">
     <i class="fas fa-chevron-up text-light button__icon"></i>
