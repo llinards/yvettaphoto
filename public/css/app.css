@@ -17442,6 +17442,14 @@ body.lb-disable-scrolling {
   padding-top: 2rem;
 }
 
+.navbar.mobile {
+  display: none;
+}
+
+.navbar.mobile .navbar-logo img {
+  width: 75px;
+}
+
 .navbar-toggler {
   padding: 0;
   margin: 0;
@@ -17496,6 +17504,10 @@ body.lb-disable-scrolling {
   text-decoration: none;
 }
 
+.anime-border.text-dark {
+  color: #000000;
+}
+
 .anime-border::after {
   content: "";
   display: block;
@@ -17503,6 +17515,10 @@ body.lb-disable-scrolling {
   height: 3px;
   background: #ffffff;
   transition: width 0.3s;
+}
+
+.anime-border.text-dark::after {
+  background: #000000;
 }
 
 .anime-border:hover::after {
@@ -17765,18 +17781,18 @@ a {
     box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.75);
   }
 
+  .navbar.desktop {
+    display: none;
+  }
+
+  .navbar.mobile {
+    display: flex;
+  }
+
   .navbar-logo {
     position: relative;
     top: 0;
     left: 0;
-  }
-
-  .logo-black {
-    display: block;
-  }
-
-  .logo-white {
-    display: none;
   }
 
   .nav-item > .nav-link,

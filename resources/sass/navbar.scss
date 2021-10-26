@@ -7,6 +7,13 @@
   padding-top: 2rem;
 }
 
+.navbar.mobile {
+  display: none;
+  .navbar-logo img {
+    width: 75px;
+  }
+}
+
 .navbar-toggler {
   padding: 0;
   margin: 0;
@@ -67,6 +74,10 @@
   text-decoration: none;
 }
 
+.anime-border.text-dark {
+  color: #000000;
+}
+
 .anime-border::after {
   content: "";
   display: block;
@@ -74,6 +85,10 @@
   height: 3px;
   background: #ffffff;
   transition: width 0.3s;
+}
+
+.anime-border.text-dark::after {
+  background: #000000;
 }
 
 .anime-border:hover::after {
