@@ -55,10 +55,15 @@ a {
   padding: 55px 0;
 }
 
-.main__headings {
+.main-header {
   letter-spacing: 2.5px;
   font-weight: 300;
   font-size: 80px;
+}
+
+.main-text {
+  letter-spacing: 0.75px;
+  margin-bottom: 0.5rem;
 }
 
 #button {

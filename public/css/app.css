@@ -17592,15 +17592,6 @@ section#contactMe p.lead {
   background-color: #1d2124;
 }
 
-.description__p {
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
-}
-
-.description__p p {
-  margin-bottom: 0.5rem;
-}
-
 .modal-content {
   border: none;
   border-radius: 0;
@@ -17655,10 +17646,6 @@ section#contactMe p.lead {
   font-weight: 700;
 }
 
-.about-me__p {
-  letter-spacing: 1px;
-}
-
 hr {
   border: 2px solid #34495e;
 }
@@ -17690,10 +17677,15 @@ a {
   padding: 55px 0;
 }
 
-.main__headings {
+.main-header {
   letter-spacing: 2.5px;
   font-weight: 300;
   font-size: 80px;
+}
+
+.main-text {
+  letter-spacing: 0.75px;
+  margin-bottom: 0.5rem;
 }
 
 #button {
@@ -17806,7 +17798,7 @@ a {
 }
 
 @media (max-width: 767px) {
-  .main__headings {
+  .main-header {
     font-size: 55px;
   }
 
@@ -17824,11 +17816,6 @@ a {
 }
 
 @media (max-width: 575px) {
-  .description__p,
-  .about-me__p {
-    font-size: 18px;
-  }
-
   .admin__headings {
     font-size: 1.5rem;
   }
@@ -17856,28 +17843,18 @@ a {
 }
 
 @media (max-width: 425px) {
-  .main__headings {
+  .main-header {
     font-size: 35px;
   }
 
   #button {
     margin: 20px !important;
   }
-
-  .description__p,
-  .about-me__p {
-    font-size: 16px;
-  }
 }
 
 @media (max-width: 375px) {
   .grid-item {
     width: 325px;
-  }
-
-  .description__p,
-  .about-me__p {
-    font-size: 13px;
   }
 }
 

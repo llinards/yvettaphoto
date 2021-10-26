@@ -40071,7 +40071,7 @@ var render = function() {
             _vm._v(" "),
             _c(
               "h1",
-              { staticClass: "text-uppercase text-center main__headings" },
+              { staticClass: "text-uppercase text-center main-header" },
               [_vm._v("\n          " + _vm._s(_vm.categoryName) + "\n        ")]
             ),
             _vm._v(" "),
@@ -40082,7 +40082,7 @@ var render = function() {
         _vm.categoryDescription
           ? _c("div", { staticClass: "container" }, [
               _c("div", { staticClass: "row justify-content-center" }, [
-                _c("div", { staticClass: "lead text-justify description__p" }, [
+                _c("div", { staticClass: "lead main-text" }, [
                   _c("span", {
                     domProps: { innerHTML: _vm._s(_vm.categoryDescription) }
                   })
