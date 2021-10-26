@@ -71,7 +71,7 @@
     @else
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link text-uppercase anime-border text-dark"
+                <a class="nav-link text-uppercase anime-border"
                     href="{{ (isset($photos)) ? '/#portfolio' : URL::previous() }}">Back</a>
             </li>
         </ul>
