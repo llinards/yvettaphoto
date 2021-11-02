@@ -15,7 +15,7 @@ $(function() {
     e.preventDefault();
 
     // top position relative to the document
-    var pos = $id.offset().top - 50;
+    var pos = $id.offset().top;
 
     // animated top scrolling
     $("body, html")
@@ -28,7 +28,7 @@ $(function() {
   //
   var btn = $("#button");
   $(window).scroll(function() {
-    if ($(window).scrollTop() > 300) {
+    if ($(window).scrollTop() > 100) {
       btn.addClass("show");
     } else {
       btn.removeClass("show");
@@ -76,4 +76,5 @@ $(function() {
       child.classList.toggle("change");
     }
   });
+  console.log(document.getElementsByClassName('collapse'));
 });

@@ -55,43 +55,46 @@
   display: none;
 }
 
-// .nav-item > .nav-link {
-//   font-weight: 600;
-//   letter-spacing: 0.5px;
-//   color: #ffffff;
-// }
-
 .nav-item,
 .nav-item > .nav-link {
   color: #ffffff;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.75px;
 }
 
-.anime-border {
+.anime-border,
+.anime-border-dark {
   display: inline-block;
-  color: #ffffff;
   text-decoration: none;
 }
 
-.anime-border.text-dark {
+.anime-border {
+  color: #ffffff;
+}
+
+.anime-border-dark {
   color: #000000;
 }
 
-.anime-border::after {
+.anime-border::after,
+.anime-border-dark::after {
   content: "";
   display: block;
   width: 0;
   height: 3px;
-  background: #ffffff;
   transition: width 0.3s;
 }
 
-.anime-border.text-dark::after {
+.anime-border::after {
+  background: #ffffff;
+}
+
+.anime-border-dark::after {
   background: #000000;
 }
 
-.anime-border:hover::after {
+.anime-border:hover::after,
+.anime-border-dark:hover::after {
   width: 100%;
 }
 

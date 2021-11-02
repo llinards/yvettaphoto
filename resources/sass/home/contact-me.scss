@@ -1,28 +1,31 @@
 section#contactMe p.lead {
-    text-align: justify;
+  text-align: justify;
 }
 
 .form-control {
-    border: transparent;
-    border-radius: 0;
-    border-bottom: 3px solid #34495e;
-    transition: all .4s;
+  border: transparent;
+  border-radius: 0;
+  border-bottom: 3px solid #dee2e6;
+  letter-spacing: 1.06px;
 }
 
 .form-control:focus {
-    background: transparent;
-    border: 3px solid #34495e;
-    box-shadow: none;
-    color: #000;
+  border-color: transparent;
+  outline: none;
+  box-shadow: none;
+  border-bottom: 3px solid #dee2e6;
 }
 
-.btn-submit {
-    border-radius: .25rem;
-    background-color: #616569;
-    color: #fff;
-    text-transform: uppercase;
+.submit-btn {
+  padding-top: 49px;
 }
 
-.btn-submit:hover {
-    background-color: #1d2124;
+.submit-btn button {
+  border-radius: 28px;
+  width: 240px;
+  font-size: 21px;
+  font-weight: 600;
+  background-color: #616569;
+  color: #ffffff;
+  text-transform: uppercase;
 }
