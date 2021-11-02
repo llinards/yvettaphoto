@@ -26,7 +26,7 @@
                 </li>
             @else
                 <li class="nav-item">
-                    <a class="nav-link text-uppercase anime-border text-dark"
+                    <a class="nav-link text-uppercase anime-border-dark text-dark"
                         href="{{ (isset($photos)) ? '/#portfolio' : URL::previous() }}">Back</a>
                 </li>
             @endif
@@ -50,20 +50,20 @@
         <div class="collapse navbar-collapse justify-content-center" id="nav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link text-uppercase anime-border" href="#home">Home</a><span class="menu-divider"> |</span>
+                <a class="nav-link text-uppercase anime-border-dark" href="#home">Home</a><span class="menu-divider"> |</span>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-uppercase anime-border" href="#portfolio">Portfolio</a><span class="menu-divider"> |</span>
+                <a class="nav-link text-uppercase anime-border-dark" href="#portfolio">Portfolio</a><span class="menu-divider"> |</span>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-uppercase anime-border" href="/artist-statement">Artist Statement</a><span class="menu-divider"> |</span>
+                <a class="nav-link text-uppercase anime-border-dark" href="/artist-statement">Artist Statement</a><span class="menu-divider"> |</span>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-uppercase anime-border" href="/about-me">About
+                <a class="nav-link text-uppercase anime-border-dark" href="/about-me">About
                     Me</a><span class="menu-divider"> |</span>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-uppercase anime-border" href="#contactMe">Contact
+                <a class="nav-link text-uppercase anime-border-dark" href="#contactMe">Contact
                     Me</a>
             </li>
         </ul>
@@ -71,7 +71,7 @@
     @else
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link text-uppercase anime-border"
+                <a class="nav-link text-uppercase anime-border-dark"
                     href="{{ (isset($photos)) ? '/#portfolio' : URL::previous() }}">Back</a>
             </li>
         </ul>
