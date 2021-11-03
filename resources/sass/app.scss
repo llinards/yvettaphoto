@@ -19,10 +19,8 @@
 
 @import "gallery/index";
 
-@import "about-me/index";
-
 hr {
-  border: 2px solid #34495e;
+  border: 3px solid #dee2e6;
 }
 
 h1,
@@ -121,6 +119,10 @@ footer {
 .facebook-icon:hover,
 .instagram-icon:active {
   color: #000;
+}
+
+.admin-container {
+  margin-top: 100px;
 }
 
 @import "media-queries";

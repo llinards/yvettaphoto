@@ -16,14 +16,18 @@
                      To become a photographer, I started with fundamental pieces of knowledge in Photo Académie in Riga (Latvia). Upon finding ICM and ME photo technics, I realized that is the language I was looking for – be able to access and express a secret and mystique of life, color tonality, and vibrance of my emotions. It is a language that reflects the way I see and feel life and the way to be in dialog with you.
                   </p>
                   <hr />
-                  <img src="../img/about-me/Hannover_web_story.jpg" width="350" class="img-fluid py-2" alt="">
+                  <div class="main-text-img text-center">
+                     <img src="../img/about-me/Hannover_web_story.jpg" width="350" class="img-fluid py-2" alt="">
+                  </div>
                   <p class="lead main-text">
                      My photo in "EXPO 2000" info desk in the Latvian pavilion in Hannover.
-                     It was about a waste development project in the region where I was involved and proud of. Today such a photo wouldn’t get high attention, but in the 2000ies it was not only a significant achievement for me to produce a photo but also very significant progress in Environmental management here in Latvia.                  </p>
-                     <hr />
-                     <blockquote class="text-uppercase about-me__quote main-text">ENJOY AND BE INSPIRED BY THE PHOTOS!</blockquote>
+                     It was about a waste development project in the region where I was involved and proud of. Today such a photo wouldn’t get high attention, but in the 2000ies it was not only a significant achievement for me to produce a photo but also very significant progress in Environmental management here in Latvia.</p>
                   </p>
-                  <img src="../img/about-me/0338_1200px.jpg" width="350" class="img-fluid py-2" alt="">
+                  <hr />
+                  <h3 class="text-uppercase text-center main-text">ENJOY AND BE INSPIRED BY THE PHOTOS!</h3>
+                  <div class="main-text-img text-center">
+                     <img src="../img/about-me/0338_1200px.jpg" width="350" class="img-fluid py-2" alt="">
+                  </div>
                </div>
             </div>
          </div>
