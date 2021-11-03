@@ -1,6 +1,6 @@
 @extends('layouts.admin-default',['title' => 'Jauna kategorija'])
 @section('content')
-    <div class="container mt-4">
+    <div class="container admin-container">
         @include('inc.status-messages')
         <div class="jumbotron">
             <div class="d-flex flex-column align-items-center">

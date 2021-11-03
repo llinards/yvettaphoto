@@ -10,29 +10,36 @@
           <div class="underline"></div>
         </div>
         <div class="container" v-if="categoryDescription">
-          <div class="row justify-content-center">
+          <div class="row mx-auto">
             <div class="lead main-text">
               <span v-html="categoryDescription"></span>
             </div>
           </div>
         </div>
-        <div v-if="images" class="row pt-3 grid">
-          <div v-for="image in images" class="grid-item" v-bind:key="image.id">
-            <a
-              data-toggle="lightbox"
-              :data-gallery="categoryName"
-              v-bind:href="'/storage/' + image.image_name"
+        <div class="container">
+          <div v-if="images" class="row pt-3 grid mx-auto">
+            <div class="grid-sizer"></div>
+            <div
+              v-for="image in images"
+              class="grid-item"
+              v-bind:key="image.id"
             >
-              <img
-                class="img-fluid"
-                v-bind:src="'/storage/' + image.image_name"
-                @load="reloadGrid"
-              />
-            </a>
+              <a
+                data-toggle="lightbox"
+                :data-gallery="categoryName"
+                v-bind:href="'/storage/' + image.image_name"
+              >
+                <img
+                  class="img-fluid"
+                  v-bind:src="'/storage/' + image.image_name"
+                  @load="reloadGrid"
+                />
+              </a>
+            </div>
           </div>
-        </div>
-        <div v-else>
-          <p>No pictures found!</p>
+          <div v-else>
+            <p>No pictures found!</p>
+          </div>
         </div>
       </div>
     </section>
@@ -54,9 +61,9 @@ export default {
       const grid = document.querySelector(".grid");
       const masonry = new Masonry(grid, {
         itemSelector: ".grid-item",
+        columnWidth: ".grid-sizer",
         gutter: 35,
-        fitWidth: true,
-        originLeft: false
+        percentPosition: true
       });
     }
   },
