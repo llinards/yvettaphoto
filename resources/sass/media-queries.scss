@@ -19,14 +19,6 @@
     left: 0;
   }
 
-  // .logo-black {
-  //   display: block;
-  // }
-
-  // .logo-white {
-  //   display: none;
-  // }
-
   .nav-item > .nav-link,
   .menu-divider {
     color: #000000;
@@ -50,10 +42,6 @@
     font-size: 55px;
   }
 
-  // .yvettaphoto-logo {
-  //   max-width: 60%;
-  // }
-
   .about-me__quote {
     font-size: 20px;
   }
@@ -68,10 +56,6 @@
 }
 
 @media (max-width: 575px) {
-  // .description__p {
-  //   font-size: 18px;
-  // }
-
   .admin__headings {
     font-size: 1.5rem;
   }
@@ -88,9 +72,7 @@
       margin-top: 1rem;
     }
   }
-  .grid-item {
-    width: 350px;
-  }
+
   #button {
     right: 0 !important;
   }
@@ -104,24 +86,29 @@
   #button {
     margin: 20px !important;
   }
-
-  // .description__p {
-  //   font-size: 16px;
-  // }
 }
 
-@media (max-width: 375px) {
+@media (min-width: 576px) {
+  .grid-sizer,
   .grid-item {
-    width: 325px;
+    width: 220px;
   }
-
-  // .description__p {
-  //   font-size: 13px;
-  // }
 }
-
-@media (max-width: 360px) {
+@media (min-width: 768px) {
+  .grid-sizer,
   .grid-item {
-    width: 275px;
+    width: 310px;
+  }
+}
+@media (min-width: 992px) {
+  .grid-sizer,
+  .grid-item {
+    width: 445px;
+  }
+}
+@media (min-width: 1200px) {
+  .grid-sizer,
+  .grid-item {
+    width: 345px;
   }
 }
