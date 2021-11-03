@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg desktop">
+<nav class="navbar {{ ($index) ? 'navbar-index' : '' }} navbar-expand-lg desktop">
     <div class="navbar-logo">
         <a href="{{ ($index) ? '#home' : '/' }}">
             <img class="img-fluid" src="../img/{{ ($index) ? 'logo-svg-white.svg' : 'logo-black.png' }}" alt="">
@@ -34,7 +34,7 @@
     </div>
 </nav>
 
-<nav class="navbar navbar-expand-lg mobile">
+<nav class="navbar {{ ($index) ? 'navbar-index' : '' }} navbar-expand-lg mobile">
     <div class="navbar-logo">
         <a href="{{ ($index) ? '#home' : '/' }}">
             <img class="img-fluid" src="../img/logo-black.png" alt="">
