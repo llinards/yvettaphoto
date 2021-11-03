@@ -17440,6 +17440,9 @@ body.lb-disable-scrolling {
   right: 0;
   z-index: 1030;
   padding-top: 2rem;
+  padding-bottom: 2rem;
+  box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.75);
+  background-color: #6165694f;
 }
 
 .navbar.mobile {
@@ -17773,6 +17776,7 @@ footer {
     padding-top: 24px;
     padding-bottom: 24px;
     box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.75);
+    background-color: transparent;
   }
 
   .navbar.desktop {
@@ -17810,14 +17814,6 @@ footer {
 @media (max-width: 767px) {
   .main-header {
     font-size: 55px;
-  }
-
-  .about-me__nav-links {
-    text-align: center;
-  }
-
-  .about-me__nav-link {
-    padding: 25px 16px !important;
   }
 }
 
