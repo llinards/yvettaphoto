@@ -25,9 +25,6 @@
                   </p>
                   <hr />
                   <h3 class="text-uppercase text-center main-text">ENJOY AND BE INSPIRED BY THE PHOTOS!</h3>
-                  <div class="main-text-img text-center">
-                     <img src="../img/about-me/0338_1200px.jpg" width="350" class="img-fluid py-2" alt="">
-                  </div>
                </div>
             </div>
          </div>
