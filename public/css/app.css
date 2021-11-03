@@ -17441,6 +17441,9 @@ body.lb-disable-scrolling {
   z-index: 1030;
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.navbar-index {
   box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.75);
   background-color: #6165694f;
 }
@@ -17775,8 +17778,10 @@ footer {
   .navbar {
     padding-top: 24px;
     padding-bottom: 24px;
-    box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.75);
-    background-color: transparent;
+  }
+
+  .navbar-index {
+    background-color: #ffffff45;
   }
 
   .navbar.desktop {
