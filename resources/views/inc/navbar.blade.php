@@ -1,16 +1,9 @@
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar {{ ($index) ? 'navbar-index' : '' }} navbar-expand-lg desktop">
     <div class="navbar-logo">
         <a href="{{ ($index) ? '#home' : '/' }}">
-            <img class="img-fluid logo-white" src="../img/logo-svg-white.svg" alt="">
-            <img class="img-fluid logo-black" src="../img/logo-black.png" alt="">
+            <img class="img-fluid" src="../img/{{ ($index) ? 'logo-svg-white.svg' : 'logo-black.png' }}" alt="">
         </a>
     </div>
-    <button type="button" class="navbar-toggler" data-toggle="collapse"
-            data-target="#nav">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-    </button>
     <div class="collapse navbar-collapse justify-content-center" id="nav">
         <ul class="navbar-nav">
             @if($index)
@@ -33,11 +26,54 @@
                 </li>
             @else
                 <li class="nav-item">
-                    <a class="nav-link text-uppercase anime-border"
-                        href="{{ (isset($photos)) ? '/#portfolio' : URL::previous() }}">
-                        <i class="fas fa-chevron-left"></i> Back</a>
+                    <a class="nav-link text-uppercase anime-border-dark text-dark"
+                        href="{{ (isset($photos)) ? '/#portfolio' : URL::previous() }}">Back</a>
                 </li>
             @endif
         </ul>
     </div>
+</nav>
+
+<nav class="navbar {{ ($index) ? 'navbar-index' : '' }} navbar-expand-lg mobile">
+    <div class="navbar-logo">
+        <a href="{{ ($index) ? '#home' : '/' }}">
+            <img class="img-fluid" src="../img/logo-black.png" alt="">
+        </a>
+    </div>
+    @if ($index)
+        <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#nav">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="nav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link text-uppercase anime-border-dark" href="#home">Home</a><span class="menu-divider"> |</span>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-uppercase anime-border-dark" href="#portfolio">Portfolio</a><span class="menu-divider"> |</span>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-uppercase anime-border-dark" href="/artist-statement">Artist Statement</a><span class="menu-divider"> |</span>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-uppercase anime-border-dark" href="/about-me">About
+                    Me</a><span class="menu-divider"> |</span>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-uppercase anime-border-dark" href="#contactMe">Contact
+                    Me</a>
+            </li>
+        </ul>
+    </div>
+    @else
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link text-uppercase anime-border-dark"
+                    href="{{ (isset($photos)) ? '/#portfolio' : URL::previous() }}">Back</a>
+            </li>
+        </ul>
+    @endif
 </nav>

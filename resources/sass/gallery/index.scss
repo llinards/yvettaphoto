@@ -24,12 +24,12 @@
   background-color: #ccc !important;
 }
 
-.grid {
-  margin: 0 auto;
+.grid-sizer,
+.grid-item {
+  width: 100%;
 }
 
 .grid-item {
-  width: 400px;
   margin-bottom: 35px;
   img {
     width: 100%;
