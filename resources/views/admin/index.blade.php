@@ -1,7 +1,7 @@
 @extends('layouts.admin-default',['title' => 'Administrācijas panelis'])
 @section('content')
   <section class="options">
-    <div class="container mt-4">
+    <div class="container admin-container">
       <div class="jumbotron">
         <div class="row d-flex flex-column align-items-center">
           <div>
