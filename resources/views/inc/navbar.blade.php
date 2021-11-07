@@ -13,9 +13,9 @@
                 <li class="nav-item">
                     <a class="nav-link text-uppercase anime-border" href="#portfolio">Portfolio</a><span class="menu-divider"> |</span>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link text-uppercase anime-border" href="/artist-statement">Artist Statement</a><span class="menu-divider"> |</span>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link text-uppercase anime-border" href="/about-me">About
                         Me</a><span class="menu-divider"> |</span>
@@ -55,9 +55,9 @@
             <li class="nav-item">
                 <a class="nav-link text-uppercase anime-border-dark" href="#portfolio">Portfolio</a><span class="menu-divider"> |</span>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link text-uppercase anime-border-dark" href="/artist-statement">Artist Statement</a><span class="menu-divider"> |</span>
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a class="nav-link text-uppercase anime-border-dark" href="/about-me">About
                     Me</a><span class="menu-divider"> |</span>
