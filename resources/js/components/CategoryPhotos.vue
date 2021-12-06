@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="py-5" id="photos">
+    <section id="photos">
       <div class="container-fluid">
         <div class="heading d-flex align-items-center justify-content-around">
           <div class="underline"></div>

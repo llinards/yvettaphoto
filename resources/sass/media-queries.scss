@@ -1,11 +1,22 @@
+@media (max-width: 1200px) {
+  .category {
+    max-width: 296px;
+  }
+}
+
 @media (max-width: 992px) {
   .navbar {
     padding-top: 24px;
     padding-bottom: 24px;
   }
 
-  .navbar-index {
-    background-color: #ffffff45;
+  .heading {
+    margin-top: 100px;
+    margin-bottom: 25px;
+  }
+
+  .navbar-not-index {
+    background-color: white;
   }
 
   .navbar.desktop {
@@ -14,6 +25,10 @@
 
   .navbar.mobile {
     display: flex;
+  }
+
+  .main-header {
+    font-size: 28px;
   }
 
   .navbar-logo {
@@ -38,11 +53,17 @@
   .underline {
     width: 10%;
   }
+  #portfolio .row {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
-  .main-header {
-    font-size: 28px;
+  .category {
+    max-width: 246px;
+  }
+  .category-title-overlay h4 {
+    font-size: 1.25rem;
   }
 
   .lead {
@@ -83,9 +104,8 @@
   .main-header {
     font-size: 20px;
   }
-
   .lead {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
   }
 }
 

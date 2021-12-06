@@ -1,7 +1,7 @@
 @extends('layouts.default', ['title' => 'Artist Statement'])
 @section('content')
     @include('inc.navbar', ['index' => false])
-    <section class="py-5" id="about-me">
+    <section id="about-me">
       <div class="container-fluid">
           <div class="heading d-flex align-items-center justify-content-around">
             <div class="underline"></div>
