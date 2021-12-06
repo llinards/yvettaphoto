@@ -11,7 +11,7 @@
                     <a class="nav-link text-uppercase anime-border" href="#home">Home</a><span class="menu-divider"> |</span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-uppercase anime-border" href="#portfolio">Portfolio</a><span class="menu-divider"> |</span>
+                    <a class="nav-link text-uppercase anime-border" href="/portfolio">Portfolio</a><span class="menu-divider"> |</span>
                 </li>
                 {{-- <li class="nav-item">
                     <a class="nav-link text-uppercase anime-border" href="/artist-statement">Artist Statement</a><span class="menu-divider"> |</span>
@@ -21,13 +21,13 @@
                         Me</a><span class="menu-divider"> |</span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-uppercase anime-border" href="#contactMe">Contact
+                    <a class="nav-link text-uppercase anime-border" href="/contact-me">Contact
                         Me</a>
                 </li>
             @else
                 <li class="nav-item">
                     <a class="nav-link text-uppercase anime-border-dark text-dark"
-                        href="{{ (isset($photos)) ? '/#portfolio' : URL::previous() }}">Back</a>
+                        href="{{ (isset($photos)) ? '/' : URL::previous() }}">Back</a>
                 </li>
             @endif
         </ul>
@@ -53,7 +53,7 @@
                 <a class="nav-link text-uppercase anime-border-dark" href="#home">Home</a><span class="menu-divider"> |</span>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-uppercase anime-border-dark" href="#portfolio">Portfolio</a><span class="menu-divider"> |</span>
+                <a class="nav-link text-uppercase anime-border-dark" href="/portfolio">Portfolio</a><span class="menu-divider"> |</span>
             </li>
             {{-- <li class="nav-item">
                 <a class="nav-link text-uppercase anime-border-dark" href="/artist-statement">Artist Statement</a><span class="menu-divider"> |</span>
