@@ -40065,7 +40065,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("section", { staticClass: "py-5", attrs: { id: "photos" } }, [
+    _c("section", { attrs: { id: "photos" } }, [
       _c("div", { staticClass: "container-fluid" }, [
         _c(
           "div",

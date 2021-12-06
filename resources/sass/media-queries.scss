@@ -4,8 +4,8 @@
     padding-bottom: 24px;
   }
 
-  .navbar-index {
-    background-color: #ffffff45;
+  .navbar-not-index {
+    background-color: white;
   }
 
   .navbar.desktop {
@@ -41,6 +41,10 @@
 }
 
 @media (max-width: 768px) {
+  .heading {
+    margin-top: 100px;
+    margin-bottom: 25px;
+  }
   .main-header {
     font-size: 28px;
   }

@@ -1,7 +1,7 @@
 @extends('layouts.default', ['title' => 'Portfolio'])
 @section('content')
   @include('inc.navbar', ['index' => false])
-  <section id="portfolio" class="gallery-block grid-gallery py-5">
+  <section id="portfolio" class="gallery-block grid-gallery">
     <div class="container-fluid">
       <div class="heading d-flex align-items-center justify-content-around">
         <div class="underline"></div>
@@ -11,7 +11,7 @@
       <div class="row">
         @foreach ($categories as $category)
           <div class="col-sm-12 col-md-6 col-lg-4 p-0 category">
-            <a href="/{{ $category->category_slug }}">
+            <a href="/portfolio/{{ $category->category_slug }}">
               <div class="category-image">
                 <img class="w-100 h-100" src="/storage/{{ $category->cover_photo_url }}" alt="">
               </div>

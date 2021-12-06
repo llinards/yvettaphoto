@@ -41,7 +41,6 @@ Route::get('/', 'HomeController@index');
 Route::get('/portfolio', 'HomeController@portfolio');
 Route::get('/contact-me', 'HomeController@contactMe');
 Route::get('/about-me', 'HomeController@aboutMe');
-// Route::get('/artist-statement', 'HomeController@artistStatement');
-Route::get('/{category}', 'HomeController@galleryImages');
+Route::get('/portfolio/{category}', 'HomeController@galleryImages');
 
 Route::post('/send-email', 'EmailsController@sendEmail');

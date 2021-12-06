@@ -1,7 +1,7 @@
 @extends('layouts.default', ['title' => 'Portfolio'])
 @section('content')
   @include('inc.navbar', ['index' => false])
-  <section id="contactMe" class="py-5">
+  <section id="contactMe">
     <div class="container-fluid">
       <div class="heading d-flex align-items-center justify-content-around">
         <div class="underline"></div>
