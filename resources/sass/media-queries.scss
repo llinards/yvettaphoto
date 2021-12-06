@@ -1,3 +1,9 @@
+@media (max-width: 1200px) {
+  .category {
+    max-width: 296px;
+  }
+}
+
 @media (max-width: 992px) {
   .navbar {
     padding-top: 24px;
@@ -14,6 +20,10 @@
 
   .navbar.mobile {
     display: flex;
+  }
+
+  .main-header {
+    font-size: 28px;
   }
 
   .navbar-logo {
@@ -38,6 +48,9 @@
   .underline {
     width: 10%;
   }
+  #portfolio .row {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -45,8 +58,12 @@
     margin-top: 100px;
     margin-bottom: 25px;
   }
-  .main-header {
-    font-size: 28px;
+
+  .category {
+    max-width: 246px;
+  }
+  .category-title-overlay h4 {
+    font-size: 1.25rem;
   }
 
   .lead {
@@ -83,11 +100,6 @@
   }
 }
 
-@media (max-width: 375px) {
-  .main-header {
-    font-size: 25px;
-  }
-}
 @media (max-width: 375px) {
   .main-header {
     font-size: 20px;

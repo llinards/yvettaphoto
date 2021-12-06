@@ -13,7 +13,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link text-uppercase anime-border-dark text-dark {{ Request::is('portfolio') ? 'current-link' : '' }}"
-          href="/portfolio">Portfolio</a><span class="menu-divider text-dark"> |</span>
+          href="/portfolio">{{ (isset($photos)) ? 'back to portfolio' : 'Portfolio' }}</a><span class="menu-divider text-dark"> |</span>
       </li>
       <li class="nav-item">
         <a class="nav-link text-uppercase anime-border-dark text-dark {{ Request::is('about-me') ? 'current-link' : '' }}" href="/about-me">About
