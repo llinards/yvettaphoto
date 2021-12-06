@@ -17789,6 +17789,11 @@ a,
     padding-bottom: 24px;
   }
 
+  .heading {
+    margin-top: 100px;
+    margin-bottom: 25px;
+  }
+
   .navbar-not-index {
     background-color: white;
   }
@@ -17834,11 +17839,6 @@ a,
 }
 
 @media (max-width: 768px) {
-  .heading {
-    margin-top: 100px;
-    margin-bottom: 25px;
-  }
-
   .category {
     max-width: 246px;
   }
