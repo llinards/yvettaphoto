@@ -14,6 +14,17 @@ class HomeController extends Controller
         return view('pages.index', compact('categories'));
     }
 
+    public function portfolio()
+    {
+        $categories = Category::latest()->get();
+        return view('pages.portfolio', compact('categories'));
+    }
+
+    public function contactMe()
+    {
+        return view('pages.contact-me');
+    }
+
     public function artistStatement()
     {
         return view('pages.artist-statement');

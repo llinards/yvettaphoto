@@ -8,11 +8,6 @@
   padding-bottom: 2rem;
 }
 
-.navbar-index {
-  box-shadow: 0px 6px 17px 0px rgb(0 0 0 / 75%);
-  background-color: #6165694f;
-}
-
 .navbar.mobile {
   display: none;
   .navbar-logo img {
@@ -68,38 +63,49 @@
   letter-spacing: 0.75px;
 }
 
-.anime-border,
+// .anime-border,
+
 .anime-border-dark {
   display: inline-block;
   text-decoration: none;
 }
 
-.anime-border {
-  color: #ffffff;
-}
+// .anime-border {
+//   color: #ffffff;
+// }
 
-.anime-border-dark {
+.anime-border-dark,
+.current-link {
   color: #000000;
 }
 
-.anime-border::after,
-.anime-border-dark::after {
+// .anime-border::after,
+.anime-border-dark::after,
+.current-link::after {
   content: "";
   display: block;
-  width: 0;
   height: 3px;
   transition: width 0.3s;
 }
 
-.anime-border::after {
-  background: #ffffff;
+.anime-border-dark::after {
+  width: 0;
 }
 
-.anime-border-dark::after {
+.current-link::after {
+  width: 100%;
+}
+
+// .anime-border::after {
+//   background: #ffffff;
+// }
+
+.anime-border-dark::after,
+.current-link::after {
   background: #000000;
 }
 
-.anime-border:hover::after,
+// .anime-border:hover::after,
 .anime-border-dark:hover::after {
   width: 100%;
 }
