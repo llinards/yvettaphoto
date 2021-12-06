@@ -2,7 +2,7 @@
 @section('content')
   @include('inc.navbar', ['index' => false])
   <section id="contactMe">
-    <div class="container-fluid">
+    <div class="container">
       <div class="heading d-flex align-items-center justify-content-around">
         <div class="underline"></div>
         <h1 class="text-uppercase text-center main-header">Contact<br /> Me</h1>
