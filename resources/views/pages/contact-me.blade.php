@@ -1,4 +1,4 @@
-@extends('layouts.default', ['title' => 'Portfolio'])
+@extends('layouts.default', ['title' => 'Contact Me'])
 @section('content')
   @include('inc.navbar', ['index' => false])
   <section id="contactMe">
