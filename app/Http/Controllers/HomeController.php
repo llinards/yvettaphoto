@@ -35,6 +35,11 @@ class HomeController extends Controller
         return view('pages.bio');
     }
 
+    public function cv()
+    {
+        return view('pages.cv');
+    }
+
     public function galleryImages(Category $category)
     {
         // $images = Image::imagesDesc($category)->get();

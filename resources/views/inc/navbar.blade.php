@@ -24,6 +24,10 @@
           href="/artist-statement">Artist Statement</a><span class="menu-divider text-dark"> |</span>
       </li>
       <li class="nav-item">
+        <a class="nav-link text-uppercase anime-border-dark text-dark {{ Request::is('cv') ? 'current-link' : '' }}"
+          href="/cv">CV</a><span class="menu-divider text-dark"> |</span>
+      </li>
+      <li class="nav-item">
         <a class="nav-link text-uppercase anime-border-dark text-dark {{ Request::is('contact-me') ? 'current-link' : '' }}" href="/contact-me">Contact
           Me</a>
       </li>
@@ -65,6 +69,10 @@
       </li>
       <li class="nav-item">
         <a class="nav-link text-uppercase anime-border-dark {{ Request::is('artist-statement') ? 'current-link' : '' }}" href="/artist-statement">Artist Statement</a><span class="menu-divider">
+          |</span>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-uppercase anime-border-dark {{ Request::is('cv') ? 'current-link' : '' }}" href="/cv">CV</a><span class="menu-divider">
           |</span>
       </li>
       <li class="nav-item">

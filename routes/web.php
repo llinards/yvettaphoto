@@ -42,6 +42,7 @@ Route::get('/portfolio', 'HomeController@portfolio');
 Route::get('/contact-me', 'HomeController@contactMe');
 Route::get('/bio', 'HomeController@bio');
 Route::get('/artist-statement', 'HomeController@artistStatement');
+Route::get('/cv', 'HomeController@cv');
 Route::get('/portfolio/{category}', 'HomeController@galleryImages');
 
 Route::post('/send-email', 'EmailsController@sendEmail');
