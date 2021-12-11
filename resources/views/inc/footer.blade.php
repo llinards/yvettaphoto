@@ -1,5 +1,5 @@
 <footer class="{{ $index ? 'footer-index' : '' }}">
-  <div class="container-fluid">
+  <div class="container">
     <div class="row justify-content-around align-items-center">
       {{-- <p class="m-0 footer-text">Developed by LYNYRDS</p> --}}
       <p class="m-0 footer-text">&copy; <?php echo date('Y'); ?> YVETTA</p>
