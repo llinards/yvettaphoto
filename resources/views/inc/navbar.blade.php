@@ -13,11 +13,11 @@
       </li>
       <li class="nav-item">
         <a class="nav-link text-uppercase anime-border-dark text-dark {{ Request::is('portfolio') ? 'current-link' : '' }}"
-          href="/portfolio">{{ (isset($photos)) ? 'back to portfolio' : 'Portfolio' }}</a><span class="menu-divider text-dark"> |</span>
+          href="/portfolio">{{ isset($photos) ? 'back to portfolio' : 'Portfolio' }}</a><span class="menu-divider text-dark"> |</span>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-uppercase anime-border-dark text-dark {{ Request::is('about-me') ? 'current-link' : '' }}" href="/about-me">About
-          Me</a><span class="menu-divider text-dark"> |</span>
+        <a class="nav-link text-uppercase anime-border-dark text-dark {{ Request::is('bio') ? 'current-link' : '' }}" href="/bio">Bio</a><span
+          class="menu-divider text-dark"> |</span>
       </li>
       <li class="nav-item">
         <a class="nav-link text-uppercase anime-border-dark text-dark {{ Request::is('contact-me') ? 'current-link' : '' }}" href="/contact-me">Contact
@@ -56,8 +56,8 @@
           class="menu-divider"> |</span>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-uppercase anime-border-dark {{ Request::is('about-me') ? 'current-link' : '' }}" href="/about-me">About
-          Me</a><span class="menu-divider"> |</span>
+        <a class="nav-link text-uppercase anime-border-dark {{ Request::is('bio') ? 'current-link' : '' }}" href="/bio">Bio</a><span class="menu-divider">
+          |</span>
       </li>
       <li class="nav-item">
         <a class="nav-link text-uppercase anime-border-dark {{ Request::is('contact-me') ? 'current-link' : '' }}" href="/contact-me">Contact

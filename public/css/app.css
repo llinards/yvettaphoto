@@ -17583,6 +17583,10 @@ section#contactMe p.lead {
   text-transform: uppercase;
 }
 
+.submit-btn button:focus {
+  box-shadow: none;
+}
+
 .modal-content {
   border: none;
   border-radius: 0;

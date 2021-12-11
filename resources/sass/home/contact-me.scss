@@ -29,3 +29,7 @@ section#contactMe p.lead {
   color: #ffffff;
   text-transform: uppercase;
 }
+
+.submit-btn button:focus {
+  box-shadow: none;
+}
