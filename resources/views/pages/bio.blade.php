@@ -1,7 +1,7 @@
 @extends('layouts.default', ['title' => 'BIO'])
 @section('content')
   @include('inc.navbar', ['index' => false])
-  <section id="about-me">
+  <section>
     <div class="container">
       <div class="heading d-flex align-items-center justify-content-around">
         <div class="underline"></div>
