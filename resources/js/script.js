@@ -76,5 +76,14 @@ $(function() {
       child.classList.toggle("change");
     }
   });
-  console.log(document.getElementsByClassName('collapse'));
+
+  const bioReadMore = document.getElementById("read-more-bio-btn");
+  bioReadMore.addEventListener("click", () => {
+    let isExpanded = bioReadMore.getAttribute("aria-expanded");
+    if (isExpanded == "false") {
+      bioReadMore.textContent = "Close";
+    } else {
+      bioReadMore.textContent = "Read More";
+    }
+  });
 });
