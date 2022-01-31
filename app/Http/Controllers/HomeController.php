@@ -40,6 +40,11 @@ class HomeController extends Controller
         return view('pages.cv');
     }
 
+    public function news()
+    {
+        return view('pages.news');
+    }
+
     public function galleryImages(Category $category)
     {
         // $images = Image::imagesDesc($category)->get();
