@@ -40,7 +40,10 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/', 'HomeController@index');
 Route::get('/portfolio', 'HomeController@portfolio');
 Route::get('/contact-me', 'HomeController@contactMe');
-Route::get('/about-me', 'HomeController@aboutMe');
+Route::get('/bio', 'HomeController@bio');
+Route::get('/artist-statement', 'HomeController@artistStatement');
+Route::get('/cv', 'HomeController@cv');
+Route::get('/news', 'HomeController@news');
 Route::get('/portfolio/{category}', 'HomeController@galleryImages');
 
 Route::post('/send-email', 'EmailsController@sendEmail');

@@ -12,9 +12,9 @@ class EmailsController extends Controller
     {
         try {
             Mail::send(new ContactMail($request));
-            return redirect('/#contactMe')->with('success', 'Thanks! Your  e-mail has been sent!');
+            return back()->with('success', 'Thanks! Your  e-mail has been sent!');
         } catch (\Exception $e) {
-            return redirect('/#contactMe')->with('error', 'Error!');
+            return back()->with('error', 'Error!');
         }
     }
 }

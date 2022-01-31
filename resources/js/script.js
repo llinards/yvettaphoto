@@ -70,11 +70,24 @@ $(function() {
     });
   });
 
-  const menu = document.querySelector(".navbar-toggler");
-  menu.addEventListener("click", () => {
-    for (let child of menu.children) {
-      child.classList.toggle("change");
-    }
-  });
-  console.log(document.getElementsByClassName('collapse'));
+  const menu = document.querySelector(".navbar-toggler") || null;
+  if (menu != null) {
+    menu.addEventListener("click", () => {
+      for (let child of menu.children) {
+        child.classList.toggle("change");
+      }
+    });
+  }
+
+  const bioReadMore = document.getElementById("read-more-bio-btn") || null;
+  if (bioReadMore != null) {
+    bioReadMore.addEventListener("click", () => {
+      let isExpanded = bioReadMore.getAttribute("aria-expanded");
+      if (isExpanded == "false") {
+        bioReadMore.textContent = "Close";
+      } else {
+        bioReadMore.textContent = "Read More";
+      }
+    });
+  }
 });

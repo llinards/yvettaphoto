@@ -30,9 +30,19 @@ class HomeController extends Controller
         return view('pages.artist-statement');
     }
 
-    public function aboutMe()
+    public function bio()
     {
-        return view('pages.about-me');
+        return view('pages.bio');
+    }
+
+    public function cv()
+    {
+        return view('pages.cv');
+    }
+
+    public function news()
+    {
+        return view('pages.news');
     }
 
     public function galleryImages(Category $category)
