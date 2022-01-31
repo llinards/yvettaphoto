@@ -4,9 +4,7 @@
 <head>
   @include('inc.head')
 </head>
-{{-- <body oncontextmenu="return false"> --}}
-
-<body>
+<body oncontextmenu="return false">
   <div id="app">
     @yield('content')
     @include('inc.footer', Request::is('/') ? ['index' => true] : ['index' => false])
