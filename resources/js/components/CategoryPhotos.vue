@@ -1,45 +1,37 @@
 <template>
   <div>
     <section id="photos">
-      <div class="container-fluid">
-        <div class="heading d-flex align-items-center justify-content-around">
+      <div class="container">
+        <div class="heading d-flex align-items-center justify-content-between">
           <div class="underline"></div>
           <h1 class="text-uppercase text-center main-header">
             {{ categoryName }}
           </h1>
           <div class="underline"></div>
         </div>
-        <div class="container" v-if="categoryDescription">
-          <div class="row mx-auto">
-            <div class="lead main-text">
-              <span v-html="categoryDescription"></span>
-            </div>
+        <div class="row mx-auto" v-if="categoryDescription">
+          <div class="lead main-text">
+            <span v-html="categoryDescription"></span>
           </div>
         </div>
-        <div class="container">
-          <div v-if="images" class="row pt-3 grid mx-auto">
-            <div class="grid-sizer"></div>
-            <div
-              v-for="image in images"
-              class="grid-item"
-              v-bind:key="image.id"
+        <div v-if="images" class="row pt-3 grid mx-auto">
+          <div class="grid-sizer"></div>
+          <div v-for="image in images" class="grid-item" v-bind:key="image.id">
+            <a
+              data-toggle="lightbox"
+              :data-gallery="categoryName"
+              v-bind:href="'/storage/' + image.image_name"
             >
-              <a
-                data-toggle="lightbox"
-                :data-gallery="categoryName"
-                v-bind:href="'/storage/' + image.image_name"
-              >
-                <img
-                  class="img-fluid"
-                  v-bind:src="'/storage/' + image.image_name"
-                  @load="reloadGrid"
-                />
-              </a>
-            </div>
+              <img
+                class="img-fluid"
+                v-bind:src="'/storage/' + image.image_name"
+                @load="reloadGrid"
+              />
+            </a>
           </div>
-          <div v-else>
-            <p>No pictures found!</p>
-          </div>
+        </div>
+        <div v-else>
+          <p>No pictures found!</p>
         </div>
       </div>
     </section>
