@@ -41,15 +41,6 @@ a,
   background-color: #dee2e6;
 }
 
-.underline-dark {
-  // width: 150px;
-  width: 90%;
-  // border: 3px solid #fff;
-  // margin: auto;
-  height: 3px;
-  background-color: #fff;
-}
-
 .heading {
   margin-top: 125px;
   margin-bottom: 50px;
@@ -58,7 +49,6 @@ a,
 .main-header {
   letter-spacing: 2.5px;
   font-weight: 300;
-  // font-size: 80px;
 }
 
 .main-text {
@@ -72,11 +62,7 @@ a,
   font-weight: 300;
 }
 
-#main-text-img-artist-statement {
-  padding-bottom: 55px;
-}
-
-#button {
+#button-up {
   display: inline-block;
   position: fixed;
   bottom: 30px;
@@ -87,11 +73,11 @@ a,
   z-index: 1000;
 }
 
-#button:hover {
+#button-up:hover {
   cursor: pointer;
 }
 
-#button::after {
+#button-up::after {
   font-weight: normal;
   font-style: normal;
   font-size: 20px;
@@ -99,7 +85,7 @@ a,
   color: #fff;
 }
 
-#button.show {
+#button-up.show {
   opacity: 1;
   visibility: visible;
 }

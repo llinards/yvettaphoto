@@ -1,7 +1,7 @@
 @extends('layouts.default', ['title' => 'Contact Me'])
 @section('content')
   @include('inc.navbar', ['index' => false])
-  <section id="contactMe">
+  <section>
     <div class="container">
       <div class="heading d-flex align-items-center justify-content-between">
         <div class="underline"></div>
