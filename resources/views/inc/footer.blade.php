@@ -14,6 +14,6 @@
     </div>
   </div>
 </footer>
-<a id="button">
+<a id="button-up">
   <img src="../img/up-arrow.svg" class="button-icon" alt="">
 </a>
