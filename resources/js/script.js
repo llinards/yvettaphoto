@@ -26,7 +26,7 @@ $(function() {
   });
 
   //
-  var btn = $("#button");
+  var btn = $("#button-up");
   $(window).scroll(function() {
     if ($(window).scrollTop() > 100) {
       btn.addClass("show");

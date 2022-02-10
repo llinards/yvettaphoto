@@ -63,23 +63,16 @@
   letter-spacing: 0.75px;
 }
 
-// .anime-border,
-
 .anime-border-dark {
   display: inline-block;
   text-decoration: none;
 }
-
-// .anime-border {
-//   color: #ffffff;
-// }
 
 .anime-border-dark,
 .current-link {
   color: #000000;
 }
 
-// .anime-border::after,
 .anime-border-dark::after,
 .current-link::after {
   content: "";
@@ -96,16 +89,11 @@
   width: 100%;
 }
 
-// .anime-border::after {
-//   background: #ffffff;
-// }
-
 .anime-border-dark::after,
 .current-link::after {
   background: #000000;
 }
 
-// .anime-border:hover::after,
 .anime-border-dark:hover::after {
   width: 100%;
 }

@@ -3,7 +3,7 @@
   @include('inc.navbar', ['index' => false])
   <section id="portfolio" class="gallery-block grid-gallery">
     <div class="container">
-      <div class="heading d-flex align-items-center justify-content-around">
+      <div class="heading d-flex align-items-center justify-content-between">
         <div class="underline"></div>
         <h1 class="text-uppercase main-header">Portfolio</h1>
         <div class="underline"></div>
