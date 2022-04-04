@@ -94,7 +94,7 @@ return [
     'numeric'              => ' :attribute jābūt skaitlim.',
     'present'              => ' :attribute laikums ir nepieciešams.',
     'regex'                => ' :attribute formāts ir nederīgs.',
-    'required'             => ' :attribute laukums ir nepieciešams.',
+    'required'             => ' :attribute ir nepieciešams.',
     'required_if'          => ' :attribute laukums ir nepieciešams, ja vien :other ir :values.',
     'required_unless'      => ' :attribute laukums ir nepieciešams, ja vien :other ir :values.',
     'required_with'        => ' :attribute laukums ir nepieciešams, kad :values ir pieejama.',
@@ -145,11 +145,14 @@ return [
     */
 
     'attributes' => [
-        'category-name' => 'Kategorijas nosaukuma',
+        'category-name' => 'Kategorijas nosaukums',
         'category-cover' => 'Kategorijas bilde',
         'selected-category' => 'Izvēlētās kategorijas',
         'photos' => 'Bildes',
         'category-description' => 'Kategorijas apraksta',
-        'main-img-cover' => 'Titulbildes izvēles'
+        'main-img-cover' => 'Titulbildes izvēles',
+        'name' => 'Jūsu vārds/uzvārds',
+        'email' => 'Jūsu e-pasts',
+        'msg' => 'Jūsu ziņojums'
     ],
 ];

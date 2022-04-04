@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EmailsController;
 use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\CategoriesController;
+use Spatie\Honeypot\ProtectAgainstSpam;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,4 +61,4 @@ Route::get('/news', [HomeController::class, 'news']);
 // Route::get('/portfolio/{category}', 'HomeController@galleryImages');
 Route::get('/portfolio/{category}', [HomeController::class, 'galleryImages']);
 // Route::post('/send-email', 'EmailsController@sendEmail');
-Route::post('/send-email', [EmailsController::class, 'sendEmail']);
+Route::post('/send-email', [EmailsController::class, 'send'])->middleware(ProtectAgainstSpam::class);
