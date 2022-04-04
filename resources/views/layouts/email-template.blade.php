@@ -1,7 +1,7 @@
-<p>Saņemts jauns ziņojums no yvettaphoto.com</p>
-<p><strong>Sūtītāja vārds:</strong>{{ $email->name }}</p>
-<p><strong>Sūtītāja e-pasts:</strong>{{ $email->email }}</p>
+<h4>Saņemts jauns ziņojums no yvettaphoto.com</h4>
+<p><strong>Sūtītāja vārds:</strong> {{ $name }}</p>
+<p><strong>Sūtītāja e-pasts:</strong> {{ $email }}</p>
 <p><strong>Sūtītāja ziņa:</strong></p>
 <p>
-    {{ $email->msg }}
+  {{ $body }}
 </p>
