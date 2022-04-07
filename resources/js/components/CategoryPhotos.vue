@@ -25,6 +25,7 @@
               <img
                 class="img-fluid"
                 v-bind:src="'/storage/' + image.image_name"
+                v-bind:alt="image.alt_attribute"
                 @load="reloadGrid"
               />
             </a>
