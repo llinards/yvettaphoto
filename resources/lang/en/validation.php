@@ -153,6 +153,7 @@ return [
         'main-img-cover' => 'Titulbildes izvēles',
         'name' => 'Jūsu vārds/uzvārds',
         'email' => 'Jūsu e-pasts',
-        'msg' => 'Jūsu ziņojums'
+        'msg' => 'Jūsu ziņojums',
+        'image-alt-attribute' => 'Bildes "alt" vērtība'
     ],
 ];

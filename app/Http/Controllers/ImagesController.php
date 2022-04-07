@@ -78,6 +78,24 @@ class ImagesController extends Controller
     return view('admin.photos.edit', compact('images', 'category'));
   }
 
+  public function editImageInfo(Category $category, Image $image)
+  {
+    return view('admin.photos.edit-info', compact('image', 'category'));
+  }
+
+  public function storeImageInfo(Category $category, $id)
+  {
+    try {
+      $updatedImage = request();
+      $imageToUpdate = Image::findOrFail($id);
+      $imageToUpdate->alt_attribute = $updatedImage['image_alt_attribute'];
+      $imageToUpdate->save();
+      return redirect('/admin/'.$category->category_slug.'/bildes')->with('success', 'Atjaunots!');
+    } catch (\Exception $e) {
+      return back()->with('error', $e);
+    }
+  }
+
   public function destroy()
   {
     $data = request('image-id');
