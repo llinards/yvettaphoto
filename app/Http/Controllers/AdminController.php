@@ -28,7 +28,7 @@ class AdminController extends Controller
       $image = Exif::make("storage/{$imagePath}");
       $image->save();
       return redirect('/admin/titulbilde/jauna')->with('success', 'Titulbilde nomainīta!');
-    } catch (\Exception $exception) {
+    } catch (\Exception $e) {
       return redirect('/admin/titulbilde/jauna')->with('error', 'Kļūda!');
     }
   }
