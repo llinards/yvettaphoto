@@ -10,6 +10,18 @@
       </div>
       <div class="row">
         <div class="col">
+          <p class="lead main-text">I am so happy to be selected with my image “Contradictions” for the online
+            exhibition “Trees” in ASMITH GALLERY photographic arts, Johnson City, Texas.</p>
+          <p class="lead main-text"><a href="https://asmithgallery.com/current-exhibition/" target="_blank">asmithgallery.com</a></p>
+          <p class="lead main-text">The image ”Contradictions” has been included in the book “The 27”.</p>
+          <div class="text-center mb-5 mt-5">
+            <img src="../img/news/contradictions.jpg" width="350" class="img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col">
           <p class="lead main-text">I am honored that two of my images have been selected for “Dreams and Imaginings”
             exhibition in our Middlebury, Vermont gallery.
             The photograph “Let’s Go Lost” received Juror’s Susan Burnstine AWARD.</p>
