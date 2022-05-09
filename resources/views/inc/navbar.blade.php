@@ -64,7 +64,7 @@
           |</span>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-uppercase anime-border-dark {{ Request::is('portfolio') ? 'current-link' : '' }}" href="/portfolio">Portfolio</a><span
+        <a class="nav-link text-uppercase anime-border-dark {{ Request::is('portfolio') ? 'current-link' : '' }}" href="/portfolio">{{ isset($photos) ? 'back to portfolio' : 'Portfolio' }}</a><span
           class="menu-divider"> |</span>
       </li>
       <li class="nav-item">
