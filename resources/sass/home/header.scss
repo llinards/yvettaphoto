@@ -1,7 +1,12 @@
+:root {
+  --doc-height: 100%;
+}
+
 section#home {
-    height: 100vh;
-    background-image: url('/storage/uploads/cover_photos/home-bg.jpg');
-    position: relative;
-    background-size: cover;
-    background-position: center;
+  background-image: url('/storage/uploads/cover_photos/home-bg.jpg');
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  height: var(--doc-height);
 }
