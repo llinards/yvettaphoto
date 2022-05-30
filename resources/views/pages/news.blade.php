@@ -14,6 +14,7 @@
             exhibition “Trees” in ASMITH GALLERY photographic arts, Johnson City, Texas.</p>
           <p class="lead main-text"><a href="https://asmithgallery.com/current-exhibition/" target="_blank">asmithgallery.com</a></p>
           <p class="lead main-text">The image ”Contradictions” has been included in the book “The 27”.</p>
+          <p class="lead main-text">The photograph "CONTRADICTIONS" is created within the project "THE CLOSE EMBRACE." Please see all images from the project in the <a href="https://yvettaphoto.com/portfolio/the-close-embrace">gallery</a>.</p>
           <div class="text-center mb-5 mt-5">
             <img src="../img/news/contradictions.jpg" width="350" class="img-fluid" alt="">
           </div>
