@@ -10,12 +10,8 @@
       </div>
       <div class="row">
         <div class="col">
-          <p class="lead main-text">Photography, for me, is an inner conversation. It is a process of questions and answers to myself and you. The beauty and
-            diversity of nature are the foundation for dualities; light colors and darkness, smooth lines versus sharp. These contrasts reflect the inner
-            harmony of creation.</p>
-          <p class="lead main-text">Through the use of multi-exposure and ICM (Intentional camera movement), I am looking to embed these varied layers of
-            internal and external contrasts reflected in colors and shapes as a symbol of the creative processes. To catch the moment, which gives you a
-            fragment of what might be an answer or at times provides an instant of truth, is the greatest gift of nature.</p>
+          <p class="lead main-text">Photography, for me, is an inner conversation – how to balance my inner turmoil of thoughts and emotions. It is a process of questions and answers. The balance of duality in nature– light and darkness, happiness and pain, symmetry, and chaos, offers order in disorder and carries beyond surface value. These contrasts reflect the inner harmony of creation. For years I have been learning to accept them in my life. Nature gives us solace and centering in both – when we celebrate and rebirth after losses.</p>
+          <p class="lead main-text">Through multi-exposure and ICM (Intentional camera movement) photographic technics, I am looking to embed these varied layers of internal emotional, and external contrasts reflected in colors and shapes as a symbol of creative processes. To catch a moment, which gives you a fragment of what might be an answer or at times provides an instant of truth, is nature's greatest gift.</p>
         </div>
       </div>
     </div>
