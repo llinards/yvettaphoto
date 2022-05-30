@@ -13,15 +13,16 @@
           <div class="main-text-img text-center mb-5">
             <img src="../img/iveta-lazdina-artist-statement.jpeg" width="250" class="img-fluid" alt="">
           </div>
-          <p class="lead main-text">Iveta is a Latvian-based photographer. Her interest in photography was raised during traveling – how to pick up colors that
-            surround you, expressions of light, and feelings of a particular moment. To become a Photographer, Iveta started with fundamental knowledge in Photo
-            Académie in Riga (Latvia) within classes of one of the most excellent nature master photographers in Latvia - Maris Kundzins.
-          </p>
-          <p class="lead main-text mb-3">
-            Iveta has studied art in the creative classes of Karina Rungenfelde. The beauty of contrasts and nature lines helped her develop an interest in
-            other art forms like photography. She is inspired by Impressionists & Abstract painter’s masterpieces and photo camera possibilities nowadays. It is
-            a never-ending process of learning which characterizes Iveta very well.
-          </p>
+          <p class="lead main-text">Iveta Lazdina is a Latvia-based visual artist. She is best known for her dreamy and imagining photographs of nature. Her fine artworks consist of abstract and semi-abstract photographs created via ICM and multi-exposure photographic techniques to evoke and let us feel the magic connection with natural processes and rhythms. The photographs are visual mediation processes.</p>
+          <p class="lead main-text mb-3">She aims to explore inner emotional experience to find an inner balance between being and reflection to the resonance of expression of lights, shapes, and textures.</p>
+          <p class="lead main-text mb-3">Lazdina started fundamental knowledge in Photo Academia in Riga (Latvia). Since 2019 she has focused on creative technics via studies in Masterclasses in Europe and US. Lazdina  has studied art mainly concentrated on impressionism and expressionism concepts and technic.  Lazdina has a Master’s degree in environmental science and long experience in managerial positions.</p>
+          <p class="lead main-text mb-3">Her photography has been exhibited nationally and internationally:</p>
+          <ul>
+            <li class="lead main-text">SE Center for Photography, Grenville, SC</li>
+            <li class="lead main-text">Photo Place Gallery, Middlebury, VT, with Jurors AWARD  nomination</li>
+            <li class="lead main-text">ASMITH Gallery, Johnson City, TX.</li>
+          </ul>
+          <p class="lead main-text mb-3">Lazdina's work has been published online in the ICMPhoto Magazine, LeMag Magazine.</p>
           <div class="submit-btn pt-0 text-center mb-3">
             <button class="btn" id="read-more-bio-btn" type="button" data-toggle="collapse" data-target="#read-more-bio" aria-expanded="false"
               aria-controls="read-more-bio">
