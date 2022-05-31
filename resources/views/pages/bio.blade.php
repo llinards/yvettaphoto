@@ -38,9 +38,6 @@
               a waste project developed in the North Vidzeme region, where Iveta was involved and proud of. Of course, today, such a photo wouldn’t get close
               attention. Still, in the 2000ies, it was a significant achievement to produce and present photos of very substantial progress in Environmental
               management here in Latvia.</p>
-            <p class="lead main-text mb-3">The most recent project, “Doing Environmentally,” was included in ICM Photography Magazine Special Edition concerning
-              the COP26 Climate Change Conference being held in Glasgow, Scotland, November 2021. - <a
-                href="https://www.icmphotomag.com/special-environmental-issue-november-2021" target="_blank">www.icmphotomag.com</a></p>
             <h3 class="text-uppercase text-center main-text">ENJOY AND BE INSPIRED BY THE PHOTOS!</h3>
           </div>
         </div>
