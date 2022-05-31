@@ -10,6 +10,30 @@
       </div>
       <div class="row">
         <div class="col">
+          <h4>COMING IN NOVEMBER</h4>
+          <p class="lead main-text">I am honored to participate in the exhibition “Abstract Rhythm & Blue Notes,” which will run at The Horsebridge Arts Centre in Whitstable, Kent, from November 16 - 29, 2022.
+            The genesis of the exhibition was an intensive year-long exploration of the intersection of photography, abstraction, and creativity under the tutelage of Bailey and Chinnery.
+            For more information about the exhibition, the opening reception, and a full schedule of talks and workshops, go to: <a href="http://www.arbnexhibition.co.uk/" target="_blank">www.arbnexhibition.co.uk</a>
+          </p>
+          <div class="text-center mb-5 mt-5">
+            <img src="../img/news/arbnexhibition-banner.jpeg" width="750" class="img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col">
+          <p class="lead main-text">I am honored to take part with my photograph “LIGHT SILENCE” in “Work of eARTh” show at the WithINSight Gallery (Chicago Photography Classes), Chicago.</p>
+          <p class="lead main-text"><a href="https://chicagophotoclasses.com/2022/04/24/work-of-earth-show/" target="_blank">chicagophotoclasses.com</a></p>
+          <p class="lead main-text">See entire project “SPRING” <a href="https://yvettaphoto.com/portfolio/spring">here</a>.</p>
+          <div class="text-center mb-5 mt-5">
+            <img src="../img/news/light-silence-fine-art-photography.jpg" width="350" class="img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col">
           <p class="lead main-text">I am so happy to be selected with my image “Contradictions” for the online
             exhibition “Trees” in ASMITH GALLERY photographic arts, Johnson City, Texas.</p>
           <p class="lead main-text"><a href="https://asmithgallery.com/current-exhibition/" target="_blank">asmithgallery.com</a></p>
