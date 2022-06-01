@@ -13,11 +13,19 @@
           <p>ISO: {{$image->iso}}</p>
           <p>ƒ: {{$image->f_number}}</p>
           <p>Exposure time: {{$image->exposure_time}}</p>
-          <h4>Bildes "alt" vērtība:</h4>
           <form action="/admin/{{$category->category_slug}}/bildes/{{$image->id}}" class="mb-2"
                 enctype="multipart/form-data" method="post">
             @csrf
             @method('PATCH')
+            <h4>Bildes nosaukums:</h4>
+            <div class="form-group">
+              <input type="text" class="form-control" value="{{ $image->title }}" name="image_title"
+                     id="image_title">
+              @error('image_title')
+              <p class="text-danger">{{ $message }}</p>
+              @enderror
+            </div>
+            <h4>Bildes "alt" vērtība:</h4>
             <div class="form-group">
               <input type="text" class="form-control" value="{{ $image->alt_attribute }}" name="image_alt_attribute"
                      id="image_alt_attribute">
