@@ -29,6 +29,9 @@
                 @load="reloadGrid"
               />
             </a>
+            <div v-if="image.title" class="img-title mt-2">
+              <h5 class="main-header text-center text-uppercase">{{ image.title }}</h5>
+            </div>
           </div>
         </div>
         <div v-else>
