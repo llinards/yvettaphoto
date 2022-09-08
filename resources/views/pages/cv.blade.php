@@ -11,6 +11,7 @@
       <div class="row">
         <div class="col">
           <h4 class="font-weight-bold text-uppercase">GROUP EXBIBITIONS</h4>
+          <p class="lead main-text">“Undercurrents”, LACP Members Exhibition at Summer on 7th, Los Angeles, US, 2022</p>
           <p class="lead main-text">“Trees” in ASMITH GALLERY photographic arts, Johnson City, Texas, US, 2022</p>
           <p class="lead main-text">“Work of earth” show at the WithINSight Gallery, Chicago, US, 2022</p>
           <p class="lead main-text">“Dreams and Imaginings” in Photo Place Gallery, Middlebury, Vermont, US, 2022, with JUROR’S AWARD to the photograph “Let’s go lost”</p>
