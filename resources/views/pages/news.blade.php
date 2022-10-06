@@ -10,7 +10,9 @@
       </div>
       <div class="row">
         <div class="col">
-          <p class="lead main-text">I am honored to take part with my photograph “Look over” in Pop up <a href="https://lacphoto.org/undercurrents-pop-up-members-exhibition-at-summer-on-7th-2022/" target="_blank">LACP (Los Angeles Centre for Photography)</a> Members exhibition at Summer on the 7th.</p>
+          <h4>COMING IN NOVEMBER’22</h4>
+          <p class="lead main-text">I am honored to be selected for an online exhibition in the 2022 International Juried Exhibition, juried by Paul Kopeikin at the Center for Photographic Art. </p>
+          <p class="lead main-text">Exhibition on view: November 19 – December 29, 2022. <a href="https://photography.org/event/2022-international-juried-exhibition/" target="_blank">https://photography.org/event/2022-international-juried-exhibition/</a></p>
           <p class="lead main-text">See entire project “The close embrace” <a href="https://yvettaphoto.com/portfolio/the-close-embrace">here</a>.</p>
           <div class="text-center mb-5 mt-5">
             <img src="../img/news/look-over-la-2022.jpg" width="350" class="img-fluid" alt="">
@@ -20,13 +22,34 @@
       <hr>
       <div class="row">
         <div class="col">
-          <h4>COMING IN NOVEMBER</h4>
-          <p class="lead main-text">I am honored to participate in the exhibition “Abstract Rhythm & Blue Notes,” which will run at The Horsebridge Arts Centre in Whitstable, Kent, from November 16 - 29, 2022.
-            The genesis of the exhibition was an intensive year-long exploration of the intersection of photography, abstraction, and creativity under the tutelage of Bailey and Chinnery.
-            For more information about the exhibition, the opening reception, and a full schedule of talks and workshops, go to: <a href="http://www.arbnexhibition.co.uk/" target="_blank">www.arbnexhibition.co.uk</a>
-          </p>
+          <p class="lead main-text">I am thrilled to participate in the exhibition “Abstract Rhythm & Blue Notes,” which will run at The Horsebridge Arts Centre in Whitstable, Kent, from November 16 - 28, 2022.</p>
+          <p class="lead main-text">The genesis of the exhibition was an intensive year-long exploration of the intersection of photography, abstraction, and creativity under the tutelage of Bailey and Chinnery.</p>
+          <p class="lead main-text">For more information about the exhibition, the opening reception, and a full schedule of talks and workshops, go to: <a href="https://www.arbnexhibition.co.uk" target="_blank">www.arbnexhibition.co.uk</a></p>
           <div class="text-center mb-5 mt-5">
-            <img src="../img/news/arbnexhibition-banner.jpeg" width="750" class="img-fluid" alt="">
+            <img src="../img/news/arbnexhibition-banner-2022.jpeg" width="350" class="img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col">
+          <p class="lead main-text">I am honored to take part with my photograph “Look over” and “Solstice” in the exhibition “Shape - Barcelona” at PH21@Barcelona gallery. A curated international photography exhibition from November 3- 13, 2022.</p>
+          <p class="lead main-text"><a href="https://www.ph21gallery.com/shape-barcelona-22-october" target="_blank">https://www.ph21gallery.com/shape-barcelona-22-october</a></p>
+          <p class="lead main-text">The photo “Look over” received honorable mention.</p>
+          <p class="lead main-text">See entire project “The close embrace” <a href="https://yvettaphoto.com/portfolio/the-close-embrace">here</a>.</p>
+          <div class="text-center mb-5 mt-5">
+            <img src="../img/news/solstice.jpg" width="350" class="img-fluid p-1" alt="">
+            <img src="../img/news/look-over-la-2022.jpg" width="350" class="img-fluid p-1" alt="">
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col">
+          <p class="lead main-text">I am honored to take part with my photograph “Look over” in Pop up <a href="https://lacphoto.org/undercurrents-pop-up-members-exhibition-at-summer-on-7th-2022/" target="_blank">LACP (Los Angeles Centre for Photography)</a> Members exhibition at Summer on the 7th.</p>
+          <p class="lead main-text">See entire project “The close embrace” <a href="https://yvettaphoto.com/portfolio/the-close-embrace">here</a>.</p>
+          <div class="text-center mb-5 mt-5">
+            <img src="../img/news/look-over-la-2022.jpg" width="350" class="img-fluid" alt="">
           </div>
         </div>
       </div>
