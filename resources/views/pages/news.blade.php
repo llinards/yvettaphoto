@@ -46,6 +46,17 @@
       <hr>
       <div class="row">
         <div class="col">
+          <p class="lead main-text">I am honored that my project “The close embrace” to be chosen by DODHO Magazine as one of the concept.</p>
+          <p class="lead main-text"><a href="https://www.dodho.com/visual-meditation-the-close-embrace-by-iveta-lazdina/" target="_blank">www.dodho.com</a></p>
+          <p class="lead main-text">See entire project “The close embrace” <a href="https://yvettaphoto.com/portfolio/the-close-embrace">here</a>.</p>
+          <div class="text-center mb-5 mt-5">
+            <img src="../img/news/look-over-la-2022.jpg" width="350" class="img-fluid p-1" alt="">
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col">
           <p class="lead main-text">I am honored to take part with my photograph “Look over” in Pop up <a href="https://lacphoto.org/undercurrents-pop-up-members-exhibition-at-summer-on-7th-2022/" target="_blank">LACP (Los Angeles Centre for Photography)</a> Members exhibition at Summer on the 7th.</p>
           <p class="lead main-text">See entire project “The close embrace” <a href="https://yvettaphoto.com/portfolio/the-close-embrace">here</a>.</p>
           <div class="text-center mb-5 mt-5">
