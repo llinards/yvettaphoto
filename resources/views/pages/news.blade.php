@@ -8,18 +8,6 @@
         <h1 class="text-uppercase text-center main-header">news</h1>
         <div class="underline"></div>
       </div>
-      <div class="row">
-        <div class="col-lg col-sm-12 d-flex flex-column justify-content-center">
-          <p class="lead main-text">I am honored to be selected for an online exhibition in the 2022 International Juried Exhibition, juried by Paul Kopeikin at the Center for Photographic Art. </p>
-          <p class="lead main-text">Exhibition on view: November 19 – December 29, 2022. <a href="https://photography.org/event/2022-international-juried-exhibition/" target="_blank">https://photography.org/event/2022-international-juried-exhibition/</a></p>
-          <p class="lead main-text">See entire project “The close embrace” <a href="https://yvettaphoto.com/portfolio/the-close-embrace">here</a>.</p>
-          <p class="small main-text">01/01/2022</p>
-        </div>
-        <div class="col-lg col-sm-12 d-flex flex-column align-items-lg-end align-items-center">
-          <img src="../img/news/look-over-la-2022.jpg" width="300" class="img-fluid my-2" alt="">
-        </div>
-      </div>
-      <hr>
       @foreach($allNews as $newsItem)
         <div class="row">
           <div class="col-lg col-sm-12 d-flex flex-column justify-content-center news-item-content">
@@ -28,12 +16,24 @@
           </div>
           <div class="col-lg col-sm-12 d-flex flex-column align-items-lg-end align-items-center">
             @foreach($newsItem->images as $image)
-              <img src="{{asset('storage/uploads/news/'.$image)}}" width="300" class="img-fluid my-2" alt="">
+              <img src="{{$image['image_name']}}" width="300" class="img-fluid my-2" alt="">
             @endforeach
           </div>
         </div>
         <hr>
       @endforeach
+{{--      <div class="row">--}}
+{{--        <div class="col-lg col-sm-12 d-flex flex-column justify-content-center">--}}
+{{--          <p class="lead main-text">I am honored to be selected for an online exhibition in the 2022 International Juried Exhibition, juried by Paul Kopeikin at the Center for Photographic Art. </p>--}}
+{{--          <p class="lead main-text">Exhibition on view: November 19 – December 29, 2022. <a href="https://photography.org/event/2022-international-juried-exhibition/" target="_blank">https://photography.org/event/2022-international-juried-exhibition/</a></p>--}}
+{{--          <p class="lead main-text">See entire project “The close embrace” <a href="https://yvettaphoto.com/portfolio/the-close-embrace">here</a>.</p>--}}
+{{--          <p class="small main-text">01/01/2022</p>--}}
+{{--        </div>--}}
+{{--        <div class="col-lg col-sm-12 d-flex flex-column align-items-lg-end align-items-center">--}}
+{{--          <img src="../img/news/look-over-la-2022.jpg" width="300" class="img-fluid my-2" alt="">--}}
+{{--        </div>--}}
+{{--      </div>--}}
+{{--      <hr>--}}
 {{--      <div class="row">--}}
 {{--        <div class="col">--}}
 {{--          <p class="lead main-text">I am thrilled to participate in the exhibition “Abstract Rhythm & Blue Notes,” which will run at The Horsebridge Arts Centre in Whitstable, Kent, from November 16 - 28, 2022.</p>--}}
