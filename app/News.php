@@ -9,6 +9,8 @@ class News extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['title', 'description'];
+
     public function images(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
       return $this->hasMany(Image::class, 'news_id');

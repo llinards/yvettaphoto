@@ -46,6 +46,10 @@ Route::middleware(['auth'])->group(function () {
   Route::patch('/admin/{category}/bildes/{image}', [ImagesController::class, 'storeImageInfo']);
 //  Route::patch('/admin/bildes', [ImagesController::class, 'storeImageInfo']);
   Route::delete('/admin/bildes', [ImagesController::class, 'destroy']);
+
+  Route::get('/admin/zinas/new', [NewsController::class, 'create']);
+  Route::get('/admin/zinas/{news}/edit', [NewsController::class, 'edit']);
+  Route::post('/admin/zinas', [NewsController::class, 'store']);
 });
 
 Route::get('/', [HomeController::class, 'index']);
