@@ -10,8 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $categories = Category::latest()->get();
-        return view('pages.index', compact('categories'));
+        return view('pages.index');
     }
 
     public function portfolio()
@@ -38,11 +37,6 @@ class HomeController extends Controller
     public function cv()
     {
         return view('pages.cv');
-    }
-
-    public function news()
-    {
-        return view('pages.news');
     }
 
     public function galleryImages(Category $category)

@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\EmailsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImagesController;
+use App\Http\Controllers\NewsController;
 use Spatie\Honeypot\ProtectAgainstSpam;
 
 /*
@@ -45,6 +46,10 @@ Route::middleware(['auth'])->group(function () {
   Route::patch('/admin/{category}/bildes/{image}', [ImagesController::class, 'storeImageInfo']);
 //  Route::patch('/admin/bildes', [ImagesController::class, 'storeImageInfo']);
   Route::delete('/admin/bildes', [ImagesController::class, 'destroy']);
+
+  Route::get('/admin/zinas/new', [NewsController::class, 'create']);
+  Route::get('/admin/zinas/{news}/edit', [NewsController::class, 'edit']);
+  Route::post('/admin/zinas', [NewsController::class, 'store']);
 });
 
 Route::get('/', [HomeController::class, 'index']);
@@ -53,6 +58,6 @@ Route::get('/contact-me', [HomeController::class, 'contactMe']);
 Route::get('/bio', [HomeController::class, 'bio']);
 Route::get('/artist-statement', [HomeController::class, 'artistStatement']);
 Route::get('/cv', [HomeController::class, 'cv']);
-Route::get('/news', [HomeController::class, 'news']);
+Route::get('/news', [NewsController::class, 'index']);
 Route::get('/portfolio/{category}', [HomeController::class, 'galleryImages']);
 Route::post('/send-email', [EmailsController::class, 'send'])->middleware(ProtectAgainstSpam::class);

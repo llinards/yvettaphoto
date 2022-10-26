@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\News;
 use Intervention\Image\Facades\Image as Exif;
 
 class AdminController extends Controller
 {
   public function index()
   {
-    return view('admin.index');
+    $allNews = News::orderBy('updated_at', 'DESC')->get();
+    return view('admin.index', compact('allNews'));
   }
 
   public function create()

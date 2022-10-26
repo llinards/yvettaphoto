@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
-  protected $fillable = ['alt_attribute'];
+  protected $guarded = [];
 
   public function scopeImagesDesc($query, $category)
   {
