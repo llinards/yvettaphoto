@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Image;
 use App\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
 {
@@ -55,6 +57,19 @@ class NewsController extends Controller
       }
     }
 
+    public function destroy(News $news)
+    {
+      try {
+        foreach ($news->images as $image) {
+          Storage::delete('public/' . $image->image_name);
+        }
+        $news->delete();
+        $news->images()->delete();
+        return back()->with('success', 'Ziņa izdzēsta!');
+      } catch (\Exception $e) {
+        return back()->with('error', 'Kļūda!');
+      }
+    }
 
     public function edit(News $news)
     {
