@@ -50,6 +50,7 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/admin/zinas/new', [NewsController::class, 'create']);
   Route::get('/admin/zinas/{news}/edit', [NewsController::class, 'edit']);
   Route::post('/admin/zinas', [NewsController::class, 'store']);
+  Route::patch('/admin/zinas', [NewsController::class, 'update']);
   Route::delete('/admin/zinas/{news}/delete', [NewsController::class, 'destroy']);
 });
 

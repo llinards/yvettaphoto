@@ -31,7 +31,8 @@ class NewsController extends Controller
         'news-title.required' => 'Trūkst virsraksta!',
         'news-title.max' => 'Virsraksts pārāk garš!',
         'news-description.required' => 'Trūkst teksta!',
-        'news-image.required' => 'Trūkst bildes!'
+        'news-image.required' => 'Trūkst bildes!',
+        'news-image.mimes' => 'Pārliecinies, ka augšupielādē foto!'
       ]);
 
       try {
@@ -57,6 +58,53 @@ class NewsController extends Controller
       }
     }
 
+    public function edit(News $news)
+    {
+      return view('admin.news.edit', compact('news'));
+    }
+
+    public function update(Request $data)
+    {
+      $data->validate([
+        'news-title' => ['required', 'max:100'],
+        'news-description' => 'required',
+        'news-image' => 'max:1536'
+      ],
+      [
+        'news-title.required' => 'Trūkst virsraksta!',
+        'news-title.max' => 'Virsraksts pārāk garš!',
+        'news-description.required' => 'Trūkst teksta!',
+      ]);
+      try {
+        $newsToUpdate = News::findOrFail($data['id']);
+        $newsToUpdate->update([
+          'title' => $data['news-title'],
+          'description' => $data['news-description']
+        ]);
+        if (isset($data['news-image'])) {
+          foreach ($newsToUpdate->images as $image) {
+            Storage::delete('public/' . $image->image_name);
+          }
+          $newsToUpdate->images()->delete();
+          foreach($data['news-image'] as $image) {
+            $imagePath = $image->store('uploads/news', 'public');
+            $newsToUpdate->images()->create([
+              'category_id' => 0,
+              'image_name' => $imagePath,
+              'camera_model' => 'NA',
+              'camera_make' => 'NA',
+              'iso' => 0,
+              'f_number' => 'NA',
+              'exposure_time' => 'NA'
+            ]);
+          }
+        }
+        return redirect('/admin')->with('success', 'Ziņa atjaunota!');
+      } catch (\Exception $e) {
+        return back()->with('error', 'Kļūda!');
+      }
+    }
+
     public function destroy(News $news)
     {
       try {
@@ -69,10 +117,5 @@ class NewsController extends Controller
       } catch (\Exception $e) {
         return back()->with('error', 'Kļūda!');
       }
-    }
-
-    public function edit(News $news)
-    {
-      dd($news);
     }
 }
