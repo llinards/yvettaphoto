@@ -25,14 +25,17 @@
           <div class="news-section-content">
             <div class="row justify-content-center">
             @foreach($allNews as $newsItem)
-              <div class="col-3 m-2">
+                @include('admin.news.delete-modal', ['id' => $newsItem->id])
+                <div class="col-3 m-2">
                 <div class="card">
                   <div class="card-body">
                     <h5 class="card-title">{{ $newsItem->title }}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Izveidots: {{ $newsItem->created_at }}</h6>
                     <h6 class="card-subtitle mb-2 text-muted">Rediģēts: {{ $newsItem->updated_at }}</h6>
-                    <a href="/admin/zinas/{{$newsItem->id}}/edit" class="card-link">Rediģēt</a>
-                    <a href="#" class="card-link btn btn-danger">Dzēst</a>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <a href="/admin/zinas/{{$newsItem->id}}/edit" class="card-link">Rediģēt</a>
+                      <button class="btn btn-danger" data-toggle="modal" data-target="#delete-news-modal">Dzēst</button>
+                    </div>
                   </div>
                 </div>
               </div>
