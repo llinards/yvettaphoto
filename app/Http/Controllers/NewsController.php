@@ -25,13 +25,14 @@ class NewsController extends Controller
       $data->validate([
         'news-title' => ['required', 'max:100'],
         'news-description' => 'required',
-        'news-image' => 'required'
+        'news-image' => ['required', 'image']
       ],
       [
         'news-title.required' => 'Trūkst virsraksta!',
         'news-title.max' => 'Virsraksts pārāk garš!',
         'news-description.required' => 'Trūkst teksta!',
-        'news-image.required' => 'Trūkst bildes!'
+        'news-image.required' => 'Trūkst bildes!',
+        'news-image.image' => 'Pārliecinies, ka augšupielādē foto!'
       ]);
 
       try {
