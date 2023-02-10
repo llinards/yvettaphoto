@@ -91,7 +91,7 @@ class ImagesController extends Controller
       $imageToUpdate->alt_attribute = $updatedImage['image_alt_attribute'];
       $imageToUpdate->title = $updatedImage['image_title'];
       $imageToUpdate->save();
-      return redirect('/admin/'.$category->category_slug.'/bildes')->with('success', 'Atjaunots!');
+      return redirect('/admin/' . $category->category_slug . '/bildes')->with('success', 'Atjaunots!');
     } catch (\Exception $e) {
       return back()->with('error', $e);
     }
