@@ -20,7 +20,7 @@ class EmailsController extends Controller
       Mail::to('info@yvettaphoto.com')->send(new Contact($data['name'], $data['email'], $data['body']));
       return back()->with('success', 'Thanks! Your  e-mail has been sent!');
     } catch (\Exception $e) {
-       return back()->with('error', 'Error!');
+      return back()->with('error', 'Error!');
     }
   }
 }
