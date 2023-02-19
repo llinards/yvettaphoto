@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\CvsController;
 use App\Http\Controllers\EmailsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImagesController;
@@ -52,6 +53,9 @@ Route::middleware(['auth'])->group(function () {
   Route::post('/admin/zinas', [NewsController::class, 'store']);
   Route::patch('/admin/zinas', [NewsController::class, 'update']);
   Route::delete('/admin/zinas/{news}/delete', [NewsController::class, 'destroy']);
+
+  Route::get('/admin/cv/edit', [CvsController::class, 'show']);
+  Route::patch('/admin/cv', [CvsController::class, 'store']);
 });
 
 Route::get('/', [HomeController::class, 'index']);
@@ -59,7 +63,7 @@ Route::get('/portfolio', [HomeController::class, 'portfolio']);
 Route::get('/contact-me', [HomeController::class, 'contactMe']);
 Route::get('/bio', [HomeController::class, 'bio']);
 Route::get('/artist-statement', [HomeController::class, 'artistStatement']);
-Route::get('/cv', [HomeController::class, 'cv']);
+Route::get('/cv', [CvsController::class, 'index']);
 Route::get('/news', [NewsController::class, 'index']);
 Route::get('/portfolio/{category}', [HomeController::class, 'galleryImages']);
 Route::post('/send-email', [EmailsController::class, 'send'])->middleware(ProtectAgainstSpam::class);
