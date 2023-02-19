@@ -53,6 +53,9 @@ Route::middleware(['auth'])->group(function () {
   Route::post('/admin/zinas', [NewsController::class, 'store']);
   Route::patch('/admin/zinas', [NewsController::class, 'update']);
   Route::delete('/admin/zinas/{news}/delete', [NewsController::class, 'destroy']);
+
+  Route::get('/admin/cv/edit', [CvsController::class, 'show']);
+  Route::patch('/admin/cv', [CvsController::class, 'store']);
 });
 
 Route::get('/', [HomeController::class, 'index']);
