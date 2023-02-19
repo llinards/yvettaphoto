@@ -12,6 +12,7 @@
             <a href="/admin/titulbilde/jauna" class="btn btn-primary">Mainīt titulbildi</a>
             <a href="/admin/kategorijas" class="btn btn-primary">Kategoriju rediģēšana</a>
             <a href="/admin/bildes/jaunas" class="btn btn-primary">Pievienot jaunas bildes</a>
+            <a href="/admin/cv/edit" class="btn btn-primary">Rediģēt CV</a>
           </div>
         </div>
       </div>

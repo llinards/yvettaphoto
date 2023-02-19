@@ -69,6 +69,12 @@
   .lead {
     font-size: 1rem;
   }
+
+  .cv-content {
+    p {
+      font-size: 1rem;
+    }
+  }
 }
 
 @media (max-width: 575px) {
@@ -110,6 +116,11 @@
   .lead {
     font-size: 0.875rem;
   }
+  .cv-content {
+    p {
+      font-size: 0.875rem;
+    }
+  }
 }
 
 @media (min-width: 576px) {
@@ -118,18 +129,21 @@
     width: 220px;
   }
 }
+
 @media (min-width: 768px) {
   .grid-sizer,
   .grid-item {
     width: 310px;
   }
 }
+
 @media (min-width: 992px) {
   .grid-sizer,
   .grid-item {
     width: 445px;
   }
 }
+
 @media (min-width: 1200px) {
   .grid-sizer,
   .grid-item {
