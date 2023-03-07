@@ -65,5 +65,8 @@ Route::get('/bio', [HomeController::class, 'bio']);
 Route::get('/artist-statement', [HomeController::class, 'artistStatement']);
 Route::get('/cv', [CvsController::class, 'index']);
 Route::get('/news', [NewsController::class, 'index']);
+Route::get('/purchase', function() {
+  return view('pages.purchase');
+});
 Route::get('/portfolio/{category}', [HomeController::class, 'galleryImages']);
 Route::post('/send-email', [EmailsController::class, 'send'])->middleware(ProtectAgainstSpam::class);
