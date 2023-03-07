@@ -20,6 +20,10 @@
           class="menu-divider text-dark"> |</span>
       </li>
       <li class="nav-item">
+        <a class="nav-link text-uppercase anime-border-dark text-dark {{ Request::is('purchase') ? 'current-link' : '' }}" href="/purchase">Purchase</a><span
+          class="menu-divider text-dark"> |</span>
+      </li>
+      <li class="nav-item">
         <a class="nav-link text-uppercase anime-border-dark text-dark {{ Request::is('bio') ? 'current-link' : '' }}" href="/bio">Bio</a><span
           class="menu-divider text-dark"> |</span>
       </li>
@@ -69,6 +73,10 @@
       </li>
       <li class="nav-item">
         <a class="nav-link text-uppercase anime-border-dark {{ Request::is('news') ? 'current-link' : '' }}" href="/news">News</a><span class="menu-divider">
+          |</span>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-uppercase anime-border-dark {{ Request::is('purchase') ? 'current-link' : '' }}" href="/purchase">Purchase</a><span class="menu-divider">
           |</span>
       </li>
       <li class="nav-item">

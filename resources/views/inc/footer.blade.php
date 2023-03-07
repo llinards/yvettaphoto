@@ -2,7 +2,8 @@
   <div class="container">
     <div class="row justify-content-around align-items-center">
       {{-- <p class="m-0 footer-text">Developed by LYNYRDS</p> --}}
-      <p class="m-0 footer-text">&copy; <?php echo date('Y'); ?> YVETTA</p>
+      <p class="m-0 footer-text">All images on this site © Iveta
+        Lazdina.<br/>The unauthorized use of any images on this site will be litigated.</p>
       <div class="d-flex justify-content-center">
         <a target="_blank" href="https://www.instagram.com/yvettaphoto/" class="instagram-icon p-3">
           <i class="fab fa-instagram"></i>
