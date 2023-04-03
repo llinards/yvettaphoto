@@ -6,6 +6,7 @@ use App\Http\Controllers\CvsController;
 use App\Http\Controllers\EmailsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImagesController;
+use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\NewsController;
 use Spatie\Honeypot\ProtectAgainstSpam;
 
@@ -56,6 +57,9 @@ Route::middleware(['auth'])->group(function () {
 
   Route::get('/admin/cv/edit', [CvsController::class, 'show']);
   Route::patch('/admin/cv', [CvsController::class, 'store']);
+
+  Route::post('/admin/upload', [ImageUploadController::class, 'store']);
+  Route::delete('/admin/upload', [ImageUploadController::class, 'destroy']);
 });
 
 Route::get('/', [HomeController::class, 'index']);
