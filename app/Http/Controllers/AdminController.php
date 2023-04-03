@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\News;
-use Intervention\Image\Facades\Image as Exif;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -18,19 +20,21 @@ class AdminController extends Controller
     return view('admin.create');
   }
 
-  public function store()
+  public function store(Request $data)
   {
-    $data = request()->validate([
-      'main-img-cover' => ['required', 'image', 'max:1536']
-    ]);
+    $data->validate([
+      'single-img-upload' => ['required']
+    ],
+      [
+        'single-img-upload.required' => 'Nav izvēlēta bilde.'
+      ]);
     try {
-      $file = request('main-img-cover');
-      $filename = 'home-bg.jpg';
-      $imagePath = $file->storeAs('uploads/' . 'cover_photos', $filename, 'public');
-      $image = Exif::make("storage/{$imagePath}");
-      $image->save();
+      $newCoverPhotoImage = $data['single-img-upload'];
+      $newCoverPhotoImageFilename = basename($newCoverPhotoImage);
+      Storage::disk('public')->move($newCoverPhotoImage, 'uploads/cover_photos/' . $newCoverPhotoImageFilename);
       return redirect('/admin/titulbilde/jauna')->with('success', 'Titulbilde nomainīta!');
     } catch (\Exception $e) {
+      Log::debug($e);
       return redirect('/admin/titulbilde/jauna')->with('error', 'Kļūda!');
     }
   }

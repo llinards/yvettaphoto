@@ -25,6 +25,10 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
+    "filepond": "^4.30.4",
+    "filepond-plugin-file-validate-size": "^2.2.8",
+    "filepond-plugin-file-validate-type": "^1.2.8",
+    "filepond-plugin-image-preview": "^4.6.11",
     "masonry-layout": "^4.2.2",
     "vue-loader": "^15.10.1"
   }

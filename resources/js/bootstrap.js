@@ -1,4 +1,8 @@
 window._ = require('lodash');
+window.FilePond = require('filepond');
+window.FilePondPluginFileValidateType = require('filepond-plugin-file-validate-type');
+window.FilePondPluginFileValidateSize = require('filepond-plugin-file-validate-size');
+window.FilePondPluginImagePreview = require('filepond-plugin-image-preview');
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
