@@ -12,6 +12,9 @@
         <a class="nav-link" target="_blank" href="/">Galvenā mājaslapa</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" target="_blank" href="https://compressor.io/">Bilžu samazināšana izmērā</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="{{ route('logout') }}"
            onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
