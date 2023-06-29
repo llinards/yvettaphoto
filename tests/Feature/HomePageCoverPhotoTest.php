@@ -23,21 +23,19 @@ class HomePageCoverPhotoTest extends TestCase
 
   public function test_if_home_page_cover_photo_can_be_changed(): void
   {
-
-    // Create a user
     $user = User::factory()->create();
-
-    // Log in the user
     $this->actingAs($user);
 
-    Storage::fake('public');
+    Storage::fake('local');
     $file = UploadedFile::fake()->image('home-bg.jpg');
     $response = $this->post('/admin/titulbilde/jauna', [
       'single-img-upload' => $file
     ]);
+
+//    dd($response);
     $response->assertStatus(302);
     $response->assertRedirect('/admin');
 //      dd($response);
-    Storage::disk('public')->assertExists("uploads/cover_photos/home-bg.jpg");
+    Storage::disk('local')->assertExists("public/uploads/cover_photos/home-bg.jpg");
   }
 }
