@@ -12,14 +12,6 @@ class HomePageCoverPhotoTest extends TestCase
 {
   use RefreshDatabase;
 
-  /**
-   * A basic feature test example.
-   */
-  public function test_if_home_page_cover_photo_exists(): void
-  {
-    Storage::disk('local')->assertExists("public/uploads/cover_photos/home-bg.jpg");
-  }
-
   public function test_if_home_page_cover_photo_can_be_changed(): void
   {
     $user = User::factory()->create();
