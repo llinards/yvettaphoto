@@ -10,8 +10,7 @@ class ImageUploadController extends Controller
   public function store(Request $data)
   {
     if ($data->has('single-img-upload')) {
-      $file = $data->file('single-img-upload');
-      return $file->storeAs('temp', 'home-bg.' . $file->getClientOriginalExtension(), 'public');
+      return $data->file('single-img-upload')->store('temp', 'public');
     }
   }
 

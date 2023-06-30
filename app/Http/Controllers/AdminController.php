@@ -30,9 +30,8 @@ class AdminController extends Controller
       ]);
     try {
       $newCoverPhotoImage = $data['single-img-upload'];
-      $newCoverPhotoImageFilename = basename($newCoverPhotoImage);
-      Storage::disk('public')->move($newCoverPhotoImage, 'uploads/cover_photos/' . $newCoverPhotoImageFilename);
-      return redirect('/admin/titulbilde/jauna')->with('success', 'Titulbilde nomainīta!');
+      Storage::disk('public')->move($newCoverPhotoImage, 'uploads/cover_photos/home-bg.jpg');
+      return redirect('/admin')->with('success', 'Titulbilde nomainīta!');
     } catch (\Exception $e) {
       Log::debug($e);
       return redirect('/admin/titulbilde/jauna')->with('error', 'Kļūda!');

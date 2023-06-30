@@ -8,40 +8,25 @@
       </div>
     </div>
     <div class="row justify-content-center m-2">
-      <form action="/admin/titulbilde/jauna" enctype="multipart/form-data" method="post">
-        @csrf
-        <div class="form-group">
-          <label for="main-img-cover" class="col-form-label">Titulbilde</label>
-          <input type="file" class="form-control-file" name="single-img-upload" id="single-img-upload">
-          <small class="form-text text-muted"><strong>Bildes
-              izmēram jābūt pēc iespējas mazākam.</strong><br/> To samazināt var <a href="https://compressor.io/"
-                                                                                    target="_blank">šajā
-              lapā</a>.</small>
-          @error('single-img-upload')
-          <p class="text-danger">{{ $message }}</p>
-          @enderror
-        </div>
-        <button type="submit" class="btn btn-success">Mainīt</button>
-        <a class="btn btn-secondary" href="/admin">Atpakaļ</a>
-      </form>
+      <div class="col-10">
+        <form action="/admin/titulbilde/jauna" enctype="multipart/form-data" method="post">
+          @csrf
+          <div class="form-group">
+            <label for="main-img-cover" class="col-form-label">Titulbilde</label>
+            @error('single-img-upload')
+            <p class="text-danger">{{ $message }}</p>
+            @enderror
+            <input type="file" class="form-control-file" name="single-img-upload" id="single-img-upload">
+            <small class="form-text text-muted"><strong>Bildes
+                izmēram jābūt pēc iespējas mazākam.</strong><br/> To samazināt var <a href="https://compressor.io/"
+                                                                                      target="_blank">šajā
+                lapā</a>.</small>
+          </div>
+          <button type="submit" class="btn btn-success">Mainīt</button>
+          <a class="btn btn-secondary" href="/admin">Atpakaļ</a>
+        </form>
+      </div>
     </div>
   </div>
-  <script>
-    FilePond.registerPlugin(FilePondPluginFileValidateType);
-    FilePond.registerPlugin(FilePondPluginFileValidateSize);
-    FilePond.registerPlugin(FilePondPluginImagePreview);
-    FilePond.create(document.querySelector('input[id="single-img-upload"]'));
-    FilePond.setOptions({
-      server: {
-        url: '/admin/upload',
-        headers: {
-          'X-CSRF-TOKEN': '{{ csrf_token() }}'
-        }
-      },
-      required: true,
-      maxFileSize: '1MB',
-      allowImagePreview: true,
-      acceptedFileTypes: ['image/*'],
-    });
-  </script>
+  @include('inc.single-img-upload')
 @endsection
