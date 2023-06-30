@@ -4,7 +4,6 @@ namespace Tests\Feature;
 
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
@@ -26,16 +25,18 @@ class HomePageCoverPhotoTest extends TestCase
     $user = User::factory()->create();
     $this->actingAs($user);
 
-    Storage::fake('local');
-    $file = UploadedFile::fake()->image('home-bg.jpg');
-    $response = $this->post('/admin/titulbilde/jauna', [
+    Storage::fake('public');
+    $file = UploadedFile::fake()->image('image.jpg');
+    $fileTempUpload = $this->post('/admin/upload', [
       'single-img-upload' => $file
     ]);
 
-//    dd($response);
-    $response->assertStatus(302);
-    $response->assertRedirect('/admin');
-//      dd($response);
-    Storage::disk('local')->assertExists("public/uploads/cover_photos/home-bg.jpg");
+    Storage::disk('public')->assertExists($fileTempUpload->content());
+
+    $response = $this->post('/admin/titulbilde/jauna', [
+      'single-img-upload' => $fileTempUpload->content()
+    ]);
+
+    Storage::disk('public')->assertExists("uploads/cover_photos/home-bg.jpg");
   }
 }
