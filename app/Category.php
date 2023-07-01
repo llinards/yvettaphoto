@@ -6,15 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $fillable = ['name','description','category_slug','cover_photo_url'];
+  protected $fillable = ['name', 'description', 'category_slug', 'cover_photo_url'];
 
-    public function getRouteKeyName()
-    {
-        return 'category_slug';
-    }
+  public function getRouteKeyName()
+  {
+    return 'category_slug';
+  }
 
-    public function scopeCategoriesDesc($query)
-    {
-        return $query->orderBy('created_at', 'DESC');
-    }
+  public function images(): \Illuminate\Database\Eloquent\Relations\HasMany
+  {
+    return $this->hasMany(Image::class);
+  }
+
+  public function scopeCategoriesDesc($query)
+  {
+    return $query->orderBy('created_at', 'DESC');
+  }
 }

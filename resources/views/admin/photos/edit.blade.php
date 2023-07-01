@@ -10,8 +10,8 @@
     </div>
     @include('admin.photos.delete-modal')
     <div class="row">
-      @if(!$images->isEmpty())
-        @foreach($images as $image)
+      @if(!$category->images->isEmpty())
+        @foreach($category->images as $image)
           <div class="col-xs-12 col-md-6 col-lg-4 mt-4">
             <div class="card" style="width: 18rem; margin: 0 auto;">
               <img src="/storage/{{ $image->image_name }}" class="card-img-top" alt="...">
