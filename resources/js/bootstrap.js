@@ -3,6 +3,7 @@ window.FilePond = require('filepond');
 window.FilePondPluginFileValidateType = require('filepond-plugin-file-validate-type');
 window.FilePondPluginFileValidateSize = require('filepond-plugin-file-validate-size');
 window.FilePondPluginImagePreview = require('filepond-plugin-image-preview');
+window.Masonry = require('masonry-layout');
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support

@@ -43,6 +43,7 @@
 </template>
 <script>
 import Masonry from "masonry-layout";
+
 export default {
   props: ["category"],
   data() {
@@ -71,6 +72,7 @@ export default {
       this.categoryDescription = response.data[0].description;
     });
   },
-  mounted() {}
+  mounted() {
+  }
 };
 </script>
