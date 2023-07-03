@@ -25,11 +25,11 @@
             <a
               data-toggle="lightbox"
               data-gallery="{{ $category->name }}"
-              href="{{ asset($image->image_name) }}"
+              href="{{ asset('storage/'.$image->image_name) }}"
             >
               <img
                 class="img-fluid gallery-image"
-                src="{{ asset($image->image_name) }}"
+                src="{{ asset('storage/'.$image->image_name) }}"
                 alt="{{ $image->alt_attribute }}"
               />
             </a>
