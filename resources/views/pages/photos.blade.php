@@ -23,8 +23,7 @@
         @foreach($category->images as $image)
           <div class="grid-item">
             <a
-              data-toggle="lightbox"
-              data-gallery="{{ $category->name }}"
+              data-fslightbox="{{Str::slug($image->category->name)}}"
               href="{{ asset('storage/'.$image->image_name) }}"
             >
               <img
@@ -41,6 +40,7 @@
           </div>
         @endforeach
       </div>
+    </div>
   </section>
   @include('inc.masonry')
 @endsection

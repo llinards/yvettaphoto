@@ -27,6 +27,7 @@
     "filepond-plugin-file-validate-size": "^2.2.8",
     "filepond-plugin-file-validate-type": "^1.2.8",
     "filepond-plugin-image-preview": "^4.6.11",
+    "fslightbox": "^3.4.1",
     "masonry-layout": "^4.2.2"
   }
 }

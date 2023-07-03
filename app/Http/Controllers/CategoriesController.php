@@ -85,6 +85,7 @@ class CategoriesController extends Controller
       $categorySlug = Str::slug($data['category-name']);
 
       $updateCategory = Category::findOrFail($categoryId);
+      return $updateCategory;
       $updateCategory->name = $data['category-name'];
       $updateCategory->description = $data['category-description'];
       $updateCategory->category_slug = $categorySlug;
