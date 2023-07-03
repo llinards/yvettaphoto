@@ -72,5 +72,5 @@ Route::get('/news', [NewsController::class, 'index']);
 Route::get('/purchase', function() {
   return view('pages.purchase');
 });
-Route::get('/portfolio/{category}', [HomeController::class, 'galleryImages']);
+Route::get('/portfolio/{category}', [HomeController::class, 'getAllCategoryImages']);
 Route::post('/send-email', [EmailsController::class, 'send'])->middleware(ProtectAgainstSpam::class);

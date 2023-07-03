@@ -65,9 +65,10 @@ export default {
   },
   created() {
     axios.get(`/api/${this.category}`).then(response => {
-      this.categoryName = response.data[1].name;
-      this.categoryDescription = response.data[1].description;
-      this.images = response.data[0];
+      console.log(response.data);
+      this.images = response.data[0].images;
+      this.categoryName = response.data[0].name;
+      this.categoryDescription = response.data[0].description;
     });
   },
   mounted() {}
