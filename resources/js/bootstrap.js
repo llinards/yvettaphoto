@@ -5,6 +5,7 @@ window.FilePondPluginFileValidateSize = require('filepond-plugin-file-validate-s
 window.FilePondPluginImagePreview = require('filepond-plugin-image-preview');
 window.fsLightbox = require("fslightbox");
 window.Masonry = require('masonry-layout');
+console.log('first');
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support

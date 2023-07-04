@@ -76,26 +76,44 @@ class CategoriesController extends Controller
       'category-name' => 'required',
       'category-description' => 'nullable',
     ],
-    [
-      'category-id.required' => 'Kļūda! Mēģini vēlreiz.',
-      'category-name.required' => 'Nav norādīts kategorijas nosaukums.',
-    ]);
+      [
+        'category-id.required' => 'Kļūda! Mēģini vēlreiz.',
+        'category-name.required' => 'Nav norādīts kategorijas nosaukums.',
+      ]);
     try {
-      $categoryId = $data['category-id'];
-      $categorySlug = Str::slug($data['category-name']);
+      $updateCategory = Category::findOrFail($data['category-id']);
 
-      $updateCategory = Category::findOrFail($categoryId);
-      return $updateCategory;
+      if (Str::slug($data['category-name']) !== $updateCategory->category_slug) {
+        $categorySlug = Str::slug($data['category-name']);
+        Storage::disk('public')->makeDirectory('uploads/' . $categorySlug);
+        Storage::disk('public')->move('uploads/' . $updateCategory->category_slug, 'uploads/' . $categorySlug);
+        $updateCategory->cover_photo_url = 'uploads/' . $categorySlug . '/' . basename($updateCategory->cover_photo_url);
+        
+        foreach ($updateCategory->images as $image) {
+          $imageToUpdate = Photos::findOrFail($image->id);
+          $imageToUpdate->image_name = 'uploads/' . $categorySlug . '/' . basename($image->image_name);
+          $imageToUpdate->save();
+        }
+      } else {
+        $categorySlug = $updateCategory->category_slug;
+      }
+
       $updateCategory->name = $data['category-name'];
       $updateCategory->description = $data['category-description'];
       $updateCategory->category_slug = $categorySlug;
 
       if (isset($data['single-img-upload'])) {
-        $oldImg = Category::where('id', $categoryId)->pluck('cover_photo_url');
-        // problema ir ar to, ka foldera nosaukums glabājas DB
-        Storage::delete('public/' . $oldImg[0]);
-        $imagePath = $this->saveCoverImage($categorySlug);
-        $updateCategory->cover_photo_url = $imagePath;
+        $oldImg = $updateCategory->cover_photo_url;
+        Storage::disk('public')->delete($oldImg);
+
+        $resizedCategoryCoverImage = Image::make("storage/" . $data['single-img-upload'])->fit(600, 600);
+        $resizedCategoryCoverImage->save();
+
+        $categoryCoverImageFilename = basename($data['single-img-upload']);
+        $categoryCoverImagePath = 'uploads/' . $categorySlug . '/' . $categoryCoverImageFilename;
+        Storage::disk('public')->move($data['single-img-upload'], $categoryCoverImagePath);
+
+        $updateCategory->cover_photo_url = $categoryCoverImagePath;
       }
       $updateCategory->save();
       return redirect('/admin/kategorijas')->with('success', 'Kategorija atjaunota!');
@@ -117,16 +135,5 @@ class CategoriesController extends Controller
     } catch (\Exception $e) {
       return redirect('/admin/kategorijas')->with('error', 'Kļūda!');
     }
-  }
-
-  protected function saveCoverImage($categorySlug)
-  {
-    $file = request('category-cover');
-    $filename = 'cover_' . $categorySlug . '_' . date("Ymd_His") . '.' . $file->getClientOriginalExtension();
-    $imagePath = $file->storeAs('uploads/' . $categorySlug, $filename, 'public');
-    $image = Image::make("storage/{$imagePath}")->fit(600, 600);
-    $image->save();
-
-    return $imagePath;
   }
 }
