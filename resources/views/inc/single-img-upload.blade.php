@@ -1,5 +1,4 @@
 <script>
-  console.log('second');
   FilePond.registerPlugin(FilePondPluginFileValidateType);
   FilePond.registerPlugin(FilePondPluginFileValidateSize);
   FilePond.registerPlugin(FilePondPluginImagePreview);

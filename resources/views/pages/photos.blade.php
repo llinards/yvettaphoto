@@ -23,7 +23,7 @@
         @foreach($category->images as $image)
           <div class="grid-item">
             <a
-              data-fslightbox="{{Str::slug($image->category->name)}}"
+              data-fslightbox="{{$image->category->category_slug}}"
               href="{{ asset('storage/'.$image->image_name) }}"
             >
               <img
