@@ -6,6 +6,7 @@ use App\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rules\File;
 
 class AdminController extends Controller
 {
@@ -23,11 +24,10 @@ class AdminController extends Controller
   public function store(Request $data)
   {
     $data->validate([
-      'single-img-upload' => ['required','size:1024']
+      'single-img-upload' => ['required']
     ],
       [
-        'single-img-upload.required' => 'Nav izvēlēta bilde.',
-        'single-img-upload.size' => 'Bilde ir pārāk liela. Izmērs nevar pārsniegt 1MB / 1024KB'
+        'single-img-upload.required' => 'Nav izvēlēta bilde.'
       ]);
     try {
       $newCoverPhotoImage = $data['single-img-upload'];
