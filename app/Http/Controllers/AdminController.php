@@ -27,7 +27,7 @@ class AdminController extends Controller
     ],
       [
         'single-img-upload.required' => 'Nav izvēlēta bilde.',
-        'single-img-upload.size' => 'Bilde ir pārāk liela.'
+        'single-img-upload.size' => 'Bilde ir pārāk liela. Izmērs nevar pārsniegt 1MB / 1024KB'
       ]);
     try {
       $newCoverPhotoImage = $data['single-img-upload'];
