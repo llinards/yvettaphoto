@@ -23,10 +23,11 @@ class AdminController extends Controller
   public function store(Request $data)
   {
     $data->validate([
-      'single-img-upload' => ['required']
+      'single-img-upload' => ['required','size:1024']
     ],
       [
-        'single-img-upload.required' => 'Nav izvēlēta bilde.'
+        'single-img-upload.required' => 'Nav izvēlēta bilde.',
+        'single-img-upload.size' => 'Bilde ir pārāk liela.'
       ]);
     try {
       $newCoverPhotoImage = $data['single-img-upload'];

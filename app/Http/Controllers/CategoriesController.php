@@ -88,7 +88,7 @@ class CategoriesController extends Controller
         Storage::disk('public')->makeDirectory('uploads/' . $categorySlug);
         Storage::disk('public')->move('uploads/' . $updateCategory->category_slug, 'uploads/' . $categorySlug);
         $updateCategory->cover_photo_url = 'uploads/' . $categorySlug . '/' . basename($updateCategory->cover_photo_url);
-        
+
         foreach ($updateCategory->images as $image) {
           $imageToUpdate = Photos::findOrFail($image->id);
           $imageToUpdate->image_name = 'uploads/' . $categorySlug . '/' . basename($image->image_name);
