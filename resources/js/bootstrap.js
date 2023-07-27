@@ -1,9 +1,11 @@
 window._ = require('lodash');
+document.addEventListener("DOMContentLoaded", function() {
+  require("fslightbox");
+});
 window.FilePond = require('filepond');
 window.FilePondPluginFileValidateType = require('filepond-plugin-file-validate-type');
 window.FilePondPluginFileValidateSize = require('filepond-plugin-file-validate-size');
 window.FilePondPluginImagePreview = require('filepond-plugin-image-preview');
-window.fsLightbox = require("fslightbox");
 window.Masonry = require('masonry-layout');
 
 /**
