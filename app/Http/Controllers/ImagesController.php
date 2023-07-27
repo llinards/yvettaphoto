@@ -74,8 +74,7 @@ class ImagesController extends Controller
 
   public function edit(Category $category)
   {
-    $images = Image::where('category_id', $category->id)->orderBy('created_at', 'DESC')->get();
-    return view('admin.photos.edit', compact('images', 'category'));
+    return view('admin.photos.edit', compact('category'));
   }
 
   public function editImageInfo(Category $category, Image $image)
