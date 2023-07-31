@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Image;
-use DB;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image as Exif;
 
@@ -33,7 +32,7 @@ class ImagesController extends Controller
     try {
       $imageCount = 0;
       foreach ($data['photos'] as $photo) {
-        $imagePath = $photo->store('uploads/' . $categorySlug->category_slug, 'public');
+        $imagePath = $photo->store('uploads/'.$categorySlug->category_slug, 'public');
         $data = Exif::make("storage/{$imagePath}")->exif();
         if (isset($data['Model'])) {
           $cameraModel = $data['Model'];
@@ -63,9 +62,9 @@ class ImagesController extends Controller
         $imageCount += 1;
       }
       if ($imageCount > 1) {
-        return redirect('/admin/' . $categorySlug->category_slug . '/bildes')->with('success', 'Bildes pievienotas!');
+        return redirect('/admin/'.$categorySlug->category_slug.'/bildes')->with('success', 'Bildes pievienotas!');
       } else {
-        return redirect('/admin/' . $categorySlug->category_slug . '/bildes')->with('success', 'Bilde pievienota!');
+        return redirect('/admin/'.$categorySlug->category_slug.'/bildes')->with('success', 'Bilde pievienota!');
       }
     } catch (\Exception $e) {
       return redirect('/admin/bildes/jaunas')->with('error', 'Kļūda!');
@@ -77,12 +76,12 @@ class ImagesController extends Controller
     return view('admin.photos.edit', compact('category'));
   }
 
-  public function editImageInfo(Category $category, Image $image)
+  public function getImageInfo(Category $category, Image $image)
   {
     return view('admin.photos.edit-info', compact('image', 'category'));
   }
 
-  public function storeImageInfo(Category $category, $id)
+  public function setImageInfo(Category $category, $id)
   {
     try {
       $updatedImage = request();
@@ -90,7 +89,7 @@ class ImagesController extends Controller
       $imageToUpdate->alt_attribute = $updatedImage['image_alt_attribute'];
       $imageToUpdate->title = $updatedImage['image_title'];
       $imageToUpdate->save();
-      return redirect('/admin/' . $category->category_slug . '/bildes')->with('success', 'Atjaunots!');
+      return redirect('/admin/'.$category->category_slug.'/bildes')->with('success', 'Atjaunots!');
     } catch (\Exception $e) {
       return back()->with('error', $e);
     }
@@ -102,7 +101,7 @@ class ImagesController extends Controller
     $imageLocation = Image::find($data);
     try {
       Image::destroy($data);
-      Storage::delete('public/' . $imageLocation->image_name);
+      Storage::delete('public/'.$imageLocation->image_name);
       return back()->with('success', 'Bilde izdzēsta!');
     } catch (\Exception $e) {
       return back()->with('error', 'Kļūda!');
