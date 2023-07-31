@@ -17,9 +17,4 @@ class Category extends Model
   {
     return $this->hasMany(Image::class);
   }
-
-  public function scopeCategoriesDesc($query)
-  {
-    return $query->orderBy('created_at', 'DESC');
-  }
 }
