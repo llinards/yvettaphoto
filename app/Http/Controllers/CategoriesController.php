@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Image as Photos;
-use DB;
-use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
@@ -16,7 +14,7 @@ class CategoriesController extends Controller
 {
   public function index()
   {
-    $categories = Category::categoriesDesc()->get();
+    $categories = Category::latest()->get();
     return view('admin.categories.index', compact('categories'));
   }
 
@@ -45,7 +43,7 @@ class CategoriesController extends Controller
       $resizedCategoryCoverImage->save();
 
       $categoryCoverImageFilename = basename($categoryCoverImage);
-      $categoryCoverImagePath = 'uploads/' . $categorySlug . '/' . $categoryCoverImageFilename;
+      $categoryCoverImagePath = 'uploads/'.$categorySlug.'/'.$categoryCoverImageFilename;
 
       Storage::disk('public')->move($categoryCoverImage, $categoryCoverImagePath);
 
@@ -55,7 +53,7 @@ class CategoriesController extends Controller
         'category_slug' => $categorySlug,
         'cover_photo_url' => $categoryCoverImagePath
       ]);
-      return redirect('/admin/' . $categorySlug . '/bildes')->with('success', 'Kategorija pievienota!');
+      return redirect('/admin/'.$categorySlug.'/bildes')->with('success', 'Kategorija pievienota!');
     } catch (\Exception $e) {
       Log::debug($e);
       return redirect('/admin/kategorijas')->with('error', 'Kļūda!');
@@ -85,13 +83,13 @@ class CategoriesController extends Controller
 
       if (Str::slug($data['category-name']) !== $updateCategory->category_slug) {
         $categorySlug = Str::slug($data['category-name']);
-        Storage::disk('public')->makeDirectory('uploads/' . $categorySlug);
-        Storage::disk('public')->move('uploads/' . $updateCategory->category_slug, 'uploads/' . $categorySlug);
-        $updateCategory->cover_photo_url = 'uploads/' . $categorySlug . '/' . basename($updateCategory->cover_photo_url);
+        Storage::disk('public')->makeDirectory('uploads/'.$categorySlug);
+        Storage::disk('public')->move('uploads/'.$updateCategory->category_slug, 'uploads/'.$categorySlug);
+        $updateCategory->cover_photo_url = 'uploads/'.$categorySlug.'/'.basename($updateCategory->cover_photo_url);
 
         foreach ($updateCategory->images as $image) {
           $imageToUpdate = Photos::findOrFail($image->id);
-          $imageToUpdate->image_name = 'uploads/' . $categorySlug . '/' . basename($image->image_name);
+          $imageToUpdate->image_name = 'uploads/'.$categorySlug.'/'.basename($image->image_name);
           $imageToUpdate->save();
         }
       } else {
@@ -106,11 +104,11 @@ class CategoriesController extends Controller
         $oldImg = $updateCategory->cover_photo_url;
         Storage::disk('public')->delete($oldImg);
 
-        $resizedCategoryCoverImage = Image::make("storage/" . $data['single-img-upload'])->fit(600, 600);
+        $resizedCategoryCoverImage = Image::make("storage/".$data['single-img-upload'])->fit(600, 600);
         $resizedCategoryCoverImage->save();
 
         $categoryCoverImageFilename = basename($data['single-img-upload']);
-        $categoryCoverImagePath = 'uploads/' . $categorySlug . '/' . $categoryCoverImageFilename;
+        $categoryCoverImagePath = 'uploads/'.$categorySlug.'/'.$categoryCoverImageFilename;
         Storage::disk('public')->move($data['single-img-upload'], $categoryCoverImagePath);
 
         $updateCategory->cover_photo_url = $categoryCoverImagePath;
@@ -128,7 +126,7 @@ class CategoriesController extends Controller
       $categoryId = request('category-id');
       $category = Category::find($categoryId);
       $categorySlug = $category->category_slug;
-      Storage::deleteDirectory('public/uploads/' . $categorySlug);
+      Storage::deleteDirectory('public/uploads/'.$categorySlug);
       Category::destroy($categoryId);
       Photos::where('category_id', $categoryId)->delete();
       return redirect('/admin/kategorijas')->with('success', 'Kategorija un tās bildes izdzēstas!');

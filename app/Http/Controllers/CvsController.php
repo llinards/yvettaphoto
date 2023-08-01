@@ -12,12 +12,12 @@ class CvsController extends Controller
     return view('pages.cv')->with('cv', $this->getCvContent());
   }
 
-  public function show()
+  public function edit()
   {
     return view('admin.cv.edit')->with('cv', $this->getCvContent());
   }
 
-  public function store(Request $data)
+  public function update(Request $data)
   {
     $data->validate([
       'cv-content' => 'required'

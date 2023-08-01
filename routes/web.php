@@ -32,7 +32,6 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/admin/titulbilde/jauna', [AdminController::class, 'create']);
   Route::post('/admin/titulbilde/jauna', [AdminController::class, 'store']);
 
-
   Route::get('/admin/kategorijas', [CategoriesController::class, 'index']);
   Route::get('/admin/kategorijas/jauna', [CategoriesController::class, 'create']);
   Route::post('/admin/kategorijas', [CategoriesController::class, 'store']);
@@ -44,32 +43,39 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/admin/bildes/jaunas', [ImagesController::class, 'create']);
   Route::post('/admin/bildes', [ImagesController::class, 'store']);
   Route::get('/admin/{category}/bildes', [ImagesController::class, 'edit']);
-  Route::get('/admin/{category}/bildes/{image}', [ImagesController::class, 'editImageInfo']);
-  Route::patch('/admin/{category}/bildes/{image}', [ImagesController::class, 'storeImageInfo']);
-//  Route::patch('/admin/bildes', [ImagesController::class, 'storeImageInfo']);
+  Route::get('/admin/{category}/bildes/{image}', [ImagesController::class, 'getImageInfo']);
+  Route::patch('/admin/{category}/bildes/{image}', [ImagesController::class, 'setImageInfo']);
   Route::delete('/admin/bildes', [ImagesController::class, 'destroy']);
 
   Route::get('/admin/zinas/new', [NewsController::class, 'create']);
-  Route::get('/admin/zinas/{news}/edit', [NewsController::class, 'edit']);
   Route::post('/admin/zinas', [NewsController::class, 'store']);
+  Route::get('/admin/zinas/{news}/edit', [NewsController::class, 'edit']);
   Route::patch('/admin/zinas', [NewsController::class, 'update']);
   Route::delete('/admin/zinas/{news}/delete', [NewsController::class, 'destroy']);
 
-  Route::get('/admin/cv/edit', [CvsController::class, 'show']);
-  Route::patch('/admin/cv', [CvsController::class, 'store']);
+  Route::get('/admin/cv/edit', [CvsController::class, 'edit']);
+  Route::patch('/admin/cv', [CvsController::class, 'update']);
 
   Route::post('/admin/upload', [ImageUploadController::class, 'store']);
   Route::delete('/admin/upload', [ImageUploadController::class, 'destroy']);
 });
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/portfolio', [HomeController::class, 'portfolio']);
-Route::get('/contact-me', [HomeController::class, 'contactMe']);
-Route::get('/bio', [HomeController::class, 'bio']);
-Route::get('/artist-statement', [HomeController::class, 'artistStatement']);
+Route::get('/', static function () {
+  return view('pages.index');
+});
+Route::get('/portfolio', [HomeController::class, 'getAllCategories']);
+Route::get('/contact-me', static function () {
+  return view('pages.contact-me');
+});
+Route::get('/bio', static function () {
+  return view('pages.bio');
+});
+Route::get('/artist-statement', static function () {
+  return view('pages.artist-statement');
+});
 Route::get('/cv', [CvsController::class, 'index']);
 Route::get('/news', [NewsController::class, 'index']);
-Route::get('/purchase', function() {
+Route::get('/purchase', static function () {
   return view('pages.purchase');
 });
 Route::get('/portfolio/{category}', [HomeController::class, 'getAllCategoryImages']);
