@@ -4,7 +4,7 @@
     @include('inc.status-messages')
     <div class="jumbotron">
       <div class="d-flex flex-column align-items-center">
-        <h2 class="admin__headings">Rediģēt "{{ $category[0]['name'] }}" kategoriju</h2>
+        <h2 class="admin__headings">Rediģēt "{{ $category->name }}" kategoriju</h2>
       </div>
     </div>
     <div class="row justify-content-center m-2">
@@ -12,13 +12,13 @@
         <form action="/admin/kategorijas" enctype="multipart/form-data" method="post">
           @csrf
           @method('PATCH')
-          <input type="hidden" name="category-id" value="{{ $category[0]['id'] }}">
+          <input type="hidden" name="category-id" value="{{ $category->id }}">
           <div class="form-group">
             <label for="category-name" class="col-form-label">Kategorijas nosaukums</label>
             @error('category-name')
             <p class="text-danger">{{ $message }}</p>
             @enderror
-            <input type="text" class="form-control" value="{{ $category[0]['name'] }}" name="category-name"
+            <input type="text" class="form-control" value="{{ $category->name }}" name="category-name"
                    id="category-name" placeholder="Kategorijas nosaukums šeit">
           </div>
           <div class="form-group">
@@ -27,13 +27,13 @@
             <p class="text-danger">{{ $message }}</p>
             @enderror
             <textarea class="form-control" id="category-description" name="category-description"
-                      rows="3">{{ $category[0]['description'] }}</textarea>
+                      rows="3">{{ $category->description }}</textarea>
           </div>
           <div class="row">
             <div class="form-group col-6">
               <label for="">Kategorijas esošā titulbilde</label>
               <div>
-                <img src="/storage/{{ $category[0]['cover_photo_url'] }}" class="card-img-top w-50" alt=""/>
+                <img src="/storage/{{ $category->cover_photo_url }}" class="card-img-top w-50" alt=""/>
               </div>
             </div>
             <div class="form-group col-6">

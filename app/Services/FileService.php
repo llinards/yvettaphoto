@@ -6,7 +6,7 @@ use Storage;
 
 class FileService
 {
-  public function storeCoverPhoto($data): void
+  public function storeCoverPhoto(object $data): void
   {
     $coverPhoto = $data['single-img-upload'];
     Storage::disk('public')->move($coverPhoto, 'uploads/cover_photos/home-bg.jpg');

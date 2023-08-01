@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Requests\StoreCategoryRequest;
 use App\Image as Photos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -23,18 +24,8 @@ class CategoriesController extends Controller
     return view('admin.categories.create');
   }
 
-  public function store(Request $data)
+  public function store(StoreCategoryRequest $data)
   {
-    $data->validate([
-      'category-name' => 'required',
-      'single-img-upload' => 'required',
-      'category-description' => 'nullable'
-    ],
-      [
-        'category-name.required' => 'Nav norādīts kategorijas nosaukums.',
-        'single-img-upload.required' => 'Nav pievienot kategorijas titulbilde'
-      ]
-    );
     try {
       $categorySlug = Str::slug($data['category-name']);
       $categoryCoverImage = $data['single-img-upload'];
@@ -47,7 +38,7 @@ class CategoriesController extends Controller
 
       Storage::disk('public')->move($categoryCoverImage, $categoryCoverImagePath);
 
-      $data = Category::create([
+      Category::create([
         'name' => $data['category-name'],
         'description' => $data['category-description'],
         'category_slug' => $categorySlug,
@@ -62,7 +53,6 @@ class CategoriesController extends Controller
 
   public function edit(Category $category)
   {
-    $category = Category::where('id', $category->id)->get();
     return view('admin.categories.edit', compact('category'));
   }
 
