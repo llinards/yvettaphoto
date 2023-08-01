@@ -42,7 +42,7 @@ class CategoriesController extends Controller
       return redirect('/admin/'.$categorySlug.'/bildes')->with('success', 'Kategorija pievienota!');
     } catch (\Exception $e) {
       Log::error($e);
-      return redirect('/admin/kategorijas')->with('error', 'Kļūda!');
+      return redirect()->back()->with('error', 'Kļūda!');
     }
   }
 
@@ -65,7 +65,7 @@ class CategoriesController extends Controller
         foreach ($categoryToUpdate->images as $image) {
           $fileService->updateCategoryImageDirectory($image, $newCategorySlug);
         }
-        
+
         $categoryToUpdate->cover_photo_url = 'uploads/'.$newCategorySlug.'/'.basename($categoryToUpdate->cover_photo_url);
         $categoryToUpdate->category_slug = $newCategorySlug;
       }

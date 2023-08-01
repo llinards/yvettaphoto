@@ -12,10 +12,15 @@ class HomePageCoverPhotoTest extends TestCase
 {
   use RefreshDatabase;
 
-  public function test_if_home_page_cover_photo_can_be_changed(): void
+  protected function createAdminUser(): void
   {
     $user = User::factory()->create();
     $this->actingAs($user);
+  }
+
+  public function test_if_home_page_cover_photo_can_be_changed(): void
+  {
+    $this->createAdminUser();
 
     Storage::fake('public');
     $file = UploadedFile::fake()->image('image.jpg');
@@ -27,15 +32,15 @@ class HomePageCoverPhotoTest extends TestCase
 
     $this->post('/admin/titulbilde/jauna', [
       'single-img-upload' => $fileTempUpload->content()
-    ]);
+    ])->assertRedirect('/admin')->assertStatus(302);
 
     Storage::disk('public')->assertExists("uploads/cover_photos/home-bg.jpg");
   }
 
-  public function test_if_validations_is_enabled_when_changing_home_page_cover_photo(): void
+  public function test_if_validation_works_when_changing_home_page_cover_photo(): void
   {
-    $user = User::factory()->create();
-    $this->actingAs($user);
+    $this->createAdminUser();
+
     Storage::fake('public');
     $this->post('/admin/titulbilde/jauna', [
       'single-img-upload' => ""
