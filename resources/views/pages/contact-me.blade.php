@@ -11,7 +11,6 @@
       <div class="row justify-content-center">
         <div class="col-lg-10">
           <p class="lead text-center main-text"><a href="mailto:info@yvettaphoto.com">info@yvettaphoto.com</a></p>
-          @include('inc.status-messages')
           <form method="POST" action="/send-email" autocomplete="off" class="contact-form">
             @csrf
             @honeypot
