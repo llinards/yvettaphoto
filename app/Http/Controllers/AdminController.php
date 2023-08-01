@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCoverPhotoRequest;
 use App\News;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Validation\Rules\File;
 
 class AdminController extends Controller
 {
@@ -21,16 +20,11 @@ class AdminController extends Controller
     return view('admin.create');
   }
 
-  public function store(Request $data)
+  public function store(StoreCoverPhotoRequest $data)
   {
-    $data->validate([
-      'single-img-upload' => ['required']
-    ],
-      [
-        'single-img-upload.required' => 'Nav izvēlēta bilde.'
-      ]);
     try {
       $newCoverPhotoImage = $data['single-img-upload'];
+      //TODO: failu pārvietošana uz public disk
       Storage::disk('public')->move($newCoverPhotoImage, 'uploads/cover_photos/home-bg.jpg');
       return redirect('/admin')->with('success', 'Titulbilde nomainīta!');
     } catch (\Exception $e) {
