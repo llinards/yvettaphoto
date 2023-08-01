@@ -21,14 +21,26 @@ class HomePageCoverPhotoTest extends TestCase
     $file = UploadedFile::fake()->image('image.jpg');
     $fileTempUpload = $this->post('/admin/upload', [
       'single-img-upload' => $file
-    ]);
+    ])->assertStatus(200);
 
     Storage::disk('public')->assertExists($fileTempUpload->content());
 
-    $response = $this->post('/admin/titulbilde/jauna', [
+    $this->post('/admin/titulbilde/jauna', [
       'single-img-upload' => $fileTempUpload->content()
     ]);
 
     Storage::disk('public')->assertExists("uploads/cover_photos/home-bg.jpg");
+  }
+
+  public function test_if_validations_is_enabled_when_changing_home_page_cover_photo(): void
+  {
+    $user = User::factory()->create();
+    $this->actingAs($user);
+    Storage::fake('public');
+    $this->post('/admin/titulbilde/jauna', [
+      'single-img-upload' => ""
+    ])->assertSessionHasErrors(['single-img-upload'])->assertStatus(302);
+
+    Storage::disk('public')->assertMissing("uploads/cover_photos/home-bg.jpg");
   }
 }
