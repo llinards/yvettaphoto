@@ -7,6 +7,7 @@ use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Image;
 use App\Services\FileService;
+use App\Services\ImageService;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -24,20 +25,20 @@ class CategoriesController extends Controller
     return view('admin.categories.create');
   }
 
-  public function store(StoreCategoryRequest $data, FileService $fileService)
+  public function store(StoreCategoryRequest $data, FileService $fileService, ImageService $imageService)
   {
     try {
       $categoryName = $data['category-name'];
       $categorySlug = Str::slug($categoryName);
 
-      $fileService->resizeImage($data);
-      $categoryCoverPhoto = $fileService->storeCategoryCoverPhoto($data);
+      $imageService->resizeImage($data);
+      $categoryCoverPhotoUrl = $fileService->storeCategoryCoverPhoto($data);
 
       Category::create([
         'name' => $categoryName,
         'description' => $data['category-description'],
         'category_slug' => $categorySlug,
-        'cover_photo_url' => $categoryCoverPhoto,
+        'cover_photo_url' => $categoryCoverPhotoUrl,
       ]);
       return redirect('/admin/'.$categorySlug.'/bildes')->with('success', 'Kategorija pievienota!');
     } catch (\Exception $e) {
@@ -51,7 +52,7 @@ class CategoriesController extends Controller
     return view('admin.categories.edit', compact('category'));
   }
 
-  public function update(UpdateCategoryRequest $data, FileService $fileService)
+  public function update(UpdateCategoryRequest $data, FileService $fileService, ImageService $imageService)
   {
     try {
       $categoryToUpdate = Category::findOrFail($data['category-id']);
@@ -75,7 +76,7 @@ class CategoriesController extends Controller
 
       if (isset($data['single-img-upload'])) {
         $fileService->destroyCategoryCoverPhoto($categoryToUpdate->cover_photo_url);
-        $fileService->resizeImage($data);
+        $imageService->resizeImage($data);
 
         $categoryToUpdate->cover_photo_url = $fileService->storeCategoryCoverPhoto($data);
       }
