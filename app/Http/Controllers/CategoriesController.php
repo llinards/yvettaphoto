@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
-use App\Image;
 use App\Services\FileService;
 use App\Services\ImageService;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -88,16 +88,13 @@ class CategoriesController extends Controller
       return redirect('/admin/kategorijas')->with('error', 'Kļūda!');
     }
   }
-
-  public function destroy()
+  
+  public function destroy(Request $data)
   {
     try {
-      $categoryId = request('category-id');
-      $category = Category::find($categoryId);
-      $categorySlug = $category->category_slug;
-      Storage::deleteDirectory('public/uploads/'.$categorySlug);
-      Category::destroy($categoryId);
-      Image::where('category_id', $categoryId)->delete();
+      $category = Category::findOrFail($data['category-id']);
+      Storage::deleteDirectory('public/uploads/'.$category->category_slug);
+      $category->delete();
       return redirect('/admin/kategorijas')->with('success', 'Kategorija un tās bildes izdzēstas!');
     } catch (\Exception $e) {
       Log::error($e);

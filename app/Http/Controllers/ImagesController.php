@@ -20,14 +20,14 @@ class ImagesController extends Controller
 
   public function create()
   {
-    $categories = Category::get();
+    $categories = Category::all();
     return view('admin.photos.create', compact('categories'));
   }
 
   public function store(StoreImageRequest $data, FileService $fileService, ImageService $imageService)
   {
     $categoryId = $data['selected-category'];
-    $categorySlug = Category::find($categoryId)->category_slug;
+    $categorySlug = Category::findOrFail($categoryId)->category_slug;
 
     try {
       foreach ($data['multiple-img-upload'] as $image) {
