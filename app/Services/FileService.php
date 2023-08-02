@@ -4,7 +4,6 @@ namespace App\Services;
 
 use App\Image;
 use Illuminate\Support\Str;
-use Intervention\Image\Facades\Image as InterventionImage;
 use Storage;
 
 class FileService
@@ -15,18 +14,13 @@ class FileService
     Storage::disk('public')->move($coverPhoto, 'uploads/cover_photos/home-bg.jpg');
   }
 
-  public function resizeImage(object $data): void
-  {
-    InterventionImage::make("storage/".$data['single-img-upload'])->resize(600, 600)->save();
-  }
-
   public function storeCategoryCoverPhoto(object $data): string
   {
     $categorySlug = Str::slug($data['category-name']);
     $photo = $data['single-img-upload'];
-    $categoryCoverPhoto = 'uploads/'.$categorySlug.'/'.basename($photo);
-    Storage::disk('public')->move($photo, $categoryCoverPhoto);
-    return $categoryCoverPhoto;
+    $categoryCoverPhotoUrl = 'uploads/'.$categorySlug.'/'.basename($photo);
+    Storage::disk('public')->move($photo, $categoryCoverPhotoUrl);
+    return $categoryCoverPhotoUrl;
   }
 
   public function destroyCategoryCoverPhoto(string $coverPhotoUrl): void
@@ -45,5 +39,12 @@ class FileService
     $imageToUpdate = Image::findOrFail($image->id);
     $imageToUpdate->image_name = 'uploads/'.$newCategorySlug.'/'.basename($image->image_name);
     $imageToUpdate->save();
+  }
+
+  public function storeCategoryPhotos(string $image, string $categorySlug): string
+  {
+    $imageUrl = 'uploads/'.$categorySlug.'/'.basename($image);
+    Storage::disk('public')->move($image, $imageUrl);
+    return $imageUrl;
   }
 }
