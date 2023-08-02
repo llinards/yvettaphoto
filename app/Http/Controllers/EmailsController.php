@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Mail;
 
 class EmailsController extends Controller
 {
-  public function send(ContactMeRequest $request)
+  public function send(ContactMeRequest $data)
   {
     try {
       Mail::to('info@yvettaphoto.com')->send(new Contact($data['name'], $data['email'], $data['body']));
