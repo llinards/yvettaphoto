@@ -16,8 +16,10 @@ class CategoryTest extends TestCase
     $this->actingAs($user);
   }
 
-//  public function test_if_category_can_be_created(): void
-//  {
+
+  public function test_category_can_be_created(): void
+  {
+    $this->markTestSkipped('In progress...');
 //    //TODO: not working with resuzeImage() method
 //    $this->createAdminUser();
 //
@@ -38,5 +40,5 @@ class CategoryTest extends TestCase
 //    $this->assertDatabaseHas('categories', [
 //      'name' => 'Test category'
 //    ]);
-//  }
+  }
 }
