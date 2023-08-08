@@ -18,21 +18,14 @@
                   enctype="multipart/form-data" method="post">
               @csrf
               @method('PATCH')
+              <input type="hidden" name="image-id" value="{{ $image->id }}">
               <h4>Bildes nosaukums:</h4>
               <div class="form-group">
-                <input type="text" class="form-control" value="{{ $image->title }}" name="image_title"
-                       id="image_title">
-                @error('image_title')
-                <p class="text-danger">{{ $message }}</p>
-                @enderror
+                <input type="text" class="form-control" value="{{ $image->title }}" name="image-title">
               </div>
               <h4>Bildes "alt" vērtība:</h4>
               <div class="form-group">
-                <input type="text" class="form-control" value="{{ $image->alt_attribute }}" name="image_alt_attribute"
-                       id="image_alt_attribute">
-                @error('image_alt_attribute')
-                <p class="text-danger">{{ $message }}</p>
-                @enderror
+                <input type="text" class="form-control" value="{{ $image->alt_attribute }}" name="image-alt-attribute">
               </div>
               <button type="submit" class="btn btn-success">Saglabāt</button>
               <a class="btn btn-secondary" href="{{ url()->previous() }}">Atpakaļ</a>

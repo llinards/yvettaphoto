@@ -7,6 +7,7 @@ use App\Http\Requests\StoreImageRequest;
 use App\Image;
 use App\Services\FileService;
 use App\Services\ImageService;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
@@ -63,14 +64,13 @@ class ImagesController extends Controller
     return view('admin.photos.edit-info', compact('image', 'category'));
   }
 
-  public function setImageInfo(Category $category, Image $image)
+  public function setImageInfo(Category $category, Request $image)
   {
-//    return $image;
+
     try {
-      $updatedImage = request();
-      $imageToUpdate = Image::findOrFail($image->id);
-      $imageToUpdate->alt_attribute = $image['image_alt_attribute'];
-      $imageToUpdate->title = $image['image_title'];
+      $imageToUpdate = Image::findOrFail($image['image-id']);
+      $imageToUpdate->alt_attribute = $image['image-alt-attribute'];
+      $imageToUpdate->title = $image['image-title'];
       $imageToUpdate->save();
       return redirect('/admin/'.$category->category_slug.'/bildes')->with('success', 'Atjaunots!');
     } catch (\Exception $e) {
@@ -79,15 +79,15 @@ class ImagesController extends Controller
     }
   }
 
-  public function destroy()
+  public function destroy(Request $image)
   {
-    $data = request('image-id');
-    $imageLocation = Image::find($data);
     try {
-      Image::destroy($data);
-      Storage::delete('public/'.$imageLocation->image_name);
+      $imageToDelete = Image::findOrFail($image['image-id']);
+      $imageToDelete->delete();
+      Storage::delete('public/'.$imageToDelete->image_name);
       return back()->with('success', 'Bilde izdzēsta!');
     } catch (\Exception $e) {
+      Log::error($e);
       return back()->with('error', 'Kļūda!');
     }
   }
