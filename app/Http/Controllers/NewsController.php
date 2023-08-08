@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
@@ -42,17 +43,12 @@ class NewsController extends Controller
       foreach ($data['news-image'] as $image) {
         $imagePath = $image->store('uploads/news', 'public');
         $news->images()->create([
-          'category_id' => 0,
-          'image_name' => $imagePath,
-          'camera_model' => 'NA',
-          'camera_make' => 'NA',
-          'iso' => 0,
-          'f_number' => 'NA',
-          'exposure_time' => 'NA'
+          'image_location' => $imagePath
         ]);
       }
       return redirect('/admin')->with('success', 'Ziņa pievienota!');
     } catch (\Exception $e) {
+      Log::error($e);
       return back()->with('error', 'Kļūda!');
     }
   }
@@ -82,24 +78,19 @@ class NewsController extends Controller
       ]);
       if (isset($data['news-image'])) {
         foreach ($newsToUpdate->images as $image) {
-          Storage::delete('public/' . $image->image_name);
+          Storage::delete('public/'.$image->image_location);
         }
         $newsToUpdate->images()->delete();
         foreach ($data['news-image'] as $image) {
           $imagePath = $image->store('uploads/news', 'public');
           $newsToUpdate->images()->create([
-            'category_id' => 0,
-            'image_name' => $imagePath,
-            'camera_model' => 'NA',
-            'camera_make' => 'NA',
-            'iso' => 0,
-            'f_number' => 'NA',
-            'exposure_time' => 'NA'
+            'image_location' => $imagePath,
           ]);
         }
       }
       return redirect('/admin')->with('success', 'Ziņa atjaunota!');
     } catch (\Exception $e) {
+      Log::error($e);
       return back()->with('error', 'Kļūda!');
     }
   }
@@ -108,12 +99,13 @@ class NewsController extends Controller
   {
     try {
       foreach ($news->images as $image) {
-        Storage::delete('public/' . $image->image_name);
+        Storage::delete('public/'.$image->image_location);
       }
       $news->delete();
       $news->images()->delete();
       return back()->with('success', 'Ziņa izdzēsta!');
     } catch (\Exception $e) {
+      Log::error($e);
       return back()->with('error', 'Kļūda!');
     }
   }
