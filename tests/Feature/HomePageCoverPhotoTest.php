@@ -12,23 +12,40 @@ class HomePageCoverPhotoTest extends TestCase
 {
   use RefreshDatabase;
 
-  public function test_if_home_page_cover_photo_can_be_changed(): void
+  protected function createAdminUser(): void
   {
     $user = User::factory()->create();
     $this->actingAs($user);
+  }
+
+  public function test_home_page_cover_photo_can_be_changed(): void
+  {
+    $this->createAdminUser();
 
     Storage::fake('public');
     $file = UploadedFile::fake()->image('image.jpg');
     $fileTempUpload = $this->post('/admin/upload', [
       'single-img-upload' => $file
-    ]);
+    ])->assertStatus(200);
 
     Storage::disk('public')->assertExists($fileTempUpload->content());
 
-    $response = $this->post('/admin/titulbilde/jauna', [
+    $this->post('/admin/titulbilde/jauna', [
       'single-img-upload' => $fileTempUpload->content()
-    ]);
+    ])->assertRedirect('/admin');
 
     Storage::disk('public')->assertExists("uploads/cover_photos/home-bg.jpg");
+  }
+
+  public function test_validation_works_when_changing_home_page_cover_photo(): void
+  {
+    $this->createAdminUser();
+
+    Storage::fake('public');
+    $this->post('/admin/titulbilde/jauna', [
+      'single-img-upload' => ""
+    ])->assertSessionHasErrors(['single-img-upload']);
+
+    Storage::disk('public')->assertMissing("uploads/cover_photos/home-bg.jpg");
   }
 }

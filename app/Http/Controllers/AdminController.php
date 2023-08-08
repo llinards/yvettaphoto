@@ -27,7 +27,7 @@ class AdminController extends Controller
       return redirect('/admin')->with('success', 'Titulbilde nomainīta!');
     } catch (\Exception $e) {
       Log::error($e);
-      return redirect('/admin/titulbilde/jauna')->with('error', 'Kļūda!');
+      return redirect()->back()->with('error', 'Kļūda!');
     }
   }
 }
