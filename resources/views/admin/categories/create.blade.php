@@ -18,7 +18,7 @@
           </div>
           <div class="form-group">
             <label for="category-description">Kategorijas apraksts</label>
-            <textarea class="form-control" id="category-description" name="category-description"
+            <textarea class="form-control" id="description-textarea" name="category-description"
                       rows="3"></textarea>
           </div>
           <div class="form-group">
