@@ -11,7 +11,7 @@ class NewsController extends Controller
 {
   public function index()
   {
-    $allNews = News::with('images')->orderBy('created_at', 'DESC')->get();
+    $allNews = News::orderBy('created_at', 'DESC')->get();
     return view('pages.news', compact('allNews'));
   }
 
@@ -84,7 +84,7 @@ class NewsController extends Controller
         foreach ($data['news-image'] as $image) {
           $imagePath = $image->store('uploads/news', 'public');
           $newsToUpdate->images()->create([
-            'image_location' => $imagePath,
+            'image_location' => $imagePath
           ]);
         }
       }
