@@ -40,13 +40,11 @@ class NewsController extends Controller
         'title' => $data['news-title'],
         'description' => $data['news-description']
       ]);
-      if ($news) {
-        foreach ($data['news-image'] as $image) {
-          $imagePath = $image->store('uploads/news', 'public');
-          $news->images()->create([
-            'image_location' => $imagePath
-          ]);
-        }
+      foreach ($data['news-image'] as $image) {
+        $imagePath = $image->store('uploads/news', 'public');
+        $news->images()->create([
+          'image_location' => $imagePath
+        ]);
       }
       return redirect('/admin')->with('success', 'Ziņa pievienota!');
     } catch (\Exception $e) {
