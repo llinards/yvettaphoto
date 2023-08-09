@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Image extends Model
 {
@@ -10,7 +11,7 @@ class Image extends Model
 
   protected $with = ['category'];
 
-  public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+  public function category(): BelongsTo
   {
     return $this->belongsTo(Category::class);
   }
