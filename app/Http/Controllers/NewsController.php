@@ -11,7 +11,7 @@ class NewsController extends Controller
 {
   public function index()
   {
-    $allNews = News::with('images')->orderBy('created_at', 'DESC')->get();
+    $allNews = News::orderBy('created_at', 'DESC')->get();
     return view('pages.news', compact('allNews'));
   }
 
@@ -40,11 +40,13 @@ class NewsController extends Controller
         'title' => $data['news-title'],
         'description' => $data['news-description']
       ]);
-      foreach ($data['news-image'] as $image) {
-        $imagePath = $image->store('uploads/news', 'public');
-        $news->images()->create([
-          'image_location' => $imagePath
-        ]);
+      if ($news) {
+        foreach ($data['news-image'] as $image) {
+          $imagePath = $image->store('uploads/news', 'public');
+          $news->images()->create([
+            'image_location' => $imagePath
+          ]);
+        }
       }
       return redirect('/admin')->with('success', 'Ziņa pievienota!');
     } catch (\Exception $e) {
@@ -84,7 +86,7 @@ class NewsController extends Controller
         foreach ($data['news-image'] as $image) {
           $imagePath = $image->store('uploads/news', 'public');
           $newsToUpdate->images()->create([
-            'image_location' => $imagePath,
+            'image_location' => $imagePath
           ]);
         }
       }
