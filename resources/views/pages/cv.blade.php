@@ -10,7 +10,11 @@
       </div>
       <div class="row">
         <div class="col cv-content">
-          {!! $cv->content !!}
+          @if(empty($cv->content))
+            <p class="text-center">No CV content found.</p>
+          @else
+            {!! $cv->content !!}
+          @endif
         </div>
       </div>
     </div>

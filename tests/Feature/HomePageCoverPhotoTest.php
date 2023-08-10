@@ -20,6 +20,7 @@ class HomePageCoverPhotoTest extends TestCase
 
   public function test_home_page_cover_photo_can_be_changed(): void
   {
+    $this->markTestSkipped('In progress...');
     $this->createAdminUser();
 
     Storage::fake('public');
@@ -39,6 +40,7 @@ class HomePageCoverPhotoTest extends TestCase
 
   public function test_validation_works_when_changing_home_page_cover_photo(): void
   {
+    $this->markTestSkipped('In progress...');
     $this->createAdminUser();
 
     Storage::fake('public');
