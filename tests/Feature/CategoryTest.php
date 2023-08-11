@@ -35,7 +35,7 @@ class CategoryTest extends TestCase
 //      'category-name' => 'Test category',
 //      'category-description' => 'Test description',
 //      'single-img-upload' => $fileTempUpload->content()
-//    ])->assertRedirect('/admin/test-category/bildes')->assertStatus(302);
+//    ])->assertRedirect('/admin/test-category/bildes');
 //
 //    $this->assertDatabaseHas('categories', [
 //      'name' => 'Test category'
