@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Category;
 use App\Image;
 use App\User;
-use Faker\Generator;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,8 +16,6 @@ class DatabaseSeeder extends Seeder
    */
   public function run()
   {
-    $faker = app(Generator::class);
-
     User::factory(1)->create();
     Category::factory(5)->create()
       ->each(function ($category) {
