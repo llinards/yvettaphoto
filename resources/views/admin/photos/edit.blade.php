@@ -14,7 +14,8 @@
         @foreach($category->images as $image)
           <div class="col-xs-12 col-md-6 col-lg-4 mt-4">
             <div class="card" style="width: 18rem; margin: 0 auto;">
-              <img src="/storage/{{ $image->image_name }}" class="card-img-top" alt="...">
+              <img src="{{ asset('storage/uploads/'.$image->category->category_slug.'/'.$image->image_name) }}"
+                   class="card-img-top" alt="...">
               <div class="card-body">
                 <div class="text-center">
                   <a href="/admin/{{ $category->category_slug }}/bildes/{{ $image->id }}" class="btn btn-primary mt-1">Rediģēt
