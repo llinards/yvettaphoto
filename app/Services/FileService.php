@@ -35,8 +35,8 @@ class FileService
     Storage::disk('public')->move('uploads/'.$oldCategorySlug, 'uploads/'.$newCategorySlug);
   }
 
-  public function destroyPhoto(string $coverPhotoUrl): void
+  public function destroyPhoto(string $slug, string $coverPhotoUrl): void
   {
-    Storage::disk('public')->delete($coverPhotoUrl);
+    Storage::disk('public')->delete('uploads/'.$slug.'/'.$coverPhotoUrl);
   }
 }

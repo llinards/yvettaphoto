@@ -70,7 +70,7 @@ class CategoriesController extends Controller
       $categoryToUpdate->description = $data['category-description'];
 
       if (isset($data['single-img-upload'])) {
-        $fileService->destroyPhoto($categoryToUpdate->cover_photo_url);
+        $fileService->destroyPhoto(Str::slug($data['category-name']), $categoryToUpdate->cover_photo_url);
         $imageService->resizeImage($data);
 
         $categoryToUpdate->cover_photo_url = basename($fileService->storeCategoryCoverPhoto($data));

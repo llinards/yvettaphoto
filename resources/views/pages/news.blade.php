@@ -19,7 +19,7 @@
             <div class="row justify-content-lg-end justify-content-center">
               @foreach($newsItem->images as $image)
                 <div class="col-sm-6 col-12 d-flex justify-content-center">
-                  <img src="{{asset('/storage/'.$image->image_location)}}" class="img-fluid my-2" alt="">
+                  <img src="{{asset('/storage/uploads/news/'.$image->image_location)}}" class="img-fluid my-2" alt="">
                 </div>
               @endforeach
             </div>
