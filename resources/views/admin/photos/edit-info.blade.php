@@ -5,7 +5,8 @@
     <div class="row justify-content-center m-2">
       <div class="col-10 offset-6">
         <div class="card" style="width: 18rem;">
-          <img src="/storage/{{$image->image_name}}" class="card-img-top" alt="...">
+          <img src="{{ asset('storage/uploads/'.$image->category->category_slug.'/'.$image->image_name) }}"
+               class="card-img-top" alt="...">
           <div class="card-body">
             <h4>Kamera:</h4>
             <p>{{$image->camera_make}}</p>
