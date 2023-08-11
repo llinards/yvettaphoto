@@ -24,11 +24,11 @@
           <div class="grid-item">
             <a
               data-fslightbox="{{$image->category->category_slug}}"
-              href="{{ asset('storage/'.$image->image_name) }}"
+              href="{{ asset('storage/uploads/'.$image->category->category_slug.'/'.$image->image_name) }}"
             >
               <img
                 class="img-fluid gallery-image"
-                src="{{ asset('storage/'.$image->image_name) }}"
+                src="{{ asset('storage/uploads/'.$image->category->category_slug.'/'.$image->image_name) }}"
                 alt="{{ $image->alt_attribute }}"
               />
             </a>

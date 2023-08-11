@@ -36,7 +36,7 @@ class ImagesController extends Controller
 
         $newImage = new Image();
         $newImage->category_id = $categoryId;
-        $newImage->image_name = $imageUrl;
+        $newImage->image_name = basename($imageUrl);
         if ($exifData) {
           $newImage->camera_model = $exifData['Model'];
           $newImage->camera_make = $exifData['Make'];
@@ -82,7 +82,7 @@ class ImagesController extends Controller
     try {
       $imageToDelete = Image::findOrFail($image['image-id']);
       $imageToDelete->delete();
-      Storage::delete('public/'.$imageToDelete->image_name);
+      Storage::delete('public/uploads/'.$imageToDelete->category->category_slug.'/'.$imageToDelete->image_name);
       return back()->with('success', 'Bilde izdzēsta!');
     } catch (\Exception $e) {
       Log::error($e);
