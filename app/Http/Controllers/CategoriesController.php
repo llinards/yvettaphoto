@@ -38,7 +38,7 @@ class CategoriesController extends Controller
         'name' => $categoryName,
         'description' => $data['category-description'],
         'category_slug' => $categorySlug,
-        'cover_photo_url' => $categoryCoverPhotoUrl,
+        'cover_photo_url' => basename($categoryCoverPhotoUrl),
       ]);
       return redirect('/admin/'.$categorySlug.'/bildes')->with('success', 'Kategorija pievienota!');
     } catch (\Exception $e) {
@@ -63,11 +63,6 @@ class CategoriesController extends Controller
         $oldCategorySlug = $categoryToUpdate->category_slug;
 
         $fileService->updateCategoryDirectory($newCategorySlug, $oldCategorySlug);
-        foreach ($categoryToUpdate->images as $image) {
-          $fileService->updateCategoryImageDirectory($image, $newCategorySlug);
-        }
-
-        $categoryToUpdate->cover_photo_url = 'uploads/'.$newCategorySlug.'/'.basename($categoryToUpdate->cover_photo_url);
         $categoryToUpdate->category_slug = $newCategorySlug;
       }
 
@@ -78,7 +73,7 @@ class CategoriesController extends Controller
         $fileService->destroyPhoto($categoryToUpdate->cover_photo_url);
         $imageService->resizeImage($data);
 
-        $categoryToUpdate->cover_photo_url = $fileService->storeCategoryCoverPhoto($data);
+        $categoryToUpdate->cover_photo_url = basename($fileService->storeCategoryCoverPhoto($data));
       }
 
       $categoryToUpdate->save();

@@ -27,7 +27,8 @@
             <div class="form-group col-6">
               <label for="">Kategorijas esošā titulbilde</label>
               <div>
-                <img src="/storage/{{ $category->cover_photo_url }}" class="card-img-top w-50" alt=""/>
+                <img src="{{ asset('storage/uploads/'.$category->category_slug.'/'.$category->cover_photo_url) }}"
+                     class="card-img-top w-50" alt=""/>
               </div>
             </div>
             <div class="form-group col-6">

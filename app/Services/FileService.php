@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-use App\Image;
 use Illuminate\Support\Str;
 use Storage;
 
@@ -34,13 +33,6 @@ class FileService
   {
     Storage::disk('public')->makeDirectory('uploads/'.$newCategorySlug);
     Storage::disk('public')->move('uploads/'.$oldCategorySlug, 'uploads/'.$newCategorySlug);
-  }
-
-  public function updateCategoryImageDirectory($image, $newCategorySlug): void
-  {
-    $imageToUpdate = Image::findOrFail($image->id);
-    $imageToUpdate->image_name = 'uploads/'.$newCategorySlug.'/'.basename($image->image_name);
-    $imageToUpdate->save();
   }
 
   public function destroyPhoto(string $coverPhotoUrl): void

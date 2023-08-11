@@ -14,7 +14,9 @@
           <div class="category">
             <a href="/portfolio/{{ $category->category_slug }}">
               <div class="category-image">
-                <img class="w-100 h-100" src="/storage/{{ $category->cover_photo_url }}" alt="">
+                <img class="w-100 h-100"
+                     src="{{ asset('storage/uploads/'.$category->category_slug.'/'.$category->cover_photo_url) }}"
+                     alt="">
               </div>
               <div class="category-title-overlay d-flex justify-content-center align-items-center">
                 <h4 class="text-uppercase text-center text-white m-0 p-0">{{ $category->name }}</h4>
