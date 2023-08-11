@@ -75,7 +75,7 @@ class CategoriesController extends Controller
       $categoryToUpdate->description = $data['category-description'];
 
       if (isset($data['single-img-upload'])) {
-        $fileService->destroyCategoryCoverPhoto($categoryToUpdate->cover_photo_url);
+        $fileService->destroyPhoto($categoryToUpdate->cover_photo_url);
         $imageService->resizeImage($data);
 
         $categoryToUpdate->cover_photo_url = $fileService->storeCategoryCoverPhoto($data);
@@ -88,7 +88,7 @@ class CategoriesController extends Controller
       return redirect('/admin/kategorijas')->with('error', 'Kļūda!');
     }
   }
-  
+
   public function destroy(Request $data)
   {
     try {

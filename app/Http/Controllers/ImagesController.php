@@ -27,12 +27,11 @@ class ImagesController extends Controller
 
   public function store(StoreImageRequest $data, FileService $fileService, ImageService $imageService)
   {
-    $categoryId = $data['selected-category'];
-    $categorySlug = Category::findOrFail($categoryId)->category_slug;
-
     try {
+      $categoryId = $data['selected-category'];
+      $categorySlug = Category::findOrFail($categoryId)->category_slug;
       foreach ($data['multiple-img-upload'] as $image) {
-        $imageUrl = $fileService->storeCategoryPhotos($image, $categorySlug);
+        $imageUrl = $fileService->storePhotos($image, $categorySlug);
         $exifData = $imageService->getImageExifData($imageUrl);
 
         $newImage = new Image();
@@ -66,7 +65,6 @@ class ImagesController extends Controller
 
   public function setImageInfo(Category $category, Request $image)
   {
-
     try {
       $imageToUpdate = Image::findOrFail($image['image-id']);
       $imageToUpdate->alt_attribute = $image['image-alt-attribute'];

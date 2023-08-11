@@ -23,9 +23,11 @@ class FileService
     return $categoryCoverPhotoUrl;
   }
 
-  public function destroyCategoryCoverPhoto(string $coverPhotoUrl): void
+  public function storePhotos(string $image, string $categorySlug): string
   {
-    Storage::disk('public')->delete($coverPhotoUrl);
+    $imageUrl = 'uploads/'.$categorySlug.'/'.basename($image);
+    Storage::disk('public')->move($image, $imageUrl);
+    return $imageUrl;
   }
 
   public function updateCategoryDirectory($newCategorySlug, $oldCategorySlug): void
@@ -41,10 +43,8 @@ class FileService
     $imageToUpdate->save();
   }
 
-  public function storeCategoryPhotos(string $image, string $categorySlug): string
+  public function destroyPhoto(string $coverPhotoUrl): void
   {
-    $imageUrl = 'uploads/'.$categorySlug.'/'.basename($image);
-    Storage::disk('public')->move($image, $imageUrl);
-    return $imageUrl;
+    Storage::disk('public')->delete($coverPhotoUrl);
   }
 }

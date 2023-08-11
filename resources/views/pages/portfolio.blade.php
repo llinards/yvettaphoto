@@ -9,7 +9,7 @@
         <div class="underline"></div>
       </div>
       <div class="row">
-        @foreach ($categories as $category)
+        @forelse ($categories as $category)
           {{-- <div class="col-sm-12 col-md-6 col-lg-4 p-0 category"> --}}
           <div class="category">
             <a href="/portfolio/{{ $category->category_slug }}">
@@ -21,7 +21,11 @@
               </div>
             </a>
           </div>
-        @endforeach
+        @empty
+          <div class="mx-auto">
+            <p class="text-center">At the moment portfolio section is empty.</p>
+          </div>
+        @endforelse
       </div>
     </div>
   </section>
