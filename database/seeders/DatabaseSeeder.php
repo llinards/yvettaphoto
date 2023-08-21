@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Category;
-use App\Image;
 use App\User;
 use Illuminate\Database\Seeder;
 
@@ -17,12 +16,9 @@ class DatabaseSeeder extends Seeder
   public function run()
   {
     User::factory(1)->create();
-    Category::factory(5)->create()
-      ->each(function ($category) {
-        Image::factory(10)->create([
-          'category_id' => $category->id,
-          'image_name' => 'needs to be added'
-        ]);
-      });
+    Category::factory(5)->create();
+//    foreach (Category::all() as $category) {
+//      Image::factory(5)->create();
+//    }
   }
 }
