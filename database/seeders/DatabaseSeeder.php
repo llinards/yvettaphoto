@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Category;
+use App\News;
+use App\NewsImage;
 use App\User;
 use Illuminate\Database\Seeder;
 
@@ -17,8 +19,10 @@ class DatabaseSeeder extends Seeder
   {
     User::factory(1)->create();
     Category::factory(5)->create();
-//    foreach (Category::all() as $category) {
-//      Image::factory(5)->create();
-//    }
+    News::factory(5)->create()->each(function ($news) {
+      $news->images()->createMany(
+        NewsImage::factory(rand(1, 2))->make()->toArray()
+      );
+    });
   }
 }
