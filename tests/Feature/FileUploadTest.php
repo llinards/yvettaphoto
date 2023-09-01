@@ -20,7 +20,7 @@ class FileUploadTest extends TestCase
     $this->user = User::factory()->create();
   }
 
-  public function test_single_img_upload_works()
+  public function test_single_img_upload_works(): void
   {
     $this->actingAs($this->user);
     $file = UploadedFile::fake()->image('image.jpg');
@@ -30,5 +30,21 @@ class FileUploadTest extends TestCase
 
     $response->assertStatus(200);
     Storage::disk('public')->assertExists($response->content());
+
+    Storage::disk('public')->delete($response->content());
+  }
+
+  public function test_multiple_img_upload_works(): void
+  {
+    $this->actingAs($this->user);
+    $image = UploadedFile::fake()->image('image.jpg');
+    $response = $this->post('/admin/upload', [
+      'multiple-img-upload' => [$image]
+    ]);
+
+    $response->assertStatus(200);
+    Storage::disk('public')->assertExists($response->content());
+
+    Storage::disk('public')->delete($response->content());
   }
 }

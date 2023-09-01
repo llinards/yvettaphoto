@@ -20,6 +20,7 @@ class NewsTest extends TestCase
   {
     parent::setUp();
     $this->user = User::factory()->create();
+    Storage::fake();
   }
 
 
@@ -48,7 +49,7 @@ class NewsTest extends TestCase
     foreach ($news->images as $image) {
       Storage::disk('public')->delete('uploads/news/'.$image->image_location);
     }
-    
+
   }
 
   public function test_news_can_be_destroyed(): void
@@ -64,6 +65,8 @@ class NewsTest extends TestCase
     $response = $this->delete('/admin/zinas/'.$news->id.'/delete');
 
     $response->assertStatus(302);
+    $response->assertSessionHas('success', 'Ziņa izdzēsta!');
+
     $this->assertDatabaseMissing('news', [
       'id' => $news->id,
     ]);
@@ -77,24 +80,33 @@ class NewsTest extends TestCase
 
   public function test_news_can_be_created(): void
   {
-    $this->markTestSkipped('In progress...');
     $this->actingAs($this->user);
 
-    Storage::fake('public');
-    $file[] = UploadedFile::fake()->image('test.jpg');
+    $file = UploadedFile::fake()->image('test.jpg');
 
     $fileTempUpload = $this->post('/admin/upload', [
-      'multiple-img-upload' => $file
-    ])->assertStatus(200);
-
-    dd($fileTempUpload);
-
-    Storage::disk('public')->assertExists($fileTempUpload->content());
+      'multiple-img-upload' => [$file]
+    ]);
 
     $response = $this->post('/admin/zinas', [
       'news-title' => 'Test category',
       'news-description' => 'Test description',
-      'multiple-img-upload' => $fileTempUpload->content()
+      'multiple-img-upload' => [$fileTempUpload->content()]
     ]);
+    $response->assertRedirect('/admin');
+    $response->assertSessionHas('success', 'Ziņa pievienota!');
+
+    $this->assertDatabaseHas('news', [
+      'title' => 'Test category'
+    ]);
+
+    $this->assertDatabaseHas('news_images', [
+      'news_id' => News::first()->id,
+      'image_location' => basename($fileTempUpload->content())
+    ]);
+
+    Storage::disk('public')->assertExists('uploads/news/'.basename($fileTempUpload->content()));
+
+    Storage::disk('public')->delete('uploads/news/'.basename($fileTempUpload->content()));
   }
 }
