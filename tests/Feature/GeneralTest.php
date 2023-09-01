@@ -24,22 +24,22 @@ class GeneralTest extends TestCase
     $this->get('/purchase')->assertStatus(200);
   }
 
-  public function test_bio_works()
+  public function test_bio_works(): void
   {
     $this->get('/bio')->assertStatus(200);
   }
 
-  public function test_artist_statement_works()
+  public function test_artist_statement_works(): void
   {
     $this->get('/artist-statement')->assertStatus(200);
   }
 
-  public function test_cv_works()
+  public function test_cv_works(): void
   {
     $this->get('/cv')->assertStatus(200);
   }
 
-  public function test_contact_me_works()
+  public function test_contact_me_works(): void
   {
     $this->get('/contact-me')->assertStatus(200);
   }
