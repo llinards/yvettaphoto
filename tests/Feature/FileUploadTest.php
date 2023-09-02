@@ -20,31 +20,41 @@ class FileUploadTest extends TestCase
     $this->user = User::factory()->create();
   }
 
-  public function test_single_img_upload_works(): void
+  public function testSingleImageUploadWorks(): void
   {
-    $this->actingAs($this->user);
-    $file = UploadedFile::fake()->image('image.jpg');
-    $response = $this->post('/admin/upload', [
-      'single-img-upload' => $file
-    ]);
+    $image = UploadedFile::fake()->image('image.jpg');
+    $response = $this->uploadImage('single-img-upload', $image);
 
     $response->assertStatus(200);
-    Storage::disk('public')->assertExists($response->content());
-
-    Storage::disk('public')->delete($response->content());
+    $this->assertImageExistsInStorage($response->content());
+    $this->deleteImage($response->content());
   }
 
-  public function test_multiple_img_upload_works(): void
+  public function testMultipleImageUploadWorks(): void
   {
-    $this->actingAs($this->user);
     $image = UploadedFile::fake()->image('image.jpg');
-    $response = $this->post('/admin/upload', [
-      'multiple-img-upload' => [$image]
-    ]);
+    $response = $this->uploadImage('multiple-img-upload', [$image]);
 
     $response->assertStatus(200);
-    Storage::disk('public')->assertExists($response->content());
+    $this->assertImageExistsInStorage($response->content());
+    $this->deleteImage($response->content());
+  }
 
-    Storage::disk('public')->delete($response->content());
+  private function uploadImage($fileKey, $image)
+  {
+    $this->actingAs($this->user);
+    return $this->post('/admin/upload', [
+      $fileKey => $image,
+    ]);
+  }
+
+  private function deleteImage(string $imageLocation): void
+  {
+    Storage::disk('public')->delete($imageLocation);
+  }
+
+  private function assertImageExistsInStorage(string $imageLocation): void
+  {
+    Storage::disk('public')->assertExists($imageLocation);
   }
 }
