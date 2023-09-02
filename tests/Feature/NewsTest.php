@@ -64,6 +64,23 @@ class NewsTest extends TestCase
     }
   }
 
+  public function test_validation_works_when_creating_news(): void
+  {
+    $this->actingAs($this->user);
+
+    $response = $this->createNews([
+      'news-title' => '',
+      'news-description' => '',
+      'multiple-img-upload' => '',
+    ]);
+
+    $response->assertSessionHasErrors([
+      'news-title' => 'Nav ievadīts virsraksts!',
+      'news-description' => 'Nav ievadīts teksts!',
+      'multiple-img-upload' => 'Nav pievienotas bildes!',
+    ]);
+  }
+
   public function test_edit_news_can_be_opened(): void
   {
     $news = News::factory()->hasImages(rand(1, 2))->create();
