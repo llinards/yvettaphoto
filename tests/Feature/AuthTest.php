@@ -18,7 +18,7 @@ class AuthTest extends TestCase
     $this->user = User::factory()->create();
   }
 
-  public function test_only_authenticated_users_can_see_dashboard()
+  public function test_only_authenticated_users_can_see_dashboard(): void
   {
     $response = $this->get('/admin');
 
@@ -26,7 +26,7 @@ class AuthTest extends TestCase
     $response->assertRedirect('/login');
   }
 
-  public function test_authenticated_users_can_see_dashboard()
+  public function test_authenticated_users_can_see_dashboard(): void
   {
     $this->actingAs($this->user);
     $response = $this->get('/admin');
