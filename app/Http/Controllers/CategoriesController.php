@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
+use App\Services\CategoryService;
 use App\Services\FileService;
 use App\Services\ImageService;
 use Illuminate\Http\Request;
@@ -25,22 +26,15 @@ class CategoriesController extends Controller
     return view('admin.categories.create');
   }
 
-  public function store(StoreCategoryRequest $data, FileService $fileService, ImageService $imageService)
-  {
+  public function store(
+    StoreCategoryRequest $data,
+    CategoryService $categoryService
+  ) {
     try {
-      $categoryName = $data['category-name'];
-      $categorySlug = Str::slug($categoryName);
-
-      $imageService->resizeImage($data);
-      $categoryCoverPhotoUrl = $fileService->storeCategoryCoverPhoto($data);
-
-      Category::create([
-        'name' => $categoryName,
-        'description' => $data['category-description'],
-        'category_slug' => $categorySlug,
-        'cover_photo_url' => basename($categoryCoverPhotoUrl),
-      ]);
-      return redirect('/admin/'.$categorySlug.'/bildes')->with('success', 'Kategorija pievienota!');
+      $categoryService->addCategory($data);
+      $categoryService->resizeImage($data['single-img-upload']);
+      $categoryService->addImage($data['single-img-upload']);
+      return redirect('/admin/'.$categoryService->getSlug().'/bildes')->with('success', 'Kategorija pievienota!');
     } catch (\Exception $e) {
       Log::error($e);
       return redirect()->back()->with('error', 'Kļūda!');

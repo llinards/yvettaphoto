@@ -6,9 +6,9 @@ use Intervention\Image\Facades\Image as InterventionImage;
 
 class ImageService
 {
-  public function resizeImage(object $data): void
+  public function resizeImage(string $image): void
   {
-    InterventionImage::make("storage/".$data['single-img-upload'])->resize(600, 600)->save();
+    InterventionImage::make("storage/".$image)->resize(600, 600)->save();
   }
 
   public function getImageExifData(string $imageUrl): ?array
