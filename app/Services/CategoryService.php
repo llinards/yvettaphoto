@@ -70,7 +70,7 @@ class CategoryService
 
   public function destroyCategory(object $data): void
   {
-    $this->category = $this->getCategory($data['category-id']);
+    $this->category = $this->getCategory($data['id']);
     $fileService = new FileService();
     $fileService->destroyDirectory('uploads/'.$this->category->category_slug);
     $this->category->delete();
