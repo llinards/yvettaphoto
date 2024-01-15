@@ -57,7 +57,7 @@ class CategoryService
       $fileService->moveDirectory('uploads/'.$this->category->category_slug, 'uploads/'.$this->slug);
     }
     if ($isCategoryCoverImageChanged) {
-      $this->destroyImage($this->category->cover_photo_url);
+      $fileService->destroyFile($this->category->cover_photo_url, 'uploads/'.$this->slug);
     }
     $this->category->update([
       'name' => $data['category-name'],
@@ -66,16 +66,10 @@ class CategoryService
       'cover_photo_url' => $this->categoryCoverImage,
     ]);
   }
-  
+
   public function resizeImage(string $image): void
   {
     $imageService = new ImageService();
     $imageService->resizeImage($image);
-  }
-
-  public function destroyImage(string $image): void
-  {
-    $fileService = new FileService();
-    $fileService->destroyFile($image, 'uploads/'.$this->slug);
   }
 }
