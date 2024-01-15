@@ -12,7 +12,17 @@ class FileService
     Storage::disk('public')->move($file, $location.'/'.basename($file));
   }
 
-  
+  public function moveDirectory(string $oldDirectory, string $newDirectory): void
+  {
+    Storage::disk('public')->makeDirectory($newDirectory);
+    Storage::disk('public')->move($oldDirectory, $newDirectory);
+  }
+
+  public function destroyFile(string $file, string $location): void
+  {
+    Storage::disk('public')->delete($location.'/'.$file);
+  }
+
 //
 
   public function storeCoverPhoto(object $data): void
@@ -41,10 +51,5 @@ class FileService
   {
     Storage::disk('public')->makeDirectory('uploads/'.$newCategorySlug);
     Storage::disk('public')->move('uploads/'.$oldCategorySlug, 'uploads/'.$newCategorySlug);
-  }
-
-  public function destroyPhoto(string $slug, string $coverPhotoUrl): void
-  {
-    Storage::disk('public')->delete('uploads/'.$slug.'/'.$coverPhotoUrl);
   }
 }
