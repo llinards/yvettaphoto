@@ -8,7 +8,6 @@ use App\Http\Requests\UpdateCategoryRequest;
 use App\Services\CategoryService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Storage;
 
 class CategoriesController extends Controller
 {
@@ -56,12 +55,10 @@ class CategoriesController extends Controller
     }
   }
 
-  public function destroy(Request $data)
+  public function destroy(Request $data, CategoryService $categoryService)
   {
     try {
-      $category = Category::findOrFail($data['category-id']);
-      Storage::deleteDirectory('public/uploads/'.$category->category_slug);
-      $category->delete();
+      $categoryService->destroyCategory($data);
       return redirect('/admin/kategorijas')->with('success', 'Kategorija un tās bildes izdzēstas!');
     } catch (\Exception $e) {
       Log::error($e);

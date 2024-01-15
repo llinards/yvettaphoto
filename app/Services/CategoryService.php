@@ -45,6 +45,7 @@ class CategoryService
     }
   }
 
+  //TODO: Should be optimized further
   public function updateCategory(object $data): void
   {
     $fileService = new FileService();
@@ -65,6 +66,14 @@ class CategoryService
       'category_slug' => $this->slug,
       'cover_photo_url' => $this->categoryCoverImage,
     ]);
+  }
+
+  public function destroyCategory(object $data): void
+  {
+    $this->category = $this->getCategory($data['category-id']);
+    $fileService = new FileService();
+    $fileService->destroyDirectory('uploads/'.$this->category->category_slug);
+    $this->category->delete();
   }
 
   public function resizeImage(string $image): void
