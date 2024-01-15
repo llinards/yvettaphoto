@@ -6,12 +6,9 @@ use App\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Services\CategoryService;
-use App\Services\FileService;
-use App\Services\ImageService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 
 class CategoriesController extends Controller
 {
@@ -26,10 +23,8 @@ class CategoriesController extends Controller
     return view('admin.categories.create');
   }
 
-  public function store(
-    StoreCategoryRequest $data,
-    CategoryService $categoryService
-  ) {
+  public function store(StoreCategoryRequest $data, CategoryService $categoryService)
+  {
     try {
       $categoryService->addCategory($data);
       $categoryService->resizeImage($data['single-img-upload']);
@@ -46,31 +41,14 @@ class CategoriesController extends Controller
     return view('admin.categories.edit', compact('category'));
   }
 
-  public function update(UpdateCategoryRequest $data, FileService $fileService, ImageService $imageService)
+  public function update(UpdateCategoryRequest $data, CategoryService $categoryService)
   {
     try {
-      $categoryToUpdate = Category::findOrFail($data['category-id']);
-      $isCategorySlugChanged = $categoryToUpdate->category_slug !== Str::slug($data['category-name']);
-
-      if ($isCategorySlugChanged) {
-        $newCategorySlug = Str::slug($data['category-name']);
-        $oldCategorySlug = $categoryToUpdate->category_slug;
-
-        $fileService->updateCategoryDirectory($newCategorySlug, $oldCategorySlug);
-        $categoryToUpdate->category_slug = $newCategorySlug;
+      $categoryService->updateCategory($data);
+      if ($data->has('single-img-upload')) {
+        $categoryService->resizeImage($data['single-img-upload']);
+        $categoryService->addImage($data['single-img-upload']);
       }
-
-      $categoryToUpdate->name = $data['category-name'];
-      $categoryToUpdate->description = $data['category-description'];
-
-      if (isset($data['single-img-upload'])) {
-        $fileService->destroyPhoto(Str::slug($data['category-name']), $categoryToUpdate->cover_photo_url);
-        $imageService->resizeImage($data);
-
-        $categoryToUpdate->cover_photo_url = basename($fileService->storeCategoryCoverPhoto($data));
-      }
-
-      $categoryToUpdate->save();
       return redirect('/admin/kategorijas')->with('success', 'Kategorija atjaunota!');
     } catch (\Exception $e) {
       Log::error($e);
