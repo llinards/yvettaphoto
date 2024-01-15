@@ -77,7 +77,7 @@ class NewsController extends Controller
   {
     try {
       foreach ($news->images as $image) {
-        $fileService->destroyPhoto('news', $image->image_location);
+        $fileService->destroyFile($image, 'uploads/news/'.$image->image_location);
       }
       $news->delete();
       return back()->with('success', 'Ziņa izdzēsta!');
