@@ -10,7 +10,6 @@
         </div>
       </div>
     </div>
-    @include('admin.categories.delete-modal')
     <div class="row">
       @if(!$categories->isEmpty())
         @foreach($categories as $category)
@@ -25,9 +24,10 @@
                     kategorijā</a>
                   <a class="btn btn-warning mt-1" href="/admin/kategorijas/{{ $category->category_slug }}/edit">Rediģēt
                     kategoriju</a>
-                  <button class="btn btn-danger mt-1 deleteCategory" data-toggle="modal"
-                          data-categoryid="{{ $category->id }}">Dzēst kategoriju
-                  </button>
+                  <a class="btn btn-danger mt-1" href="/admin/kategorijas/{{ $category->id }}/delete"
+                     onclick="confirm('Vai tiešām vēlies dzēst kategoriju un bildes tur?');">
+                    Dzēst kategoriju
+                  </a>
                 </div>
               </div>
             </div>

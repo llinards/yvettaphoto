@@ -6,7 +6,6 @@ use App\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Services\CategoryService;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
 class CategoriesController extends Controller
@@ -55,10 +54,10 @@ class CategoriesController extends Controller
     }
   }
 
-  public function destroy(Request $data, CategoryService $categoryService)
+  public function destroy(Category $category, CategoryService $categoryService)
   {
     try {
-      $categoryService->destroyCategory($data);
+      $categoryService->destroyCategory($category);
       return redirect('/admin/kategorijas')->with('success', 'Kategorija un tās bildes izdzēstas!');
     } catch (\Exception $e) {
       Log::error($e);
