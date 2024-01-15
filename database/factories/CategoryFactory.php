@@ -25,6 +25,7 @@ class CategoryFactory extends Factory
     return [
       'name' => $categoryName,
       'category_slug' => $categorySlug,
+      'description' => $this->faker->paragraph(),
       'cover_photo_url' => $this->faker->image(storage_path('app/public/uploads/'.$categorySlug),
         600, 600, 'cities',
         false),
