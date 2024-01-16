@@ -19993,13 +19993,6 @@ a,
   .ekko-lightbox-nav-overlay a {
     font-size: 3em !important;
   }
-  .admin-buttons {
-    display: flex;
-    flex-direction: column;
-  }
-  .admin-buttons a {
-    margin-top: 1rem;
-  }
   #button-up {
     right: 0 !important;
   }

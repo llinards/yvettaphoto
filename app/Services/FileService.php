@@ -6,8 +6,12 @@ use Storage;
 
 class FileService
 {
-  public function storeFile(string $file, string $location): void
+  public function storeFile(string $file, string $location, bool $isCoverPhoto = false): void
   {
+    if ($isCoverPhoto) {
+      Storage::disk('public')->move($file, $location.'/home-bg.jpg');
+      return;
+    }
     Storage::disk('public')->move($file, $location.'/'.basename($file));
   }
 
@@ -28,12 +32,6 @@ class FileService
   }
 
 // old code
-
-  public function storeCoverPhoto(object $data): void
-  {
-    $coverPhoto = $data['single-img-upload'];
-    Storage::disk('public')->move($coverPhoto, 'uploads/cover_photos/home-bg.jpg');
-  }
 
   public function storePhotos(string $image, string $categorySlug): string
   {

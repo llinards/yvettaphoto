@@ -9,6 +9,18 @@
         <a class="nav-link" href="/admin">Sākums</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="/admin/titulbilde/jauna">Mainīt titulbildi</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/kategorijas">Kategorijas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/bildes/jaunas">Bildes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/cv/edit">CV</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" target="_blank" href="https://compressor.io/">Bilžu samazināšanas rīks (compressor.io)</a>
       </li>
       <li class="nav-item ml-lg-auto">
