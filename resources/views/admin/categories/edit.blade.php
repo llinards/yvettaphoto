@@ -1,9 +1,9 @@
 <x-admin-app-layout>
   <x-slot name="header">
-    <h2>Rediģēt - {{ $category->name }} - kategoriju</h2>
+    <h2>Rediģēt kategoriju: <strong>{{ $category->name }}</strong></h2>
   </x-slot>
   <x-slot name="content">
-    <div class="col-6 offset-3">
+    <div class="col-lg-6 offset-lg-3 col-12">
       <form action="/admin/kategorijas" enctype="multipart/form-data" method="post">
         @csrf
         @method('PATCH')
@@ -20,12 +20,12 @@
           </x-description-text-area>
         </div>
         <div class="row">
-          <div class="form-group col-6">
+          <div class="form-group col-lg-6 col-12">
             <label for="">Kategorijas esošā titulbilde</label>
             <img src="{{ asset('storage/uploads/'.$category->category_slug.'/'.$category->cover_photo_url) }}"
                  class="card-img-top w-50" alt=""/>
           </div>
-          <div class="form-group col-6">
+          <div class="form-group col-lg-6 col-12">
             <label for="single-img-upload" class="col-form-label">Kategorijas jaunā titulbilde</label>
             <x-single-img-upload/>
           </div>
@@ -35,7 +35,7 @@
           <small class="form-text text-muted"><strong>Bildes
               izmērs nedrīkst pārsniegt 1 MB (1024 KB).</strong></small>
         </div>
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between flex-wrap">
           <a class="btn btn-secondary" href="/admin/kategorijas">Atpakaļ</a>
           <button type="submit" class="btn btn-success">Atjaunot kategoriju kategoriju</button>
         </div>

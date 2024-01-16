@@ -3,7 +3,7 @@
     <h2>Izveidot jaunu kategoriju</h2>
   </x-slot>
   <x-slot name="content">
-    <div class="col-6 offset-3">
+    <div class="col-lg-6 offset-lg-3 col-12">
       <form action="/admin/kategorijas" enctype="multipart/form-data" method="post">
         @csrf
         <div class="form-group">
