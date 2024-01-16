@@ -20,6 +20,7 @@
 @import "home/contact-me";
 
 @import "gallery/index";
+@import "gallery/admin";
 @import "news/index";
 @import "cv/index";
 
@@ -116,10 +117,6 @@ a,
 .facebook-icon:hover,
 .instagram-icon:active {
   color: #000;
-}
-
-.admin-container {
-  margin-top: 125px;
 }
 
 .maintenance-page {

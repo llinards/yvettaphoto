@@ -1,43 +1,39 @@
-@extends('layouts.admin-default')
-@section('content')
-  <div class="container admin-container">
-    @include('inc.status-messages')
-    <div class="jumbotron">
-      <div class="d-flex flex-column align-items-center">
-        <h2 class="admin__headings">Kategorijas</h2>
-        <div>
-          <a href="/admin/kategorijas/jauna" class="btn btn-success">Pievienot jaunu kategoriju</a>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      @if(!$categories->isEmpty())
-        @foreach($categories as $category)
-          <div class="col-xs-12 col-md-6 col-lg-4 mt-4">
-            <div class="card" style="width: 18rem; margin: 0 auto;">
-              <img src="{{ asset('storage/uploads/'.$category->category_slug.'/'.$category->cover_photo_url) }}"
-                   class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title text-center">{{ $category->name }}</h5>
-                <div class="text-center">
-                  <a class="btn btn-success mt-1" href="/admin/{{ $category->category_slug }}/bildes">Bildes šajā
-                    kategorijā</a>
-                  <a class="btn btn-warning mt-1" href="/admin/kategorijas/{{ $category->category_slug }}/edit">Rediģēt
-                    kategoriju</a>
-                  <a class="btn btn-danger mt-1" href="/admin/kategorijas/{{ $category->id }}/delete"
-                     onclick="confirm('Vai tiešām vēlies dzēst kategoriju un bildes tur?');">
-                    Dzēst kategoriju
-                  </a>
-                </div>
-              </div>
-            </div>
+<x-admin-app-layout>
+  <x-slot name="header">
+    <h2>Kategorijas</h2>
+    <a href="/admin/kategorijas/jauna" class="btn btn-success">Pievienot jaunu kategoriju</a>
+  </x-slot>
+  <x-slot name="content">
+    @if(!$categories->isEmpty())
+      @foreach($categories as $category)
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-5">
+          <h5 class="text-center">{{ $category->name }}</h5>
+          <hr>
+          <div class="text-center">
+            <img class="w-75"
+                 src="{{ asset('storage/uploads/'.$category->category_slug.'/'.$category->cover_photo_url) }}">
           </div>
-        @endforeach
-      @else
-        <div class="text-center w-100">
-          <p>Nav nevienas kategorijas! Pievieno, lai kaut ko redzētu šeit! :)</p>
+          <div class="text-center">
+            <a class="btn btn-secondary mt-1" href="/admin/kategorijas/{{ $category->category_slug }}/edit">Rediģēt
+              kategoriju</a>
+            <a class="btn btn-secondary mt-1" href="/admin/{{ $category->category_slug }}/bildes">Bildes šajā
+              kategorijā</a>
+            <hr>
+            <form action="/admin/kategorijas/{{ $category->id }}/delete" method="POST">
+              @csrf
+              @method('DELETE')
+              <button class="btn btn-danger mt-1"
+                      onclick="return confirm('Vai tiešām vēlies dzēst kategoriju un bildes tur?');">
+                Dzēst kategoriju
+              </button>
+            </form>
+          </div>
         </div>
-      @endif
-    </div>
-  </div>
-@stop
+      @endforeach
+    @else
+      <div class="text-center w-100">
+        <p>Nav nevienas kategorijas! Pievieno, lai kaut ko redzētu šeit! :)</p>
+      </div>
+    @endif
+  </x-slot>
+</x-admin-app-layout>

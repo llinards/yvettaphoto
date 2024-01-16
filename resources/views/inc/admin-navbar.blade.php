@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+{{--TODO: Atjaunot navbar--}}
+<nav class="navbar navbar-expand-lg navbar-light bg-light position-relative mb-5">
   <button class="navbar-toggler navbar-light bg-dark navbar-btn" type="button" data-toggle="collapse"
           data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
