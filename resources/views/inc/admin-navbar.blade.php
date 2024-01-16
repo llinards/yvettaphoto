@@ -1,21 +1,17 @@
-{{--TODO: Atjaunot navbar--}}
 <nav class="navbar navbar-expand-lg navbar-light bg-light position-relative mb-5">
-  <button class="navbar-toggler navbar-light bg-dark navbar-btn" type="button" data-toggle="collapse"
-          data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler navbar-light navbar-btn ml-auto border-0" type="button" data-toggle="collapse"
+          data-target="#admin-navbar" aria-controls="admin-navbar" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav d-flex align-items-center">
-      <li class="{{ (request()->is('/admin')) ? 'active' : '' }}nav-item">
-        <a class="nav-link" href="/admin">Administrācijas sākumlapa</a>
+  <div class="collapse navbar-collapse" id="admin-navbar">
+    <ul class="navbar-nav d-flex align-items-center w-100">
+      <li class="nav-item">
+        <a class="nav-link" href="/admin">Sākums</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" target="_blank" href="/">Galvenā mājaslapa</a>
+        <a class="nav-link" target="_blank" href="https://compressor.io/">Bilžu samazināšanas rīks (compressor.io)</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" target="_blank" href="https://compressor.io/">Bilžu samazināšana izmērā</a>
-      </li>
-      <li class="nav-item">
+      <li class="nav-item ml-lg-auto">
         <a class="nav-link" href="{{ route('logout') }}"
            onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
