@@ -9,7 +9,6 @@ class CategoryService
 {
   private string $slug;
   private object $category;
-  private string $categoryCoverImage;
 
   private function setSlug(string $slug): void
   {
@@ -51,9 +50,9 @@ class CategoryService
     $fileService = new FileService();
     $this->category = $this->getCategory($data['category-id']);
     $this->setSlug($data['category-name']);
-    $this->categoryCoverImage = isset($data['single-img-upload']) ? basename($data['single-img-upload']) : $this->category->cover_photo_url;
+    $categoryCoverImage = isset($data['single-img-upload']) ? basename($data['single-img-upload']) : $this->category->cover_photo_url;
     $isSlugChanged = $this->category->category_slug !== $this->slug;
-    $isCategoryCoverImageChanged = $this->category->cover_photo_url !== $this->categoryCoverImage;
+    $isCategoryCoverImageChanged = $this->category->cover_photo_url !== $categoryCoverImage;
     if ($isSlugChanged) {
       $fileService->moveDirectory('uploads/'.$this->category->category_slug, 'uploads/'.$this->slug);
     }
@@ -64,7 +63,7 @@ class CategoryService
       'name' => $data['category-name'],
       'description' => $data['category-description'],
       'category_slug' => $this->slug,
-      'cover_photo_url' => $this->categoryCoverImage,
+      'cover_photo_url' => $categoryCoverImage,
     ]);
   }
 

@@ -1,5 +1,4 @@
-{{--TODO: Dzēst šo failu, kad pabeigta migrācija--}}
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
   <meta charset="UTF-8">
@@ -11,9 +10,21 @@
   @include('inc.js')
 </head>
 <body>
+{{--TODO: Atjaunot šo--}}
 @if(!isset($loginPage))
   @include('inc.admin-navbar')
 @endif
-@yield('content')
+
+<div class="container">
+  @include('inc.status-messages')
+</div>
+<div class="container d-flex align-items-center flex-column">
+  {{ $header }}
+</div>
+<div class="container mb-5">
+  <div class="row">
+    {{ $content }}
+  </div>
+</div>
 </body>
 </html>
