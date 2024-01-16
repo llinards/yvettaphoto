@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
-use App\Http\Requests\StoreCategoryRequest;
-use App\Http\Requests\UpdateCategoryRequest;
+use App\Http\Requests\CategoryRequest;
 use App\Services\CategoryService;
 use Illuminate\Support\Facades\Log;
 
@@ -21,7 +20,7 @@ class CategoriesController extends Controller
     return view('admin.categories.create');
   }
 
-  public function store(StoreCategoryRequest $data, CategoryService $categoryService)
+  public function store(CategoryRequest $data, CategoryService $categoryService)
   {
     try {
       $categoryService->addCategory($data);
@@ -39,7 +38,7 @@ class CategoriesController extends Controller
     return view('admin.categories.edit', compact('category'));
   }
 
-  public function update(UpdateCategoryRequest $data, CategoryService $categoryService)
+  public function update(CategoryRequest $data, CategoryService $categoryService)
   {
     try {
       $categoryService->updateCategory($data);
