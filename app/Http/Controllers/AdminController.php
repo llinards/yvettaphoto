@@ -23,7 +23,7 @@ class AdminController extends Controller
   public function store(StoreCoverPhotoRequest $data, FileService $fileService)
   {
     try {
-      $fileService->storeCoverPhoto($data);
+      $fileService->storeFile($data['single-img-upload'], 'uploads/cover_photos', true);
       return redirect('/admin')->with('success', 'Titulbilde nomainīta!');
     } catch (\Exception $e) {
       Log::error($e);
