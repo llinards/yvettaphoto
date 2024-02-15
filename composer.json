@@ -11,6 +11,7 @@
     "php": "^8.1",
     "doctrine/dbal": "^3.6",
     "fakerphp/faker": "^1.23",
+    "filament/filament": "^3.2",
     "intervention/image": "^2.7",
     "laravel/framework": "^10.0",
     "laravel/tinker": "^2.8",
@@ -21,11 +22,11 @@
     "barryvdh/laravel-debugbar": "^3.8",
     "beyondcode/laravel-query-detector": "^1.7",
     "laravel/telescope": "^4.16",
+    "spatie/laravel-ignition": "^2.4",
     "mockery/mockery": "^1.5",
     "nunomaduro/collision": "^7.0",
     "nunomaduro/phpinsights": "^2.11",
-    "phpunit/phpunit": "^10.0",
-    "spatie/laravel-ignition": "^2.4"
+    "phpunit/phpunit": "^10.0"
   },
   "config": {
     "optimize-autoloader": true,
@@ -60,7 +61,8 @@
     ],
     "post-autoload-dump": [
       "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-      "@php artisan package:discover --ansi"
+      "@php artisan package:discover --ansi",
+      "@php artisan filament:upgrade"
     ],
     "post-root-package-install": [
       "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
