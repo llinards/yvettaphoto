@@ -1,4 +1,5 @@
-{{--TODO: Dzēst, kad neizmanto--}}
+<input type="file" class="form-control-file" name="single-img-upload" id="single-img-upload">
+
 <script>
   FilePond.registerPlugin(FilePondPluginFileValidateType);
   FilePond.registerPlugin(FilePondPluginFileValidateSize);

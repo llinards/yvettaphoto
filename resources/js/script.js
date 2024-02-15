@@ -1,7 +1,7 @@
 // change background for navbar when scrolling down
-$(function() {
+$(function () {
   // handle links with @href started with '#' only
-  $(document).on("click", 'a[href^="#"]', function(e) {
+  $(document).on("click", 'a[href^="#"]', function (e) {
     // target element id
     var id = $(this).attr("href");
 
@@ -27,7 +27,7 @@ $(function() {
 
   //
   var btn = $("#button-up");
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     if ($(window).scrollTop() > 100) {
       btn.addClass("show");
     } else {
@@ -35,7 +35,7 @@ $(function() {
     }
   });
 
-  btn.on("click", function(e) {
+  btn.on("click", function (e) {
     e.preventDefault();
     $("html, body").animate(
       {
@@ -45,25 +45,19 @@ $(function() {
     );
   });
   //
-  $(document).on("click", ".navbar-collapse", function(e) {
+  $(document).on("click", ".navbar-collapse", function (e) {
     if ($(e.target).is("a")) {
       $(this).collapse("hide");
     }
   });
 
-  $(document).on("click", ".deleteCategory", function() {
-    var categoryId = $(this).attr("data-categoryid");
-    $("#modelToDeleteId").val(categoryId);
-    $("#deleteModal").modal("show");
-  });
-
-  $(document).on("click", ".deleteImage", function() {
+  $(document).on("click", ".deleteImage", function () {
     var imageId = $(this).attr("data-imageid");
     $("#modelToDeleteId").val(imageId);
     $("#deleteModal").modal("show");
   });
 
-  $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+  $(document).on("click", '[data-toggle="lightbox"]', function (event) {
     event.preventDefault();
     $(this).ekkoLightbox({
       alwaysShowClose: false

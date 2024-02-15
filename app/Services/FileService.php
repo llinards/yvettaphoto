@@ -2,41 +2,41 @@
 
 namespace App\Services;
 
-use Illuminate\Support\Str;
 use Storage;
 
 class FileService
 {
-  public function storeCoverPhoto(object $data): void
+  public function storeFile(string $file, string $location, bool $isCoverPhoto = false): void
   {
-    $coverPhoto = $data['single-img-upload'];
-    Storage::disk('public')->move($coverPhoto, 'uploads/cover_photos/home-bg.jpg');
+    if ($isCoverPhoto) {
+      Storage::disk('public')->move($file, $location.'/home-bg.jpg');
+      return;
+    }
+    Storage::disk('public')->move($file, $location.'/'.basename($file));
   }
 
-  public function storeCategoryCoverPhoto(object $data): string
+  public function moveDirectory(string $oldDirectory, string $newDirectory): void
   {
-    $categorySlug = Str::slug($data['category-name']);
-    $photo = $data['single-img-upload'];
-    $categoryCoverPhotoUrl = 'uploads/'.$categorySlug.'/'.basename($photo);
-    Storage::disk('public')->move($photo, $categoryCoverPhotoUrl);
-    return $categoryCoverPhotoUrl;
+    Storage::disk('public')->makeDirectory($newDirectory);
+    Storage::disk('public')->move($oldDirectory, $newDirectory);
   }
+
+  public function destroyFile(string $file, string $location): void
+  {
+    Storage::disk('public')->delete($location.'/'.$file);
+  }
+
+  public function destroyDirectory(string $location): void
+  {
+    Storage::disk('public')->deleteDirectory($location);
+  }
+
+// old code
 
   public function storePhotos(string $image, string $categorySlug): string
   {
     $imageUrl = 'uploads/'.$categorySlug.'/'.basename($image);
     Storage::disk('public')->move($image, $imageUrl);
     return $imageUrl;
-  }
-
-  public function updateCategoryDirectory($newCategorySlug, $oldCategorySlug): void
-  {
-    Storage::disk('public')->makeDirectory('uploads/'.$newCategorySlug);
-    Storage::disk('public')->move('uploads/'.$oldCategorySlug, 'uploads/'.$newCategorySlug);
-  }
-
-  public function destroyPhoto(string $slug, string $coverPhotoUrl): void
-  {
-    Storage::disk('public')->delete('uploads/'.$slug.'/'.$coverPhotoUrl);
   }
 }

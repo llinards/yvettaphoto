@@ -4,21 +4,27 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateCategoryRequest extends FormRequest
+class CategoryRequest extends FormRequest
 {
   public function rules(): array
   {
-    return [
-      'category-id' => 'required',
+
+    $rules = [
       'category-name' => 'required',
     ];
+
+    if ($this->getMethod() == 'POST') {
+      $rules += ['single-img-upload' => 'required'];
+    }
+
+    return $rules;
   }
 
   public function messages(): array
   {
     return [
-      'category-id.required' => 'Kļūda! Mēģini vēlreiz.',
       'category-name.required' => 'Nav norādīts kategorijas nosaukums.',
+      'single-img-upload.required' => 'Nav pievienota kategorijas titulbilde.'
     ];
   }
 

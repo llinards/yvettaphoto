@@ -14,12 +14,14 @@
 //@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 
 @import "navbar";
+@import "admin";
 
 @import "home/header";
 @import "home/portfolio";
 @import "home/contact-me";
 
 @import "gallery/index";
+@import "gallery/admin";
 @import "news/index";
 @import "cv/index";
 
@@ -116,10 +118,6 @@ a,
 .facebook-icon:hover,
 .instagram-icon:active {
   color: #000;
-}
-
-.admin-container {
-  margin-top: 125px;
 }
 
 .maintenance-page {
