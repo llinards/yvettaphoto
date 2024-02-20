@@ -13,9 +13,9 @@
           <div class="main-text-img text-center mb-5">
             <img src="../img/iveta-lazdina-artist-statement.jpeg" width="250" class="img-fluid" alt="">
           </div>
-          <p class="lead main-text">Iveta Lazdina is a fine art photographer from Latvia. Her interest in photography was raised while traveling to embed personal feelings of particular moments, moving beyond the medium's ability to reproduce reality. Iveta is inspired by abstract painters, and she works in an abstract and semi-abstract manner with ICM and multi-exposure technics. Her works are drawn to find harmony and balance between the inner and outer world.</p>
-          <p class="lead main-text mb-3">She started her fundamental knowledge in photography in Photo Academie in Riga (Latvia). In addition, Iveta has studied art in several creative classes and International workshops.</p>
-          <p class="lead main-text mb-3">Lazdina's images have been exhibited in several group exhibitions and published several times in ICMPhoto Magazine, LeMag online Magazine.</p>
+          <p class="lead main-text">Iveta Lazdina is a fine art photographer from Latvia. Her interest in photography began through travels when she became drawn to embedding personal  moments that can move  beyond the medium's ability to reproduce reality.</p>
+          <p class="lead main-text mb-3">Inspired by impressionism, she works in a abstract and semi-abstract manner using creative multi-exposure technics.  She  studied at the Photo Academie in Riga (Latvia). In addition, Iveta has attended several creative classes and international workshops.</p>
+          <p class="lead main-text mb-3"> Lazdinas's images have been exhibited in several international group exhibitions and published in magazines including: ICMPhoto Magazine, LeMag, and Dodho.</p>
 {{--          <p class="lead main-text mb-3">Her photography has been exhibited nationally and internationally:</p>--}}
 {{--          <ul>--}}
 {{--            <li class="lead main-text">SE Center for Photography, Grenville, SC</li>--}}
