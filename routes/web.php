@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\CvsController;
 use App\Http\Controllers\EmailsController;
+use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\NewsController;
@@ -27,6 +28,9 @@ Auth::routes([
 
 
 Route::middleware(['auth'])->prefix('/admin')->group(function () {
+  Route::post('/bildes/temp/upload', [FileUploadController::class, 'store'])->name('image_temporary.store');
+  Route::delete('/bildes/temp/upload', [FileUploadController::class, 'destroy'])->name('image_temporary.destroy');
+
   Route::get('/', [AdminController::class, 'index'])->name('admin.index');
   Route::get('/titulbilde/jauna', [AdminController::class, 'create'])->name('admin.cover_photo.create');
   Route::post('/titulbilde', [AdminController::class, 'store'])->name('admin.cover_photo.store');
@@ -43,9 +47,7 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
   Route::patch('/bildes/{image}', [ImagesController::class, 'update'])->name('category.images.update');
   Route::delete('/bildes/{image}', [ImagesController::class, 'destroy'])->name('category.images.destroy');
 
-  Route::post('/bildes/temp/upload', [ImagesController::class, 'storeTemp'])->name('image_temporary.store');
-  Route::delete('/bildes/temp/upload', [ImagesController::class, 'destroyTemp'])->name('image_temporary.destroy');
-
+  
   Route::get('/zinas/new', [NewsController::class, 'create']);
   Route::post('/zinas', [NewsController::class, 'store']);
   Route::get('/zinas/{news}/edit', [NewsController::class, 'edit']);
