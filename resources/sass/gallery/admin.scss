@@ -1,0 +1,18 @@
+.gallery-images {
+  columns: 4;
+  gap: 1.5rem;
+}
+
+.gallery-image {
+  break-inside: avoid;
+}
+
+.delete-gallery-image-icon {
+  color: black;
+  font-size: 1.5rem;
+}
+
+.delete-gallery-image-icon:hover {
+  color: gray;
+}
+

@@ -9,7 +9,7 @@ class StoreImageRequest extends FormRequest
   public function rules(): array
   {
     return [
-      'selected-category' => 'required',
+      'category-id' => 'required',
       'multiple-img-upload' => 'required'
     ];
   }
@@ -17,7 +17,7 @@ class StoreImageRequest extends FormRequest
   public function messages(): array
   {
     return [
-      'selected-category.required' => 'Nav izvēlēta kategorija!',
+      'category-id.required' => 'Nav izvēlēta kategorija!',
       'multiple-img-upload.required' => 'Nav izvēlētas bildes!'
     ];
   }

@@ -21,14 +21,6 @@ $(function () {
   });
   //
 
-
-  $(document).on("click", ".deleteImage", function () {
-    var imageId = $(this).attr("data-imageid");
-    $("#modelToDeleteId").val(imageId);
-    $("#deleteModal").modal("show");
-  });
-
-
   const menu = document.querySelector(".navbar-toggler") || null;
   if (menu != null) {
     menu.addEventListener("click", () => {

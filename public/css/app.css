@@ -17487,6 +17487,28 @@ readers do not read off random characters that represent icons */
  * Copyright 2023 Fonticons, Inc.
  */
 :root, :host {
+  --fa-style-family-classic: "Font Awesome 6 Free";
+  --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff2?fb8184add5a3101ad0a321db81c70285) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.ttf?45a265d0f07b31cde85f8723d9c53efd) format("truetype");
+}
+.fas,
+.fa-solid {
+  font-weight: 900;
+}
+
+/*!
+ * Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ * Copyright 2023 Fonticons, Inc.
+ */
+:root, :host {
   --fa-style-family-brands: "Font Awesome 6 Brands";
   --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
 }
@@ -19804,6 +19826,26 @@ section#home {
   width: 100%;
 }
 
+.gallery-images {
+  -moz-columns: 4;
+       columns: 4;
+  gap: 1.5rem;
+}
+
+.gallery-image {
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
+}
+
+.delete-gallery-image-icon {
+  color: black;
+  font-size: 1.5rem;
+}
+
+.delete-gallery-image-icon:hover {
+  color: gray;
+}
+
 .news-item-content p:not(.small) {
   letter-spacing: 0.75px;
   margin-bottom: 0.5rem;
@@ -19839,6 +19881,13 @@ p,
 a,
 .form-control {
   font-family: "Montserrat", sans-serif;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 .underline {
@@ -19971,6 +20020,10 @@ a,
   #portfolio .row {
     justify-content: center;
   }
+  .gallery-images {
+    -moz-columns: 3;
+         columns: 3;
+  }
 }
 @media (max-width: 768px) {
   .category {
@@ -19995,6 +20048,10 @@ a,
   }
   #button-up {
     right: 0 !important;
+  }
+  .gallery-images {
+    -moz-columns: 2;
+         columns: 2;
   }
 }
 @media (max-width: 425px) {

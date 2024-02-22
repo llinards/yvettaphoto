@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\CategoryImage;
 use App\Http\Requests\StoreImageRequest;
-use App\Image;
 use App\Services\FileService;
 use App\Services\ImageService;
 use Illuminate\Http\Request;
@@ -14,27 +14,21 @@ use Illuminate\Support\Facades\Storage;
 class ImagesController extends Controller
 {
 
-  public function index()
+  public function index(Category $category)
   {
-    return back();
-  }
-
-  public function create()
-  {
-    $categories = Category::all();
-    return view('admin.photos.create', compact('categories'));
+    return view('admin.photos.index', compact('category'));
   }
 
   public function store(StoreImageRequest $data, FileService $fileService, ImageService $imageService)
   {
     try {
-      $categoryId = $data['selected-category'];
+      $categoryId = $data['category-id'];
       $categorySlug = Category::findOrFail($categoryId)->category_slug;
       foreach ($data['multiple-img-upload'] as $image) {
         $imageUrl = $fileService->storePhotos($image, $categorySlug);
         $exifData = $imageService->getImageExifData($imageUrl);
 
-        $newImage = new Image();
+        $newImage = new CategoryImage();
         $newImage->category_id = $categoryId;
         $newImage->image_name = basename($imageUrl);
         if ($exifData) {
@@ -53,12 +47,8 @@ class ImagesController extends Controller
     }
   }
 
-  public function edit(Category $category)
-  {
-    return view('admin.photos.edit', compact('category'));
-  }
 
-  public function getImageInfo(Category $category, Image $image)
+  public function getImageInfo(Category $category, CategoryImage $image)
   {
     return view('admin.photos.edit-info', compact('image', 'category'));
   }
@@ -66,7 +56,7 @@ class ImagesController extends Controller
   public function setImageInfo(Category $category, Request $image)
   {
     try {
-      $imageToUpdate = Image::findOrFail($image['image-id']);
+      $imageToUpdate = CategoryImage::findOrFail($image['image-id']);
       $imageToUpdate->alt_attribute = $image['image-alt-attribute'];
       $imageToUpdate->title = $image['image-title'];
       $imageToUpdate->save();
@@ -77,10 +67,10 @@ class ImagesController extends Controller
     }
   }
 
-  public function destroy(Request $image)
+  public function destroy(CategoryImage $image)
   {
     try {
-      $imageToDelete = Image::findOrFail($image['image-id']);
+      $imageToDelete = CategoryImage::findOrFail($image['id']);
       $imageToDelete->delete();
       Storage::delete('public/uploads/'.$imageToDelete->category->category_slug.'/'.$imageToDelete->image_name);
       return back()->with('success', 'Bilde izdzēsta!');

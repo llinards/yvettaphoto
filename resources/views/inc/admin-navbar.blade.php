@@ -15,9 +15,6 @@
         <a class="nav-link" href="/admin/kategorijas">Kategorijas</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/admin/bildes/jaunas">Bildes</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="/admin/cv/edit">CV</a>
       </li>
       <li class="nav-item">

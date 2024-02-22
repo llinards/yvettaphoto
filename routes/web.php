@@ -39,13 +39,14 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
   Route::patch('/kategorijas', [CategoriesController::class, 'update'])->name('categories.update');
   Route::delete('/kategorijas/{category}', [CategoriesController::class, 'destroy'])->name('categories.destroy');
 
-  Route::get('/bildes', [ImagesController::class, 'index']);
-  Route::get('/bildes/jaunas', [ImagesController::class, 'create']);
-  Route::post('/bildes', [ImagesController::class, 'store']);
-  Route::get('/{category}/bildes', [ImagesController::class, 'edit']);
+  Route::get('/{category}/bildes', [ImagesController::class, 'index'])->name('category.images.index');
+  Route::post('/bildes', [ImagesController::class, 'store'])->name('category.images.store');
+  Route::delete('/bildes/{image}', [ImagesController::class, 'destroy'])->name('category.images.destroy');
+
+
   Route::get('/{category}/bildes/{image}', [ImagesController::class, 'getImageInfo']);
   Route::patch('/{category}/bildes/{image}', [ImagesController::class, 'setImageInfo']);
-  Route::delete('/bildes', [ImagesController::class, 'destroy']);
+
 
   Route::get('/zinas/new', [NewsController::class, 'create']);
   Route::post('/zinas', [NewsController::class, 'store']);

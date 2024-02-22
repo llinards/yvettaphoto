@@ -56,6 +56,10 @@
   #portfolio .row {
     justify-content: center;
   }
+  
+  .gallery-images {
+    columns: 3;
+  }
 }
 
 @media (max-width: 768px) {
@@ -85,9 +89,13 @@
   .ekko-lightbox-nav-overlay a {
     font-size: 3em !important;
   }
-  
+
   #button-up {
     right: 0 !important;
+  }
+
+  .gallery-images {
+    columns: 2;
   }
 }
 

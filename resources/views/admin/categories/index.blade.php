@@ -17,7 +17,8 @@
             <a class="btn btn-secondary mt-1"
                href="{{route('categories.edit',[$category->category_slug])}}">Rediģēt
               kategoriju</a>
-            <a class="btn btn-secondary mt-1" href="/admin/{{ $category->category_slug }}/bildes">Bildes šajā
+            <a class="btn btn-secondary mt-1" href="{{route('category.images.index',[$category->category_slug])}}">Bildes
+              šajā
               kategorijā</a>
             <hr>
             <form action="{{route('categories.destroy',[$category->category_slug])}}" method="POST">
