@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Storage;
 
 class ImagesController extends Controller
 {
-
   public function index(Category $category)
   {
     return view('admin.photos.index', compact('category'));
@@ -47,6 +46,18 @@ class ImagesController extends Controller
     }
   }
 
+  public function storeTemp(Request $data)
+  {
+    if ($data->has('single-image')) {
+      return $data->file('single-image')->store('temp', 'public');
+    }
+    if ($data->has('multiple-images')) {
+      foreach ($data->file('multiple-images') as $file) {
+        return $file->store('temp', 'public');
+      }
+    }
+  }
+
   public function update(Request $image)
   {
     try {
@@ -72,5 +83,11 @@ class ImagesController extends Controller
       Log::error($e);
       return back()->with('error', 'Kļūda!');
     }
+  }
+
+  public function destroyTemp(Request $data)
+  {
+    Storage::delete('public/'.$data->getContent());
+    return '';
   }
 }

@@ -9,7 +9,7 @@
 
   const options = {
     server: {
-      url: '/admin/upload',
+      url: '/admin/bildes/temp/upload',
       headers: {
         'X-CSRF-TOKEN': '{{ csrf_token() }}'
       }

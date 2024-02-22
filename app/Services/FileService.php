@@ -6,10 +6,11 @@ use Storage;
 
 class FileService
 {
-  public function storeFile(string $file, string $location, bool $isCoverPhoto = false): void
+  public function storeFile(string $file, string $location, string $fileName = ''): void
   {
-    if ($isCoverPhoto) {
-      Storage::disk('public')->move($file, $location.'/home-bg.jpg');
+    if ($fileName) {
+      //TODO: Should improve file extension
+      Storage::disk('public')->move($file, $location.'/'.$fileName.'.jpg');
       return;
     }
     Storage::disk('public')->move($file, $location.'/'.basename($file));
