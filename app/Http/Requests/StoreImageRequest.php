@@ -10,7 +10,7 @@ class StoreImageRequest extends FormRequest
   {
     return [
       'category-id' => 'required',
-      'multiple-img-upload' => 'required'
+      'multiple-images' => 'required'
     ];
   }
 
@@ -18,7 +18,7 @@ class StoreImageRequest extends FormRequest
   {
     return [
       'category-id.required' => 'Nav izvēlēta kategorija!',
-      'multiple-img-upload.required' => 'Nav izvēlētas bildes!'
+      'multiple-images.required' => 'Nav izvēlētas bildes!'
     ];
   }
 

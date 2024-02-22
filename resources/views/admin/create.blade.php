@@ -7,8 +7,8 @@
       <form action="{{route('admin.cover_photo.store')}}" enctype="multipart/form-data" method="post">
         @csrf
         <div class="form-group">
-          <label for="single-img-upload" class="col-form-label">Titulbilde</label>
-          <x-single-img-upload/>
+          <label for="single-image" class="col-form-label">Titulbilde</label>
+          <x-file-upload type="single-image"/>
           <small class="form-text text-muted"><strong>Bildes
               izmēram jābūt pēc iespējas mazākam.</strong><br/> To samazināt var <a href="https://compressor.io/"
                                                                                     target="_blank">šajā

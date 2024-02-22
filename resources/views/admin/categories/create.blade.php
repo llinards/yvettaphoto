@@ -16,8 +16,8 @@
           <x-description-text-area/>
         </div>
         <div class="form-group">
-          <label for="single-img-upload" class="col-form-label">Kategorijas titulbilde</label>
-          <x-single-img-upload/>
+          <label for="single-image" class="col-form-label">Kategorijas titulbilde</label>
+          <x-file-upload type="single-image"/>
           <small class="form-text text-muted">Bilde automātiski tiks sagriezta 600x600px.</small>
           <small class="form-text text-muted"><strong>Bildes
               izmērs nedrīkst pārsniegt 1 MB (1024 KB).</strong></small>

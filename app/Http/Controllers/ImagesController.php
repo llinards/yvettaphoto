@@ -24,7 +24,7 @@ class ImagesController extends Controller
     try {
       $categoryId = $data['category-id'];
       $categorySlug = Category::findOrFail($categoryId)->category_slug;
-      foreach ($data['multiple-img-upload'] as $image) {
+      foreach ($data['multiple-images'] as $image) {
         $imageUrl = $fileService->storePhotos($image, $categorySlug);
         $exifData = $imageService->getImageExifData($imageUrl);
 

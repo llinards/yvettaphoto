@@ -9,8 +9,8 @@
         @method('POST')
         <div class="form-group">
           <input type="hidden" name="category-id" value="{{ $category->id }}">
-          <label for="multiple-img-upload" class="col-form-label">Pievieno jaunas bildes</label>
-          <x-multiple-img-upload/>
+          <label for="multiple-images" class="col-form-label">Pievieno jaunas bildes</label>
+          <x-file-upload type="multiple-images"/>
           <small class="form-text text-muted"><strong>Bildes
               izmērs nedrīkst pārsniegt 1 MB (1024 KB).</strong></small>
         </div>

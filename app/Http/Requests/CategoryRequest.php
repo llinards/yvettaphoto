@@ -14,7 +14,7 @@ class CategoryRequest extends FormRequest
     ];
 
     if ($this->getMethod() == 'POST') {
-      $rules += ['single-img-upload' => 'required'];
+      $rules += ['single-image' => 'required'];
     }
 
     return $rules;
@@ -24,7 +24,7 @@ class CategoryRequest extends FormRequest
   {
     return [
       'category-name.required' => 'Nav norādīts kategorijas nosaukums.',
-      'single-img-upload.required' => 'Nav pievienota kategorijas titulbilde.'
+      'single-image.required' => 'Nav pievienota kategorijas titulbilde.'
     ];
   }
 

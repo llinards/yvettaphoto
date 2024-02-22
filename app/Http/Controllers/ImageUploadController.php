@@ -9,11 +9,11 @@ class ImageUploadController extends Controller
 {
   public function store(Request $data)
   {
-    if ($data->has('single-img-upload')) {
-      return $data->file('single-img-upload')->store('temp', 'public');
+    if ($data->has('single-image')) {
+      return $data->file('single-image')->store('temp', 'public');
     }
-    if ($data->has('multiple-img-upload')) {
-      foreach ($data->file('multiple-img-upload') as $file) {
+    if ($data->has('multiple-images')) {
+      foreach ($data->file('multiple-images') as $file) {
         return $file->store('temp', 'public');
       }
     }

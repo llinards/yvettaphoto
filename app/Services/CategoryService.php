@@ -32,7 +32,7 @@ class CategoryService
       'name' => $data['category-name'],
       'description' => $data['category-description'],
       'category_slug' => $this->slug,
-      'cover_photo_url' => basename($data['single-img-upload']),
+      'cover_photo_url' => basename($data['single-image']),
     ]);
   }
 
@@ -50,7 +50,7 @@ class CategoryService
     $fileService = new FileService();
     $this->category = $this->getCategory($data['category-id']);
     $this->setSlug($data['category-name']);
-    $categoryCoverImage = isset($data['single-img-upload']) ? basename($data['single-img-upload']) : $this->category->cover_photo_url;
+    $categoryCoverImage = isset($data['single-image']) ? basename($data['single-image']) : $this->category->cover_photo_url;
     $isSlugChanged = $this->category->category_slug !== $this->slug;
     $isCategoryCoverImageChanged = $this->category->cover_photo_url !== $categoryCoverImage;
     if ($isSlugChanged) {

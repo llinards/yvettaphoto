@@ -9,14 +9,14 @@ class StoreCoverPhotoRequest extends FormRequest
   public function rules(): array
   {
     return [
-      'single-img-upload' => ['required']
+      'single-image' => ['required']
     ];
   }
 
   public function messages(): array
   {
     return [
-      'single-img-upload.required' => 'Nav izvēlēta bilde!',
+      'single-image.required' => 'Nav izvēlēta bilde!',
     ];
   }
 

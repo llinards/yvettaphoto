@@ -26,8 +26,8 @@
                  class="card-img-top w-50" alt=""/>
           </div>
           <div class="form-group col-lg-6 col-12">
-            <label for="single-img-upload" class="col-form-label">Kategorijas jaunā titulbilde</label>
-            <x-single-img-upload/>
+            <label for="single-image" class="col-form-label">Kategorijas jaunā titulbilde</label>
+            <x-file-upload type="single-image"/>
           </div>
         </div>
         <div class="form-group">

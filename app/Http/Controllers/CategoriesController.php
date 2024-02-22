@@ -24,8 +24,8 @@ class CategoriesController extends Controller
   {
     try {
       $categoryService->addCategory($data);
-      $categoryService->resizeImage($data['single-img-upload']);
-      $categoryService->addImage($data['single-img-upload']);
+      $categoryService->resizeImage($data['single-image']);
+      $categoryService->addImage($data['single-image']);
       return redirect('/admin/'.$categoryService->getSlug().'/bildes')->with('success', 'Kategorija pievienota!');
     } catch (\Exception $e) {
       Log::error($e);
@@ -42,9 +42,9 @@ class CategoriesController extends Controller
   {
     try {
       $categoryService->updateCategory($data);
-      if ($data->has('single-img-upload')) {
-        $categoryService->resizeImage($data['single-img-upload']);
-        $categoryService->addImage($data['single-img-upload']);
+      if ($data->has('single-image')) {
+        $categoryService->resizeImage($data['single-image']);
+        $categoryService->addImage($data['single-image']);
       }
       return redirect('/admin/kategorijas')->with('success', 'Kategorija atjaunota!');
     } catch (\Exception $e) {
