@@ -37,7 +37,7 @@ Route::middleware(['auth'])->group(function () {
   Route::post('/admin/kategorijas', [CategoriesController::class, 'store']);
   Route::get('/admin/kategorijas/{category}/edit', [CategoriesController::class, 'edit']);
   Route::patch('/admin/kategorijas', [CategoriesController::class, 'update']);
-  Route::delete('/admin/kategorijas/{category:id}/delete', [CategoriesController::class, 'destroy']);
+  Route::delete('/admin/kategorijas/{category}/delete', [CategoriesController::class, 'destroy']);
 
   Route::get('/admin/bildes', [ImagesController::class, 'index']);
   Route::get('/admin/bildes/jaunas', [ImagesController::class, 'create']);

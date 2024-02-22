@@ -19,7 +19,7 @@
             <a class="btn btn-secondary mt-1" href="/admin/{{ $category->category_slug }}/bildes">Bildes šajā
               kategorijā</a>
             <hr>
-            <form action="/admin/kategorijas/{{ $category->id }}/delete" method="POST">
+            <form action="/admin/kategorijas/{{ $category->category_slug }}/delete" method="POST">
               @csrf
               @method('DELETE')
               <button class="btn btn-danger mt-1"
@@ -31,7 +31,7 @@
         </div>
       @endforeach
     @else
-      <div class="text-center w-100">
+      <div class="text-center w-100 mt-5">
         <p>Nav nevienas kategorijas! Pievieno, lai kaut ko redzētu šeit! :)</p>
       </div>
     @endif

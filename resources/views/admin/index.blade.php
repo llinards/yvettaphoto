@@ -1,8 +1,22 @@
 <x-admin-app-layout>
-  <x-slot name="header">
-    <h2>Administrācijas panelis</h2>
-  </x-slot>
   <x-slot name="content">
+    <div class="col-lg-4 offset-lg-4 col-12 d-flex flex-column flex-wrap">
+      <a class="m-2 btn btn-info" href="/admin/titulbilde/jauna">Mainīt titulbildi</a>
+      <a class="m-2 btn btn-info" href="/admin/kategorijas">Kategorijas</a>
+      <a class="m-2 btn btn-info" href="/admin/bildes/jaunas">Bildes</a>
+      <a class="m-2 btn btn-info" href="/admin/cv/edit">CV</a>
+      <a class="m-2 btn btn-info" target="_blank" href="https://compressor.io/">Bilžu samazināšanas rīks
+        (compressor.io)</a>
+      <hr class="w-100">
+      <a class="m-2 btn btn-danger" href="{{ route('logout') }}"
+         onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+        Atslēgties
+      </a>
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+      </form>
+    </div>
 
     {{--    <div class="container admin-container">--}}
     {{--      <div class="news-section-heading text-center">--}}

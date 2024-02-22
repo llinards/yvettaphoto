@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCoverPhotoRequest;
-use App\News;
 use App\Services\FileService;
 use Illuminate\Support\Facades\Log;
 
@@ -11,8 +10,7 @@ class AdminController extends Controller
 {
   public function index()
   {
-    $allNews = News::orderBy('updated_at', 'DESC')->get();
-    return view('admin.index', compact('allNews'));
+    return view('admin.index');
   }
 
   public function create()

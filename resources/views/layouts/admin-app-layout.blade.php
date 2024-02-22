@@ -18,9 +18,11 @@
 <div class="container">
   @include('inc.status-messages')
 </div>
-<div class="container d-flex align-items-center flex-column">
-  {{ $header }}
-</div>
+@if(isset($header))
+  <div class="container d-flex align-items-center flex-column">
+    {{ $header }}
+  </div>
+@endif
 <div class="container mb-5">
   <div class="row">
     {{ $content }}
