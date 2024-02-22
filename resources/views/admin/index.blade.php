@@ -1,8 +1,8 @@
 <x-admin-app-layout>
   <x-slot name="content">
     <div class="col-lg-4 offset-lg-4 col-12 d-flex flex-column flex-wrap">
-      <a class="m-2 btn btn-info" href="/admin/titulbilde/jauna">Mainīt titulbildi</a>
-      <a class="m-2 btn btn-info" href="/admin/kategorijas">Kategorijas</a>
+      <a class="m-2 btn btn-info" href="{{route('admin.cover_photo.create')}}">Mainīt titulbildi</a>
+      <a class="m-2 btn btn-info" href="{{route('categories.index')}}">Kategorijas</a>
       <a class="m-2 btn btn-info" href="/admin/bildes/jaunas">Bildes</a>
       <a class="m-2 btn btn-info" href="/admin/cv/edit">CV</a>
       <a class="m-2 btn btn-info" target="_blank" href="https://compressor.io/">Bilžu samazināšanas rīks

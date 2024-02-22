@@ -4,7 +4,7 @@
   </x-slot>
   <x-slot name="content">
     <div class="col-lg-6 offset-lg-3 col-12">
-      <form action="/admin/kategorijas" enctype="multipart/form-data" method="post">
+      <form action="{{route('categories.store')}}" enctype="multipart/form-data" method="post">
         @csrf
         <div class="form-group">
           <label for="category-name" class="col-form-label">Kategorijas nosaukums</label>
@@ -23,7 +23,7 @@
               izmērs nedrīkst pārsniegt 1 MB (1024 KB).</strong></small>
         </div>
         <div class="d-flex justify-content-between">
-          <a class="btn btn-secondary" href="/admin/kategorijas">Atpakaļ</a>
+          <a class="btn btn-secondary" href="{{route('categories.index')}}">Atpakaļ</a>
           <button type="submit" class="btn btn-success">Pievienot kategoriju</button>
         </div>
       </form>

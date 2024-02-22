@@ -4,7 +4,7 @@
   </x-slot>
   <x-slot name="content">
     <div class="col-lg-6 offset-lg-3 col-12">
-      <form action="/admin/titulbilde/jauna" enctype="multipart/form-data" method="post">
+      <form action="{{route('admin.cover_photo.store')}}" enctype="multipart/form-data" method="post">
         @csrf
         <div class="form-group">
           <label for="single-img-upload" class="col-form-label">Titulbilde</label>

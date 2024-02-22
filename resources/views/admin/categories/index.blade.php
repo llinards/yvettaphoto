@@ -1,7 +1,7 @@
 <x-admin-app-layout>
   <x-slot name="header">
     <h2>Kategorijas</h2>
-    <a href="/admin/kategorijas/jauna" class="btn btn-success">Pievienot jaunu kategoriju</a>
+    <a href="{{route('categories.create')}}" class="btn btn-success">Pievienot jaunu kategoriju</a>
   </x-slot>
   <x-slot name="content">
     @if(!$categories->isEmpty())
@@ -14,12 +14,13 @@
                  src="{{ asset('storage/uploads/'.$category->category_slug.'/'.$category->cover_photo_url) }}">
           </div>
           <div class="text-center">
-            <a class="btn btn-secondary mt-1" href="/admin/kategorijas/{{ $category->category_slug }}/edit">Rediģēt
+            <a class="btn btn-secondary mt-1"
+               href="{{route('categories.edit',[$category->category_slug])}}">Rediģēt
               kategoriju</a>
             <a class="btn btn-secondary mt-1" href="/admin/{{ $category->category_slug }}/bildes">Bildes šajā
               kategorijā</a>
             <hr>
-            <form action="/admin/kategorijas/{{ $category->category_slug }}/delete" method="POST">
+            <form action="{{route('categories.destroy',[$category->category_slug])}}" method="POST">
               @csrf
               @method('DELETE')
               <button class="btn btn-danger mt-1"
