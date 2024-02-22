@@ -39,6 +39,9 @@
           </div>
         @endforeach
       </div>
+      <div class="d-flex">
+        <a class="btn btn-secondary" href="{{route('categories.index')}}">Atpakaļ</a>
+      </div>
     </div>
   </x-slot>
 </x-admin-app-layout>
