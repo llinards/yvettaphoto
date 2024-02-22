@@ -16,10 +16,16 @@ class ImageFactory extends Factory
    */
   public function definition(): array
   {
-    return [
-      'category_id' => 0,
-      'image_name' => $this->faker->image(storage_path('app/public/uploads/'.'slug',),
-        rand(600, 1440), rand(600, 1440), 'cities', false),
-    ];
+    return [];
+  }
+
+  public function withCategory($slug): Factory|ImageFactory
+  {
+    return $this->state(function () use ($slug) {
+      return [
+        'image_name' => $this->faker->image(storage_path('app/public/uploads/'.$slug),
+          rand(600, 1440), rand(600, 1440), 'cities', false),
+      ];
+    });
   }
 }
