@@ -19,7 +19,7 @@
             </a>
             <button type="submit" onclick="return confirm('Vai tiešām vēlies dzēst kategoriju un bildes tajā?');"
                     class="admin-action-icons p-0">
-              <i class="fa-solid fa-xmark"></i>
+              <i class="fa-solid fa-trash-can"></i>
             </button>
           </form>
           <img class="w-100"

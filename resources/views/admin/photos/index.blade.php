@@ -27,16 +27,18 @@
                   class="d-flex justify-content-between align-items-center">
               @csrf
               @method('DELETE')
-              <button type="button" class="admin-action-icons p-0">
+              <button type="button" data-toggle="modal" data-target="#update-image-info-{{$image->id}}"
+                      class="admin-action-icons p-0">
                 <i class="fa-solid fa-circle-info"></i>
               </button>
               <button type="submit" class="admin-action-icons p-0">
-                <i class="fa-solid fa-xmark"></i>
+                <i class="fa-solid fa-trash-can"></i>
               </button>
             </form>
             <img class="img-fluid w-100 mb-3"
                  src="{{ asset('storage/uploads/'.$image->category->category_slug.'/'.$image->image_name) }}"/>
           </div>
+          @include('admin.photos.edit-modal', ['image' => $image])
         @endforeach
       </div>
       <div class="d-flex">
