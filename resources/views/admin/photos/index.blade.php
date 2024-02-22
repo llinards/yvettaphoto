@@ -22,15 +22,15 @@
     <div class="col-12 mt-5">
       <div class="gallery-images">
         @foreach($category->images as $image)
-          <div class="gallery-image position-relative">
+          <div class="gallery-image">
             <form action="{{route('category.images.destroy',[$image->id])}}" method="POST"
                   class="d-flex justify-content-between align-items-center">
               @csrf
               @method('DELETE')
-              <button type="button" class="delete-gallery-image-icon p-0">
+              <button type="button" class="admin-action-icons p-0">
                 <i class="fa-solid fa-circle-info"></i>
               </button>
-              <button type="submit" class="delete-gallery-image-icon p-0">
+              <button type="submit" class="admin-action-icons p-0">
                 <i class="fa-solid fa-xmark"></i>
               </button>
             </form>
