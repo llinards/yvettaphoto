@@ -2,11 +2,11 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\CategoryImagesController;
 use App\Http\Controllers\CvsController;
 use App\Http\Controllers\EmailsController;
 use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\NewsController;
 use Spatie\Honeypot\ProtectAgainstSpam;
 
@@ -42,12 +42,12 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
   Route::patch('/kategorijas', [CategoriesController::class, 'update'])->name('categories.update');
   Route::delete('/kategorijas/{category}', [CategoriesController::class, 'destroy'])->name('categories.destroy');
 
-  Route::get('/{category}/bildes', [ImagesController::class, 'index'])->name('category.images.index');
-  Route::post('/bildes', [ImagesController::class, 'store'])->name('category.images.store');
-  Route::patch('/bildes/{image}', [ImagesController::class, 'update'])->name('category.images.update');
-  Route::delete('/bildes/{image}', [ImagesController::class, 'destroy'])->name('category.images.destroy');
+  Route::get('/{category}/bildes', [CategoryImagesController::class, 'index'])->name('category.images.index');
+  Route::post('/bildes', [CategoryImagesController::class, 'store'])->name('category.images.store');
+  Route::patch('/bildes/{image}', [CategoryImagesController::class, 'update'])->name('category.images.update');
+  Route::delete('/bildes/{image}', [CategoryImagesController::class, 'destroy'])->name('category.images.destroy');
 
-  
+
   Route::get('/zinas/new', [NewsController::class, 'create']);
   Route::post('/zinas', [NewsController::class, 'store']);
   Route::get('/zinas/{news}/edit', [NewsController::class, 'edit']);
