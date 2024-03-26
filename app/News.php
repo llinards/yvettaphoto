@@ -18,4 +18,9 @@ class News extends Model
   {
     return $this->hasMany(NewsImage::class);
   }
+
+  public function scopeLatestNews($query)
+  {
+    return $query->orderBy('created_at', 'DESC')->get();
+  }
 }

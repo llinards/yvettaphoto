@@ -4,15 +4,19 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreNewsRequest extends FormRequest
+class NewsRequest extends FormRequest
 {
   public function rules(): array
   {
-    return [
+    $rules = [
       'news-title' => ['required', 'max:100'],
       'description-textarea' => 'required',
-      'multiple-images' => 'required'
     ];
+
+    if ($this->getMethod() == 'POST') {
+      $rules += ['multiple-images' => 'required'];
+    }
+    return $rules;
   }
 
   public function messages()

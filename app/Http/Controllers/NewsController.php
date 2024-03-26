@@ -2,24 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreNewsRequest;
+use App\Http\Requests\NewsRequest;
 use App\Http\Requests\UpdateNewsRequest;
 use App\News;
 use App\NewsImage;
 use App\Services\FileService;
+use App\Services\NewsService;
 use Illuminate\Support\Facades\Log;
 
 class NewsController extends Controller
 {
   public function index()
   {
-    $allNews = News::orderBy('created_at', 'DESC')->get();
+    $allNews = News::latestNews();
     return view('pages.news', compact('allNews'));
   }
 
   public function indexAdmin()
   {
-    $allNews = News::orderBy('created_at', 'DESC')->get();
+    $allNews = News::latestNews();
     return view('admin.news.index', compact('allNews'));
   }
 
@@ -28,20 +29,14 @@ class NewsController extends Controller
     return view('admin.news.create');
   }
 
-  public function store(StoreNewsRequest $data, FileService $fileService)
+  public function store(NewsRequest $data, NewsService $newsService)
   {
     try {
-      $news = News::create([
-        'title' => $data['news-title'],
-        'description' => $data['description-textarea']
-      ]);
+      $newsService->addNews($data);
       foreach ($data['multiple-images'] as $image) {
-        $imageUrl = $fileService->storePhotos($image, 'news');
-        $news->images()->create([
-          'image_location' => basename($imageUrl)
-        ]);
+        $newsService->addImage($image);
       }
-      return redirect('/admin')->with('success', 'Ziņa pievienota!');
+      return redirect('/admin/zinas')->with('success', 'Ziņa pievienota!');
     } catch (\Exception $e) {
       Log::error($e);
       return back()->with('error', 'Kļūda!');
