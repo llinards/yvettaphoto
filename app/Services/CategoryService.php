@@ -30,7 +30,7 @@ class CategoryService
     $this->setSlug($data['category-name']);
     $this->category = Category::create([
       'name' => $data['category-name'],
-      'description' => $data['category-description'],
+      'description' => $data['description-textarea'],
       'category_slug' => $this->slug,
       'cover_photo_url' => basename($data['single-image']),
     ]);
@@ -61,7 +61,7 @@ class CategoryService
     }
     $this->category->update([
       'name' => $data['category-name'],
-      'description' => $data['category-description'],
+      'description' => $data['description-textarea'],
       'category_slug' => $this->slug,
       'cover_photo_url' => $categoryCoverImage,
     ]);

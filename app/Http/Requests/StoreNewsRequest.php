@@ -10,8 +10,8 @@ class StoreNewsRequest extends FormRequest
   {
     return [
       'news-title' => ['required', 'max:100'],
-      'news-description' => 'required',
-      'multiple-img-upload' => 'required'
+      'description-textarea' => 'required',
+      'multiple-images' => 'required'
     ];
   }
 
@@ -20,8 +20,8 @@ class StoreNewsRequest extends FormRequest
     return [
       'news-title.required' => 'Nav ievadīts virsraksts!',
       'news-title.max' => 'Virsrakts ir pārāk garš! Maksimālais simbolu skaits ir 100.',
-      'news-description.required' => 'Nav ievadīts teksts!',
-      'multiple-img-upload.required' => 'Nav pievienotas bildes!',
+      'description-textarea.required' => 'Nav ievadīts teksts!',
+      'multiple-images.required' => 'Nav pievienotas bildes!',
     ];
   }
 

@@ -14,7 +14,7 @@
                  id="category-name" placeholder="Kategorijas nosaukums šeit">
         </div>
         <div class="form-group">
-          <label for="category-description">Kategorijas apraksts</label>
+          <label for="description-textarea">Kategorijas apraksts</label>
           <x-description-text-area>
             {{ $category->description }}
           </x-description-text-area>
@@ -37,7 +37,7 @@
         </div>
         <div class="d-flex justify-content-between flex-wrap">
           <a class="btn btn-secondary" href="{{route('categories.index')}}">Atpakaļ</a>
-          <button type="submit" class="btn btn-success">Atjaunot kategoriju kategoriju</button>
+          <button type="submit" class="btn btn-success">Atjaunot kategoriju</button>
         </div>
       </form>
     </div>

@@ -12,7 +12,7 @@
                  id="category-name" placeholder="Kategorijas nosaukums šeit">
         </div>
         <div class="form-group">
-          <label for="category-description">Kategorijas apraksts</label>
+          <label for="description-textarea">Kategorijas apraksts</label>
           <x-description-text-area/>
         </div>
         <div class="form-group">

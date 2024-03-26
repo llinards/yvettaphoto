@@ -1,4 +1,4 @@
-<textarea class="form-control" id="description-textarea" name="category-description"
+<textarea class="form-control" id="description-textarea" name="description-textarea"
           rows="3">{{$slot}}</textarea>
 
 <script>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreNewsRequest;
 use App\Http\Requests\UpdateNewsRequest;
 use App\News;
+use App\NewsImage;
 use App\Services\FileService;
 use Illuminate\Support\Facades\Log;
 
@@ -14,6 +15,12 @@ class NewsController extends Controller
   {
     $allNews = News::orderBy('created_at', 'DESC')->get();
     return view('pages.news', compact('allNews'));
+  }
+
+  public function indexAdmin()
+  {
+    $allNews = News::orderBy('created_at', 'DESC')->get();
+    return view('admin.news.index', compact('allNews'));
   }
 
   public function create()
@@ -26,9 +33,9 @@ class NewsController extends Controller
     try {
       $news = News::create([
         'title' => $data['news-title'],
-        'description' => $data['news-description']
+        'description' => $data['description-textarea']
       ]);
-      foreach ($data['multiple-img-upload'] as $image) {
+      foreach ($data['multiple-images'] as $image) {
         $imageUrl = $fileService->storePhotos($image, 'news');
         $news->images()->create([
           'image_location' => basename($imageUrl)
@@ -49,17 +56,17 @@ class NewsController extends Controller
   public function update(UpdateNewsRequest $data, FileService $fileService)
   {
     try {
-      $newsToUpdate = News::findOrFail($data['id']);
+      $newsToUpdate = News::findOrFail($data['news-id']);
       $newsToUpdate->update([
         'title' => $data['news-title'],
-        'description' => $data['news-description']
+        'description' => $data['description-textarea']
       ]);
-      if (isset($data['multiple-img-upload'])) {
+      if (isset($data['multiple-images'])) {
         foreach ($newsToUpdate->images as $image) {
           $fileService->destroyPhoto('news', $image->image_location);
         }
         $newsToUpdate->images()->delete();
-        foreach ($data['multiple-img-upload'] as $image) {
+        foreach ($data['multiple-images'] as $image) {
           $imageUrl = $fileService->storePhotos($image, 'news');
           $newsToUpdate->images()->create([
             'image_location' => basename($imageUrl)
@@ -71,6 +78,11 @@ class NewsController extends Controller
       Log::error($e);
       return back()->with('error', 'Kļūda!');
     }
+  }
+
+  public function destroyImage(NewsImage $image)
+  {
+    return $image;
   }
 
   public function destroy(News $news, FileService $fileService)

@@ -56,8 +56,9 @@
   #portfolio .row {
     justify-content: center;
   }
-  
-  .gallery-images {
+
+  .gallery-images,
+  .news-images {
     columns: 3;
   }
 }
@@ -94,7 +95,8 @@
     right: 0 !important;
   }
 
-  .gallery-images {
+  .gallery-images,
+  .news-images {
     columns: 2;
   }
 }

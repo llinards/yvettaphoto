@@ -47,12 +47,14 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
   Route::patch('/bildes/{image}', [CategoryImagesController::class, 'update'])->name('category.images.update');
   Route::delete('/bildes/{image}', [CategoryImagesController::class, 'destroy'])->name('category.images.destroy');
 
+  Route::get('/zinas', [NewsController::class, 'indexAdmin'])->name('news.index');
+  Route::get('/zinas/jauna', [NewsController::class, 'create'])->name('news.create');
+  Route::post('/zinas', [NewsController::class, 'store'])->name('news.store');
+  Route::get('/zinas/{news}/rediget', [NewsController::class, 'edit'])->name('news.edit');
+  Route::patch('/zinas', [NewsController::class, 'update'])->name('news.update');
+  Route::delete('/zinas/bilde/{image}/dzest', [NewsController::class, 'destroyImage'])->name('news.image.destroy');
+  Route::delete('/zinas/{news}', [NewsController::class, 'destroy'])->name('news.destroy');
 
-  Route::get('/zinas/new', [NewsController::class, 'create']);
-  Route::post('/zinas', [NewsController::class, 'store']);
-  Route::get('/zinas/{news}/edit', [NewsController::class, 'edit']);
-  Route::patch('/zinas', [NewsController::class, 'update']);
-  Route::delete('/zinas/{news}/delete', [NewsController::class, 'destroy']);
 
   Route::get('/cv/edit', [CvsController::class, 'edit']);
   Route::patch('/cv', [CvsController::class, 'update']);

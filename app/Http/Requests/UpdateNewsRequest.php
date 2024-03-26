@@ -10,7 +10,7 @@ class UpdateNewsRequest extends FormRequest
   {
     return [
       'news-title' => ['required', 'max:100'],
-      'news-description' => 'required',
+      'description-textarea' => 'required',
     ];
   }
 
@@ -19,7 +19,7 @@ class UpdateNewsRequest extends FormRequest
     return [
       'news-title.required' => 'Nav ievadīts virsraksts!',
       'news-title.max' => 'Virsrakts ir pārāk garš! Maksimālais simbolu skaits ir 100.',
-      'news-description.required' => 'Nav ievadīts teksts!',
+      'description-textarea.required' => 'Nav ievadīts teksts!',
     ];
   }
 
