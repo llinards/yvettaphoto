@@ -33,4 +33,6 @@ class AuthTest extends TestCase
 
     $response->assertStatus(200);
   }
+
+  // Add option to check if validation works
 }
