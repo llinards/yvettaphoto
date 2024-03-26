@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\News;
+use App\NewsImage;
 
 class NewsService
 {
@@ -23,5 +24,28 @@ class NewsService
       'image_location' => basename($image)
     ]);
     $fileService->storeFile($image, 'uploads/news');
+  }
+
+  public function updateNews(object $data): void
+  {
+    $this->news = News::findOrFail($data['news-id']);
+    $this->news->update([
+      'title' => $data['news-title'],
+      'description' => $data['description-textarea']
+    ]);
+  }
+
+  public function destroyImage(object $data): void
+  {
+    $fileService = new FileService();
+    $image = NewsImage::findOrFail($data['id']);
+    $fileService->destroyFile($data['image_location'], 'uploads/news');
+    $image->delete();
+  }
+
+  public function destroyNews(object $data): void
+  {
+    $this->news = News::findOrFail($data['id']);
+    $this->news->delete();
   }
 }

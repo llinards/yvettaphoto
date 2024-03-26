@@ -6,7 +6,6 @@ use App\Http\Requests\NewsRequest;
 use App\Http\Requests\UpdateNewsRequest;
 use App\News;
 use App\NewsImage;
-use App\Services\FileService;
 use App\Services\NewsService;
 use Illuminate\Support\Facades\Log;
 
@@ -48,45 +47,40 @@ class NewsController extends Controller
     return view('admin.news.edit', compact('news'));
   }
 
-  public function update(UpdateNewsRequest $data, FileService $fileService)
+  public function update(NewsRequest $data, NewsService $newsService)
   {
     try {
-      $newsToUpdate = News::findOrFail($data['news-id']);
-      $newsToUpdate->update([
-        'title' => $data['news-title'],
-        'description' => $data['description-textarea']
-      ]);
-      if (isset($data['multiple-images'])) {
-        foreach ($newsToUpdate->images as $image) {
-          $fileService->destroyPhoto('news', $image->image_location);
-        }
-        $newsToUpdate->images()->delete();
+      $newsService->updateNews($data);
+      if ($data->has('multiple-images')) {
         foreach ($data['multiple-images'] as $image) {
-          $imageUrl = $fileService->storePhotos($image, 'news');
-          $newsToUpdate->images()->create([
-            'image_location' => basename($imageUrl)
-          ]);
+          $newsService->addImage($image);
         }
       }
-      return redirect('/admin')->with('success', 'Ziņa atjaunota!');
+      return redirect('/admin/zinas')->with('success', 'Ziņa atjaunota!');
     } catch (\Exception $e) {
       Log::error($e);
       return back()->with('error', 'Kļūda!');
     }
   }
 
-  public function destroyImage(NewsImage $image)
+  public function destroyImage(NewsImage $image, NewsService $newsService)
   {
-    return $image;
+    try {
+      $newsService->destroyImage($image);
+      return back()->with('success', 'Bilde dzēsta');
+    } catch (\Exception $e) {
+      Log::error($e);
+      return back()->with('error', 'Kļūda!');
+    }
   }
 
-  public function destroy(News $news, FileService $fileService)
+  public function destroy(News $news, NewsService $newsService)
   {
     try {
       foreach ($news->images as $image) {
-        $fileService->destroyFile($image, 'uploads/news/'.$image->image_location);
+        $newsService->destroyImage($image);
       }
-      $news->delete();
+      $newsService->destroyNews($news);
       return back()->with('success', 'Ziņa izdzēsta!');
     } catch (\Exception $e) {
       Log::error($e);
