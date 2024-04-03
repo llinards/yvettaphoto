@@ -16,10 +16,12 @@ class AuthTest extends TestCase
   {
     parent::setUp();
     $this->user = User::factory()->create();
+    $this->actingAs($this->user);
   }
 
   public function test_only_authenticated_users_can_see_dashboard(): void
   {
+    auth()->logout(); // Ensure the user is logged out for this test
     $response = $this->get('/admin');
 
     $response->assertStatus(302);
@@ -28,11 +30,27 @@ class AuthTest extends TestCase
 
   public function test_authenticated_users_can_see_dashboard(): void
   {
-    $this->actingAs($this->user);
     $response = $this->get('/admin');
 
     $response->assertStatus(200);
   }
 
-  // Add option to check if validation works
+  public function test_authenticated_users_can_logout(): void
+  {
+    $response = $this->post('/logout');
+
+    $response->assertRedirect('/');
+    $this->assertGuest();
+  }
+
+  public function test_login_form_rejects_invalid_data(): void
+  {
+    auth()->logout();
+    $response = $this->post('/login', [
+      'email' => 'not-an-email',
+      'password' => 'short'
+    ]);
+
+    $response->assertSessionHasErrors(['email']);
+  }
 }

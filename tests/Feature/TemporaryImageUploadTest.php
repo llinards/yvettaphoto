@@ -12,40 +12,45 @@ class TemporaryImageUploadTest extends TestCase
 {
   use RefreshDatabase;
 
-  private User $user;
-
   protected function setUp(): void
   {
     parent::setUp();
-    $this->user = User::factory()->create();
+    $user = User::factory()->create();
+    $this->actingAs($user);
   }
 
   public function test_single_image_temporary_upload(): void
   {
     Storage::fake('public');
-    $this->actingAs($this->user);
+    $file = UploadedFile::fake()->image('single-file.jpg');
     $response = $this->post(route('image_temporary.store'), [
-      'single-image' => UploadedFile::fake()->image('single-file.jpg')
+      'single-image' => $file
     ]);
 
     $response->assertStatus(200);
-
     Storage::disk('public')->assertExists($response->content());
   }
 
   public function test_multiple_image_temporary_upload(): void
   {
     Storage::fake('public');
-    $this->actingAs($this->user);
+    $files = [
+      UploadedFile::fake()->image('multiple-file-one.jpg'),
+      UploadedFile::fake()->image('multiple-file-two.jpg')
+    ];
 
-    $response = $this->post(route('image_temporary.store'), [
-      'multiple-images' => [
-        UploadedFile::fake()->image('multiple-file-one.jpg'),
-        UploadedFile::fake()->image('multiple-file-two.jpg')
-      ],
-    ]);
+    $uploadedFiles = [];
+    foreach ($files as $file) {
+      $response = $this->post(route('image_temporary.store'), [
+        'multiple-images' => [$file],
+      ]);
 
-    $response->assertStatus(200);
-    Storage::disk('public')->assertExists($response->content());
+      $response->assertStatus(200);
+      $uploadedFiles[] = json_decode($response->getContent());
+    }
+
+    foreach ($uploadedFiles as $uploadedFile) {
+      Storage::disk('public')->assertExists($uploadedFile);
+    }
   }
 }

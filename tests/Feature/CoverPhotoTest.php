@@ -18,20 +18,19 @@ class CoverPhotoTest extends TestCase
   {
     parent::setUp();
     $this->user = User::factory()->create();
+    $this->actingAs($this->user);
   }
 
-  public function test_change_cover_photo_can_be_opened(): void
+  public function test_user_can_access_change_cover_photo_page(): void
   {
-    $this->actingAs($this->user);
     $response = $this->get(route('admin.cover_photo.create'));
 
     $response->assertStatus(200);
   }
 
-  public function test_cover_photo_can_changed(): void
+  public function test_user_can_change_cover_photo(): void
   {
     Storage::fake('public');
-    $this->actingAs($this->user);
     $file = $this->uploadSingleImage(UploadedFile::fake()->image('test.jpg'));
 
     $response = $this->post(route('admin.cover_photo.store'), [
@@ -45,14 +44,21 @@ class CoverPhotoTest extends TestCase
     Storage::disk('public')->assertExists('uploads/cover_photos/home-bg.jpg');
   }
 
-  public function test_validation_when_changing_cover_photo(): void
+  /**
+   * @dataProvider provideInvalidCoverPhotoData
+   */
+  public function test_validation_when_changing_cover_photo($data, $expectedError): void
   {
-    $this->actingAs($this->user);
-    $response = $this->post(route('admin.cover_photo.store'));
+    $response = $this->post(route('admin.cover_photo.store'), $data);
 
-    $response->assertSessionHasErrors([
-      'single-image' => 'Nav izvēlēta bilde!'
-    ]);
+    $response->assertSessionHasErrors($expectedError);
+  }
+
+  public static function provideInvalidCoverPhotoData(): array
+  {
+    return [
+      'No image selected' => [[], ['single-image' => 'Nav izvēlēta bilde!']],
+    ];
   }
 
   private function uploadSingleImage(UploadedFile $file): string

@@ -9,38 +9,24 @@ class GeneralTest extends TestCase
 {
   use RefreshDatabase;
 
-  public function test_homepage_works(): void
+  /**
+   * @dataProvider provideRoutes
+   */
+  public function test_routes_work($route): void
   {
-    $this->get('/')->assertStatus(200);
+    $this->get($route)->assertStatus(200);
   }
 
-  public function test_portfolio_works(): void
+  public static function provideRoutes(): array
   {
-    $this->get('/portfolio')->assertStatus(200);
-  }
-
-  public function test_purchase_works(): void
-  {
-    $this->get('/purchase')->assertStatus(200);
-  }
-
-  public function test_bio_works(): void
-  {
-    $this->get('/bio')->assertStatus(200);
-  }
-
-  public function test_artist_statement_works(): void
-  {
-    $this->get('/artist-statement')->assertStatus(200);
-  }
-
-  public function test_cv_works(): void
-  {
-    $this->get('/cv')->assertStatus(200);
-  }
-
-  public function test_contact_me_works(): void
-  {
-    $this->get('/contact-me')->assertStatus(200);
+    return [
+      'Homepage' => ['/'],
+      'Portfolio' => ['/portfolio'],
+      'Purchase' => ['/purchase'],
+      'Bio' => ['/bio'],
+      'Artist Statement' => ['/artist-statement'],
+      'CV' => ['/cv'],
+      'Contact Me' => ['/contact-me'],
+    ];
   }
 }
