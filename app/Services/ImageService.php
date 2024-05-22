@@ -2,32 +2,32 @@
 
 namespace App\Services;
 
-use Intervention\Image\Facades\Image as InterventionImage;
+use Intervention\Image\Laravel\Facades\Image;
 
 class ImageService
 {
   public function resizeImage(string $image): void
   {
-    InterventionImage::make("storage/".$image)->resize(600, 600)->save();
+    Image::read("storage/".$image)->resize(600, 600)->save();
   }
 
   public function getImageExifData(string $imageUrl): ?array
   {
-    $exifData = InterventionImage::make("storage/{$imageUrl}")->exif();
-    if (isset($exifData['Model'])) {
+    $exifData = Image::read("storage/{$imageUrl}")->exif();
+    if ($exifData->get('IFD0.Model')) {
       return $this->setImageExifData($exifData);
     }
     return null;
   }
 
-  protected function setImageExifData(array $exifData): array
+  protected function setImageExifData(object $exifData): array
   {
     return [
-      'Model' => $exifData['Model'],
-      'Make' => $exifData['Make'],
-      'ISOSpeedRatings' => $exifData['ISOSpeedRatings'],
-      'FNumber' => $exifData['FNumber'],
-      'ExposureTime' => $exifData['ExposureTime'],
+      'Model' => $exifData->get('IFD0.Model'),
+      'Make' => $exifData->get('IFD0.Make'),
+      'ISOSpeedRatings' => $exifData->get('EXIF.ISOSpeedRatings'),
+      'FNumber' => $exifData->get('EXIF.FNumber'),
+      'ExposureTime' => $exifData->get('EXIF.ExposureTime'),
     ];
   }
 }
