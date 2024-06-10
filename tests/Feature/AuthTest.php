@@ -21,7 +21,7 @@ class AuthTest extends TestCase
 
   public function test_only_authenticated_users_can_see_dashboard(): void
   {
-    auth()->logout(); // Ensure the user is logged out for this test
+    auth()->logout();
     $response = $this->get('/admin');
 
     $response->assertStatus(302);

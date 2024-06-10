@@ -19,11 +19,11 @@ class CategoryTest extends TestCase
   {
     parent::setUp();
     $this->user = User::factory()->create();
+    $this->actingAs($this->user);
   }
 
   public function test_categories_index_can_be_opened(): void
   {
-    $this->actingAs($this->user);
     $response = $this->get(route('categories.index'));
 
     $response->assertStatus(200);
@@ -31,7 +31,6 @@ class CategoryTest extends TestCase
 
   public function test_create_category_can_be_opened(): void
   {
-    $this->actingAs($this->user);
     $response = $this->get(route('categories.create'));
 
     $response->assertStatus(200);
@@ -41,16 +40,16 @@ class CategoryTest extends TestCase
   {
     $this->markTestIncomplete();
     Storage::fake('public');
-    $this->actingAs($this->user);
-    $file = $this->uploadSingleImage(UploadedFile::fake()->image('test.jpg', 1920, 1080));
+    $file = UploadedFile::fake()->image('test.jpg', 1920, 1080);
+    $uploadedFile = $this->uploadSingleImage($file);
+
     $response = $this->post(route('categories.store'), [
       'category-name' => 'Test Category',
       'description-textarea' => 'This is a test description for category',
-      'single-image' => $file
+      'single-image' => $uploadedFile
     ]);
 
-//    Intervention\Image\Exception\NotReadableException: Image source not readable
-
+    // [2024-05-22 10:53:46] testing.ERROR: Intervention\Image\Exceptions\DecoderException: Unable to decode input in /Users/linardslazdins/Development/sites/yvettaphoto/vendor/intervention/image/src/Drivers/AbstractDecoder.php:38
 
     $response->assertSessionHas([
       'success' => 'Kategorija pievienota!'
@@ -89,6 +88,7 @@ class CategoryTest extends TestCase
     $response = $this->post(route('image_temporary.store'), [
       'single-image' => $file,
     ]);
+    $response->assertStatus(200);
     return $response->content();
   }
 }
