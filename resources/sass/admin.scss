@@ -6,3 +6,10 @@
 .admin-action-icons:hover {
   color: gray;
 }
+
+button.admin-action-icons {
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
