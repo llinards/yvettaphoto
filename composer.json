@@ -19,6 +19,7 @@
   },
   "require-dev": {
     "barryvdh/laravel-debugbar": "^3.8",
+    "laravel/boost": "^1.8",
     "laravel/telescope": "^5.0",
     "mockery/mockery": "^1.5",
     "nunomaduro/collision": "^8.1",
@@ -55,7 +56,8 @@
   "prefer-stable": true,
   "scripts": {
     "post-update-cmd": [
-      "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+      "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+      "@php artisan boost:update --ansi"
     ],
     "post-autoload-dump": [
       "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
