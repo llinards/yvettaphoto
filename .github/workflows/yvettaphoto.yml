@@ -2,7 +2,7 @@ name: YVETTA Photo Tests
 
 on:
   push:
-    branches: [ "development", "staging", "master" ]
+    branches: [ "staging", "master" ]
   pull_request:
     branches: [ "staging", "master" ]
 
