@@ -1,7 +1,6 @@
 @extends('layouts.default', ['title' => $category->name ])
 @section('content')
   @include('inc.navbar', ['index' => false, 'photos' => true])
-  {{--    <category-photos category="{{ $category->category_slug }}"></category-photos>--}}
   <section id="photos">
     <div class="container">
       <div class="heading d-flex align-items-center justify-content-between">
@@ -42,5 +41,35 @@
       </div>
     </div>
   </section>
-  @include('inc.masonry')
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.querySelector('.grid');
+
+      if (!grid) {
+        console.warn('Grid element not found');
+        return;
+      }
+
+      const galleryImages = document.querySelectorAll('.gallery-image');
+      let loadedCount = 0;
+
+      galleryImages.forEach((image) => {
+        image.addEventListener('load', () => {
+          loadedCount++;
+          if (loadedCount === galleryImages.length) {
+            new Masonry(grid, {
+              itemSelector: '.grid-item',
+              columnWidth: '.grid-sizer',
+              gutter: 35,
+              percentPosition: true
+            });
+          }
+        });
+
+        if (image.complete) {
+          image.dispatchEvent(new Event('load'));
+        }
+      });
+    });
+  </script>
 @endsection

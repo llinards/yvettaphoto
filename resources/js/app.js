@@ -1,2 +1,2 @@
-require("./bootstrap");
-require("./script");
+import "./bootstrap";
+import "./script";

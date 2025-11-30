@@ -23,5 +23,3 @@
   @endisset
   {{ config('app.name') }}
 </title>
-@include('inc.css')
-@include('inc.js')
