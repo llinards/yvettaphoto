@@ -1,9 +1,31 @@
 <textarea class="form-control" id="description-textarea" name="description-textarea"
           rows="3">{{$slot}}</textarea>
 
-<script>
-  CKEDITOR.replace('description-textarea', {
-    removeButtons: removeButtons = 'Source,Save,Templates,SelectAll,Scayt,NewPage,Preview,Print,Find,Replace,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,CopyFormatting,RemoveFormat,Outdent,Indent,Blockquote,CreateDiv,JustifyCenter,JustifyLeft,JustifyRight,JustifyBlock,Language,BidiRtl,BidiLtr,Image,Flash,Table,HorizontalRule,Smiley,SpecialChar,PageBreak,Iframe,Styles,TextColor,Maximize,About,ShowBlocks,BGColor,Format,Font,FontSize'
-  });
+<script type="module">
+  const LICENSE_KEY = 'GPL';
+  const editorConfig = {
+    toolbar: {
+      items: ['bold', 'italic', 'underline', 'superscript', '|', 'bulletedList',
+        'numberedList', '|', 'link', 'blockQuote', '|', 'sourceEditing'],
+      shouldNotGroupWhenFull: false,
+    },
+    plugins: [AutoLink, Autosave, BlockQuote, Bold, Essentials, Italic, Link, Paragraph, Superscript, Underline, SourceEditing, List],
+    licenseKey: LICENSE_KEY,
+    link: {
+      addTargetToExternalLinks: true,
+      defaultProtocol: 'https://',
+      decorators: {
+        toggleDownloadable: {
+          mode: 'manual',
+          label: 'Downloadable',
+          attributes: {
+            download: 'file',
+          },
+        },
+      },
+    },
+  };
+
+  ClassicEditor.create(document.querySelector('#description-textarea'), editorConfig);
 </script>
 

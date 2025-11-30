@@ -9,6 +9,22 @@ import jQuery from 'jquery';
 import 'bootstrap';
 import axios from 'axios';
 import fslightbox from 'fslightbox';
+import {
+  AutoLink,
+  Autosave,
+  BlockQuote,
+  Bold,
+  ClassicEditor,
+  Essentials,
+  Italic,
+  Link,
+  List,
+  Paragraph,
+  SourceEditing,
+  Superscript,
+  Underline,
+} from 'ckeditor5';
+import 'ckeditor5/ckeditor5.css';
 
 window._ = _;
 window.Masonry = Masonry;
@@ -20,6 +36,20 @@ window.Popper = Popper.default || Popper;
 window.$ = window.jQuery = jQuery;
 window.axios = axios;
 window.fslightbox = fslightbox;
+
+window.ClassicEditor = ClassicEditor;
+window.AutoLink = AutoLink;
+window.Autosave = Autosave;
+window.BlockQuote = BlockQuote;
+window.Bold = Bold;
+window.Essentials = Essentials;
+window.Italic = Italic;
+window.Link = Link;
+window.List = List;
+window.Paragraph = Paragraph;
+window.Superscript = Superscript;
+window.Underline = Underline;
+window.SourceEditing = SourceEditing;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
