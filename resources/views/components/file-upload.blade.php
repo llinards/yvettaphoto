@@ -1,6 +1,6 @@
 <input type="file" class="form-control-file" name="{{($type === 'single-image') ? $type : $type.'[]'}}" id="{{$type}}">
 
-<script>
+<script type="module">
   const fileUpload = document.getElementById('{{$type}}');
   const fileId = fileUpload.getAttribute('id');
   FilePond.registerPlugin(FilePondPluginFileValidateType);

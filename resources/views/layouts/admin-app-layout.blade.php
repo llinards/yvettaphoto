@@ -6,8 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Administrācijas panelis</title>
-  @include('inc.css')
-  @include('inc.js')
+  @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
 {{--TODO: Atjaunot šo--}}
@@ -28,5 +27,6 @@
     {{ $content }}
   </div>
 </div>
+@vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </body>
 </html>

@@ -7,13 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Administrācijas panelis</title>
-  @include('inc.css')
-  @include('inc.js')
 </head>
 <body>
 @if(!isset($loginPage))
   @include('inc.admin-navbar')
 @endif
 @yield('content')
+@vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </body>
 </html>
