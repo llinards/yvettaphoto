@@ -10,6 +10,7 @@ This application is a Laravel application and its main Laravel ecosystems packag
 
 - php - 8.3.28
 - laravel/framework (LARAVEL) - v12
+- laravel/nightwatch (NIGHTWATCH) - v1
 - laravel/prompts (PROMPTS) - v0
 - laravel/mcp (MCP) - v0
 - laravel/telescope (TELESCOPE) - v5
