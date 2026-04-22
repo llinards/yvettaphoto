@@ -1,10 +1,13 @@
 {
     "agents": [
-        "phpstorm"
+        "claude_code"
     ],
-    "editors": [
-        "phpstorm"
-    ],
-    "guidelines": [],
-    "herd_mcp": true
+    "guidelines": true,
+    "mcp": true,
+    "nightwatch_mcp": true,
+    "sail": false,
+    "skills": [
+        "laravel-best-practices",
+        "configure-nightwatch"
+    ]
 }
