@@ -10,8 +10,18 @@
       </div>
       <div class="row">
         <div class="col">
-          <p class="lead main-text">Photography, for me, is an inner conversation – how to balance my inner turmoil of thoughts and emotions. It is a process of questions and answers. The balance of duality in nature– light and darkness, happiness and pain, symmetry, and chaos, offers order in disorder and carries beyond surface value. These contrasts reflect the inner harmony of creation. For years I have been learning to accept them in my life. Nature gives us solace and centering in both – when we celebrate and rebirth after losses.</p>
-          <p class="lead main-text">Through multi-exposure and ICM (Intentional camera movement) photographic technics, I am looking to embed these varied layers of internal emotional, and external contrasts reflected in colors and shapes as a symbol of creative processes. To catch a moment, which gives you a fragment of what might be an answer or at times provides an instant of truth, is nature's greatest gift.</p>
+          <p class="lead main-text">Photography, for me, is a way of exploring the relationship between perception and
+            emotional experience. My work moves between figuration and abstraction, shaped by an interest in how memory,
+            sensation, and atmosphere influence the way we recognize the world around us. I am drawn to moments where
+            familiarity begins to dissolve — where landscapes, light, and form shift beyond direct description into
+            something more intuitive and emotionally felt.</p>
+          <p class="lead main-text">Working with layered imagery, camera movement, and multi-exposure processes, I
+            create photographs that resist fixed interpretation. Rather than documenting external reality, the images
+            reflect fleeting states of recognition, presence, and emotional ambiguity.</p>
+          <p class="lead main-text">Nature appears throughout the work not simply as subject matter, but as a place
+            where emotional and perceptual experiences become intertwined.</p>
+          <p class="lead main-text">I am interested in photography’s ability to move beyond representation toward
+            something more sensory, personal, and unresolved.</p>
         </div>
       </div>
     </div>
