@@ -20,16 +20,17 @@ class CvsController extends Controller
   public function update(Request $data)
   {
     $data->validate([
-      'cv-content' => 'required'
+      'description-textarea' => 'required',
     ],
       [
-        'cv-content.required' => 'Trūkst CV saturs!'
+        'description-textarea.required' => 'Trūkst CV saturs!',
       ]);
     try {
       $cvToUpdate = Cv::findOrFail($data['id']);
       $cvToUpdate->update([
-        'content' => $data['cv-content']
+        'content' => $data['description-textarea'],
       ]);
+
       return redirect('/admin')->with('success', 'CV atjaunots!');
     } catch (\Exception $e) {
       return back()->with('error', 'Kļūda!');
