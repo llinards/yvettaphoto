@@ -28,6 +28,14 @@ class AuthTest extends TestCase
     $response->assertRedirect('/login');
   }
 
+  public function test_unauthenticated_json_requests_receive_unauthorized_response(): void
+  {
+    auth()->logout();
+    $response = $this->getJson('/admin');
+
+    $response->assertUnauthorized();
+  }
+
   public function test_authenticated_users_can_see_dashboard(): void
   {
     $response = $this->get('/admin');

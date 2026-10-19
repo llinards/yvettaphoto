@@ -19,6 +19,7 @@
     "spatie/laravel-honeypot": "^4.3"
   },
   "require-dev": {
+    "baer-software/larabeacon": "^3.3",
     "laravel/boost": "^2.0",
     "laravel/telescope": "^5.0",
     "mockery/mockery": "^1.5",
